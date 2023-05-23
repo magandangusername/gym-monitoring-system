@@ -8,7 +8,10 @@ git bash installation commands:
 6. then type: git init
 7. then type: git branch -M main
 8. then type: git remote add origin git@github.com:magandangusername/gym-monitoring-system.git
-9. then type: git pull origin main
+9. if you have never generated a ssh before, type: ssh-keygen -of
+10. just enter through if you don't know what you are doing.
+11. go to 'C:\Users\<Your user>\.ssh' then send the 'id_rsa.pub' file or the code inside to the repository owner
+12. once the owner confirmed your ssh, you can now type: git pull origin main
 
 for pushing:
 
@@ -24,3 +27,11 @@ HARD RESET: if everything messes up or displays error and you dont know what to 
 
 1. type: git fetch --all
 2. then type: git reset --hard origin/main
+
+additional git commands:
+1. git fetch
+2. git status - tells if new commits have been pushed
+
+errors and solutions:
+1. authenticity of github.com... cant be established
+	- type: ssh-keyscan github.com >> ~/.ssh/known_hosts
