@@ -84,7 +84,7 @@ Public Class member_registration
         getdata = MemberID.ExecuteReader
         getdata.Read()
         Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPassword.Text & "')"
-
+        DBConnection.member_id = getdata("member_id")
         Dim registercmd2 As New OleDbCommand(pw, con)
         getdata.Close()
         registercmd2.ExecuteNonQuery()

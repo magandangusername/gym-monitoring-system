@@ -8,11 +8,20 @@ Public Class profile
     Private Sub profile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'load the current user profile info to the screen
         Call DBConnection.con.Open()
-        Dim MemberProfile As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
+        Dim MemberProfile As New OleDbCommand("SELECT * FROM Members where member_id = " & DBConnection.member_id, con)
         Dim getdata As OleDbDataReader
         getdata = MemberProfile.ExecuteReader
         getdata.Read()
-        txtFullname.Text = ""
+        txtFullname.Text = getdata("fname")
+        txtAddress.Text = getdata("address")
+        txtBirthday.Text = getdata("birthday")
+        txtGender.Text = getdata("gender")
+        txtHeight.Text = getdata("height")
+        txtWeight.Text = getdata("weight")
+        txtContactNumber.Text = getdata("contactnumber")
+        txtEmail.Text = getdata("email")
+        txtEmergencyContactPerson.Text = getdata("emergencyperson")
+        txtContactNumber2.Text = getdata("emergencynum")
 
         getdata.Close()
         Call DBConnection.con.Close()
@@ -64,5 +73,33 @@ Public Class profile
                 e.Handled = True
             End If
         End If
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Call DBConnection.con.Open()
+        Dim updateprofile As New OleDbCommand("Update Members 
+        SET fname = '" & txtFullname.Text & "',
+        address = '" & txtAddress.Text & "',
+        contactnumber = '" & txtContactNumber.Text & "',
+        email = '" & txtEmail.Text & "',
+        emergencyperson = '" & txtEmergencyContactPerson.Text & "',
+        emergencynum = '" & txtContactNumber2.Text & "',
+        height = '" & txtHeight.Text & "',
+        weight = '" & txtWeight.Text & "'", con)
+
+        If txtPassword.Text IsNot "" And txtReTypePassword.Text IsNot "" Then
+            If txtPassword.Text = txtReTypePassword.Text Then
+                Dim updatepw As New OleDbCommand("Update credentials 
+                SET member_password = '" & txtPassword.Text &
+                " WHERE member_id = " & DBConnection.member_id, con)
+                updatepw.ExecuteNonQuery()
+                MsgBox("Password updated successfully")
+            End If
+        End If
+        updateprofile.ExecuteNonQuery()
+        MsgBox("Profile updated successfully")
+
+
+        Call DBConnection.con.Close()
     End Sub
 End Class
