@@ -35,7 +35,7 @@ Partial Class admin_registration
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(155, 68)
+        Me.Label1.Location = New System.Drawing.Point(71, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 0
@@ -44,7 +44,7 @@ Partial Class admin_registration
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(155, 131)
+        Me.Label2.Location = New System.Drawing.Point(91, 110)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 13)
         Me.Label2.TabIndex = 1
@@ -53,7 +53,7 @@ Partial Class admin_registration
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(155, 196)
+        Me.Label3.Location = New System.Drawing.Point(71, 175)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 2
@@ -61,28 +61,28 @@ Partial Class admin_registration
         '
         'txtFullname
         '
-        Me.txtFullname.Location = New System.Drawing.Point(237, 61)
+        Me.txtFullname.Location = New System.Drawing.Point(140, 44)
         Me.txtFullname.Name = "txtFullname"
-        Me.txtFullname.Size = New System.Drawing.Size(100, 20)
+        Me.txtFullname.Size = New System.Drawing.Size(250, 20)
         Me.txtFullname.TabIndex = 3
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(237, 124)
+        Me.txtEmail.Location = New System.Drawing.Point(140, 107)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(250, 20)
         Me.txtEmail.TabIndex = 4
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(237, 189)
+        Me.txtPassword.Location = New System.Drawing.Point(140, 172)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(250, 20)
         Me.txtPassword.TabIndex = 5
         '
         'btnRegister
         '
-        Me.btnRegister.Location = New System.Drawing.Point(219, 298)
+        Me.btnRegister.Location = New System.Drawing.Point(94, 250)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(75, 23)
         Me.btnRegister.TabIndex = 6
@@ -91,7 +91,7 @@ Partial Class admin_registration
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(351, 298)
+        Me.btnCancel.Location = New System.Drawing.Point(263, 250)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 7
@@ -102,7 +102,7 @@ Partial Class admin_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(437, 329)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.txtPassword)
