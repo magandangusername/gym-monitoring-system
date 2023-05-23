@@ -24,117 +24,9 @@ Partial Class admin_overview
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.tpAdmin = New System.Windows.Forms.TabPage()
-        Me.btnAdd1 = New System.Windows.Forms.Button()
-        Me.btnDelete1 = New System.Windows.Forms.Button()
-        Me.btnUpdate1 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.lblAdminName = New System.Windows.Forms.Label()
-        Me.lblDate = New System.Windows.Forms.Label()
-        Me.lblTotalData = New System.Windows.Forms.Label()
-        Me.txtGender = New System.Windows.Forms.TextBox()
-        Me.txtBirthday = New System.Windows.Forms.TextBox()
-        Me.txtContactNumber2 = New System.Windows.Forms.TextBox()
-        Me.lblContactNumber2 = New System.Windows.Forms.Label()
-        Me.txtEmergencyContactPerson = New System.Windows.Forms.TextBox()
-        Me.lblEmergencyContactPerson = New System.Windows.Forms.Label()
-        Me.txtWeight = New System.Windows.Forms.TextBox()
-        Me.lblWeight = New System.Windows.Forms.Label()
-        Me.txtHeight = New System.Windows.Forms.TextBox()
-        Me.lblHeight = New System.Windows.Forms.Label()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.txtContactNumber = New System.Windows.Forms.TextBox()
-        Me.lblContactNumber = New System.Windows.Forms.Label()
-        Me.lblGender = New System.Windows.Forms.Label()
-        Me.lblBirthday = New System.Windows.Forms.Label()
-        Me.txtAddress = New System.Windows.Forms.TextBox()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.txtFullname = New System.Windows.Forms.TextBox()
-        Me.lblFullName = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.lblUpperBody = New System.Windows.Forms.Label()
-        Me.lblCore = New System.Windows.Forms.Label()
-        Me.lblLowerBody = New System.Windows.Forms.Label()
-        Me.cbUBA1 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA1 = New System.Windows.Forms.TextBox()
-        Me.txtUBA2 = New System.Windows.Forms.TextBox()
-        Me.cbUBA2 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA3 = New System.Windows.Forms.TextBox()
-        Me.cbUBA3 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA4 = New System.Windows.Forms.TextBox()
-        Me.cbUBA4 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA5 = New System.Windows.Forms.TextBox()
-        Me.cbUBA5 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA6 = New System.Windows.Forms.TextBox()
-        Me.cbUBA6 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA7 = New System.Windows.Forms.TextBox()
-        Me.cbUBA7 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA8 = New System.Windows.Forms.TextBox()
-        Me.cbUBA8 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA9 = New System.Windows.Forms.TextBox()
-        Me.cbUBA9 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA18 = New System.Windows.Forms.TextBox()
-        Me.cbUBA18 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA17 = New System.Windows.Forms.TextBox()
-        Me.cbUB17 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA16 = New System.Windows.Forms.TextBox()
-        Me.cbUBA16 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA15 = New System.Windows.Forms.TextBox()
-        Me.cbUBA15 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA14 = New System.Windows.Forms.TextBox()
-        Me.cbUBA14 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA13 = New System.Windows.Forms.TextBox()
-        Me.cbUBA13 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA12 = New System.Windows.Forms.TextBox()
-        Me.cbUBA12 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA11 = New System.Windows.Forms.TextBox()
-        Me.cbUBA11 = New System.Windows.Forms.CheckBox()
-        Me.txtUBA10 = New System.Windows.Forms.TextBox()
-        Me.cbUBA10 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA9 = New System.Windows.Forms.TextBox()
-        Me.cbCBA9 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA8 = New System.Windows.Forms.TextBox()
-        Me.cbCBA8 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA7 = New System.Windows.Forms.TextBox()
-        Me.cbCBA7 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA6 = New System.Windows.Forms.TextBox()
-        Me.cbCBA6 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA5 = New System.Windows.Forms.TextBox()
-        Me.cbCBA5 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA4 = New System.Windows.Forms.TextBox()
-        Me.cbCBA4 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA3 = New System.Windows.Forms.TextBox()
-        Me.cbCBA3 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA2 = New System.Windows.Forms.TextBox()
-        Me.cbCBA2 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA1 = New System.Windows.Forms.TextBox()
-        Me.cbCBA1 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA18 = New System.Windows.Forms.TextBox()
-        Me.cbCBA18 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA17 = New System.Windows.Forms.TextBox()
-        Me.cbCBA17 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA16 = New System.Windows.Forms.TextBox()
-        Me.cbCBA16 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA15 = New System.Windows.Forms.TextBox()
-        Me.cbCBA15 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA14 = New System.Windows.Forms.TextBox()
-        Me.cbCBA14 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA13 = New System.Windows.Forms.TextBox()
-        Me.cbCBA13 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA12 = New System.Windows.Forms.TextBox()
-        Me.cbCBA12 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA11 = New System.Windows.Forms.TextBox()
-        Me.cbCBA11 = New System.Windows.Forms.CheckBox()
-        Me.txtCBA10 = New System.Windows.Forms.TextBox()
-        Me.cbCBA10 = New System.Windows.Forms.CheckBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.txtLBA18 = New System.Windows.Forms.TextBox()
         Me.cbLBA18 = New System.Windows.Forms.CheckBox()
         Me.txtLBA17 = New System.Windows.Forms.TextBox()
@@ -171,8 +63,115 @@ Partial Class admin_overview
         Me.cbLBA2 = New System.Windows.Forms.CheckBox()
         Me.txtLBA1 = New System.Windows.Forms.TextBox()
         Me.cbLBA1 = New System.Windows.Forms.CheckBox()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtCBA17 = New System.Windows.Forms.TextBox()
+        Me.cbCBA17 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA16 = New System.Windows.Forms.TextBox()
+        Me.cbCBA16 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA15 = New System.Windows.Forms.TextBox()
+        Me.cbCBA15 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA14 = New System.Windows.Forms.TextBox()
+        Me.cbCBA14 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA13 = New System.Windows.Forms.TextBox()
+        Me.cbCBA13 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA12 = New System.Windows.Forms.TextBox()
+        Me.cbCBA12 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA11 = New System.Windows.Forms.TextBox()
+        Me.cbCBA11 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA10 = New System.Windows.Forms.TextBox()
+        Me.cbCBA10 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA9 = New System.Windows.Forms.TextBox()
+        Me.cbCBA9 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA8 = New System.Windows.Forms.TextBox()
+        Me.cbCBA8 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA7 = New System.Windows.Forms.TextBox()
+        Me.cbCBA7 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA6 = New System.Windows.Forms.TextBox()
+        Me.cbCBA6 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA5 = New System.Windows.Forms.TextBox()
+        Me.cbCBA5 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA4 = New System.Windows.Forms.TextBox()
+        Me.cbCBA4 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA3 = New System.Windows.Forms.TextBox()
+        Me.cbCBA3 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA2 = New System.Windows.Forms.TextBox()
+        Me.cbCBA2 = New System.Windows.Forms.CheckBox()
+        Me.txtCBA1 = New System.Windows.Forms.TextBox()
+        Me.cbCBA1 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA18 = New System.Windows.Forms.TextBox()
+        Me.cbUBA18 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA17 = New System.Windows.Forms.TextBox()
+        Me.cbUB17 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA16 = New System.Windows.Forms.TextBox()
+        Me.cbUBA16 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA15 = New System.Windows.Forms.TextBox()
+        Me.cbUBA15 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA14 = New System.Windows.Forms.TextBox()
+        Me.cbUBA14 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA13 = New System.Windows.Forms.TextBox()
+        Me.cbUBA13 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA12 = New System.Windows.Forms.TextBox()
+        Me.cbUBA12 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA11 = New System.Windows.Forms.TextBox()
+        Me.cbUBA11 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA10 = New System.Windows.Forms.TextBox()
+        Me.cbUBA10 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA9 = New System.Windows.Forms.TextBox()
+        Me.cbUBA9 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA8 = New System.Windows.Forms.TextBox()
+        Me.cbUBA8 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA7 = New System.Windows.Forms.TextBox()
+        Me.cbUBA7 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA6 = New System.Windows.Forms.TextBox()
+        Me.cbUBA6 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA5 = New System.Windows.Forms.TextBox()
+        Me.cbUBA5 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA4 = New System.Windows.Forms.TextBox()
+        Me.cbUBA4 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA3 = New System.Windows.Forms.TextBox()
+        Me.cbUBA3 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA2 = New System.Windows.Forms.TextBox()
+        Me.cbUBA2 = New System.Windows.Forms.CheckBox()
+        Me.txtUBA1 = New System.Windows.Forms.TextBox()
+        Me.cbUBA1 = New System.Windows.Forms.CheckBox()
+        Me.lblLowerBody = New System.Windows.Forms.Label()
+        Me.lblCore = New System.Windows.Forms.Label()
+        Me.lblUpperBody = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtGender = New System.Windows.Forms.TextBox()
+        Me.txtBirthday = New System.Windows.Forms.TextBox()
+        Me.txtContactNumber2 = New System.Windows.Forms.TextBox()
+        Me.lblContactNumber2 = New System.Windows.Forms.Label()
+        Me.txtEmergencyContactPerson = New System.Windows.Forms.TextBox()
+        Me.lblEmergencyContactPerson = New System.Windows.Forms.Label()
+        Me.txtWeight = New System.Windows.Forms.TextBox()
+        Me.lblWeight = New System.Windows.Forms.Label()
+        Me.txtHeight = New System.Windows.Forms.TextBox()
+        Me.lblHeight = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.txtContactNumber = New System.Windows.Forms.TextBox()
+        Me.lblContactNumber = New System.Windows.Forms.Label()
+        Me.lblGender = New System.Windows.Forms.Label()
+        Me.lblBirthday = New System.Windows.Forms.Label()
+        Me.txtAddress = New System.Windows.Forms.TextBox()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.txtFullname = New System.Windows.Forms.TextBox()
+        Me.lblFullName = New System.Windows.Forms.Label()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.tpAdmin = New System.Windows.Forms.TabPage()
+        Me.btnAdd1 = New System.Windows.Forms.Button()
+        Me.btnDelete1 = New System.Windows.Forms.Button()
+        Me.btnUpdate1 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.lblAdminName = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.lblTotalData = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,6 +193,7 @@ Partial Class admin_overview
         '
         'tpCustomer
         '
+        Me.tpCustomer.Controls.Add(Me.DateTimePicker1)
         Me.tpCustomer.Controls.Add(Me.btnSearch)
         Me.tpCustomer.Controls.Add(Me.txtSearch)
         Me.tpCustomer.Controls.Add(Me.txtLBA18)
@@ -232,8 +232,6 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.cbLBA2)
         Me.tpCustomer.Controls.Add(Me.txtLBA1)
         Me.tpCustomer.Controls.Add(Me.cbLBA1)
-        Me.tpCustomer.Controls.Add(Me.txtCBA18)
-        Me.tpCustomer.Controls.Add(Me.cbCBA18)
         Me.tpCustomer.Controls.Add(Me.txtCBA17)
         Me.tpCustomer.Controls.Add(Me.cbCBA17)
         Me.tpCustomer.Controls.Add(Me.txtCBA16)
@@ -343,116 +341,990 @@ Partial Class admin_overview
         Me.tpCustomer.Text = "Customer"
         Me.tpCustomer.UseVisualStyleBackColor = True
         '
-        'btnAdd
+        'DateTimePicker1
         '
-        Me.btnAdd.Location = New System.Drawing.Point(443, 531)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 1
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.DateTimePicker1.Location = New System.Drawing.Point(981, 214)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 205
         '
-        'btnDelete
+        'btnSearch
         '
-        Me.btnDelete.Location = New System.Drawing.Point(647, 531)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete.TabIndex = 3
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.btnSearch.Location = New System.Drawing.Point(6, 531)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.TabIndex = 204
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'txtSearch
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(716, 518)
-        Me.DataGridView1.TabIndex = 0
+        Me.txtSearch.Location = New System.Drawing.Point(87, 533)
+        Me.txtSearch.MaxLength = 11
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(293, 20)
+        Me.txtSearch.TabIndex = 203
         '
-        'btnUpdate
+        'txtLBA18
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(546, 531)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate.TabIndex = 2
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
+        Me.txtLBA18.Location = New System.Drawing.Point(1406, 521)
+        Me.txtLBA18.Name = "txtLBA18"
+        Me.txtLBA18.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA18.TabIndex = 201
         '
-        'tpAdmin
+        'cbLBA18
         '
-        Me.tpAdmin.Controls.Add(Me.btnAdd1)
-        Me.tpAdmin.Controls.Add(Me.btnDelete1)
-        Me.tpAdmin.Controls.Add(Me.btnUpdate1)
-        Me.tpAdmin.Controls.Add(Me.DataGridView2)
-        Me.tpAdmin.Location = New System.Drawing.Point(23, 4)
-        Me.tpAdmin.Name = "tpAdmin"
-        Me.tpAdmin.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAdmin.Size = New System.Drawing.Size(1187, 560)
-        Me.tpAdmin.TabIndex = 1
-        Me.tpAdmin.Text = "Admin "
-        Me.tpAdmin.UseVisualStyleBackColor = True
+        Me.cbLBA18.AutoSize = True
+        Me.cbLBA18.Location = New System.Drawing.Point(1454, 523)
+        Me.cbLBA18.Name = "cbLBA18"
+        Me.cbLBA18.Size = New System.Drawing.Size(99, 17)
+        Me.cbLBA18.TabIndex = 200
+        Me.cbLBA18.Text = "Dumbbell lunge"
+        Me.cbLBA18.UseVisualStyleBackColor = True
         '
-        'btnAdd1
+        'txtLBA17
         '
-        Me.btnAdd1.Location = New System.Drawing.Point(21, 521)
-        Me.btnAdd1.Name = "btnAdd1"
-        Me.btnAdd1.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd1.TabIndex = 4
-        Me.btnAdd1.Text = "Add"
-        Me.btnAdd1.UseVisualStyleBackColor = True
+        Me.txtLBA17.Location = New System.Drawing.Point(1406, 498)
+        Me.txtLBA17.Name = "txtLBA17"
+        Me.txtLBA17.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA17.TabIndex = 199
         '
-        'btnDelete1
+        'cbLBA17
         '
-        Me.btnDelete1.Location = New System.Drawing.Point(225, 521)
-        Me.btnDelete1.Name = "btnDelete1"
-        Me.btnDelete1.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete1.TabIndex = 6
-        Me.btnDelete1.Text = "Delete"
-        Me.btnDelete1.UseVisualStyleBackColor = True
+        Me.cbLBA17.AutoSize = True
+        Me.cbLBA17.Location = New System.Drawing.Point(1454, 500)
+        Me.cbLBA17.Name = "cbLBA17"
+        Me.cbLBA17.Size = New System.Drawing.Size(112, 17)
+        Me.cbLBA17.TabIndex = 198
+        Me.cbLBA17.Text = "Bodyweight Squat"
+        Me.cbLBA17.UseVisualStyleBackColor = True
         '
-        'btnUpdate1
+        'txtLBA16
         '
-        Me.btnUpdate1.Location = New System.Drawing.Point(124, 521)
-        Me.btnUpdate1.Name = "btnUpdate1"
-        Me.btnUpdate1.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate1.TabIndex = 5
-        Me.btnUpdate1.Text = "Update"
-        Me.btnUpdate1.UseVisualStyleBackColor = True
+        Me.txtLBA16.Location = New System.Drawing.Point(1406, 475)
+        Me.txtLBA16.Name = "txtLBA16"
+        Me.txtLBA16.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA16.TabIndex = 197
         '
-        'DataGridView2
+        'cbLBA16
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 7)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1175, 498)
-        Me.DataGridView2.TabIndex = 1
+        Me.cbLBA16.AutoSize = True
+        Me.cbLBA16.Location = New System.Drawing.Point(1454, 477)
+        Me.cbLBA16.Name = "cbLBA16"
+        Me.cbLBA16.Size = New System.Drawing.Size(87, 17)
+        Me.cbLBA16.TabIndex = 196
+        Me.cbLBA16.Text = "Barbell squat"
+        Me.cbLBA16.UseVisualStyleBackColor = True
         '
-        'lblAdminName
+        'txtLBA15
         '
-        Me.lblAdminName.AutoSize = True
-        Me.lblAdminName.Location = New System.Drawing.Point(38, 9)
-        Me.lblAdminName.Name = "lblAdminName"
-        Me.lblAdminName.Size = New System.Drawing.Size(115, 13)
-        Me.lblAdminName.TabIndex = 1
-        Me.lblAdminName.Text = "Welcome Admin Name"
+        Me.txtLBA15.Location = New System.Drawing.Point(1406, 452)
+        Me.txtLBA15.Name = "txtLBA15"
+        Me.txtLBA15.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA15.TabIndex = 195
         '
-        'lblDate
+        'cbLBA15
         '
-        Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(1571, 9)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(56, 13)
-        Me.lblDate.TabIndex = 2
-        Me.lblDate.Text = "Date Time"
+        Me.cbLBA15.AutoSize = True
+        Me.cbLBA15.Location = New System.Drawing.Point(1454, 454)
+        Me.cbLBA15.Name = "cbLBA15"
+        Me.cbLBA15.Size = New System.Drawing.Size(91, 17)
+        Me.cbLBA15.TabIndex = 194
+        Me.cbLBA15.Text = "Donkey kicks"
+        Me.cbLBA15.UseVisualStyleBackColor = True
         '
-        'lblTotalData
+        'txtLBA14
         '
-        Me.lblTotalData.AutoSize = True
-        Me.lblTotalData.Location = New System.Drawing.Point(1419, 9)
-        Me.lblTotalData.Name = "lblTotalData"
-        Me.lblTotalData.Size = New System.Drawing.Size(57, 13)
-        Me.lblTotalData.TabIndex = 3
-        Me.lblTotalData.Text = "Total Data"
+        Me.txtLBA14.Location = New System.Drawing.Point(1406, 429)
+        Me.txtLBA14.Name = "txtLBA14"
+        Me.txtLBA14.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA14.TabIndex = 193
+        '
+        'cbLBA14
+        '
+        Me.cbLBA14.AutoSize = True
+        Me.cbLBA14.Location = New System.Drawing.Point(1454, 431)
+        Me.cbLBA14.Name = "cbLBA14"
+        Me.cbLBA14.Size = New System.Drawing.Size(92, 17)
+        Me.cbLBA14.TabIndex = 192
+        Me.cbLBA14.Text = "Leg extension"
+        Me.cbLBA14.UseVisualStyleBackColor = True
+        '
+        'txtLBA13
+        '
+        Me.txtLBA13.Location = New System.Drawing.Point(1406, 406)
+        Me.txtLBA13.Name = "txtLBA13"
+        Me.txtLBA13.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA13.TabIndex = 191
+        '
+        'cbLBA13
+        '
+        Me.cbLBA13.AutoSize = True
+        Me.cbLBA13.Location = New System.Drawing.Point(1454, 408)
+        Me.cbLBA13.Name = "cbLBA13"
+        Me.cbLBA13.Size = New System.Drawing.Size(94, 17)
+        Me.cbLBA13.TabIndex = 190
+        Me.cbLBA13.Text = "Walking lunge"
+        Me.cbLBA13.UseVisualStyleBackColor = True
+        '
+        'txtLBA12
+        '
+        Me.txtLBA12.Location = New System.Drawing.Point(1406, 383)
+        Me.txtLBA12.Name = "txtLBA12"
+        Me.txtLBA12.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA12.TabIndex = 189
+        '
+        'cbLBA12
+        '
+        Me.cbLBA12.AutoSize = True
+        Me.cbLBA12.Location = New System.Drawing.Point(1454, 385)
+        Me.cbLBA12.Name = "cbLBA12"
+        Me.cbLBA12.Size = New System.Drawing.Size(100, 17)
+        Me.cbLBA12.TabIndex = 188
+        Me.cbLBA12.Text = "Reverse lunges"
+        Me.cbLBA12.UseVisualStyleBackColor = True
+        '
+        'txtLBA11
+        '
+        Me.txtLBA11.Location = New System.Drawing.Point(1406, 360)
+        Me.txtLBA11.Name = "txtLBA11"
+        Me.txtLBA11.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA11.TabIndex = 187
+        '
+        'cbLBA11
+        '
+        Me.cbLBA11.AutoSize = True
+        Me.cbLBA11.Location = New System.Drawing.Point(1454, 362)
+        Me.cbLBA11.Name = "cbLBA11"
+        Me.cbLBA11.Size = New System.Drawing.Size(72, 17)
+        Me.cbLBA11.TabIndex = 186
+        Me.cbLBA11.Text = "Leg press"
+        Me.cbLBA11.UseVisualStyleBackColor = True
+        '
+        'txtLBA10
+        '
+        Me.txtLBA10.Location = New System.Drawing.Point(1406, 337)
+        Me.txtLBA10.Name = "txtLBA10"
+        Me.txtLBA10.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA10.TabIndex = 185
+        '
+        'cbLBA10
+        '
+        Me.cbLBA10.AutoSize = True
+        Me.cbLBA10.Location = New System.Drawing.Point(1454, 339)
+        Me.cbLBA10.Name = "cbLBA10"
+        Me.cbLBA10.Size = New System.Drawing.Size(109, 17)
+        Me.cbLBA10.TabIndex = 184
+        Me.cbLBA10.Text = "Single leg deadlift"
+        Me.cbLBA10.UseVisualStyleBackColor = True
+        '
+        'txtLBA9
+        '
+        Me.txtLBA9.Location = New System.Drawing.Point(1208, 520)
+        Me.txtLBA9.Name = "txtLBA9"
+        Me.txtLBA9.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA9.TabIndex = 183
+        '
+        'cbLBA9
+        '
+        Me.cbLBA9.AutoSize = True
+        Me.cbLBA9.Location = New System.Drawing.Point(1256, 522)
+        Me.cbLBA9.Name = "cbLBA9"
+        Me.cbLBA9.Size = New System.Drawing.Size(64, 17)
+        Me.cbLBA9.TabIndex = 182
+        Me.cbLBA9.Text = "Leg curl"
+        Me.cbLBA9.UseVisualStyleBackColor = True
+        '
+        'txtLBA8
+        '
+        Me.txtLBA8.Location = New System.Drawing.Point(1208, 497)
+        Me.txtLBA8.Name = "txtLBA8"
+        Me.txtLBA8.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA8.TabIndex = 181
+        '
+        'cbLBA8
+        '
+        Me.cbLBA8.AutoSize = True
+        Me.cbLBA8.Location = New System.Drawing.Point(1256, 499)
+        Me.cbLBA8.Name = "cbLBA8"
+        Me.cbLBA8.Size = New System.Drawing.Size(76, 17)
+        Me.cbLBA8.TabIndex = 180
+        Me.cbLBA8.Text = "Side lunge"
+        Me.cbLBA8.UseVisualStyleBackColor = True
+        '
+        'txtLBA7
+        '
+        Me.txtLBA7.Location = New System.Drawing.Point(1208, 474)
+        Me.txtLBA7.Name = "txtLBA7"
+        Me.txtLBA7.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA7.TabIndex = 179
+        '
+        'cbLBA7
+        '
+        Me.cbLBA7.AutoSize = True
+        Me.cbLBA7.Location = New System.Drawing.Point(1256, 476)
+        Me.cbLBA7.Name = "cbLBA7"
+        Me.cbLBA7.Size = New System.Drawing.Size(111, 17)
+        Me.cbLBA7.TabIndex = 178
+        Me.cbLBA7.Text = "Romanian deadlift"
+        Me.cbLBA7.UseVisualStyleBackColor = True
+        '
+        'txtLBA6
+        '
+        Me.txtLBA6.Location = New System.Drawing.Point(1208, 451)
+        Me.txtLBA6.Name = "txtLBA6"
+        Me.txtLBA6.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA6.TabIndex = 177
+        '
+        'cbLBA6
+        '
+        Me.cbLBA6.AutoSize = True
+        Me.cbLBA6.Location = New System.Drawing.Point(1256, 453)
+        Me.cbLBA6.Name = "cbLBA6"
+        Me.cbLBA6.Size = New System.Drawing.Size(91, 17)
+        Me.cbLBA6.TabIndex = 176
+        Me.cbLBA6.Text = "Goblet squats"
+        Me.cbLBA6.UseVisualStyleBackColor = True
+        '
+        'txtLBA5
+        '
+        Me.txtLBA5.Location = New System.Drawing.Point(1208, 428)
+        Me.txtLBA5.Name = "txtLBA5"
+        Me.txtLBA5.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA5.TabIndex = 175
+        '
+        'cbLBA5
+        '
+        Me.cbLBA5.AutoSize = True
+        Me.cbLBA5.Location = New System.Drawing.Point(1256, 430)
+        Me.cbLBA5.Name = "cbLBA5"
+        Me.cbLBA5.Size = New System.Drawing.Size(62, 17)
+        Me.cbLBA5.TabIndex = 174
+        Me.cbLBA5.Text = "Deadlift"
+        Me.cbLBA5.UseVisualStyleBackColor = True
+        '
+        'txtLBA4
+        '
+        Me.txtLBA4.Location = New System.Drawing.Point(1208, 405)
+        Me.txtLBA4.Name = "txtLBA4"
+        Me.txtLBA4.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA4.TabIndex = 173
+        '
+        'cbLBA4
+        '
+        Me.cbLBA4.AutoSize = True
+        Me.cbLBA4.Location = New System.Drawing.Point(1256, 407)
+        Me.cbLBA4.Name = "cbLBA4"
+        Me.cbLBA4.Size = New System.Drawing.Size(74, 17)
+        Me.cbLBA4.TabIndex = 172
+        Me.cbLBA4.Text = "Calf raises"
+        Me.cbLBA4.UseVisualStyleBackColor = True
+        '
+        'txtLBA3
+        '
+        Me.txtLBA3.Location = New System.Drawing.Point(1208, 382)
+        Me.txtLBA3.Name = "txtLBA3"
+        Me.txtLBA3.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA3.TabIndex = 171
+        '
+        'cbLBA3
+        '
+        Me.cbLBA3.AutoSize = True
+        Me.cbLBA3.Location = New System.Drawing.Point(1256, 384)
+        Me.cbLBA3.Name = "cbLBA3"
+        Me.cbLBA3.Size = New System.Drawing.Size(75, 17)
+        Me.cbLBA3.TabIndex = 170
+        Me.cbLBA3.Text = "Split squat"
+        Me.cbLBA3.UseVisualStyleBackColor = True
+        '
+        'txtLBA2
+        '
+        Me.txtLBA2.Location = New System.Drawing.Point(1208, 359)
+        Me.txtLBA2.Name = "txtLBA2"
+        Me.txtLBA2.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA2.TabIndex = 169
+        '
+        'cbLBA2
+        '
+        Me.cbLBA2.AutoSize = True
+        Me.cbLBA2.Location = New System.Drawing.Point(1256, 361)
+        Me.cbLBA2.Name = "cbLBA2"
+        Me.cbLBA2.Size = New System.Drawing.Size(56, 17)
+        Me.cbLBA2.TabIndex = 168
+        Me.cbLBA2.Text = "Lunge"
+        Me.cbLBA2.UseVisualStyleBackColor = True
+        '
+        'txtLBA1
+        '
+        Me.txtLBA1.Location = New System.Drawing.Point(1208, 336)
+        Me.txtLBA1.Name = "txtLBA1"
+        Me.txtLBA1.Size = New System.Drawing.Size(42, 20)
+        Me.txtLBA1.TabIndex = 167
+        '
+        'cbLBA1
+        '
+        Me.cbLBA1.AutoSize = True
+        Me.cbLBA1.Location = New System.Drawing.Point(1256, 338)
+        Me.cbLBA1.Name = "cbLBA1"
+        Me.cbLBA1.Size = New System.Drawing.Size(59, 17)
+        Me.cbLBA1.TabIndex = 166
+        Me.cbLBA1.Text = "Squats"
+        Me.cbLBA1.UseVisualStyleBackColor = True
+        '
+        'txtCBA17
+        '
+        Me.txtCBA17.Location = New System.Drawing.Point(1406, 209)
+        Me.txtCBA17.Name = "txtCBA17"
+        Me.txtCBA17.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA17.TabIndex = 163
+        '
+        'cbCBA17
+        '
+        Me.cbCBA17.AutoSize = True
+        Me.cbCBA17.Location = New System.Drawing.Point(1454, 211)
+        Me.cbCBA17.Name = "cbCBA17"
+        Me.cbCBA17.Size = New System.Drawing.Size(78, 17)
+        Me.cbCBA17.TabIndex = 162
+        Me.cbCBA17.Text = "Plank walk"
+        Me.cbCBA17.UseVisualStyleBackColor = True
+        '
+        'txtCBA16
+        '
+        Me.txtCBA16.Location = New System.Drawing.Point(1406, 186)
+        Me.txtCBA16.Name = "txtCBA16"
+        Me.txtCBA16.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA16.TabIndex = 161
+        '
+        'cbCBA16
+        '
+        Me.cbCBA16.AutoSize = True
+        Me.cbCBA16.Location = New System.Drawing.Point(1454, 188)
+        Me.cbCBA16.Name = "cbCBA16"
+        Me.cbCBA16.Size = New System.Drawing.Size(139, 17)
+        Me.cbCBA16.TabIndex = 160
+        Me.cbCBA16.Text = "Chaturanga Dandasana"
+        Me.cbCBA16.UseVisualStyleBackColor = True
+        '
+        'txtCBA15
+        '
+        Me.txtCBA15.Location = New System.Drawing.Point(1406, 163)
+        Me.txtCBA15.Name = "txtCBA15"
+        Me.txtCBA15.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA15.TabIndex = 159
+        '
+        'cbCBA15
+        '
+        Me.cbCBA15.AutoSize = True
+        Me.cbCBA15.Location = New System.Drawing.Point(1454, 165)
+        Me.cbCBA15.Name = "cbCBA15"
+        Me.cbCBA15.Size = New System.Drawing.Size(123, 17)
+        Me.cbCBA15.TabIndex = 158
+        Me.cbCBA15.Text = "Dumbbell plank drag"
+        Me.cbCBA15.UseVisualStyleBackColor = True
+        '
+        'txtCBA14
+        '
+        Me.txtCBA14.Location = New System.Drawing.Point(1406, 140)
+        Me.txtCBA14.Name = "txtCBA14"
+        Me.txtCBA14.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA14.TabIndex = 157
+        '
+        'cbCBA14
+        '
+        Me.cbCBA14.AutoSize = True
+        Me.cbCBA14.Location = New System.Drawing.Point(1454, 142)
+        Me.cbCBA14.Name = "cbCBA14"
+        Me.cbCBA14.Size = New System.Drawing.Size(76, 17)
+        Me.cbCBA14.TabIndex = 156
+        Me.cbCBA14.Text = "Plank jack"
+        Me.cbCBA14.UseVisualStyleBackColor = True
+        '
+        'txtCBA13
+        '
+        Me.txtCBA13.Location = New System.Drawing.Point(1406, 117)
+        Me.txtCBA13.Name = "txtCBA13"
+        Me.txtCBA13.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA13.TabIndex = 155
+        '
+        'cbCBA13
+        '
+        Me.cbCBA13.AutoSize = True
+        Me.cbCBA13.Location = New System.Drawing.Point(1454, 119)
+        Me.cbCBA13.Name = "cbCBA13"
+        Me.cbCBA13.Size = New System.Drawing.Size(77, 17)
+        Me.cbCBA13.TabIndex = 154
+        Me.cbCBA13.Text = "High plank"
+        Me.cbCBA13.UseVisualStyleBackColor = True
+        '
+        'txtCBA12
+        '
+        Me.txtCBA12.Location = New System.Drawing.Point(1406, 94)
+        Me.txtCBA12.Name = "txtCBA12"
+        Me.txtCBA12.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA12.TabIndex = 153
+        '
+        'cbCBA12
+        '
+        Me.cbCBA12.AutoSize = True
+        Me.cbCBA12.Location = New System.Drawing.Point(1454, 96)
+        Me.cbCBA12.Name = "cbCBA12"
+        Me.cbCBA12.Size = New System.Drawing.Size(93, 17)
+        Me.cbCBA12.TabIndex = 152
+        Me.cbCBA12.Text = "Forearm plank"
+        Me.cbCBA12.UseVisualStyleBackColor = True
+        '
+        'txtCBA11
+        '
+        Me.txtCBA11.Location = New System.Drawing.Point(1406, 71)
+        Me.txtCBA11.Name = "txtCBA11"
+        Me.txtCBA11.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA11.TabIndex = 151
+        '
+        'cbCBA11
+        '
+        Me.cbCBA11.AutoSize = True
+        Me.cbCBA11.Location = New System.Drawing.Point(1454, 73)
+        Me.cbCBA11.Name = "cbCBA11"
+        Me.cbCBA11.Size = New System.Drawing.Size(101, 17)
+        Me.cbCBA11.TabIndex = 150
+        Me.cbCBA11.Text = "Bird-dog crunch"
+        Me.cbCBA11.UseVisualStyleBackColor = True
+        '
+        'txtCBA10
+        '
+        Me.txtCBA10.Location = New System.Drawing.Point(1406, 48)
+        Me.txtCBA10.Name = "txtCBA10"
+        Me.txtCBA10.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA10.TabIndex = 149
+        '
+        'cbCBA10
+        '
+        Me.cbCBA10.AutoSize = True
+        Me.cbCBA10.Location = New System.Drawing.Point(1454, 50)
+        Me.cbCBA10.Name = "cbCBA10"
+        Me.cbCBA10.Size = New System.Drawing.Size(113, 17)
+        Me.cbCBA10.TabIndex = 148
+        Me.cbCBA10.Text = "Hanging leg raises"
+        Me.cbCBA10.UseVisualStyleBackColor = True
+        '
+        'txtCBA9
+        '
+        Me.txtCBA9.Location = New System.Drawing.Point(1208, 231)
+        Me.txtCBA9.Name = "txtCBA9"
+        Me.txtCBA9.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA9.TabIndex = 147
+        '
+        'cbCBA9
+        '
+        Me.cbCBA9.AutoSize = True
+        Me.cbCBA9.Location = New System.Drawing.Point(1256, 233)
+        Me.cbCBA9.Name = "cbCBA9"
+        Me.cbCBA9.Size = New System.Drawing.Size(53, 17)
+        Me.cbCBA9.TabIndex = 146
+        Me.cbCBA9.Text = "Sit-up"
+        Me.cbCBA9.UseVisualStyleBackColor = True
+        '
+        'txtCBA8
+        '
+        Me.txtCBA8.Location = New System.Drawing.Point(1208, 208)
+        Me.txtCBA8.Name = "txtCBA8"
+        Me.txtCBA8.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA8.TabIndex = 145
+        '
+        'cbCBA8
+        '
+        Me.cbCBA8.AutoSize = True
+        Me.cbCBA8.Location = New System.Drawing.Point(1256, 210)
+        Me.cbCBA8.Name = "cbCBA8"
+        Me.cbCBA8.Size = New System.Drawing.Size(95, 17)
+        Me.cbCBA8.TabIndex = 144
+        Me.cbCBA8.Text = "Modified plank"
+        Me.cbCBA8.UseVisualStyleBackColor = True
+        '
+        'txtCBA7
+        '
+        Me.txtCBA7.Location = New System.Drawing.Point(1208, 185)
+        Me.txtCBA7.Name = "txtCBA7"
+        Me.txtCBA7.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA7.TabIndex = 143
+        '
+        'cbCBA7
+        '
+        Me.cbCBA7.AutoSize = True
+        Me.cbCBA7.Location = New System.Drawing.Point(1256, 187)
+        Me.cbCBA7.Name = "cbCBA7"
+        Me.cbCBA7.Size = New System.Drawing.Size(93, 17)
+        Me.cbCBA7.TabIndex = 142
+        Me.cbCBA7.Text = "Russian twists"
+        Me.cbCBA7.UseVisualStyleBackColor = True
+        '
+        'txtCBA6
+        '
+        Me.txtCBA6.Location = New System.Drawing.Point(1208, 162)
+        Me.txtCBA6.Name = "txtCBA6"
+        Me.txtCBA6.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA6.TabIndex = 141
+        '
+        'cbCBA6
+        '
+        Me.cbCBA6.AutoSize = True
+        Me.cbCBA6.Location = New System.Drawing.Point(1256, 164)
+        Me.cbCBA6.Name = "cbCBA6"
+        Me.cbCBA6.Size = New System.Drawing.Size(107, 17)
+        Me.cbCBA6.TabIndex = 140
+        Me.cbCBA6.Text = "Bicycle crunches"
+        Me.cbCBA6.UseVisualStyleBackColor = True
+        '
+        'txtCBA5
+        '
+        Me.txtCBA5.Location = New System.Drawing.Point(1208, 139)
+        Me.txtCBA5.Name = "txtCBA5"
+        Me.txtCBA5.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA5.TabIndex = 139
+        '
+        'cbCBA5
+        '
+        Me.cbCBA5.AutoSize = True
+        Me.cbCBA5.Location = New System.Drawing.Point(1256, 141)
+        Me.cbCBA5.Name = "cbCBA5"
+        Me.cbCBA5.Size = New System.Drawing.Size(69, 17)
+        Me.cbCBA5.TabIndex = 138
+        Me.cbCBA5.Text = "Leg raise"
+        Me.cbCBA5.UseVisualStyleBackColor = True
+        '
+        'txtCBA4
+        '
+        Me.txtCBA4.Location = New System.Drawing.Point(1208, 116)
+        Me.txtCBA4.Name = "txtCBA4"
+        Me.txtCBA4.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA4.TabIndex = 137
+        '
+        'cbCBA4
+        '
+        Me.cbCBA4.AutoSize = True
+        Me.cbCBA4.Location = New System.Drawing.Point(1256, 118)
+        Me.cbCBA4.Name = "cbCBA4"
+        Me.cbCBA4.Size = New System.Drawing.Size(102, 17)
+        Me.cbCBA4.TabIndex = 136
+        Me.cbCBA4.Text = "Reverse crunch"
+        Me.cbCBA4.UseVisualStyleBackColor = True
+        '
+        'txtCBA3
+        '
+        Me.txtCBA3.Location = New System.Drawing.Point(1208, 93)
+        Me.txtCBA3.Name = "txtCBA3"
+        Me.txtCBA3.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA3.TabIndex = 135
+        '
+        'cbCBA3
+        '
+        Me.cbCBA3.AutoSize = True
+        Me.cbCBA3.Location = New System.Drawing.Point(1256, 95)
+        Me.cbCBA3.Name = "cbCBA3"
+        Me.cbCBA3.Size = New System.Drawing.Size(60, 17)
+        Me.cbCBA3.TabIndex = 134
+        Me.cbCBA3.Text = "Crunch"
+        Me.cbCBA3.UseVisualStyleBackColor = True
+        '
+        'txtCBA2
+        '
+        Me.txtCBA2.Location = New System.Drawing.Point(1208, 70)
+        Me.txtCBA2.Name = "txtCBA2"
+        Me.txtCBA2.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA2.TabIndex = 133
+        '
+        'cbCBA2
+        '
+        Me.cbCBA2.AutoSize = True
+        Me.cbCBA2.Location = New System.Drawing.Point(1256, 72)
+        Me.cbCBA2.Name = "cbCBA2"
+        Me.cbCBA2.Size = New System.Drawing.Size(53, 17)
+        Me.cbCBA2.TabIndex = 132
+        Me.cbCBA2.Text = "Plank"
+        Me.cbCBA2.UseVisualStyleBackColor = True
+        '
+        'txtCBA1
+        '
+        Me.txtCBA1.Location = New System.Drawing.Point(1208, 47)
+        Me.txtCBA1.Name = "txtCBA1"
+        Me.txtCBA1.Size = New System.Drawing.Size(42, 20)
+        Me.txtCBA1.TabIndex = 131
+        '
+        'cbCBA1
+        '
+        Me.cbCBA1.AutoSize = True
+        Me.cbCBA1.Location = New System.Drawing.Point(1256, 49)
+        Me.cbCBA1.Name = "cbCBA1"
+        Me.cbCBA1.Size = New System.Drawing.Size(57, 17)
+        Me.cbCBA1.TabIndex = 130
+        Me.cbCBA1.Text = "Pilates"
+        Me.cbCBA1.UseVisualStyleBackColor = True
+        '
+        'txtUBA18
+        '
+        Me.txtUBA18.Location = New System.Drawing.Point(973, 520)
+        Me.txtUBA18.Name = "txtUBA18"
+        Me.txtUBA18.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA18.TabIndex = 129
+        '
+        'cbUBA18
+        '
+        Me.cbUBA18.AutoSize = True
+        Me.cbUBA18.Location = New System.Drawing.Point(1021, 522)
+        Me.cbUBA18.Name = "cbUBA18"
+        Me.cbUBA18.Size = New System.Drawing.Size(160, 17)
+        Me.cbUBA18.TabIndex = 128
+        Me.cbUBA18.Text = "Overhead Triceps Extension"
+        Me.cbUBA18.UseVisualStyleBackColor = True
+        '
+        'txtUBA17
+        '
+        Me.txtUBA17.Location = New System.Drawing.Point(973, 497)
+        Me.txtUBA17.Name = "txtUBA17"
+        Me.txtUBA17.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA17.TabIndex = 127
+        '
+        'cbUB17
+        '
+        Me.cbUB17.AutoSize = True
+        Me.cbUB17.Location = New System.Drawing.Point(1021, 499)
+        Me.cbUB17.Name = "cbUB17"
+        Me.cbUB17.Size = New System.Drawing.Size(83, 17)
+        Me.cbUB17.TabIndex = 126
+        Me.cbUB17.Text = "Dumbbell fly"
+        Me.cbUB17.UseVisualStyleBackColor = True
+        '
+        'txtUBA16
+        '
+        Me.txtUBA16.Location = New System.Drawing.Point(973, 474)
+        Me.txtUBA16.Name = "txtUBA16"
+        Me.txtUBA16.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA16.TabIndex = 125
+        '
+        'cbUBA16
+        '
+        Me.cbUBA16.AutoSize = True
+        Me.cbUBA16.Location = New System.Drawing.Point(1021, 476)
+        Me.cbUBA16.Name = "cbUBA16"
+        Me.cbUBA16.Size = New System.Drawing.Size(131, 17)
+        Me.cbUBA16.TabIndex = 124
+        Me.cbUBA16.Text = "Dumbbell bench press"
+        Me.cbUBA16.UseVisualStyleBackColor = True
+        '
+        'txtUBA15
+        '
+        Me.txtUBA15.Location = New System.Drawing.Point(973, 451)
+        Me.txtUBA15.Name = "txtUBA15"
+        Me.txtUBA15.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA15.TabIndex = 123
+        '
+        'cbUBA15
+        '
+        Me.cbUBA15.AutoSize = True
+        Me.cbUBA15.Location = New System.Drawing.Point(1021, 453)
+        Me.cbUBA15.Name = "cbUBA15"
+        Me.cbUBA15.Size = New System.Drawing.Size(62, 17)
+        Me.cbUBA15.TabIndex = 122
+        Me.cbUBA15.Text = "Deadlift"
+        Me.cbUBA15.UseVisualStyleBackColor = True
+        '
+        'txtUBA14
+        '
+        Me.txtUBA14.Location = New System.Drawing.Point(973, 428)
+        Me.txtUBA14.Name = "txtUBA14"
+        Me.txtUBA14.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA14.TabIndex = 121
+        '
+        'cbUBA14
+        '
+        Me.cbUBA14.AutoSize = True
+        Me.cbUBA14.Location = New System.Drawing.Point(1021, 430)
+        Me.cbUBA14.Name = "cbUBA14"
+        Me.cbUBA14.Size = New System.Drawing.Size(119, 17)
+        Me.cbUBA14.TabIndex = 120
+        Me.cbUBA14.Text = "Dumbbell front raise"
+        Me.cbUBA14.UseVisualStyleBackColor = True
+        '
+        'txtUBA13
+        '
+        Me.txtUBA13.Location = New System.Drawing.Point(973, 405)
+        Me.txtUBA13.Name = "txtUBA13"
+        Me.txtUBA13.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA13.TabIndex = 119
+        '
+        'cbUBA13
+        '
+        Me.cbUBA13.AutoSize = True
+        Me.cbUBA13.Location = New System.Drawing.Point(1021, 407)
+        Me.cbUBA13.Name = "cbUBA13"
+        Me.cbUBA13.Size = New System.Drawing.Size(80, 17)
+        Me.cbUBA13.TabIndex = 118
+        Me.cbUBA13.Text = "Upright row"
+        Me.cbUBA13.UseVisualStyleBackColor = True
+        '
+        'txtUBA12
+        '
+        Me.txtUBA12.Location = New System.Drawing.Point(973, 382)
+        Me.txtUBA12.Name = "txtUBA12"
+        Me.txtUBA12.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA12.TabIndex = 117
+        '
+        'cbUBA12
+        '
+        Me.cbUBA12.AutoSize = True
+        Me.cbUBA12.Location = New System.Drawing.Point(1021, 384)
+        Me.cbUBA12.Name = "cbUBA12"
+        Me.cbUBA12.Size = New System.Drawing.Size(151, 17)
+        Me.cbUBA12.TabIndex = 116
+        Me.cbUBA12.Text = "Dumbbell triceps kickback"
+        Me.cbUBA12.UseVisualStyleBackColor = True
+        '
+        'txtUBA11
+        '
+        Me.txtUBA11.Location = New System.Drawing.Point(973, 359)
+        Me.txtUBA11.Name = "txtUBA11"
+        Me.txtUBA11.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA11.TabIndex = 115
+        '
+        'cbUBA11
+        '
+        Me.cbUBA11.AutoSize = True
+        Me.cbUBA11.Location = New System.Drawing.Point(1021, 361)
+        Me.cbUBA11.Name = "cbUBA11"
+        Me.cbUBA11.Size = New System.Drawing.Size(72, 17)
+        Me.cbUBA11.TabIndex = 114
+        Me.cbUBA11.Text = "Pull-down"
+        Me.cbUBA11.UseVisualStyleBackColor = True
+        '
+        'txtUBA10
+        '
+        Me.txtUBA10.Location = New System.Drawing.Point(973, 336)
+        Me.txtUBA10.Name = "txtUBA10"
+        Me.txtUBA10.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA10.TabIndex = 113
+        '
+        'cbUBA10
+        '
+        Me.cbUBA10.AutoSize = True
+        Me.cbUBA10.Location = New System.Drawing.Point(1021, 338)
+        Me.cbUBA10.Name = "cbUBA10"
+        Me.cbUBA10.Size = New System.Drawing.Size(140, 17)
+        Me.cbUBA10.TabIndex = 112
+        Me.cbUBA10.Text = "Single arm dumbbell row"
+        Me.cbUBA10.UseVisualStyleBackColor = True
+        '
+        'txtUBA9
+        '
+        Me.txtUBA9.Location = New System.Drawing.Point(739, 519)
+        Me.txtUBA9.Name = "txtUBA9"
+        Me.txtUBA9.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA9.TabIndex = 111
+        '
+        'cbUBA9
+        '
+        Me.cbUBA9.AutoSize = True
+        Me.cbUBA9.Location = New System.Drawing.Point(787, 521)
+        Me.cbUBA9.Name = "cbUBA9"
+        Me.cbUBA9.Size = New System.Drawing.Size(73, 17)
+        Me.cbUBA9.TabIndex = 110
+        Me.cbUBA9.Text = "Tricep dip"
+        Me.cbUBA9.UseVisualStyleBackColor = True
+        '
+        'txtUBA8
+        '
+        Me.txtUBA8.Location = New System.Drawing.Point(739, 496)
+        Me.txtUBA8.Name = "txtUBA8"
+        Me.txtUBA8.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA8.TabIndex = 109
+        '
+        'cbUBA8
+        '
+        Me.cbUBA8.AutoSize = True
+        Me.cbUBA8.Location = New System.Drawing.Point(787, 498)
+        Me.cbUBA8.Name = "cbUBA8"
+        Me.cbUBA8.Size = New System.Drawing.Size(141, 17)
+        Me.cbUBA8.TabIndex = 108
+        Me.cbUBA8.Text = "Dumbbell shoulder press"
+        Me.cbUBA8.UseVisualStyleBackColor = True
+        '
+        'txtUBA7
+        '
+        Me.txtUBA7.Location = New System.Drawing.Point(739, 473)
+        Me.txtUBA7.Name = "txtUBA7"
+        Me.txtUBA7.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA7.TabIndex = 107
+        '
+        'cbUBA7
+        '
+        Me.cbUBA7.AutoSize = True
+        Me.cbUBA7.Location = New System.Drawing.Point(787, 475)
+        Me.cbUBA7.Name = "cbUBA7"
+        Me.cbUBA7.Size = New System.Drawing.Size(138, 17)
+        Me.cbUBA7.TabIndex = 106
+        Me.cbUBA7.Text = "Lying triceps extensions"
+        Me.cbUBA7.UseVisualStyleBackColor = True
+        '
+        'txtUBA6
+        '
+        Me.txtUBA6.Location = New System.Drawing.Point(739, 450)
+        Me.txtUBA6.Name = "txtUBA6"
+        Me.txtUBA6.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA6.TabIndex = 105
+        '
+        'cbUBA6
+        '
+        Me.cbUBA6.AutoSize = True
+        Me.cbUBA6.Location = New System.Drawing.Point(787, 452)
+        Me.cbUBA6.Name = "cbUBA6"
+        Me.cbUBA6.Size = New System.Drawing.Size(58, 17)
+        Me.cbUBA6.TabIndex = 104
+        Me.cbUBA6.Text = "Pull-up"
+        Me.cbUBA6.UseVisualStyleBackColor = True
+        '
+        'txtUBA5
+        '
+        Me.txtUBA5.Location = New System.Drawing.Point(739, 427)
+        Me.txtUBA5.Name = "txtUBA5"
+        Me.txtUBA5.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA5.TabIndex = 103
+        '
+        'cbUBA5
+        '
+        Me.cbUBA5.AutoSize = True
+        Me.cbUBA5.Location = New System.Drawing.Point(787, 429)
+        Me.cbUBA5.Name = "cbUBA5"
+        Me.cbUBA5.Size = New System.Drawing.Size(78, 17)
+        Me.cbUBA5.TabIndex = 102
+        Me.cbUBA5.Text = "Biceps curl"
+        Me.cbUBA5.UseVisualStyleBackColor = True
+        '
+        'txtUBA4
+        '
+        Me.txtUBA4.Location = New System.Drawing.Point(739, 404)
+        Me.txtUBA4.Name = "txtUBA4"
+        Me.txtUBA4.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA4.TabIndex = 101
+        '
+        'cbUBA4
+        '
+        Me.cbUBA4.AutoSize = True
+        Me.cbUBA4.Location = New System.Drawing.Point(787, 406)
+        Me.cbUBA4.Name = "cbUBA4"
+        Me.cbUBA4.Size = New System.Drawing.Size(92, 17)
+        Me.cbUBA4.TabIndex = 100
+        Me.cbUBA4.Text = "Bent-over row"
+        Me.cbUBA4.UseVisualStyleBackColor = True
+        '
+        'txtUBA3
+        '
+        Me.txtUBA3.Location = New System.Drawing.Point(739, 381)
+        Me.txtUBA3.Name = "txtUBA3"
+        Me.txtUBA3.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA3.TabIndex = 99
+        '
+        'cbUBA3
+        '
+        Me.cbUBA3.AutoSize = True
+        Me.cbUBA3.Location = New System.Drawing.Point(787, 383)
+        Me.cbUBA3.Name = "cbUBA3"
+        Me.cbUBA3.Size = New System.Drawing.Size(67, 17)
+        Me.cbUBA3.TabIndex = 98
+        Me.cbUBA3.Text = "Pushups"
+        Me.cbUBA3.UseVisualStyleBackColor = True
+        '
+        'txtUBA2
+        '
+        Me.txtUBA2.Location = New System.Drawing.Point(739, 358)
+        Me.txtUBA2.Name = "txtUBA2"
+        Me.txtUBA2.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA2.TabIndex = 97
+        '
+        'cbUBA2
+        '
+        Me.cbUBA2.AutoSize = True
+        Me.cbUBA2.Location = New System.Drawing.Point(787, 360)
+        Me.cbUBA2.Name = "cbUBA2"
+        Me.cbUBA2.Size = New System.Drawing.Size(101, 17)
+        Me.cbUBA2.TabIndex = 96
+        Me.cbUBA2.Text = "Overhead press"
+        Me.cbUBA2.UseVisualStyleBackColor = True
+        '
+        'txtUBA1
+        '
+        Me.txtUBA1.Location = New System.Drawing.Point(739, 335)
+        Me.txtUBA1.Name = "txtUBA1"
+        Me.txtUBA1.Size = New System.Drawing.Size(42, 20)
+        Me.txtUBA1.TabIndex = 95
+        '
+        'cbUBA1
+        '
+        Me.cbUBA1.AutoSize = True
+        Me.cbUBA1.Location = New System.Drawing.Point(787, 337)
+        Me.cbUBA1.Name = "cbUBA1"
+        Me.cbUBA1.Size = New System.Drawing.Size(85, 17)
+        Me.cbUBA1.TabIndex = 94
+        Me.cbUBA1.Text = "Bench press"
+        Me.cbUBA1.UseVisualStyleBackColor = True
+        '
+        'lblLowerBody
+        '
+        Me.lblLowerBody.AutoSize = True
+        Me.lblLowerBody.Location = New System.Drawing.Point(1333, 312)
+        Me.lblLowerBody.Name = "lblLowerBody"
+        Me.lblLowerBody.Size = New System.Drawing.Size(108, 13)
+        Me.lblLowerBody.TabIndex = 93
+        Me.lblLowerBody.Text = "Lower Body Activities"
+        '
+        'lblCore
+        '
+        Me.lblCore.AutoSize = True
+        Me.lblCore.Location = New System.Drawing.Point(1333, 19)
+        Me.lblCore.Name = "lblCore"
+        Me.lblCore.Size = New System.Drawing.Size(101, 13)
+        Me.lblCore.TabIndex = 92
+        Me.lblCore.Text = "Core Body Activities"
+        '
+        'lblUpperBody
+        '
+        Me.lblUpperBody.AutoSize = True
+        Me.lblUpperBody.Location = New System.Drawing.Point(883, 313)
+        Me.lblUpperBody.Name = "lblUpperBody"
+        Me.lblUpperBody.Size = New System.Drawing.Size(108, 13)
+        Me.lblUpperBody.TabIndex = 4
+        Me.lblUpperBody.Text = "Upper Body Activities"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(874, 266)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(307, 41)
+        Me.RichTextBox1.TabIndex = 91
+        Me.RichTextBox1.Text = ""
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(748, 269)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(120, 13)
+        Me.Label2.TabIndex = 90
+        Me.Label2.Text = "Medical Condition if Any"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(1011, 240)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(170, 20)
+        Me.TextBox1.TabIndex = 89
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(979, 243)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(26, 13)
+        Me.Label1.TabIndex = 88
+        Me.Label1.Text = "BMI"
         '
         'txtGender
         '
@@ -618,1000 +1490,116 @@ Partial Class admin_overview
         Me.lblFullName.TabIndex = 64
         Me.lblFullName.Text = "Full Name"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(997, 214)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(78, 20)
-        Me.TextBox1.TabIndex = 89
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(965, 217)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(26, 13)
-        Me.Label1.TabIndex = 88
-        Me.Label1.Text = "BMI"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(748, 269)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 13)
-        Me.Label2.TabIndex = 90
-        Me.Label2.Text = "Medical Condition if Any"
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(874, 266)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(307, 41)
-        Me.RichTextBox1.TabIndex = 91
-        Me.RichTextBox1.Text = ""
-        '
-        'lblUpperBody
-        '
-        Me.lblUpperBody.AutoSize = True
-        Me.lblUpperBody.Location = New System.Drawing.Point(883, 313)
-        Me.lblUpperBody.Name = "lblUpperBody"
-        Me.lblUpperBody.Size = New System.Drawing.Size(108, 13)
-        Me.lblUpperBody.TabIndex = 4
-        Me.lblUpperBody.Text = "Upper Body Activities"
-        '
-        'lblCore
-        '
-        Me.lblCore.AutoSize = True
-        Me.lblCore.Location = New System.Drawing.Point(1333, 19)
-        Me.lblCore.Name = "lblCore"
-        Me.lblCore.Size = New System.Drawing.Size(101, 13)
-        Me.lblCore.TabIndex = 92
-        Me.lblCore.Text = "Core Body Activities"
-        '
-        'lblLowerBody
-        '
-        Me.lblLowerBody.AutoSize = True
-        Me.lblLowerBody.Location = New System.Drawing.Point(1333, 312)
-        Me.lblLowerBody.Name = "lblLowerBody"
-        Me.lblLowerBody.Size = New System.Drawing.Size(108, 13)
-        Me.lblLowerBody.TabIndex = 93
-        Me.lblLowerBody.Text = "Lower Body Activities"
-        '
-        'cbUBA1
-        '
-        Me.cbUBA1.AutoSize = True
-        Me.cbUBA1.Location = New System.Drawing.Point(787, 337)
-        Me.cbUBA1.Name = "cbUBA1"
-        Me.cbUBA1.Size = New System.Drawing.Size(85, 17)
-        Me.cbUBA1.TabIndex = 94
-        Me.cbUBA1.Text = "Bench press"
-        Me.cbUBA1.UseVisualStyleBackColor = True
-        '
-        'txtUBA1
-        '
-        Me.txtUBA1.Location = New System.Drawing.Point(739, 335)
-        Me.txtUBA1.Name = "txtUBA1"
-        Me.txtUBA1.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA1.TabIndex = 95
-        '
-        'txtUBA2
-        '
-        Me.txtUBA2.Location = New System.Drawing.Point(739, 358)
-        Me.txtUBA2.Name = "txtUBA2"
-        Me.txtUBA2.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA2.TabIndex = 97
-        '
-        'cbUBA2
-        '
-        Me.cbUBA2.AutoSize = True
-        Me.cbUBA2.Location = New System.Drawing.Point(787, 360)
-        Me.cbUBA2.Name = "cbUBA2"
-        Me.cbUBA2.Size = New System.Drawing.Size(101, 17)
-        Me.cbUBA2.TabIndex = 96
-        Me.cbUBA2.Text = "Overhead press"
-        Me.cbUBA2.UseVisualStyleBackColor = True
-        '
-        'txtUBA3
-        '
-        Me.txtUBA3.Location = New System.Drawing.Point(739, 381)
-        Me.txtUBA3.Name = "txtUBA3"
-        Me.txtUBA3.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA3.TabIndex = 99
-        '
-        'cbUBA3
-        '
-        Me.cbUBA3.AutoSize = True
-        Me.cbUBA3.Location = New System.Drawing.Point(787, 383)
-        Me.cbUBA3.Name = "cbUBA3"
-        Me.cbUBA3.Size = New System.Drawing.Size(67, 17)
-        Me.cbUBA3.TabIndex = 98
-        Me.cbUBA3.Text = "Pushups"
-        Me.cbUBA3.UseVisualStyleBackColor = True
-        '
-        'txtUBA4
-        '
-        Me.txtUBA4.Location = New System.Drawing.Point(739, 404)
-        Me.txtUBA4.Name = "txtUBA4"
-        Me.txtUBA4.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA4.TabIndex = 101
-        '
-        'cbUBA4
-        '
-        Me.cbUBA4.AutoSize = True
-        Me.cbUBA4.Location = New System.Drawing.Point(787, 406)
-        Me.cbUBA4.Name = "cbUBA4"
-        Me.cbUBA4.Size = New System.Drawing.Size(92, 17)
-        Me.cbUBA4.TabIndex = 100
-        Me.cbUBA4.Text = "Bent-over row"
-        Me.cbUBA4.UseVisualStyleBackColor = True
-        '
-        'txtUBA5
-        '
-        Me.txtUBA5.Location = New System.Drawing.Point(739, 427)
-        Me.txtUBA5.Name = "txtUBA5"
-        Me.txtUBA5.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA5.TabIndex = 103
-        '
-        'cbUBA5
-        '
-        Me.cbUBA5.AutoSize = True
-        Me.cbUBA5.Location = New System.Drawing.Point(787, 429)
-        Me.cbUBA5.Name = "cbUBA5"
-        Me.cbUBA5.Size = New System.Drawing.Size(78, 17)
-        Me.cbUBA5.TabIndex = 102
-        Me.cbUBA5.Text = "Biceps curl"
-        Me.cbUBA5.UseVisualStyleBackColor = True
-        '
-        'txtUBA6
-        '
-        Me.txtUBA6.Location = New System.Drawing.Point(739, 450)
-        Me.txtUBA6.Name = "txtUBA6"
-        Me.txtUBA6.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA6.TabIndex = 105
-        '
-        'cbUBA6
-        '
-        Me.cbUBA6.AutoSize = True
-        Me.cbUBA6.Location = New System.Drawing.Point(787, 452)
-        Me.cbUBA6.Name = "cbUBA6"
-        Me.cbUBA6.Size = New System.Drawing.Size(58, 17)
-        Me.cbUBA6.TabIndex = 104
-        Me.cbUBA6.Text = "Pull-up"
-        Me.cbUBA6.UseVisualStyleBackColor = True
-        '
-        'txtUBA7
-        '
-        Me.txtUBA7.Location = New System.Drawing.Point(739, 473)
-        Me.txtUBA7.Name = "txtUBA7"
-        Me.txtUBA7.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA7.TabIndex = 107
-        '
-        'cbUBA7
-        '
-        Me.cbUBA7.AutoSize = True
-        Me.cbUBA7.Location = New System.Drawing.Point(787, 475)
-        Me.cbUBA7.Name = "cbUBA7"
-        Me.cbUBA7.Size = New System.Drawing.Size(138, 17)
-        Me.cbUBA7.TabIndex = 106
-        Me.cbUBA7.Text = "Lying triceps extensions"
-        Me.cbUBA7.UseVisualStyleBackColor = True
-        '
-        'txtUBA8
-        '
-        Me.txtUBA8.Location = New System.Drawing.Point(739, 496)
-        Me.txtUBA8.Name = "txtUBA8"
-        Me.txtUBA8.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA8.TabIndex = 109
-        '
-        'cbUBA8
-        '
-        Me.cbUBA8.AutoSize = True
-        Me.cbUBA8.Location = New System.Drawing.Point(787, 498)
-        Me.cbUBA8.Name = "cbUBA8"
-        Me.cbUBA8.Size = New System.Drawing.Size(141, 17)
-        Me.cbUBA8.TabIndex = 108
-        Me.cbUBA8.Text = "Dumbbell shoulder press"
-        Me.cbUBA8.UseVisualStyleBackColor = True
-        '
-        'txtUBA9
-        '
-        Me.txtUBA9.Location = New System.Drawing.Point(739, 519)
-        Me.txtUBA9.Name = "txtUBA9"
-        Me.txtUBA9.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA9.TabIndex = 111
-        '
-        'cbUBA9
-        '
-        Me.cbUBA9.AutoSize = True
-        Me.cbUBA9.Location = New System.Drawing.Point(787, 521)
-        Me.cbUBA9.Name = "cbUBA9"
-        Me.cbUBA9.Size = New System.Drawing.Size(73, 17)
-        Me.cbUBA9.TabIndex = 110
-        Me.cbUBA9.Text = "Tricep dip"
-        Me.cbUBA9.UseVisualStyleBackColor = True
-        '
-        'txtUBA18
-        '
-        Me.txtUBA18.Location = New System.Drawing.Point(973, 520)
-        Me.txtUBA18.Name = "txtUBA18"
-        Me.txtUBA18.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA18.TabIndex = 129
-        '
-        'cbUBA18
-        '
-        Me.cbUBA18.AutoSize = True
-        Me.cbUBA18.Location = New System.Drawing.Point(1021, 522)
-        Me.cbUBA18.Name = "cbUBA18"
-        Me.cbUBA18.Size = New System.Drawing.Size(160, 17)
-        Me.cbUBA18.TabIndex = 128
-        Me.cbUBA18.Text = "Overhead Triceps Extension"
-        Me.cbUBA18.UseVisualStyleBackColor = True
-        '
-        'txtUBA17
-        '
-        Me.txtUBA17.Location = New System.Drawing.Point(973, 497)
-        Me.txtUBA17.Name = "txtUBA17"
-        Me.txtUBA17.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA17.TabIndex = 127
-        '
-        'cbUB17
-        '
-        Me.cbUB17.AutoSize = True
-        Me.cbUB17.Location = New System.Drawing.Point(1021, 499)
-        Me.cbUB17.Name = "cbUB17"
-        Me.cbUB17.Size = New System.Drawing.Size(83, 17)
-        Me.cbUB17.TabIndex = 126
-        Me.cbUB17.Text = "Dumbbell fly"
-        Me.cbUB17.UseVisualStyleBackColor = True
-        '
-        'txtUBA16
-        '
-        Me.txtUBA16.Location = New System.Drawing.Point(973, 474)
-        Me.txtUBA16.Name = "txtUBA16"
-        Me.txtUBA16.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA16.TabIndex = 125
-        '
-        'cbUBA16
-        '
-        Me.cbUBA16.AutoSize = True
-        Me.cbUBA16.Location = New System.Drawing.Point(1021, 476)
-        Me.cbUBA16.Name = "cbUBA16"
-        Me.cbUBA16.Size = New System.Drawing.Size(131, 17)
-        Me.cbUBA16.TabIndex = 124
-        Me.cbUBA16.Text = "Dumbbell bench press"
-        Me.cbUBA16.UseVisualStyleBackColor = True
-        '
-        'txtUBA15
-        '
-        Me.txtUBA15.Location = New System.Drawing.Point(973, 451)
-        Me.txtUBA15.Name = "txtUBA15"
-        Me.txtUBA15.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA15.TabIndex = 123
-        '
-        'cbUBA15
-        '
-        Me.cbUBA15.AutoSize = True
-        Me.cbUBA15.Location = New System.Drawing.Point(1021, 453)
-        Me.cbUBA15.Name = "cbUBA15"
-        Me.cbUBA15.Size = New System.Drawing.Size(62, 17)
-        Me.cbUBA15.TabIndex = 122
-        Me.cbUBA15.Text = "Deadlift"
-        Me.cbUBA15.UseVisualStyleBackColor = True
-        '
-        'txtUBA14
-        '
-        Me.txtUBA14.Location = New System.Drawing.Point(973, 428)
-        Me.txtUBA14.Name = "txtUBA14"
-        Me.txtUBA14.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA14.TabIndex = 121
-        '
-        'cbUBA14
-        '
-        Me.cbUBA14.AutoSize = True
-        Me.cbUBA14.Location = New System.Drawing.Point(1021, 430)
-        Me.cbUBA14.Name = "cbUBA14"
-        Me.cbUBA14.Size = New System.Drawing.Size(119, 17)
-        Me.cbUBA14.TabIndex = 120
-        Me.cbUBA14.Text = "Dumbbell front raise"
-        Me.cbUBA14.UseVisualStyleBackColor = True
-        '
-        'txtUBA13
-        '
-        Me.txtUBA13.Location = New System.Drawing.Point(973, 405)
-        Me.txtUBA13.Name = "txtUBA13"
-        Me.txtUBA13.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA13.TabIndex = 119
-        '
-        'cbUBA13
-        '
-        Me.cbUBA13.AutoSize = True
-        Me.cbUBA13.Location = New System.Drawing.Point(1021, 407)
-        Me.cbUBA13.Name = "cbUBA13"
-        Me.cbUBA13.Size = New System.Drawing.Size(80, 17)
-        Me.cbUBA13.TabIndex = 118
-        Me.cbUBA13.Text = "Upright row"
-        Me.cbUBA13.UseVisualStyleBackColor = True
-        '
-        'txtUBA12
-        '
-        Me.txtUBA12.Location = New System.Drawing.Point(973, 382)
-        Me.txtUBA12.Name = "txtUBA12"
-        Me.txtUBA12.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA12.TabIndex = 117
-        '
-        'cbUBA12
-        '
-        Me.cbUBA12.AutoSize = True
-        Me.cbUBA12.Location = New System.Drawing.Point(1021, 384)
-        Me.cbUBA12.Name = "cbUBA12"
-        Me.cbUBA12.Size = New System.Drawing.Size(151, 17)
-        Me.cbUBA12.TabIndex = 116
-        Me.cbUBA12.Text = "Dumbbell triceps kickback"
-        Me.cbUBA12.UseVisualStyleBackColor = True
-        '
-        'txtUBA11
-        '
-        Me.txtUBA11.Location = New System.Drawing.Point(973, 359)
-        Me.txtUBA11.Name = "txtUBA11"
-        Me.txtUBA11.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA11.TabIndex = 115
-        '
-        'cbUBA11
-        '
-        Me.cbUBA11.AutoSize = True
-        Me.cbUBA11.Location = New System.Drawing.Point(1021, 361)
-        Me.cbUBA11.Name = "cbUBA11"
-        Me.cbUBA11.Size = New System.Drawing.Size(72, 17)
-        Me.cbUBA11.TabIndex = 114
-        Me.cbUBA11.Text = "Pull-down"
-        Me.cbUBA11.UseVisualStyleBackColor = True
-        '
-        'txtUBA10
-        '
-        Me.txtUBA10.Location = New System.Drawing.Point(973, 336)
-        Me.txtUBA10.Name = "txtUBA10"
-        Me.txtUBA10.Size = New System.Drawing.Size(42, 20)
-        Me.txtUBA10.TabIndex = 113
-        '
-        'cbUBA10
-        '
-        Me.cbUBA10.AutoSize = True
-        Me.cbUBA10.Location = New System.Drawing.Point(1021, 338)
-        Me.cbUBA10.Name = "cbUBA10"
-        Me.cbUBA10.Size = New System.Drawing.Size(140, 17)
-        Me.cbUBA10.TabIndex = 112
-        Me.cbUBA10.Text = "Single arm dumbbell row"
-        Me.cbUBA10.UseVisualStyleBackColor = True
-        '
-        'txtCBA9
-        '
-        Me.txtCBA9.Location = New System.Drawing.Point(1208, 231)
-        Me.txtCBA9.Name = "txtCBA9"
-        Me.txtCBA9.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA9.TabIndex = 147
-        '
-        'cbCBA9
-        '
-        Me.cbCBA9.AutoSize = True
-        Me.cbCBA9.Location = New System.Drawing.Point(1256, 233)
-        Me.cbCBA9.Name = "cbCBA9"
-        Me.cbCBA9.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA9.TabIndex = 146
-        Me.cbCBA9.Text = "CheckBox19"
-        Me.cbCBA9.UseVisualStyleBackColor = True
-        '
-        'txtCBA8
-        '
-        Me.txtCBA8.Location = New System.Drawing.Point(1208, 208)
-        Me.txtCBA8.Name = "txtCBA8"
-        Me.txtCBA8.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA8.TabIndex = 145
-        '
-        'cbCBA8
-        '
-        Me.cbCBA8.AutoSize = True
-        Me.cbCBA8.Location = New System.Drawing.Point(1256, 210)
-        Me.cbCBA8.Name = "cbCBA8"
-        Me.cbCBA8.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA8.TabIndex = 144
-        Me.cbCBA8.Text = "CheckBox20"
-        Me.cbCBA8.UseVisualStyleBackColor = True
-        '
-        'txtCBA7
-        '
-        Me.txtCBA7.Location = New System.Drawing.Point(1208, 185)
-        Me.txtCBA7.Name = "txtCBA7"
-        Me.txtCBA7.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA7.TabIndex = 143
-        '
-        'cbCBA7
-        '
-        Me.cbCBA7.AutoSize = True
-        Me.cbCBA7.Location = New System.Drawing.Point(1256, 187)
-        Me.cbCBA7.Name = "cbCBA7"
-        Me.cbCBA7.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA7.TabIndex = 142
-        Me.cbCBA7.Text = "CheckBox21"
-        Me.cbCBA7.UseVisualStyleBackColor = True
-        '
-        'txtCBA6
-        '
-        Me.txtCBA6.Location = New System.Drawing.Point(1208, 162)
-        Me.txtCBA6.Name = "txtCBA6"
-        Me.txtCBA6.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA6.TabIndex = 141
-        '
-        'cbCBA6
-        '
-        Me.cbCBA6.AutoSize = True
-        Me.cbCBA6.Location = New System.Drawing.Point(1256, 164)
-        Me.cbCBA6.Name = "cbCBA6"
-        Me.cbCBA6.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA6.TabIndex = 140
-        Me.cbCBA6.Text = "CheckBox22"
-        Me.cbCBA6.UseVisualStyleBackColor = True
-        '
-        'txtCBA5
-        '
-        Me.txtCBA5.Location = New System.Drawing.Point(1208, 139)
-        Me.txtCBA5.Name = "txtCBA5"
-        Me.txtCBA5.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA5.TabIndex = 139
-        '
-        'cbCBA5
-        '
-        Me.cbCBA5.AutoSize = True
-        Me.cbCBA5.Location = New System.Drawing.Point(1256, 141)
-        Me.cbCBA5.Name = "cbCBA5"
-        Me.cbCBA5.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA5.TabIndex = 138
-        Me.cbCBA5.Text = "CheckBox23"
-        Me.cbCBA5.UseVisualStyleBackColor = True
-        '
-        'txtCBA4
-        '
-        Me.txtCBA4.Location = New System.Drawing.Point(1208, 116)
-        Me.txtCBA4.Name = "txtCBA4"
-        Me.txtCBA4.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA4.TabIndex = 137
-        '
-        'cbCBA4
-        '
-        Me.cbCBA4.AutoSize = True
-        Me.cbCBA4.Location = New System.Drawing.Point(1256, 118)
-        Me.cbCBA4.Name = "cbCBA4"
-        Me.cbCBA4.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA4.TabIndex = 136
-        Me.cbCBA4.Text = "CheckBox24"
-        Me.cbCBA4.UseVisualStyleBackColor = True
-        '
-        'txtCBA3
-        '
-        Me.txtCBA3.Location = New System.Drawing.Point(1208, 93)
-        Me.txtCBA3.Name = "txtCBA3"
-        Me.txtCBA3.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA3.TabIndex = 135
-        '
-        'cbCBA3
-        '
-        Me.cbCBA3.AutoSize = True
-        Me.cbCBA3.Location = New System.Drawing.Point(1256, 95)
-        Me.cbCBA3.Name = "cbCBA3"
-        Me.cbCBA3.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA3.TabIndex = 134
-        Me.cbCBA3.Text = "CheckBox25"
-        Me.cbCBA3.UseVisualStyleBackColor = True
-        '
-        'txtCBA2
-        '
-        Me.txtCBA2.Location = New System.Drawing.Point(1208, 70)
-        Me.txtCBA2.Name = "txtCBA2"
-        Me.txtCBA2.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA2.TabIndex = 133
-        '
-        'cbCBA2
-        '
-        Me.cbCBA2.AutoSize = True
-        Me.cbCBA2.Location = New System.Drawing.Point(1256, 72)
-        Me.cbCBA2.Name = "cbCBA2"
-        Me.cbCBA2.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA2.TabIndex = 132
-        Me.cbCBA2.Text = "CheckBox26"
-        Me.cbCBA2.UseVisualStyleBackColor = True
-        '
-        'txtCBA1
-        '
-        Me.txtCBA1.Location = New System.Drawing.Point(1208, 47)
-        Me.txtCBA1.Name = "txtCBA1"
-        Me.txtCBA1.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA1.TabIndex = 131
-        '
-        'cbCBA1
-        '
-        Me.cbCBA1.AutoSize = True
-        Me.cbCBA1.Location = New System.Drawing.Point(1256, 49)
-        Me.cbCBA1.Name = "cbCBA1"
-        Me.cbCBA1.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA1.TabIndex = 130
-        Me.cbCBA1.Text = "CheckBox27"
-        Me.cbCBA1.UseVisualStyleBackColor = True
-        '
-        'txtCBA18
-        '
-        Me.txtCBA18.Location = New System.Drawing.Point(1406, 232)
-        Me.txtCBA18.Name = "txtCBA18"
-        Me.txtCBA18.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA18.TabIndex = 165
-        '
-        'cbCBA18
-        '
-        Me.cbCBA18.AutoSize = True
-        Me.cbCBA18.Location = New System.Drawing.Point(1454, 234)
-        Me.cbCBA18.Name = "cbCBA18"
-        Me.cbCBA18.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA18.TabIndex = 164
-        Me.cbCBA18.Text = "CheckBox28"
-        Me.cbCBA18.UseVisualStyleBackColor = True
-        '
-        'txtCBA17
-        '
-        Me.txtCBA17.Location = New System.Drawing.Point(1406, 209)
-        Me.txtCBA17.Name = "txtCBA17"
-        Me.txtCBA17.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA17.TabIndex = 163
-        '
-        'cbCBA17
-        '
-        Me.cbCBA17.AutoSize = True
-        Me.cbCBA17.Location = New System.Drawing.Point(1454, 211)
-        Me.cbCBA17.Name = "cbCBA17"
-        Me.cbCBA17.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA17.TabIndex = 162
-        Me.cbCBA17.Text = "CheckBox29"
-        Me.cbCBA17.UseVisualStyleBackColor = True
-        '
-        'txtCBA16
-        '
-        Me.txtCBA16.Location = New System.Drawing.Point(1406, 186)
-        Me.txtCBA16.Name = "txtCBA16"
-        Me.txtCBA16.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA16.TabIndex = 161
-        '
-        'cbCBA16
-        '
-        Me.cbCBA16.AutoSize = True
-        Me.cbCBA16.Location = New System.Drawing.Point(1454, 188)
-        Me.cbCBA16.Name = "cbCBA16"
-        Me.cbCBA16.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA16.TabIndex = 160
-        Me.cbCBA16.Text = "CheckBox30"
-        Me.cbCBA16.UseVisualStyleBackColor = True
-        '
-        'txtCBA15
-        '
-        Me.txtCBA15.Location = New System.Drawing.Point(1406, 163)
-        Me.txtCBA15.Name = "txtCBA15"
-        Me.txtCBA15.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA15.TabIndex = 159
-        '
-        'cbCBA15
-        '
-        Me.cbCBA15.AutoSize = True
-        Me.cbCBA15.Location = New System.Drawing.Point(1454, 165)
-        Me.cbCBA15.Name = "cbCBA15"
-        Me.cbCBA15.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA15.TabIndex = 158
-        Me.cbCBA15.Text = "CheckBox31"
-        Me.cbCBA15.UseVisualStyleBackColor = True
-        '
-        'txtCBA14
-        '
-        Me.txtCBA14.Location = New System.Drawing.Point(1406, 140)
-        Me.txtCBA14.Name = "txtCBA14"
-        Me.txtCBA14.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA14.TabIndex = 157
-        '
-        'cbCBA14
-        '
-        Me.cbCBA14.AutoSize = True
-        Me.cbCBA14.Location = New System.Drawing.Point(1454, 142)
-        Me.cbCBA14.Name = "cbCBA14"
-        Me.cbCBA14.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA14.TabIndex = 156
-        Me.cbCBA14.Text = "CheckBox32"
-        Me.cbCBA14.UseVisualStyleBackColor = True
-        '
-        'txtCBA13
-        '
-        Me.txtCBA13.Location = New System.Drawing.Point(1406, 117)
-        Me.txtCBA13.Name = "txtCBA13"
-        Me.txtCBA13.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA13.TabIndex = 155
-        '
-        'cbCBA13
-        '
-        Me.cbCBA13.AutoSize = True
-        Me.cbCBA13.Location = New System.Drawing.Point(1454, 119)
-        Me.cbCBA13.Name = "cbCBA13"
-        Me.cbCBA13.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA13.TabIndex = 154
-        Me.cbCBA13.Text = "CheckBox33"
-        Me.cbCBA13.UseVisualStyleBackColor = True
-        '
-        'txtCBA12
-        '
-        Me.txtCBA12.Location = New System.Drawing.Point(1406, 94)
-        Me.txtCBA12.Name = "txtCBA12"
-        Me.txtCBA12.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA12.TabIndex = 153
-        '
-        'cbCBA12
-        '
-        Me.cbCBA12.AutoSize = True
-        Me.cbCBA12.Location = New System.Drawing.Point(1454, 96)
-        Me.cbCBA12.Name = "cbCBA12"
-        Me.cbCBA12.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA12.TabIndex = 152
-        Me.cbCBA12.Text = "CheckBox34"
-        Me.cbCBA12.UseVisualStyleBackColor = True
-        '
-        'txtCBA11
-        '
-        Me.txtCBA11.Location = New System.Drawing.Point(1406, 71)
-        Me.txtCBA11.Name = "txtCBA11"
-        Me.txtCBA11.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA11.TabIndex = 151
-        '
-        'cbCBA11
-        '
-        Me.cbCBA11.AutoSize = True
-        Me.cbCBA11.Location = New System.Drawing.Point(1454, 73)
-        Me.cbCBA11.Name = "cbCBA11"
-        Me.cbCBA11.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA11.TabIndex = 150
-        Me.cbCBA11.Text = "CheckBox35"
-        Me.cbCBA11.UseVisualStyleBackColor = True
-        '
-        'txtCBA10
-        '
-        Me.txtCBA10.Location = New System.Drawing.Point(1406, 48)
-        Me.txtCBA10.Name = "txtCBA10"
-        Me.txtCBA10.Size = New System.Drawing.Size(42, 20)
-        Me.txtCBA10.TabIndex = 149
-        '
-        'cbCBA10
-        '
-        Me.cbCBA10.AutoSize = True
-        Me.cbCBA10.Location = New System.Drawing.Point(1454, 50)
-        Me.cbCBA10.Name = "cbCBA10"
-        Me.cbCBA10.Size = New System.Drawing.Size(87, 17)
-        Me.cbCBA10.TabIndex = 148
-        Me.cbCBA10.Text = "CheckBox36"
-        Me.cbCBA10.UseVisualStyleBackColor = True
-        '
-        'txtLBA18
-        '
-        Me.txtLBA18.Location = New System.Drawing.Point(1406, 521)
-        Me.txtLBA18.Name = "txtLBA18"
-        Me.txtLBA18.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA18.TabIndex = 201
-        '
-        'cbLBA18
-        '
-        Me.cbLBA18.AutoSize = True
-        Me.cbLBA18.Location = New System.Drawing.Point(1454, 523)
-        Me.cbLBA18.Name = "cbLBA18"
-        Me.cbLBA18.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA18.TabIndex = 200
-        Me.cbLBA18.Text = "CheckBox37"
-        Me.cbLBA18.UseVisualStyleBackColor = True
-        '
-        'txtLBA17
-        '
-        Me.txtLBA17.Location = New System.Drawing.Point(1406, 498)
-        Me.txtLBA17.Name = "txtLBA17"
-        Me.txtLBA17.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA17.TabIndex = 199
-        '
-        'cbLBA17
-        '
-        Me.cbLBA17.AutoSize = True
-        Me.cbLBA17.Location = New System.Drawing.Point(1454, 500)
-        Me.cbLBA17.Name = "cbLBA17"
-        Me.cbLBA17.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA17.TabIndex = 198
-        Me.cbLBA17.Text = "CheckBox38"
-        Me.cbLBA17.UseVisualStyleBackColor = True
-        '
-        'txtLBA16
-        '
-        Me.txtLBA16.Location = New System.Drawing.Point(1406, 475)
-        Me.txtLBA16.Name = "txtLBA16"
-        Me.txtLBA16.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA16.TabIndex = 197
-        '
-        'cbLBA16
-        '
-        Me.cbLBA16.AutoSize = True
-        Me.cbLBA16.Location = New System.Drawing.Point(1454, 477)
-        Me.cbLBA16.Name = "cbLBA16"
-        Me.cbLBA16.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA16.TabIndex = 196
-        Me.cbLBA16.Text = "CheckBox39"
-        Me.cbLBA16.UseVisualStyleBackColor = True
-        '
-        'txtLBA15
-        '
-        Me.txtLBA15.Location = New System.Drawing.Point(1406, 452)
-        Me.txtLBA15.Name = "txtLBA15"
-        Me.txtLBA15.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA15.TabIndex = 195
-        '
-        'cbLBA15
-        '
-        Me.cbLBA15.AutoSize = True
-        Me.cbLBA15.Location = New System.Drawing.Point(1454, 454)
-        Me.cbLBA15.Name = "cbLBA15"
-        Me.cbLBA15.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA15.TabIndex = 194
-        Me.cbLBA15.Text = "CheckBox40"
-        Me.cbLBA15.UseVisualStyleBackColor = True
-        '
-        'txtLBA14
-        '
-        Me.txtLBA14.Location = New System.Drawing.Point(1406, 429)
-        Me.txtLBA14.Name = "txtLBA14"
-        Me.txtLBA14.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA14.TabIndex = 193
-        '
-        'cbLBA14
-        '
-        Me.cbLBA14.AutoSize = True
-        Me.cbLBA14.Location = New System.Drawing.Point(1454, 431)
-        Me.cbLBA14.Name = "cbLBA14"
-        Me.cbLBA14.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA14.TabIndex = 192
-        Me.cbLBA14.Text = "CheckBox41"
-        Me.cbLBA14.UseVisualStyleBackColor = True
-        '
-        'txtLBA13
-        '
-        Me.txtLBA13.Location = New System.Drawing.Point(1406, 406)
-        Me.txtLBA13.Name = "txtLBA13"
-        Me.txtLBA13.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA13.TabIndex = 191
-        '
-        'cbLBA13
-        '
-        Me.cbLBA13.AutoSize = True
-        Me.cbLBA13.Location = New System.Drawing.Point(1454, 408)
-        Me.cbLBA13.Name = "cbLBA13"
-        Me.cbLBA13.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA13.TabIndex = 190
-        Me.cbLBA13.Text = "CheckBox42"
-        Me.cbLBA13.UseVisualStyleBackColor = True
-        '
-        'txtLBA12
-        '
-        Me.txtLBA12.Location = New System.Drawing.Point(1406, 383)
-        Me.txtLBA12.Name = "txtLBA12"
-        Me.txtLBA12.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA12.TabIndex = 189
-        '
-        'cbLBA12
-        '
-        Me.cbLBA12.AutoSize = True
-        Me.cbLBA12.Location = New System.Drawing.Point(1454, 385)
-        Me.cbLBA12.Name = "cbLBA12"
-        Me.cbLBA12.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA12.TabIndex = 188
-        Me.cbLBA12.Text = "CheckBox43"
-        Me.cbLBA12.UseVisualStyleBackColor = True
-        '
-        'txtLBA11
-        '
-        Me.txtLBA11.Location = New System.Drawing.Point(1406, 360)
-        Me.txtLBA11.Name = "txtLBA11"
-        Me.txtLBA11.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA11.TabIndex = 187
-        '
-        'cbLBA11
-        '
-        Me.cbLBA11.AutoSize = True
-        Me.cbLBA11.Location = New System.Drawing.Point(1454, 362)
-        Me.cbLBA11.Name = "cbLBA11"
-        Me.cbLBA11.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA11.TabIndex = 186
-        Me.cbLBA11.Text = "CheckBox44"
-        Me.cbLBA11.UseVisualStyleBackColor = True
-        '
-        'txtLBA10
-        '
-        Me.txtLBA10.Location = New System.Drawing.Point(1406, 337)
-        Me.txtLBA10.Name = "txtLBA10"
-        Me.txtLBA10.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA10.TabIndex = 185
-        '
-        'cbLBA10
-        '
-        Me.cbLBA10.AutoSize = True
-        Me.cbLBA10.Location = New System.Drawing.Point(1454, 339)
-        Me.cbLBA10.Name = "cbLBA10"
-        Me.cbLBA10.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA10.TabIndex = 184
-        Me.cbLBA10.Text = "CheckBox45"
-        Me.cbLBA10.UseVisualStyleBackColor = True
-        '
-        'txtLBA9
-        '
-        Me.txtLBA9.Location = New System.Drawing.Point(1208, 520)
-        Me.txtLBA9.Name = "txtLBA9"
-        Me.txtLBA9.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA9.TabIndex = 183
-        '
-        'cbLBA9
-        '
-        Me.cbLBA9.AutoSize = True
-        Me.cbLBA9.Location = New System.Drawing.Point(1256, 522)
-        Me.cbLBA9.Name = "cbLBA9"
-        Me.cbLBA9.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA9.TabIndex = 182
-        Me.cbLBA9.Text = "CheckBox46"
-        Me.cbLBA9.UseVisualStyleBackColor = True
-        '
-        'txtLBA8
-        '
-        Me.txtLBA8.Location = New System.Drawing.Point(1208, 497)
-        Me.txtLBA8.Name = "txtLBA8"
-        Me.txtLBA8.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA8.TabIndex = 181
-        '
-        'cbLBA8
-        '
-        Me.cbLBA8.AutoSize = True
-        Me.cbLBA8.Location = New System.Drawing.Point(1256, 499)
-        Me.cbLBA8.Name = "cbLBA8"
-        Me.cbLBA8.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA8.TabIndex = 180
-        Me.cbLBA8.Text = "CheckBox47"
-        Me.cbLBA8.UseVisualStyleBackColor = True
-        '
-        'txtLBA7
-        '
-        Me.txtLBA7.Location = New System.Drawing.Point(1208, 474)
-        Me.txtLBA7.Name = "txtLBA7"
-        Me.txtLBA7.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA7.TabIndex = 179
-        '
-        'cbLBA7
-        '
-        Me.cbLBA7.AutoSize = True
-        Me.cbLBA7.Location = New System.Drawing.Point(1256, 476)
-        Me.cbLBA7.Name = "cbLBA7"
-        Me.cbLBA7.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA7.TabIndex = 178
-        Me.cbLBA7.Text = "CheckBox48"
-        Me.cbLBA7.UseVisualStyleBackColor = True
-        '
-        'txtLBA6
-        '
-        Me.txtLBA6.Location = New System.Drawing.Point(1208, 451)
-        Me.txtLBA6.Name = "txtLBA6"
-        Me.txtLBA6.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA6.TabIndex = 177
-        '
-        'cbLBA6
-        '
-        Me.cbLBA6.AutoSize = True
-        Me.cbLBA6.Location = New System.Drawing.Point(1256, 453)
-        Me.cbLBA6.Name = "cbLBA6"
-        Me.cbLBA6.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA6.TabIndex = 176
-        Me.cbLBA6.Text = "CheckBox49"
-        Me.cbLBA6.UseVisualStyleBackColor = True
-        '
-        'txtLBA5
-        '
-        Me.txtLBA5.Location = New System.Drawing.Point(1208, 428)
-        Me.txtLBA5.Name = "txtLBA5"
-        Me.txtLBA5.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA5.TabIndex = 175
-        '
-        'cbLBA5
-        '
-        Me.cbLBA5.AutoSize = True
-        Me.cbLBA5.Location = New System.Drawing.Point(1256, 430)
-        Me.cbLBA5.Name = "cbLBA5"
-        Me.cbLBA5.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA5.TabIndex = 174
-        Me.cbLBA5.Text = "CheckBox50"
-        Me.cbLBA5.UseVisualStyleBackColor = True
-        '
-        'txtLBA4
-        '
-        Me.txtLBA4.Location = New System.Drawing.Point(1208, 405)
-        Me.txtLBA4.Name = "txtLBA4"
-        Me.txtLBA4.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA4.TabIndex = 173
-        '
-        'cbLBA4
-        '
-        Me.cbLBA4.AutoSize = True
-        Me.cbLBA4.Location = New System.Drawing.Point(1256, 407)
-        Me.cbLBA4.Name = "cbLBA4"
-        Me.cbLBA4.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA4.TabIndex = 172
-        Me.cbLBA4.Text = "CheckBox51"
-        Me.cbLBA4.UseVisualStyleBackColor = True
-        '
-        'txtLBA3
-        '
-        Me.txtLBA3.Location = New System.Drawing.Point(1208, 382)
-        Me.txtLBA3.Name = "txtLBA3"
-        Me.txtLBA3.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA3.TabIndex = 171
-        '
-        'cbLBA3
-        '
-        Me.cbLBA3.AutoSize = True
-        Me.cbLBA3.Location = New System.Drawing.Point(1256, 384)
-        Me.cbLBA3.Name = "cbLBA3"
-        Me.cbLBA3.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA3.TabIndex = 170
-        Me.cbLBA3.Text = "CheckBox52"
-        Me.cbLBA3.UseVisualStyleBackColor = True
-        '
-        'txtLBA2
-        '
-        Me.txtLBA2.Location = New System.Drawing.Point(1208, 359)
-        Me.txtLBA2.Name = "txtLBA2"
-        Me.txtLBA2.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA2.TabIndex = 169
-        '
-        'cbLBA2
-        '
-        Me.cbLBA2.AutoSize = True
-        Me.cbLBA2.Location = New System.Drawing.Point(1256, 361)
-        Me.cbLBA2.Name = "cbLBA2"
-        Me.cbLBA2.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA2.TabIndex = 168
-        Me.cbLBA2.Text = "CheckBox53"
-        Me.cbLBA2.UseVisualStyleBackColor = True
-        '
-        'txtLBA1
-        '
-        Me.txtLBA1.Location = New System.Drawing.Point(1208, 336)
-        Me.txtLBA1.Name = "txtLBA1"
-        Me.txtLBA1.Size = New System.Drawing.Size(42, 20)
-        Me.txtLBA1.TabIndex = 167
-        '
-        'cbLBA1
-        '
-        Me.cbLBA1.AutoSize = True
-        Me.cbLBA1.Location = New System.Drawing.Point(1256, 338)
-        Me.cbLBA1.Name = "cbLBA1"
-        Me.cbLBA1.Size = New System.Drawing.Size(87, 17)
-        Me.cbLBA1.TabIndex = 166
-        Me.cbLBA1.Text = "CheckBox54"
-        Me.cbLBA1.UseVisualStyleBackColor = True
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(87, 533)
-        Me.txtSearch.MaxLength = 11
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(293, 20)
-        Me.txtSearch.TabIndex = 203
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(6, 531)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 204
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(443, 531)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 1
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(647, 531)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 3
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(716, 518)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(546, 531)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 2
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'tpAdmin
+        '
+        Me.tpAdmin.Controls.Add(Me.btnAdd1)
+        Me.tpAdmin.Controls.Add(Me.btnDelete1)
+        Me.tpAdmin.Controls.Add(Me.btnUpdate1)
+        Me.tpAdmin.Controls.Add(Me.DataGridView2)
+        Me.tpAdmin.Location = New System.Drawing.Point(23, 4)
+        Me.tpAdmin.Name = "tpAdmin"
+        Me.tpAdmin.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpAdmin.Size = New System.Drawing.Size(1594, 560)
+        Me.tpAdmin.TabIndex = 1
+        Me.tpAdmin.Text = "Admin "
+        Me.tpAdmin.UseVisualStyleBackColor = True
+        '
+        'btnAdd1
+        '
+        Me.btnAdd1.Location = New System.Drawing.Point(21, 521)
+        Me.btnAdd1.Name = "btnAdd1"
+        Me.btnAdd1.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd1.TabIndex = 4
+        Me.btnAdd1.Text = "Add"
+        Me.btnAdd1.UseVisualStyleBackColor = True
+        '
+        'btnDelete1
+        '
+        Me.btnDelete1.Location = New System.Drawing.Point(225, 521)
+        Me.btnDelete1.Name = "btnDelete1"
+        Me.btnDelete1.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete1.TabIndex = 6
+        Me.btnDelete1.Text = "Delete"
+        Me.btnDelete1.UseVisualStyleBackColor = True
+        '
+        'btnUpdate1
+        '
+        Me.btnUpdate1.Location = New System.Drawing.Point(124, 521)
+        Me.btnUpdate1.Name = "btnUpdate1"
+        Me.btnUpdate1.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate1.TabIndex = 5
+        Me.btnUpdate1.Text = "Update"
+        Me.btnUpdate1.UseVisualStyleBackColor = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 7)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(1175, 498)
+        Me.DataGridView2.TabIndex = 1
+        '
+        'lblAdminName
+        '
+        Me.lblAdminName.AutoSize = True
+        Me.lblAdminName.Location = New System.Drawing.Point(38, 9)
+        Me.lblAdminName.Name = "lblAdminName"
+        Me.lblAdminName.Size = New System.Drawing.Size(115, 13)
+        Me.lblAdminName.TabIndex = 1
+        Me.lblAdminName.Text = "Welcome Admin Name"
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Location = New System.Drawing.Point(1571, 9)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(56, 13)
+        Me.lblDate.TabIndex = 2
+        Me.lblDate.Text = "Date Time"
+        '
+        'lblTotalData
+        '
+        Me.lblTotalData.AutoSize = True
+        Me.lblTotalData.Location = New System.Drawing.Point(1419, 9)
+        Me.lblTotalData.Name = "lblTotalData"
+        Me.lblTotalData.Size = New System.Drawing.Size(57, 13)
+        Me.lblTotalData.TabIndex = 3
+        Me.lblTotalData.Text = "Total Data"
         '
         'admin_overview
         '
@@ -1714,8 +1702,6 @@ Partial Class admin_overview
     Friend WithEvents cbLBA2 As CheckBox
     Friend WithEvents txtLBA1 As TextBox
     Friend WithEvents cbLBA1 As CheckBox
-    Friend WithEvents txtCBA18 As TextBox
-    Friend WithEvents cbCBA18 As CheckBox
     Friend WithEvents txtCBA17 As TextBox
     Friend WithEvents cbCBA17 As CheckBox
     Friend WithEvents txtCBA16 As TextBox
@@ -1786,4 +1772,5 @@ Partial Class admin_overview
     Friend WithEvents cbUBA2 As CheckBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class
