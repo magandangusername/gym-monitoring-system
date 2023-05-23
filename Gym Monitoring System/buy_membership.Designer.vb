@@ -29,6 +29,8 @@ Partial Class buy_membership
         Me.rdbdiscount4 = New System.Windows.Forms.RadioButton()
         Me.rdbdiscount5 = New System.Windows.Forms.RadioButton()
         Me.btnPlaceOrder = New System.Windows.Forms.Button()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.lblPriceTotal = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -97,18 +99,38 @@ Partial Class buy_membership
         '
         'btnPlaceOrder
         '
-        Me.btnPlaceOrder.Location = New System.Drawing.Point(89, 258)
+        Me.btnPlaceOrder.Location = New System.Drawing.Point(89, 288)
         Me.btnPlaceOrder.Name = "btnPlaceOrder"
         Me.btnPlaceOrder.Size = New System.Drawing.Size(75, 23)
         Me.btnPlaceOrder.TabIndex = 6
         Me.btnPlaceOrder.Text = "Place Order"
         Me.btnPlaceOrder.UseVisualStyleBackColor = True
         '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.Location = New System.Drawing.Point(33, 249)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(34, 13)
+        Me.lblPrice.TabIndex = 7
+        Me.lblPrice.Text = "Price:"
+        '
+        'lblPriceTotal
+        '
+        Me.lblPriceTotal.AutoSize = True
+        Me.lblPriceTotal.Location = New System.Drawing.Point(73, 249)
+        Me.lblPriceTotal.Name = "lblPriceTotal"
+        Me.lblPriceTotal.Size = New System.Drawing.Size(13, 13)
+        Me.lblPriceTotal.TabIndex = 7
+        Me.lblPriceTotal.Text = "0"
+        '
         'buy_membership
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(280, 317)
+        Me.ClientSize = New System.Drawing.Size(276, 357)
+        Me.Controls.Add(Me.lblPriceTotal)
+        Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.btnPlaceOrder)
         Me.Controls.Add(Me.rdbdiscount5)
         Me.Controls.Add(Me.rdbdiscount4)
@@ -130,4 +152,6 @@ Partial Class buy_membership
     Friend WithEvents rdbdiscount4 As RadioButton
     Friend WithEvents rdbdiscount5 As RadioButton
     Friend WithEvents btnPlaceOrder As Button
+    Friend WithEvents lblPrice As Label
+    Friend WithEvents lblPriceTotal As Label
 End Class

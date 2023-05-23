@@ -22,6 +22,7 @@ Partial Class member_registration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(member_registration))
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.txtFullname = New System.Windows.Forms.TextBox()
         Me.txtAddress = New System.Windows.Forms.TextBox()
@@ -400,6 +401,7 @@ Partial Class member_registration
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.txtFullname)
         Me.Controls.Add(Me.lblFullName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "member_registration"
         Me.Text = "member_registration"
         Me.ResumeLayout(False)

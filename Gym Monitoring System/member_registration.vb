@@ -2,6 +2,9 @@
 Public Class member_registration
     Private Sub member_registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RichTextBox1.Visible = False
+        Dim yr As Integer = DateDiff(DateInterval.Year, dtpBirthday.Value, Now)
+        If (dtpBirthday.Value < Today.AddYears(-yr)) Then yr -= 1
+        txtAge.Text = yr
 
     End Sub
 
@@ -36,7 +39,7 @@ Public Class member_registration
         VALUES ('" &
         txtFullname.Text & "','" &
         txtAddress.Text & "','" &
-        dtpBirthday.Value.Date.ToString() & "','" &
+        dtpBirthday.Value.ToShortDateString() & "','" &
         txtAge.Text & "','" &
         gender & "','" &
         txtContactNumber.Text & "','" &
@@ -45,6 +48,7 @@ Public Class member_registration
         txtContactNumber2.Text & "','" &
         txtHeight.Text & "','" &
         txtWeight.Text & "')", con)
+
 
         MsgBox("INSERT INTO Members 
         (fname,
@@ -167,5 +171,11 @@ Public Class member_registration
         Else
             RichTextBox1.Visible = True
         End If
+    End Sub
+
+    Private Sub dtpBirthday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthday.ValueChanged
+        Dim yr As Integer = DateDiff(DateInterval.Year, dtpBirthday.Value, Now)
+        If (dtpBirthday.Value < Today.AddYears(-yr)) Then yr -= 1
+        txtAge.Text = yr
     End Sub
 End Class
