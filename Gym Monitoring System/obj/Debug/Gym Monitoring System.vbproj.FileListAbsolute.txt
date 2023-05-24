@@ -42,3 +42,4 @@ C:\Users\Skeppy\Downloads\Gym Monitoring System\Gym Monitoring System\obj\Debug\
 C:\Users\Skeppy\Downloads\Gym Monitoring System\Gym Monitoring System\obj\Debug\Gym Monitoring System.exe
 C:\Users\Skeppy\Downloads\Gym Monitoring System\Gym Monitoring System\obj\Debug\Gym Monitoring System.xml
 C:\Users\Skeppy\Downloads\Gym Monitoring System\Gym Monitoring System\obj\Debug\Gym Monitoring System.pdb
+C:\Users\Skeppy\Downloads\Gym Monitoring System\Gym Monitoring System\obj\Debug\Gym_Monitoring_System.progress_report.resources
