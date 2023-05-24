@@ -14,11 +14,10 @@ Public Class login
         getdata = selectID.ExecuteReader
         getdata.Read()
         If getdata.HasRows Then
-            'order.Show()
-            'Me.Hide()
             MsgBox("Login Success")
             Me.Hide()
             If getdata("isAdmin") = "Y" Then
+                MsgBox("Logged in as ADMIN: " & getdata("fname"))
                 admin_overview.Show()
             Else
                 member_dashboard.Show()
@@ -27,8 +26,11 @@ Public Class login
 
         ElseIf txtEmail.Text = "" Or txtPassword.Text = "" Then
             MessageBox.Show("Empty Email or Password", "Warning")
+            txtEmail.Select()
         Else
             MessageBox.Show("Incorrect Name or Password", "Warning")
+            txtEmail.Select()
+            txtEmail.SelectAll()
         End If
         getdata.Close()
         Call DBConnection.con.Close()
@@ -37,5 +39,26 @@ Public Class login
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         member_registration.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub txtPassword_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPassword.KeyDown
+        e.Handled = True
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.PerformClick()
+        End If
+    End Sub
+
+    Private Sub txtEmail_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtEmail.KeyDown
+        e.Handled = True
+        If e.KeyCode = Keys.Enter Then
+            txtPassword.Select()
+            txtPassword.SelectAll()
+        End If
+    End Sub
+
+    Private Sub preventBeeps(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEmail.KeyPress, txtPassword.KeyPress
+        If e.KeyChar = Chr(13) Then
+            e.Handled = True 'This prevents the beep to sound
+        End If
     End Sub
 End Class
