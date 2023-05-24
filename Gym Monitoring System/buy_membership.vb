@@ -1,4 +1,10 @@
 ﻿Public Class buy_membership
+    'for accessability for other forms
+    Public membership As String
+    Public origPrice As Integer
+    Public discount As Integer
+    Public discountedPrice As Integer
+
     'discount
     '
     'membership 1 
@@ -59,35 +65,62 @@
         End If
 
 
+
+
+
+
+
     End Sub
 
     Private Sub rdbdiscount1_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount1.CheckedChanged
         If rdbdiscount1.Checked Then
-            lblPriceTotal.Text = 735
+            '    2% of 750 = 0.02 × 750 = 15
+            '    750 – 15 = 735
+            membership = "2 weeks"
+            origPrice = 750
+            discount = 2
+            discountedPrice = origPrice - ((discount / 100) * origPrice)
+            lblPriceTotal.Text = discountedPrice
         End If
     End Sub
 
     Private Sub rdbdiscount2_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount2.CheckedChanged
         If rdbdiscount2.Checked Then
-            lblPriceTotal.Text = 1425
+            membership = "1 Month"
+            origPrice = 1500
+            discount = 5
+            discountedPrice = origPrice - ((discount / 100) * origPrice)
+            lblPriceTotal.Text = discountedPrice
         End If
     End Sub
 
     Private Sub rdbdiscount3_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount3.CheckedChanged
         If rdbdiscount3.Checked Then
-            lblPriceTotal.Text = 3150
+            membership = "3 Months"
+            origPrice = 3500
+            discount = 10
+            discountedPrice = origPrice - ((discount / 100) * origPrice)
+            lblPriceTotal.Text = discountedPrice
         End If
     End Sub
 
     Private Sub rdbdiscount4_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount4.CheckedChanged
         If rdbdiscount4.Checked Then
-            lblPriceTotal.Text = 4785
+            membership = "6 Months"
+            origPrice = 5500
+            discount = 13
+            discountedPrice = origPrice - ((discount / 100) * origPrice)
+            lblPriceTotal.Text = discountedPrice
         End If
     End Sub
 
     Private Sub rdbdiscount5_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount5.CheckedChanged
         If rdbdiscount5.Checked Then
-            lblPriceTotal.Text = 7830
+            membership = "1 Year"
+            origPrice = 9000
+            discount = 13
+            discountedPrice = origPrice - ((discount / 100) * origPrice)
+            lblPriceTotal.Text = discountedPrice
         End If
     End Sub
 End Class

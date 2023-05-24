@@ -25,15 +25,20 @@ Partial Class Order_Request
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GyM_DBDataSet1 = New Gym_Monitoring_System.GYM_DBDataSet()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblCurrDateTime = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblDiscounted = New System.Windows.Forms.Label()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.lblDiscount = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblMembership = New System.Windows.Forms.Label()
         CType(Me.GyM_DBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,14 +65,14 @@ Partial Class Order_Request
         Me.Button1.Text = "Print Request"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblCurrDateTime
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(433, 39)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Current Datetime"
+        Me.lblCurrDateTime.AutoSize = True
+        Me.lblCurrDateTime.Location = New System.Drawing.Point(433, 39)
+        Me.lblCurrDateTime.Name = "lblCurrDateTime"
+        Me.lblCurrDateTime.Size = New System.Drawing.Size(86, 13)
+        Me.lblCurrDateTime.TabIndex = 2
+        Me.lblCurrDateTime.Text = "Current Datetime"
         '
         'Label3
         '
@@ -114,47 +119,97 @@ Partial Class Order_Request
         Me.Label9.TabIndex = 9
         Me.Label9.Text = "Discount in %"
         '
-        'Label11
+        'lblDiscounted
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(101, 359)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(13, 13)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "0"
+        Me.lblDiscounted.AutoSize = True
+        Me.lblDiscounted.Location = New System.Drawing.Point(101, 359)
+        Me.lblDiscounted.Name = "lblDiscounted"
+        Me.lblDiscounted.Size = New System.Drawing.Size(13, 13)
+        Me.lblDiscounted.TabIndex = 11
+        Me.lblDiscounted.Text = "0"
         '
-        'Label12
+        'lblPrice
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(163, 167)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(13, 13)
-        Me.Label12.TabIndex = 12
-        Me.Label12.Text = "0"
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.Location = New System.Drawing.Point(163, 167)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(13, 13)
+        Me.lblPrice.TabIndex = 12
+        Me.lblPrice.Text = "0"
         '
-        'Label13
+        'lblDiscount
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(163, 194)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(13, 13)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "0"
+        Me.lblDiscount.AutoSize = True
+        Me.lblDiscount.Location = New System.Drawing.Point(163, 194)
+        Me.lblDiscount.Name = "lblDiscount"
+        Me.lblDiscount.Size = New System.Drawing.Size(13, 13)
+        Me.lblDiscount.TabIndex = 13
+        Me.lblDiscount.Text = "0"
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Location = New System.Drawing.Point(136, 39)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(38, 13)
+        Me.lblName.TabIndex = 14
+        Me.lblName.Text = "NAME"
+        '
+        'lblAddress
+        '
+        Me.lblAddress.AutoSize = True
+        Me.lblAddress.Location = New System.Drawing.Point(136, 74)
+        Me.lblAddress.Name = "lblAddress"
+        Me.lblAddress.Size = New System.Drawing.Size(59, 13)
+        Me.lblAddress.TabIndex = 14
+        Me.lblAddress.Text = "ADDRESS"
+        '
+        'lblContact
+        '
+        Me.lblContact.AutoSize = True
+        Me.lblContact.Location = New System.Drawing.Point(136, 105)
+        Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(108, 13)
+        Me.lblContact.TabIndex = 14
+        Me.lblContact.Text = "CONTACT NUMBER"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(38, 140)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(64, 13)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Membership"
+        '
+        'lblMembership
+        '
+        Me.lblMembership.AutoSize = True
+        Me.lblMembership.Location = New System.Drawing.Point(136, 140)
+        Me.lblMembership.Name = "lblMembership"
+        Me.lblMembership.Size = New System.Drawing.Size(79, 13)
+        Me.lblMembership.TabIndex = 15
+        Me.lblMembership.Text = "MEMBERSHIP"
         '
         'Order_Request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(537, 488)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblMembership)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblContact)
+        Me.Controls.Add(Me.lblAddress)
+        Me.Controls.Add(Me.lblName)
+        Me.Controls.Add(Me.lblDiscount)
+        Me.Controls.Add(Me.lblPrice)
+        Me.Controls.Add(Me.lblDiscounted)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblCurrDateTime)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Order_Request"
@@ -168,13 +223,18 @@ Partial Class Order_Request
     Friend WithEvents Label1 As Label
     Friend WithEvents GyM_DBDataSet1 As GYM_DBDataSet
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblCurrDateTime As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblDiscounted As Label
+    Friend WithEvents lblPrice As Label
+    Friend WithEvents lblDiscount As Label
+    Friend WithEvents lblName As Label
+    Friend WithEvents lblAddress As Label
+    Friend WithEvents lblContact As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblMembership As Label
 End Class
