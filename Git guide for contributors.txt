@@ -35,3 +35,6 @@ additional git commands:
 errors and solutions:
 1. authenticity of github.com... cant be established
 	- type: ssh-keyscan github.com >> ~/.ssh/known_hosts
+2. .gitignore not working
+	- git rm -rf --cached .
+	  git add .

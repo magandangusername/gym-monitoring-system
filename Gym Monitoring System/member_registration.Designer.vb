@@ -53,7 +53,7 @@ Partial Class member_registration
         Me.Label14 = New System.Windows.Forms.Label()
         Me.rdbNo = New System.Windows.Forms.RadioButton()
         Me.rdbYes = New System.Windows.Forms.RadioButton()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.medCon = New System.Windows.Forms.RichTextBox()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -62,10 +62,12 @@ Partial Class member_registration
         Me.hidePassword = New System.Windows.Forms.PictureBox()
         Me.showPassword2 = New System.Windows.Forms.PictureBox()
         Me.hidePassword2 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblFullName
@@ -145,7 +147,8 @@ Partial Class member_registration
         'rdbMale
         '
         Me.rdbMale.AutoSize = True
-        Me.rdbMale.Location = New System.Drawing.Point(112, 201)
+        Me.rdbMale.Checked = True
+        Me.rdbMale.Location = New System.Drawing.Point(6, 15)
         Me.rdbMale.Name = "rdbMale"
         Me.rdbMale.Size = New System.Drawing.Size(48, 17)
         Me.rdbMale.TabIndex = 9
@@ -156,11 +159,10 @@ Partial Class member_registration
         'rdbFemale
         '
         Me.rdbFemale.AutoSize = True
-        Me.rdbFemale.Location = New System.Drawing.Point(222, 201)
+        Me.rdbFemale.Location = New System.Drawing.Point(110, 15)
         Me.rdbFemale.Name = "rdbFemale"
         Me.rdbFemale.Size = New System.Drawing.Size(59, 17)
         Me.rdbFemale.TabIndex = 10
-        Me.rdbFemale.TabStop = True
         Me.rdbFemale.Text = "Female"
         Me.rdbFemale.UseVisualStyleBackColor = True
         '
@@ -308,6 +310,7 @@ Partial Class member_registration
         'rdbNo
         '
         Me.rdbNo.AutoSize = True
+        Me.rdbNo.Checked = True
         Me.rdbNo.Location = New System.Drawing.Point(354, 525)
         Me.rdbNo.Name = "rdbNo"
         Me.rdbNo.Size = New System.Drawing.Size(39, 17)
@@ -327,13 +330,13 @@ Partial Class member_registration
         Me.rdbYes.Text = "Yes"
         Me.rdbYes.UseVisualStyleBackColor = True
         '
-        'RichTextBox1
+        'medCon
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(60, 566)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(367, 96)
-        Me.RichTextBox1.TabIndex = 30
-        Me.RichTextBox1.Text = ""
+        Me.medCon.Location = New System.Drawing.Point(60, 566)
+        Me.medCon.Name = "medCon"
+        Me.medCon.Size = New System.Drawing.Size(367, 96)
+        Me.medCon.TabIndex = 30
+        Me.medCon.Text = ""
         '
         'btnRegister
         '
@@ -413,11 +416,23 @@ Partial Class member_registration
         Me.hidePassword2.TabStop = False
         Me.hidePassword2.Visible = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rdbMale)
+        Me.GroupBox1.Controls.Add(Me.rdbFemale)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Location = New System.Drawing.Point(112, 189)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 38)
+        Me.GroupBox1.TabIndex = 72
+        Me.GroupBox1.TabStop = False
+        '
         'member_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 704)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.showPassword2)
         Me.Controls.Add(Me.hidePassword2)
         Me.Controls.Add(Me.showPassword)
@@ -426,7 +441,7 @@ Partial Class member_registration
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnRegister)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.medCon)
         Me.Controls.Add(Me.rdbNo)
         Me.Controls.Add(Me.rdbYes)
         Me.Controls.Add(Me.Label14)
@@ -446,8 +461,6 @@ Partial Class member_registration
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.txtContactNumber)
         Me.Controls.Add(Me.lblContactNumber)
-        Me.Controls.Add(Me.rdbFemale)
-        Me.Controls.Add(Me.rdbMale)
         Me.Controls.Add(Me.lblGender)
         Me.Controls.Add(Me.txtAge)
         Me.Controls.Add(Me.lblAge)
@@ -464,6 +477,8 @@ Partial Class member_registration
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -499,7 +514,7 @@ Partial Class member_registration
     Friend WithEvents Label14 As Label
     Friend WithEvents rdbNo As RadioButton
     Friend WithEvents rdbYes As RadioButton
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents medCon As RichTextBox
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnBack As Button
     Friend WithEvents Label1 As Label
@@ -508,4 +523,5 @@ Partial Class member_registration
     Friend WithEvents hidePassword As PictureBox
     Friend WithEvents showPassword2 As PictureBox
     Friend WithEvents hidePassword2 As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

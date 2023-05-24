@@ -1,7 +1,28 @@
 ﻿Imports System.Data.OleDb
 Public Class member_registration
-    Private Sub member_registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RichTextBox1.Visible = False
+    Private Sub member_registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Shown
+        'reset fields
+        txtFullname.Text = ""
+        txtAddress.Text = ""
+        dtpBirthday.Value = Today
+        txtAge.Text = ""
+        rdbMale.Checked = True
+        txtContactNumber.Text = ""
+        txtEmail.Text = ""
+        txtEmergencyContactPerson.Text = ""
+        txtContactNumber2.Text = ""
+        txtHeight.Text = ""
+        txtWeight.Text = ""
+        txtPassword.Text = ""
+        txtPassword.PasswordChar = "•"
+        hidePassword.Visible = False
+        showPassword.Visible = True
+        txtReTypePassword.Text = ""
+        txtReTypePassword.PasswordChar = "•"
+        hidePassword2.Visible = False
+        showPassword2.Visible = True
+
+        medCon.Visible = False
         Dim yr As Integer = DateDiff(DateInterval.Year, dtpBirthday.Value, Now)
         If (dtpBirthday.Value < Today.AddYears(-yr)) Then yr -= 1
         txtAge.Text = yr
@@ -9,12 +30,82 @@ Public Class member_registration
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        'If rdbNo.Checked Then
-        '    RichTextBox1.Visible = False
-        'Else
-        '    RichTextBox1.Visible = True
+        'validation
+        Dim hasError As Boolean = False
+        If txtFullname.Text = "" Then
+            MsgBox("ERROR: Name cannot be empty.")
+            hasError = True
+        End If
+        If txtAddress.Text = "" Then
+            MsgBox("ERROR: Address cannot be empty.")
+            hasError = True
+        End If
+        If dtpBirthday.Value > Today Then
+            MsgBox("ERROR: Birthdate cannot be empty.")
+            hasError = True
+        End If
+        If txtAge.Text = "" Then
+            MsgBox("ERROR: Age cannot be empty.")
+            hasError = True
+        ElseIf CInt(txtAge.Text) < 12Then
+            MsgBox("ERROR: You are too young to become a member.")
+            hasError = True
+        End If
+        If txtContactNumber.Text = "" Then
+            MsgBox("ERROR: Contact Number cannot be empty.")
+            hasError = True
+        End If
+        If txtEmail.Text = "" Then
+            MsgBox("ERROR: Email cannot be empty.")
+            hasError = True
+        End If
+        If txtEmergencyContactPerson.Text = "" Then
+            MsgBox("ERROR: Emergency contact person cannot be empty.")
+            hasError = True
+        End If
+        If txtContactNumber2.Text = "" Then
+            MsgBox("ERROR: Emergency contact number cannot be empty.")
+            hasError = True
+        End If
+        'Height/Weight might be optional for now. uncomment if not
+        'If txtHeight.Text = "" Then
+        '    MsgBox("ERROR: Height cannot be empty.")
+        '    hasError = True
         'End If
+        'If txtWeight.Text = "" Then
+        '    MsgBox("ERROR: Weight cannot be empty.")
+        '    hasError = True
+        'End If
+        If txtPassword.Text = "" Then
+            MsgBox("ERROR: Password cannot be empty.")
+            hasError = True
+        End If
+        If txtReTypePassword.Text = "" Then
+            MsgBox("ERROR: Please retype your password.")
+            hasError = True
+        ElseIf txtPassword.Text <> txtReTypePassword.Text Then
+            MsgBox("ERROR: password does not match.")
+            hasError = True
+        ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
+            MsgBox("Password must be atleast 8 characters
+            has atleast 1 Uppercase
+            has atleast 1 Lowercase
+            has atleast 1 Number
+            has atleast 1 Special Character
+            ")
+            hasError = True
+        End If
 
+        If hasError Then
+            Exit Sub
+        End If
+
+
+
+
+        'insertion of data to DB
+        Dim getdata As OleDbDataReader
+        Dim medCode As String = "0"
         Dim gender As String
         If rdbMale.Checked Then
             gender = "Male"
@@ -23,6 +114,15 @@ Public Class member_registration
         End If
 
         Call DBConnection.con.Open()
+        If rdbYes.Checked And medCon.Text <> "" Then
+            Dim registerMedCon As New OleDbCommand("INSERT INTO Medicaldata(medicalcondition) VALUES('" & medCon.Text & "')", con)
+            registerMedCon.ExecuteNonQuery()
+            Dim medicalCode As New OleDbCommand("SELECT medicalcode FROM Medicaldata ORDER BY medicalcode DESC", con)
+            getdata = medicalCode.ExecuteReader
+            getdata.Read()
+            medCode = getdata("medicalcode")
+            getdata.Close()
+        End If
         Dim registercmd As New OleDbCommand("INSERT INTO Members 
         (fname,
         address,
@@ -34,7 +134,8 @@ Public Class member_registration
         emergencyperson,
         emergencynum,
         height,
-        weight
+        weight,
+        medicalcode
         ) 
         VALUES ('" &
         txtFullname.Text & "','" &
@@ -47,46 +148,48 @@ Public Class member_registration
         txtEmergencyContactPerson.Text & "','" &
         txtContactNumber2.Text & "','" &
         txtHeight.Text & "','" &
-        txtWeight.Text & "')", con)
+        txtWeight.Text & "'," &
+        medCode & ")", con)
 
 
-        MsgBox("INSERT INTO Members 
-        (fname,
-        address,
-        birthday,
-        age,
-        gender,
-        contactnumber,
-        email,
-        emergencyperson,
-        emergencynum,
-        height,
-        weight
-        ) 
-        VALUES ('" &
-        txtFullname.Text & "','" &
-        txtAddress.Text & "','" &
-        dtpBirthday.Value.Date.ToString() & "','" &
-        txtAge.Text & "','" &
-        gender & "','" &
-        txtContactNumber.Text & "','" &
-        txtEmail.Text & "','" &
-        txtEmergencyContactPerson.Text & "','" &
-        txtContactNumber2.Text & "','" &
-        txtHeight.Text & "','" &
-        txtWeight.Text & "')")
+        'MsgBox("INSERT INTO Members 
+        '(fname,
+        'address,
+        'birthday,
+        'age,
+        'gender,
+        'contactnumber,
+        'email,
+        'emergencyperson,
+        'emergencynum,
+        'height,
+        'weight
+        ') 
+        'VALUES ('" &
+        'txtFullname.Text & "','" &
+        'txtAddress.Text & "','" &
+        'dtpBirthday.Value.Date.ToString() & "','" &
+        'txtAge.Text & "','" &
+        'gender & "','" &
+        'txtContactNumber.Text & "','" &
+        'txtEmail.Text & "','" &
+        'txtEmergencyContactPerson.Text & "','" &
+        'txtContactNumber2.Text & "','" &
+        'txtHeight.Text & "','" &
+        'txtWeight.Text & "'," &
+        'medCode & ")")
         member_dashboard.Show()
         Me.Hide()
 
         registercmd.ExecuteNonQuery()
-        Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
-        Dim getdata As OleDbDataReader
-        getdata = MemberID.ExecuteReader
-        getdata.Read()
+        'Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
+        'getdata = MemberID.ExecuteReader
+        'getdata.Read()
+        getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
         Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPassword.Text & "')"
         DBConnection.member_id = getdata("member_id")
         Dim registercmd2 As New OleDbCommand(pw, con)
-        getdata.Close()
+        'getdata.Close()
         registercmd2.ExecuteNonQuery()
 
         Call DBConnection.con.Close()
@@ -159,17 +262,17 @@ Public Class member_registration
 
     Private Sub rdbYes_CheckedChanged(sender As Object, e As EventArgs) Handles rdbYes.CheckedChanged
         If rdbYes.Checked Then
-            RichTextBox1.Visible = True
+            medCon.Visible = True
         Else
-            RichTextBox1.Visible = False
+            medCon.Visible = False
         End If
     End Sub
 
     Private Sub rdbNo_CheckedChanged(sender As Object, e As EventArgs) Handles rdbNo.CheckedChanged
         If rdbNo.Checked Then
-            RichTextBox1.Visible = False
+            medCon.Visible = False
         Else
-            RichTextBox1.Visible = True
+            medCon.Visible = True
         End If
     End Sub
 
