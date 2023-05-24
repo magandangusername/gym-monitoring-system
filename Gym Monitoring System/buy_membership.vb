@@ -1,9 +1,12 @@
-﻿Public Class buy_membership
+﻿Imports System.Data.OleDb
+Public Class buy_membership
     'for accessability for other forms
     Public membership As String
     Public origPrice As Integer
     Public discount As Integer
     Public discountedPrice As Integer
+    Dim getData As OleDbDataReader
+    Dim membership_id As String
 
     'discount
     '
@@ -64,7 +67,34 @@
             End If
         End If
 
+        DBConnection.con.Open()
+        Dim insertMembership As New OleDbCommand("INSERT INTO MembershipOrder(
+        membership_id,
+        member_id,
+        total_price,
+        membership_datetime,
+        membership_status
+        ) VALUES(" &
+        membership_id & "," &
+        DBConnection.member_id & "," &
+        discountedPrice & ",'" &
+        Today.ToShortDateString & " " & Now.ToShortTimeString & "','" &
+        "Pending" & "')", con)
+        MsgBox("INSERT INTO MembershipOrder(
+        membership_id,
+        member_id,
+        total_price,
+        membership_datetime,
+        membership_status
+        ) VALUES(" &
+        membership_id & "," &
+        DBConnection.member_id & "," &
+        discountedPrice & ",'" &
+        Today.ToShortDateString & " " & Now.ToShortTimeString & "','" &
+        "Pending" & "')")
+        insertMembership.ExecuteNonQuery()
 
+        DBConnection.con.Close()
 
 
 
@@ -76,51 +106,71 @@
         If rdbdiscount1.Checked Then
             '    2% of 750 = 0.02 × 750 = 15
             '    750 – 15 = 735
-            membership = "2 weeks"
-            origPrice = 750
+            DBConnection.con.Open()
+            membership = "2 Weeks"
+            getData = DBConnection.fetchData("SELECT * FROM membership WHERE membership_name = '" & membership & "'")
+        origPrice = CInt(getData("membership_price"))
+            membership_id = getData("membership_id")
             discount = 2
             discountedPrice = origPrice - ((discount / 100) * origPrice)
             lblPriceTotal.Text = discountedPrice
+            DBConnection.con.Close()
         End If
     End Sub
 
     Private Sub rdbdiscount2_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount2.CheckedChanged
         If rdbdiscount2.Checked Then
+            DBConnection.con.Open()
             membership = "1 Month"
-            origPrice = 1500
+            getData = DBConnection.fetchData("SELECT * FROM membership WHERE membership_name = '" & membership & "'")
+            origPrice = CInt(getData("membership_price"))
+            membership_id = getData("membership_id")
             discount = 5
             discountedPrice = origPrice - ((discount / 100) * origPrice)
             lblPriceTotal.Text = discountedPrice
+            DBConnection.con.Close()
         End If
     End Sub
 
     Private Sub rdbdiscount3_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount3.CheckedChanged
         If rdbdiscount3.Checked Then
+            DBConnection.con.Open()
             membership = "3 Months"
-            origPrice = 3500
+            getData = DBConnection.fetchData("SELECT * FROM membership WHERE membership_name = '" & membership & "'")
+            origPrice = CInt(getData("membership_price"))
+            membership_id = getData("membership_id")
             discount = 10
             discountedPrice = origPrice - ((discount / 100) * origPrice)
             lblPriceTotal.Text = discountedPrice
+            DBConnection.con.Close()
         End If
     End Sub
 
     Private Sub rdbdiscount4_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount4.CheckedChanged
         If rdbdiscount4.Checked Then
+            DBConnection.con.Open()
             membership = "6 Months"
-            origPrice = 5500
+            getData = DBConnection.fetchData("SELECT * FROM membership WHERE membership_name = '" & membership & "'")
+            origPrice = CInt(getData("membership_price"))
+            membership_id = getData("membership_id")
             discount = 13
             discountedPrice = origPrice - ((discount / 100) * origPrice)
             lblPriceTotal.Text = discountedPrice
+            DBConnection.con.Close()
         End If
     End Sub
 
     Private Sub rdbdiscount5_CheckedChanged(sender As Object, e As EventArgs) Handles rdbdiscount5.CheckedChanged
         If rdbdiscount5.Checked Then
+            DBConnection.con.Open()
             membership = "1 Year"
-            origPrice = 9000
+            getData = DBConnection.fetchData("SELECT * FROM membership WHERE membership_name = '" & membership & "'")
+            origPrice = CInt(getData("membership_price"))
+            membership_id = getData("membership_id")
             discount = 13
             discountedPrice = origPrice - ((discount / 100) * origPrice)
             lblPriceTotal.Text = discountedPrice
+            DBConnection.con.Close()
         End If
     End Sub
 End Class

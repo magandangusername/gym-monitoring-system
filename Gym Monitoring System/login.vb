@@ -15,6 +15,7 @@ Public Class login
         getdata.Read()
         If getdata.HasRows Then
             MsgBox("Login Success")
+            DBConnection.member_id = getdata(0)
             Me.Hide()
             If getdata("isAdmin") = "Y" Then
                 MsgBox("Logged in as ADMIN: " & getdata("fname"))
