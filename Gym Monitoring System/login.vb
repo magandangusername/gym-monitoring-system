@@ -6,19 +6,24 @@ Public Class login
 
 
         Dim selectID As New OleDbCommand("
-        SELECT COUNT(*) as isValid 
+        SELECT *
         FROM Members 
         INNER JOIN credentials ON credentials.member_id = Members.member_id WHERE Members.email = '" & txtEmail.Text & "' 
         AND credentials.member_password = '" & txtPassword.Text & "'", con)
         Dim getdata As OleDbDataReader
         getdata = selectID.ExecuteReader
         getdata.Read()
-        If getdata("isValid") > 0 Then
+        If getdata.HasRows Then
             'order.Show()
             'Me.Hide()
             MsgBox("Login Success")
             Me.Hide()
-            member_dashboard.Show()
+            If getdata("isAdmin") = "Y" Then
+                admin_overview.Show()
+            Else
+                member_dashboard.Show()
+            End If
+
 
         ElseIf txtEmail.Text = "" Or txtPassword.Text = "" Then
             MessageBox.Show("Empty Email or Password", "Warning")
