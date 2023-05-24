@@ -22,6 +22,7 @@ Partial Class admin_registration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(admin_registration))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -30,6 +31,10 @@ Partial Class admin_registration
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.showPassword = New System.Windows.Forms.PictureBox()
+        Me.hidePassword = New System.Windows.Forms.PictureBox()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -77,6 +82,7 @@ Partial Class admin_registration
         '
         Me.txtPassword.Location = New System.Drawing.Point(140, 172)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.Size = New System.Drawing.Size(250, 20)
         Me.txtPassword.TabIndex = 5
         '
@@ -98,11 +104,34 @@ Partial Class admin_registration
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'showPassword
+        '
+        Me.showPassword.Image = CType(resources.GetObject("showPassword.Image"), System.Drawing.Image)
+        Me.showPassword.Location = New System.Drawing.Point(396, 172)
+        Me.showPassword.Name = "showPassword"
+        Me.showPassword.Size = New System.Drawing.Size(19, 20)
+        Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword.TabIndex = 8
+        Me.showPassword.TabStop = False
+        '
+        'hidePassword
+        '
+        Me.hidePassword.Image = CType(resources.GetObject("hidePassword.Image"), System.Drawing.Image)
+        Me.hidePassword.Location = New System.Drawing.Point(396, 172)
+        Me.hidePassword.Name = "hidePassword"
+        Me.hidePassword.Size = New System.Drawing.Size(19, 20)
+        Me.hidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassword.TabIndex = 9
+        Me.hidePassword.TabStop = False
+        Me.hidePassword.Visible = False
+        '
         'admin_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(437, 329)
+        Me.Controls.Add(Me.showPassword)
+        Me.Controls.Add(Me.hidePassword)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.txtPassword)
@@ -113,6 +142,8 @@ Partial Class admin_registration
         Me.Controls.Add(Me.Label1)
         Me.Name = "admin_registration"
         Me.Text = "admin_registration"
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +157,6 @@ Partial Class admin_registration
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents showPassword As PictureBox
+    Friend WithEvents hidePassword As PictureBox
 End Class

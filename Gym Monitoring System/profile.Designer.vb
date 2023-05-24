@@ -22,6 +22,7 @@ Partial Class profile
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(profile))
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtReTypePassword = New System.Windows.Forms.TextBox()
@@ -48,6 +49,14 @@ Partial Class profile
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.txtGender = New System.Windows.Forms.TextBox()
+        Me.showPassword = New System.Windows.Forms.PictureBox()
+        Me.hidePassword = New System.Windows.Forms.PictureBox()
+        Me.showPassword2 = New System.Windows.Forms.PictureBox()
+        Me.hidePassword2 = New System.Windows.Forms.PictureBox()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnBack
@@ -72,6 +81,7 @@ Partial Class profile
         '
         Me.txtReTypePassword.Location = New System.Drawing.Point(134, 583)
         Me.txtReTypePassword.Name = "txtReTypePassword"
+        Me.txtReTypePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtReTypePassword.Size = New System.Drawing.Size(307, 20)
         Me.txtReTypePassword.TabIndex = 59
         '
@@ -88,6 +98,7 @@ Partial Class profile
         '
         Me.txtPassword.Location = New System.Drawing.Point(86, 540)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.Size = New System.Drawing.Size(307, 20)
         Me.txtPassword.TabIndex = 57
         '
@@ -264,11 +275,57 @@ Partial Class profile
         Me.txtGender.Size = New System.Drawing.Size(279, 20)
         Me.txtGender.TabIndex = 63
         '
+        'showPassword
+        '
+        Me.showPassword.Image = CType(resources.GetObject("showPassword.Image"), System.Drawing.Image)
+        Me.showPassword.Location = New System.Drawing.Point(399, 540)
+        Me.showPassword.Name = "showPassword"
+        Me.showPassword.Size = New System.Drawing.Size(19, 20)
+        Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword.TabIndex = 64
+        Me.showPassword.TabStop = False
+        '
+        'hidePassword
+        '
+        Me.hidePassword.Image = CType(resources.GetObject("hidePassword.Image"), System.Drawing.Image)
+        Me.hidePassword.Location = New System.Drawing.Point(399, 540)
+        Me.hidePassword.Name = "hidePassword"
+        Me.hidePassword.Size = New System.Drawing.Size(19, 20)
+        Me.hidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassword.TabIndex = 65
+        Me.hidePassword.TabStop = False
+        Me.hidePassword.Visible = False
+        '
+        'showPassword2
+        '
+        Me.showPassword2.Image = CType(resources.GetObject("showPassword2.Image"), System.Drawing.Image)
+        Me.showPassword2.Location = New System.Drawing.Point(447, 583)
+        Me.showPassword2.Name = "showPassword2"
+        Me.showPassword2.Size = New System.Drawing.Size(19, 20)
+        Me.showPassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword2.TabIndex = 66
+        Me.showPassword2.TabStop = False
+        '
+        'hidePassword2
+        '
+        Me.hidePassword2.Image = CType(resources.GetObject("hidePassword2.Image"), System.Drawing.Image)
+        Me.hidePassword2.Location = New System.Drawing.Point(447, 583)
+        Me.hidePassword2.Name = "hidePassword2"
+        Me.hidePassword2.Size = New System.Drawing.Size(19, 20)
+        Me.hidePassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassword2.TabIndex = 67
+        Me.hidePassword2.TabStop = False
+        Me.hidePassword2.Visible = False
+        '
         'profile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(794, 667)
+        Me.Controls.Add(Me.showPassword2)
+        Me.Controls.Add(Me.hidePassword2)
+        Me.Controls.Add(Me.showPassword)
+        Me.Controls.Add(Me.hidePassword)
         Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtBirthday)
         Me.Controls.Add(Me.btnBack)
@@ -297,6 +354,10 @@ Partial Class profile
         Me.Controls.Add(Me.lblFullName)
         Me.Name = "profile"
         Me.Text = "profile"
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -328,4 +389,8 @@ Partial Class profile
     Friend WithEvents lblFullName As Label
     Friend WithEvents txtBirthday As TextBox
     Friend WithEvents txtGender As TextBox
+    Friend WithEvents showPassword As PictureBox
+    Friend WithEvents hidePassword As PictureBox
+    Friend WithEvents showPassword2 As PictureBox
+    Friend WithEvents hidePassword2 As PictureBox
 End Class

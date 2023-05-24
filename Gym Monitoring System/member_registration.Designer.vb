@@ -258,6 +258,7 @@ Partial Class member_registration
         '
         Me.txtReTypePassword.Location = New System.Drawing.Point(160, 478)
         Me.txtReTypePassword.Name = "txtReTypePassword"
+        Me.txtReTypePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtReTypePassword.Size = New System.Drawing.Size(307, 20)
         Me.txtReTypePassword.TabIndex = 26
         '
@@ -274,6 +275,7 @@ Partial Class member_registration
         '
         Me.txtPassword.Location = New System.Drawing.Point(112, 435)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.Size = New System.Drawing.Size(307, 20)
         Me.txtPassword.TabIndex = 24
         '
