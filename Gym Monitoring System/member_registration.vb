@@ -178,4 +178,26 @@ Public Class member_registration
         If (dtpBirthday.Value < Today.AddYears(-yr)) Then yr -= 1
         txtAge.Text = yr
     End Sub
+
+    Private Sub showPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
+        txtPassword.PasswordChar = ""
+        showPassword.Visible = False
+        hidePassword.Visible = True
+    End Sub
+    Private Sub hidePassword_Click(sender As Object, e As EventArgs) Handles hidePassword.Click
+        txtPassword.PasswordChar = "•"
+        hidePassword.Visible = False
+        showPassword.Visible = True
+    End Sub
+
+    Private Sub showPassword2_Click(sender As Object, e As EventArgs) Handles showPassword2.Click
+        txtReTypePassword.PasswordChar = ""
+        showPassword2.Visible = False
+        hidePassword2.Visible = True
+    End Sub
+    Private Sub hidePassword2_Click(sender As Object, e As EventArgs) Handles hidePassword2.Click
+        txtReTypePassword.PasswordChar = "•"
+        hidePassword2.Visible = False
+        showPassword2.Visible = True
+    End Sub
 End Class

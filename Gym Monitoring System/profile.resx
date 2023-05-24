@@ -121,7 +121,7 @@
   <data name="showPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADmBSURBVHhe7d0J
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADmBSURBVHhe7d0J
         uLVzvf/xXcqYITOZE8oURREZMlaEkkNIZWgwV+QUKiUaZCiVIzJEkQwN5mRoNEVSxoyJzFOUc/7/z+fZ
         7efZj/3d873W+v5+9/t1Xe9znUvPsJ5177XWve77N/QBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -373,7 +373,7 @@
   <data name="hidePassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1AAADdQB75G6FQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEgWSURBVHhe7d0J
+        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEgWSURBVHhe7d0J
         vHdTvcfxw2N6zFPmIfMQXoWSMhWVUKFIpZlSpISiNKFoupW6CclMVxqlchOqW1Fp1kTkKvNMUtK9n9/z
         7PM866zzO+f8h73/e621v9/X660sz7DX2nuf/fvv/95rjf3f//3fQMjjcTDOx5X4Ax7AQ7gO38XncSjW
         9f4MERERaYfbOBWyHN6LX8Ma+vFbHIcVvD9bRERERsdtjJEl8A7ci/CiPoj78W4s6f1dIiIi0jy3MUSe
@@ -687,7 +687,7 @@
   <data name="showPassword2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADmBSURBVHhe7d0J
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADmBSURBVHhe7d0J
         uLVzvf/xXcqYITOZE8oURREZMlaEkkNIZWgwV+QUKiUaZCiVIzJEkQwN5mRoNEVSxoyJzFOUc/7/z+fZ
         7efZj/3d873W+v5+9/t1Xe9znUvPsJ5177XWve77N/QBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -939,7 +939,7 @@
   <data name="hidePassword2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1AAADdQB75G6FQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEgWSURBVHhe7d0J
+        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEgWSURBVHhe7d0J
         vHdTvcfxw2N6zFPmIfMQXoWSMhWVUKFIpZlSpISiNKFoupW6CclMVxqlchOqW1Fp1kTkKvNMUtK9n9/z
         7PM866zzO+f8h73/e621v9/X660sz7DX2nuf/fvv/95rjf3f//3fQMjjcTDOx5X4Ax7AQ7gO38XncSjW
         9f4MERERaYfbOBWyHN6LX8Ma+vFbHIcVvD9bRERERsdtjJEl8A7ci/CiPoj78W4s6f1dIiIi0jy3MUSe

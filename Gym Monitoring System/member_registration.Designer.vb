@@ -58,6 +58,14 @@ Partial Class member_registration
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.showPassword = New System.Windows.Forms.PictureBox()
+        Me.hidePassword = New System.Windows.Forms.PictureBox()
+        Me.showPassword2 = New System.Windows.Forms.PictureBox()
+        Me.hidePassword2 = New System.Windows.Forms.PictureBox()
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFullName
@@ -363,11 +371,57 @@ Partial Class member_registration
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "KG"
         '
+        'showPassword
+        '
+        Me.showPassword.Image = CType(resources.GetObject("showPassword.Image"), System.Drawing.Image)
+        Me.showPassword.Location = New System.Drawing.Point(425, 435)
+        Me.showPassword.Name = "showPassword"
+        Me.showPassword.Size = New System.Drawing.Size(19, 20)
+        Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword.TabIndex = 68
+        Me.showPassword.TabStop = False
+        '
+        'hidePassword
+        '
+        Me.hidePassword.Image = CType(resources.GetObject("hidePassword.Image"), System.Drawing.Image)
+        Me.hidePassword.Location = New System.Drawing.Point(425, 435)
+        Me.hidePassword.Name = "hidePassword"
+        Me.hidePassword.Size = New System.Drawing.Size(19, 20)
+        Me.hidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassword.TabIndex = 69
+        Me.hidePassword.TabStop = False
+        Me.hidePassword.Visible = False
+        '
+        'showPassword2
+        '
+        Me.showPassword2.Image = CType(resources.GetObject("showPassword2.Image"), System.Drawing.Image)
+        Me.showPassword2.Location = New System.Drawing.Point(473, 478)
+        Me.showPassword2.Name = "showPassword2"
+        Me.showPassword2.Size = New System.Drawing.Size(19, 20)
+        Me.showPassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.showPassword2.TabIndex = 70
+        Me.showPassword2.TabStop = False
+        '
+        'hidePassword2
+        '
+        Me.hidePassword2.Image = CType(resources.GetObject("hidePassword2.Image"), System.Drawing.Image)
+        Me.hidePassword2.Location = New System.Drawing.Point(473, 478)
+        Me.hidePassword2.Name = "hidePassword2"
+        Me.hidePassword2.Size = New System.Drawing.Size(19, 20)
+        Me.hidePassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassword2.TabIndex = 71
+        Me.hidePassword2.TabStop = False
+        Me.hidePassword2.Visible = False
+        '
         'member_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 704)
+        Me.Controls.Add(Me.showPassword2)
+        Me.Controls.Add(Me.hidePassword2)
+        Me.Controls.Add(Me.showPassword)
+        Me.Controls.Add(Me.hidePassword)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnBack)
@@ -406,6 +460,10 @@ Partial Class member_registration
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "member_registration"
         Me.Text = "member_registration"
+        CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassword2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -446,4 +504,8 @@ Partial Class member_registration
     Friend WithEvents btnBack As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents showPassword As PictureBox
+    Friend WithEvents hidePassword As PictureBox
+    Friend WithEvents showPassword2 As PictureBox
+    Friend WithEvents hidePassword2 As PictureBox
 End Class

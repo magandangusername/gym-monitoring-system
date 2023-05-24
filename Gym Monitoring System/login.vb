@@ -3,13 +3,13 @@ Imports System.Security.Cryptography
 Public Class login
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Call DBConnection.con.Open()
-
-
+        Dim salt As String = securedStr.GenerateSalt(70)
         Dim selectID As New OleDbCommand("
         SELECT *
         FROM Members 
         INNER JOIN credentials ON credentials.member_id = Members.member_id WHERE Members.email = '" & txtEmail.Text & "' 
         AND credentials.member_password = '" & txtPassword.Text & "'", con)
+        MsgBox(securedStr.HashPassword(txtPassword.Text, salt, 10101, 70))
         Dim getdata As OleDbDataReader
         getdata = selectID.ExecuteReader
         getdata.Read()
