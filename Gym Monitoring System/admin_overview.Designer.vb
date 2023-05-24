@@ -172,6 +172,13 @@ Partial Class admin_overview
         Me.lblAdminName = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblTotalData = New System.Windows.Forms.Label()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.txtAdminEmail = New System.Windows.Forms.TextBox()
+        Me.lblAdminEmail = New System.Windows.Forms.Label()
+        Me.txtAdminName = New System.Windows.Forms.TextBox()
+        Me.lblAdmin = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1527,6 +1534,12 @@ Partial Class admin_overview
         '
         'tpAdmin
         '
+        Me.tpAdmin.Controls.Add(Me.txtPassword)
+        Me.tpAdmin.Controls.Add(Me.lblPassword)
+        Me.tpAdmin.Controls.Add(Me.txtAdminEmail)
+        Me.tpAdmin.Controls.Add(Me.lblAdminEmail)
+        Me.tpAdmin.Controls.Add(Me.txtAdminName)
+        Me.tpAdmin.Controls.Add(Me.lblAdmin)
         Me.tpAdmin.Controls.Add(Me.btnAdd1)
         Me.tpAdmin.Controls.Add(Me.btnDelete1)
         Me.tpAdmin.Controls.Add(Me.btnUpdate1)
@@ -1601,11 +1614,69 @@ Partial Class admin_overview
         Me.lblTotalData.TabIndex = 3
         Me.lblTotalData.Text = "Total Data"
         '
+        'btnLogout
+        '
+        Me.btnLogout.Location = New System.Drawing.Point(1501, 613)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(75, 23)
+        Me.btnLogout.TabIndex = 206
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = True
+        '
+        'txtAdminEmail
+        '
+        Me.txtAdminEmail.Location = New System.Drawing.Point(1269, 79)
+        Me.txtAdminEmail.Name = "txtAdminEmail"
+        Me.txtAdminEmail.Size = New System.Drawing.Size(307, 20)
+        Me.txtAdminEmail.TabIndex = 77
+        '
+        'lblAdminEmail
+        '
+        Me.lblAdminEmail.AutoSize = True
+        Me.lblAdminEmail.Location = New System.Drawing.Point(1231, 82)
+        Me.lblAdminEmail.Name = "lblAdminEmail"
+        Me.lblAdminEmail.Size = New System.Drawing.Size(32, 13)
+        Me.lblAdminEmail.TabIndex = 76
+        Me.lblAdminEmail.Text = "Email"
+        '
+        'txtAdminName
+        '
+        Me.txtAdminName.Location = New System.Drawing.Point(1269, 42)
+        Me.txtAdminName.Name = "txtAdminName"
+        Me.txtAdminName.Size = New System.Drawing.Size(307, 20)
+        Me.txtAdminName.TabIndex = 75
+        '
+        'lblAdmin
+        '
+        Me.lblAdmin.AutoSize = True
+        Me.lblAdmin.Location = New System.Drawing.Point(1209, 45)
+        Me.lblAdmin.Name = "lblAdmin"
+        Me.lblAdmin.Size = New System.Drawing.Size(35, 13)
+        Me.lblAdmin.TabIndex = 74
+        Me.lblAdmin.Text = "Name"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(1269, 118)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(307, 20)
+        Me.txtPassword.TabIndex = 79
+        '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Location = New System.Drawing.Point(1210, 121)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
+        Me.lblPassword.TabIndex = 78
+        Me.lblPassword.Text = "Password"
+        '
         'admin_overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1639, 623)
+        Me.ClientSize = New System.Drawing.Size(1639, 648)
+        Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.lblTotalData)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblAdminName)
@@ -1617,6 +1688,7 @@ Partial Class admin_overview
         Me.tpCustomer.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpAdmin.ResumeLayout(False)
+        Me.tpAdmin.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1773,4 +1845,11 @@ Partial Class admin_overview
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblPassword As Label
+    Friend WithEvents txtAdminEmail As TextBox
+    Friend WithEvents lblAdminEmail As Label
+    Friend WithEvents txtAdminName As TextBox
+    Friend WithEvents lblAdmin As Label
+    Friend WithEvents btnLogout As Button
 End Class
