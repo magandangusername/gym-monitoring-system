@@ -10,6 +10,7 @@ Public Class admin_registration
         Dim registercmd As New OleDbCommand("INSERT INTO Members 
         (fname,
         email
+
         ) 
         VALUES ('" &
         txtFullname.Text & "','" &
