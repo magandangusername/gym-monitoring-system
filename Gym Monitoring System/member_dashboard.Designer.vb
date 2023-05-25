@@ -38,6 +38,10 @@ Partial Class member_dashboard
         Me.btnBuyMembership = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblMemStat = New System.Windows.Forms.Label()
+        Me.lblDaysLeft = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,11 +183,51 @@ Partial Class member_dashboard
         Me.PictureBox5.TabIndex = 26
         Me.PictureBox5.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(51, 658)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(103, 13)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Membership Status: "
+        '
+        'lblMemStat
+        '
+        Me.lblMemStat.AutoSize = True
+        Me.lblMemStat.Location = New System.Drawing.Point(151, 658)
+        Me.lblMemStat.Name = "lblMemStat"
+        Me.lblMemStat.Size = New System.Drawing.Size(56, 13)
+        Me.lblMemStat.TabIndex = 27
+        Me.lblMemStat.Text = "INACTIVE"
+        '
+        'lblDaysLeft
+        '
+        Me.lblDaysLeft.AutoSize = True
+        Me.lblDaysLeft.Location = New System.Drawing.Point(288, 658)
+        Me.lblDaysLeft.Name = "lblDaysLeft"
+        Me.lblDaysLeft.Size = New System.Drawing.Size(13, 13)
+        Me.lblDaysLeft.TabIndex = 27
+        Me.lblDaysLeft.Text = "0"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(229, 658)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 13)
+        Me.Label6.TabIndex = 27
+        Me.Label6.Text = "Day(s) left:"
+        '
         'member_dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1444, 696)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblDaysLeft)
+        Me.Controls.Add(Me.lblMemStat)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.btnBuyMembership)
         Me.Controls.Add(Me.Label2)
@@ -226,4 +270,8 @@ Partial Class member_dashboard
     Friend WithEvents btnBuyMembership As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblMemStat As Label
+    Friend WithEvents lblDaysLeft As Label
+    Friend WithEvents Label6 As Label
 End Class

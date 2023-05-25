@@ -1,19 +1,35 @@
 ﻿Imports System.Data.OleDb
 Module DBConnection
+    'global variables that will be used multiple times in diff forms
     Public con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\GYM_DB.accdb")
-    Public member_id As String
+    Public member_id As String = "0"
     Public getdata As OleDbDataReader
-    'Public Sub DBCon()
-    '    con.Open()
-    '
-    'End Sub
-    Public Function fetchData(ByVal testQ As String) As OleDbDataReader
-        Dim recordToGet As New OleDbCommand(testQ, con)
+
+    Public Function fetchData(ByVal Q As String) As OleDbDataReader
+        Dim recordToGet As New OleDbCommand(Q, con)
         getdata = recordToGet.ExecuteReader
         getdata.Read()
         Return getdata
-        getdata.Close()
     End Function
 
+    Public Sub openCon()
+        If con.State = ConnectionState.Open Then
+            Exit Sub
+        Else
+            con.Open()
+        End If
+    End Sub
+    Public Sub closeCon()
+        If con.State = ConnectionState.Closed Then
+            Exit Sub
+        Else
+            con.Close()
+        End If
+    End Sub
+
+    'Public Function closeData(ByVal Q As String) As Boolean
+    '    getdata.Close()
+    '    Return 1
+    'End Function
 
 End Module

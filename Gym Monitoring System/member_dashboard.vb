@@ -9,8 +9,18 @@
     End Sub
 
     Private Sub btnBuyMembership_Click(sender As Object, e As EventArgs) Handles btnBuyMembership.Click
-        buy_membership.Show()
+        DBConnection.openCon()
 
+        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder WHERE member_id = " & DBConnection.member_id & " AND membership_status = 'Pending'")
+        If getdata.HasRows Then
+            Dim result As MsgBoxResult = MsgBox("You currently have a pending membership order. Continue?", MsgBoxStyle.YesNo)
+            If result = MsgBoxResult.No Then
+                DBConnection.closeCon()
+                Exit Sub
+            End If
+        End If
+        DBConnection.closeCon()
+        buy_membership.Show()
     End Sub
 
     Private Sub member_dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,5 +36,16 @@
     Why It’s Important: 
             Your core supports your back, which in turn supports your entire body. Having strong stomach and back muscles helps take some of the load off of your spine. It helps improve balance, stability, and posture.
 "
+
+        DBConnection.openCon()
+        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " AND MembershipOrder.membership_status = 'Pending'")
+        If getdata.HasRows Then
+            If getdata("membership_status") = "Active" Then
+                lblMemStat.Text = "ACTIVE"
+                lblDaysLeft.Text = DateDiff("d", Today, CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days")))
+            End If
+        End If
+
+        DBConnection.closeCon()
     End Sub
 End Class

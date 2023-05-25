@@ -74,7 +74,11 @@ Public Class login
         showPassword.Visible = True
     End Sub
 
-    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub txtEmail_Click(sender As Object, e As EventArgs) Handles txtEmail.Click
+        txtEmail.SelectAll()
+    End Sub
 
+    Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
+        txtPassword.SelectAll()
     End Sub
 End Class

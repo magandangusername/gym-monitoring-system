@@ -105,7 +105,7 @@ Public Class member_registration
 
         'insertion of data to DB
         Dim getdata As OleDbDataReader
-        Dim medCode As String = "0"
+        Dim medCondition As String = ""
         Dim gender As String
         If rdbMale.Checked Then
             gender = "Male"
@@ -115,13 +115,14 @@ Public Class member_registration
 
         Call DBConnection.con.Open()
         If rdbYes.Checked And medCon.Text <> "" Then
-            Dim registerMedCon As New OleDbCommand("INSERT INTO Medicaldata(medicalcondition) VALUES('" & medCon.Text & "')", con)
-            registerMedCon.ExecuteNonQuery()
-            Dim medicalCode As New OleDbCommand("SELECT medicalcode FROM Medicaldata ORDER BY medicalcode DESC", con)
-            getdata = medicalCode.ExecuteReader
-            getdata.Read()
-            medCode = getdata("medicalcode")
-            getdata.Close()
+            'Dim registerMedCon As New OleDbCommand("INSERT INTO Medicaldata(medicalcondition) VALUES('" & medCon.Text & "')", con)
+            'registerMedCon.ExecuteNonQuery()
+            'Dim medicalCode As New OleDbCommand("SELECT medicalcode FROM Medicaldata ORDER BY medicalcode DESC", con)
+            'getdata = medicalCode.ExecuteReader
+            'getdata.Read()
+            'medCode = getdata("medicalcode")
+            'getdata.Close
+            medCondition = medCon.Text
         End If
         Dim registercmd As New OleDbCommand("INSERT INTO Members 
         (fname,
@@ -135,7 +136,7 @@ Public Class member_registration
         emergencynum,
         height,
         weight,
-        medicalcode
+        medicalcondition
         ) 
         VALUES ('" &
         txtFullname.Text & "','" &
@@ -148,8 +149,8 @@ Public Class member_registration
         txtEmergencyContactPerson.Text & "','" &
         txtContactNumber2.Text & "','" &
         txtHeight.Text & "','" &
-        txtWeight.Text & "'," &
-        medCode & ")", con)
+        txtWeight.Text & "','" &
+        medCondition & "')", con)
 
 
         'MsgBox("INSERT INTO Members 
