@@ -2,6 +2,9 @@
 Imports System.Security.Cryptography
 Public Class login
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        'Trim input fields
+        txtEmail.Text = Trim(txtEmail.Text)
+
         DBConnection.openCon()
         Dim salt As String = securedStr.GenerateSalt(70)
         'Dim selectID As New OleDbCommand("
@@ -80,6 +83,7 @@ Public Class login
     End Sub
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
+        txtEmail.Select()
         txtEmail.Text = ""
         txtPassword.Text = ""
     End Sub
