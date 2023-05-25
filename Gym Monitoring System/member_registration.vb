@@ -113,15 +113,8 @@ Public Class member_registration
             gender = "Female"
         End If
 
-        Call DBConnection.con.Open()
+        DBConnection.openCon()
         If rdbYes.Checked And medCon.Text <> "" Then
-            'Dim registerMedCon As New OleDbCommand("INSERT INTO Medicaldata(medicalcondition) VALUES('" & medCon.Text & "')", con)
-            'registerMedCon.ExecuteNonQuery()
-            'Dim medicalCode As New OleDbCommand("SELECT medicalcode FROM Medicaldata ORDER BY medicalcode DESC", con)
-            'getdata = medicalCode.ExecuteReader
-            'getdata.Read()
-            'medCode = getdata("medicalcode")
-            'getdata.Close
             medCondition = medCon.Text
         End If
         Dim registercmd As New OleDbCommand("INSERT INTO Members 
@@ -153,33 +146,6 @@ Public Class member_registration
         medCondition & "')", con)
 
 
-        'MsgBox("INSERT INTO Members 
-        '(fname,
-        'address,
-        'birthday,
-        'age,
-        'gender,
-        'contactnumber,
-        'email,
-        'emergencyperson,
-        'emergencynum,
-        'height,
-        'weight
-        ') 
-        'VALUES ('" &
-        'txtFullname.Text & "','" &
-        'txtAddress.Text & "','" &
-        'dtpBirthday.Value.Date.ToString() & "','" &
-        'txtAge.Text & "','" &
-        'gender & "','" &
-        'txtContactNumber.Text & "','" &
-        'txtEmail.Text & "','" &
-        'txtEmergencyContactPerson.Text & "','" &
-        'txtContactNumber2.Text & "','" &
-        'txtHeight.Text & "','" &
-        'txtWeight.Text & "'," &
-        'medCode & ")")
-        member_dashboard.Show()
         Me.Hide()
 
         registercmd.ExecuteNonQuery()
@@ -193,7 +159,9 @@ Public Class member_registration
         'getdata.Close()
         registercmd2.ExecuteNonQuery()
 
-        Call DBConnection.con.Close()
+        DBConnection.closeCon()
+
+        member_dashboard.Show()
 
     End Sub
 
