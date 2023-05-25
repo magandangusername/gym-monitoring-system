@@ -22,11 +22,12 @@ Partial Class admin_overview
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.btnsearch = New System.Windows.Forms.Button()
+        Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.txtLBA18 = New System.Windows.Forms.TextBox()
         Me.cbLBA18 = New System.Windows.Forms.CheckBox()
         Me.txtLBA17 = New System.Windows.Forms.TextBox()
@@ -136,7 +137,6 @@ Partial Class admin_overview
         Me.lblLowerBody = New System.Windows.Forms.Label()
         Me.lblCore = New System.Windows.Forms.Label()
         Me.lblUpperBody = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtBmi = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -179,6 +179,8 @@ Partial Class admin_overview
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblTotalData = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
+        Me.RichTextBox1 = New System.Windows.Forms.TextBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.dgvCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -200,9 +202,10 @@ Partial Class admin_overview
         '
         'tpCustomer
         '
+        Me.tpCustomer.Controls.Add(Me.RichTextBox1)
         Me.tpCustomer.Controls.Add(Me.DateTimePicker1)
-        Me.tpCustomer.Controls.Add(Me.btnSearch)
-        Me.tpCustomer.Controls.Add(Me.txtSearch)
+        Me.tpCustomer.Controls.Add(Me.btnsearch)
+        Me.tpCustomer.Controls.Add(Me.txtsearch)
         Me.tpCustomer.Controls.Add(Me.txtLBA18)
         Me.tpCustomer.Controls.Add(Me.cbLBA18)
         Me.tpCustomer.Controls.Add(Me.txtLBA17)
@@ -312,7 +315,6 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.lblLowerBody)
         Me.tpCustomer.Controls.Add(Me.lblCore)
         Me.tpCustomer.Controls.Add(Me.lblUpperBody)
-        Me.tpCustomer.Controls.Add(Me.RichTextBox1)
         Me.tpCustomer.Controls.Add(Me.Label2)
         Me.tpCustomer.Controls.Add(Me.txtBmi)
         Me.tpCustomer.Controls.Add(Me.Label1)
@@ -355,22 +357,22 @@ Partial Class admin_overview
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 205
         '
-        'btnSearch
+        'btnsearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(6, 531)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 204
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        Me.btnsearch.Location = New System.Drawing.Point(6, 531)
+        Me.btnsearch.Name = "btnsearch"
+        Me.btnsearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnsearch.TabIndex = 204
+        Me.btnsearch.Text = "Search"
+        Me.btnsearch.UseVisualStyleBackColor = True
         '
-        'txtSearch
+        'txtsearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(87, 533)
-        Me.txtSearch.MaxLength = 11
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(293, 20)
-        Me.txtSearch.TabIndex = 203
+        Me.txtsearch.Location = New System.Drawing.Point(87, 533)
+        Me.txtsearch.MaxLength = 11
+        Me.txtsearch.Name = "txtsearch"
+        Me.txtsearch.Size = New System.Drawing.Size(293, 20)
+        Me.txtsearch.TabIndex = 203
         '
         'txtLBA18
         '
@@ -1300,14 +1302,6 @@ Partial Class admin_overview
         Me.lblUpperBody.TabIndex = 4
         Me.lblUpperBody.Text = "Upper Body Activities"
         '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(874, 266)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(307, 41)
-        Me.RichTextBox1.TabIndex = 91
-        Me.RichTextBox1.Text = ""
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -1337,7 +1331,6 @@ Partial Class admin_overview
         '
         Me.txtGender.Location = New System.Drawing.Point(874, 84)
         Me.txtGender.Name = "txtGender"
-        Me.txtGender.ReadOnly = True
         Me.txtGender.Size = New System.Drawing.Size(307, 20)
         Me.txtGender.TabIndex = 87
         '
@@ -1345,7 +1338,6 @@ Partial Class admin_overview
         '
         Me.txtBirthday.Location = New System.Drawing.Point(874, 58)
         Me.txtBirthday.Name = "txtBirthday"
-        Me.txtBirthday.ReadOnly = True
         Me.txtBirthday.Size = New System.Drawing.Size(307, 20)
         Me.txtBirthday.TabIndex = 86
         '
@@ -1671,6 +1663,19 @@ Partial Class admin_overview
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.UseVisualStyleBackColor = True
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(874, 270)
+        Me.RichTextBox1.Multiline = True
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(307, 38)
+        Me.RichTextBox1.TabIndex = 206
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'admin_overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1731,7 +1736,6 @@ Partial Class admin_overview
     Friend WithEvents lblFullName As Label
     Friend WithEvents txtBmi As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents lblLowerBody As Label
     Friend WithEvents lblCore As Label
@@ -1842,8 +1846,8 @@ Partial Class admin_overview
     Friend WithEvents cbUBA3 As CheckBox
     Friend WithEvents txtUBA2 As TextBox
     Friend WithEvents cbUBA2 As CheckBox
-    Friend WithEvents btnSearch As Button
-    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnsearch As Button
+    Friend WithEvents txtsearch As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents lblPassword As Label
@@ -1852,4 +1856,6 @@ Partial Class admin_overview
     Friend WithEvents txtAdminName As TextBox
     Friend WithEvents lblAdmin As Label
     Friend WithEvents btnLogout As Button
+    Friend WithEvents RichTextBox1 As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class
