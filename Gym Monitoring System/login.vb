@@ -73,4 +73,8 @@ Public Class login
         hidePassword.Visible = False
         showPassword.Visible = True
     End Sub
+
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
