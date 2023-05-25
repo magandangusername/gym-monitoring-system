@@ -30,6 +30,20 @@ Public Class member_registration
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        DBConnection.openCon()
+        Dim getdata As OleDbDataReader
+
+        'Trim input fields
+        txtFullname.Text = Trim(txtFullname.Text)
+        txtAddress.Text = Trim(txtAddress.Text)
+        dtpBirthday.Text = Trim(dtpBirthday.Text)
+        txtAge.Text = Trim(txtAge.Text)
+        txtContactNumber.Text = Trim(txtContactNumber.Text)
+        txtEmail.Text = Trim(txtEmail.Text)
+        txtEmergencyContactPerson.Text = Trim(txtEmergencyContactPerson.Text)
+        txtContactNumber2.Text = Trim(txtContactNumber2.Text)
+
+
         'validation
         Dim hasError As Boolean = False
         If txtFullname.Text = "" Then
@@ -47,7 +61,7 @@ Public Class member_registration
         If txtAge.Text = "" Then
             MsgBox("ERROR: Age cannot be empty.")
             hasError = True
-        ElseIf CInt(txtAge.Text) < 12Then
+        ElseIf CInt(txtAge.Text) < 12 Then
             MsgBox("ERROR: You are too young to become a member.")
             hasError = True
         End If
@@ -59,6 +73,7 @@ Public Class member_registration
             MsgBox("ERROR: Email cannot be empty.")
             hasError = True
         End If
+        getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
         If txtEmergencyContactPerson.Text = "" Then
             MsgBox("ERROR: Emergency contact person cannot be empty.")
             hasError = True
@@ -97,6 +112,7 @@ Public Class member_registration
         End If
 
         If hasError Then
+            DBConnection.closeCon()
             Exit Sub
         End If
 
@@ -104,7 +120,6 @@ Public Class member_registration
 
 
         'insertion of data to DB
-        Dim getdata As OleDbDataReader
         Dim medCondition As String = ""
         Dim gender As String
         If rdbMale.Checked Then
@@ -113,7 +128,7 @@ Public Class member_registration
             gender = "Female"
         End If
 
-        DBConnection.openCon()
+
         If rdbYes.Checked And medCon.Text <> "" Then
             medCondition = medCon.Text
         End If
@@ -146,7 +161,7 @@ Public Class member_registration
         medCondition & "')", con)
 
 
-        Me.Hide()
+
 
         registercmd.ExecuteNonQuery()
         'Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
@@ -162,6 +177,7 @@ Public Class member_registration
         DBConnection.closeCon()
 
         member_dashboard.Show()
+        Me.Hide()
 
     End Sub
 

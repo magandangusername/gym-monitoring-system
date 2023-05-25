@@ -42,6 +42,7 @@ Partial Class member_dashboard
         Me.lblMemStat = New System.Windows.Forms.Label()
         Me.lblDaysLeft = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblWarning = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,12 +220,22 @@ Partial Class member_dashboard
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "Day(s) left:"
         '
+        'lblWarning
+        '
+        Me.lblWarning.AutoSize = True
+        Me.lblWarning.Location = New System.Drawing.Point(315, 658)
+        Me.lblWarning.Name = "lblWarning"
+        Me.lblWarning.Size = New System.Drawing.Size(47, 13)
+        Me.lblWarning.TabIndex = 27
+        Me.lblWarning.Text = "Warning"
+        '
         'member_dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1444, 696)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblWarning)
         Me.Controls.Add(Me.lblDaysLeft)
         Me.Controls.Add(Me.lblMemStat)
         Me.Controls.Add(Me.Label3)
@@ -274,4 +285,5 @@ Partial Class member_dashboard
     Friend WithEvents lblMemStat As Label
     Friend WithEvents lblDaysLeft As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents lblWarning As Label
 End Class

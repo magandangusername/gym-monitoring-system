@@ -36,13 +36,20 @@
     Why It’s Important: 
             Your core supports your back, which in turn supports your entire body. Having strong stomach and back muscles helps take some of the load off of your spine. It helps improve balance, stability, and posture.
 "
-
+        lblWarning.Text = ""
         DBConnection.openCon()
-        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id)
+        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
         If getdata.HasRows Then
             If getdata("membership_status") = "Active" Then
                 lblMemStat.Text = "ACTIVE"
-                lblDaysLeft.Text = DateDiff("d", Today, CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days")))
+                Dim daysleft = DateDiff("d", Today, CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days")))
+                If daysleft <= 0 Then
+                    lblMemStat.Text = "INACTIVE"
+                    daysleft = 0
+                ElseIf daysleft < 3 Then
+                    lblWarning.Text = "Warning: membership is expiring in " & daysleft & "day(s)!"
+                End If
+                lblDaysLeft.Text = daysleft
             End If
         End If
 

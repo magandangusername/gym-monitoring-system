@@ -1,29 +1,34 @@
 ﻿Imports System.Data.OleDb
 Public Class admin_registration
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        'member_registration.Show()
-        Me.Hide()
-        Call DBConnection.con.Open()
+        'Trim input fields
+        txtFullname.Text = Trim(txtFullname.Text)
+        txtEmail.Text = Trim(txtEmail.Text)
+        txtPassword.Text = Trim(txtPassword.Text)
+
+        DBConnection.openCon()
         Dim registercmd As New OleDbCommand("INSERT INTO Members 
         (fname,
         email
         ) 
         VALUES ('" &
         txtFullname.Text & "','" &
-        txtEmail.Text & "')", con)
+        txtEmail.Text & "')", DBConnection.con)
 
         registercmd.ExecuteNonQuery()
-        Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
+        Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", DBConnection.con)
         Dim getdata As OleDbDataReader
         getdata = MemberID.ExecuteReader
         getdata.Read()
         Dim pw = "INSERT INTO credentials (member_id,member_password,isAdmin) VALUES (" & getdata("member_id") & ",'" & txtPassword.Text & "','Y')"
         DBConnection.member_id = getdata("member_id")
-        Dim registercmd2 As New OleDbCommand(pw, con)
+        Dim registercmd2 As New OleDbCommand(pw, DBConnection.con)
         getdata.Close()
         registercmd2.ExecuteNonQuery()
 
-        Call DBConnection.con.Close()
+        DBConnection.closeCon()
+
+        Me.Close()
     End Sub
 
     Private Sub showPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
@@ -35,5 +40,9 @@ Public Class admin_registration
         txtPassword.PasswordChar = "•"
         hidePassword.Visible = False
         showPassword.Visible = True
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
     End Sub
 End Class

@@ -39,6 +39,8 @@ Partial Class Order_Request
         Me.lblContact = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblMembership = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblOrderID = New System.Windows.Forms.Label()
         CType(Me.GyM_DBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,7 +60,7 @@ Partial Class Order_Request
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(193, 442)
+        Me.Button1.Location = New System.Drawing.Point(139, 288)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(129, 23)
         Me.Button1.TabIndex = 1
@@ -68,7 +70,7 @@ Partial Class Order_Request
         'lblCurrDateTime
         '
         Me.lblCurrDateTime.AutoSize = True
-        Me.lblCurrDateTime.Location = New System.Drawing.Point(433, 39)
+        Me.lblCurrDateTime.Location = New System.Drawing.Point(299, 13)
         Me.lblCurrDateTime.Name = "lblCurrDateTime"
         Me.lblCurrDateTime.Size = New System.Drawing.Size(86, 13)
         Me.lblCurrDateTime.TabIndex = 2
@@ -104,7 +106,7 @@ Partial Class Order_Request
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(50, 359)
+        Me.Label8.Location = New System.Drawing.Point(39, 221)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 8
@@ -122,7 +124,7 @@ Partial Class Order_Request
         'lblDiscounted
         '
         Me.lblDiscounted.AutoSize = True
-        Me.lblDiscounted.Location = New System.Drawing.Point(101, 359)
+        Me.lblDiscounted.Location = New System.Drawing.Point(136, 221)
         Me.lblDiscounted.Name = "lblDiscounted"
         Me.lblDiscounted.Size = New System.Drawing.Size(13, 13)
         Me.lblDiscounted.TabIndex = 11
@@ -131,7 +133,7 @@ Partial Class Order_Request
         'lblPrice
         '
         Me.lblPrice.AutoSize = True
-        Me.lblPrice.Location = New System.Drawing.Point(163, 167)
+        Me.lblPrice.Location = New System.Drawing.Point(136, 167)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(13, 13)
         Me.lblPrice.TabIndex = 12
@@ -140,7 +142,7 @@ Partial Class Order_Request
         'lblDiscount
         '
         Me.lblDiscount.AutoSize = True
-        Me.lblDiscount.Location = New System.Drawing.Point(163, 194)
+        Me.lblDiscount.Location = New System.Drawing.Point(136, 194)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(13, 13)
         Me.lblDiscount.TabIndex = 13
@@ -191,11 +193,31 @@ Partial Class Order_Request
         Me.lblMembership.TabIndex = 15
         Me.lblMembership.Text = "MEMBERSHIP"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(39, 13)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Order ID"
+        '
+        'lblOrderID
+        '
+        Me.lblOrderID.AutoSize = True
+        Me.lblOrderID.Location = New System.Drawing.Point(136, 13)
+        Me.lblOrderID.Name = "lblOrderID"
+        Me.lblOrderID.Size = New System.Drawing.Size(55, 13)
+        Me.lblOrderID.TabIndex = 16
+        Me.lblOrderID.Text = "00000000"
+        '
         'Order_Request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(537, 488)
+        Me.ClientSize = New System.Drawing.Size(413, 378)
+        Me.Controls.Add(Me.lblOrderID)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblMembership)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblContact)
@@ -237,4 +259,6 @@ Partial Class Order_Request
     Friend WithEvents lblContact As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblMembership As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblOrderID As Label
 End Class

@@ -5,7 +5,7 @@ Public Class profile
         Me.Hide()
     End Sub
 
-    Private Sub profile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub profile_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
         'load the current user profile info to the screen
         Call DBConnection.con.Open()
         Dim MemberProfile As New OleDbCommand("SELECT * FROM Members where member_id = " & DBConnection.member_id, con)
@@ -76,7 +76,16 @@ Public Class profile
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Call DBConnection.con.Open()
+        'Trim input fields
+        txtFullname.Text = Trim(txtFullname.Text)
+        txtAddress.Text = Trim(txtAddress.Text)
+        txtBirthday.Text = Trim(txtBirthday.Text)
+        txtContactNumber.Text = Trim(txtContactNumber.Text)
+        txtEmail.Text = Trim(txtEmail.Text)
+        txtEmergencyContactPerson.Text = Trim(txtEmergencyContactPerson.Text)
+        txtContactNumber2.Text = Trim(txtContactNumber2.Text)
+
+        Call DBConnection.openCon()
         Dim updateprofile As New OleDbCommand("Update Members 
         SET fname = '" & txtFullname.Text & "',
         address = '" & txtAddress.Text & "',
@@ -99,8 +108,7 @@ Public Class profile
         updateprofile.ExecuteNonQuery()
         MsgBox("Profile updated successfully")
 
-
-        Call DBConnection.con.Close()
+        DBConnection.closeCon()
     End Sub
 
     Private Sub showPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click

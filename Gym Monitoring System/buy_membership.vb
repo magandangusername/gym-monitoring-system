@@ -26,77 +26,54 @@ Public Class buy_membership
     '    13% of 9000 = 0.13 × 9000 = 1170
     '    9000 – 1170 = 7830
     Private Sub btnPlaceOrder_Click(sender As Object, e As EventArgs) Handles btnPlaceOrder.Click
+        Dim result As MsgBoxResult
         If rdbdiscount1.Checked Then
-            Dim result As MsgBoxResult = MsgBox("Are you sure you want to buy a 2 Weeks Membership?", MsgBoxStyle.YesNo)
-
-            If (result = MsgBoxResult.Yes) Then
-                Me.Hide()
-                Order_Request.Show()
-            End If
+            result = MsgBox("Are you sure you want to buy a 2 Weeks Membership?", MsgBoxStyle.YesNo)
         End If
         If rdbdiscount2.Checked Then
-            Dim result As MsgBoxResult = MsgBox("Are you sure you want to buy a 1 Month Membership?", MsgBoxStyle.YesNo)
-
-            If (result = MsgBoxResult.Yes) Then
-                Me.Hide()
-                Order_Request.Show()
-            End If
+            result = MsgBox("Are you sure you want to buy a 1 Month Membership?", MsgBoxStyle.YesNo)
         End If
         If rdbdiscount3.Checked Then
-            Dim result As MsgBoxResult = MsgBox("Are you sure you want to buy a 3 Months Membership?", MsgBoxStyle.YesNo)
-
-            If (result = MsgBoxResult.Yes) Then
-                Me.Hide()
-                Order_Request.Show()
-            End If
+            result = MsgBox("Are you sure you want to buy a 3 Months Membership?", MsgBoxStyle.YesNo)
         End If
         If rdbdiscount4.Checked Then
-            Dim result As MsgBoxResult = MsgBox("Are you sure you want to buy a 6 Months Membership?", MsgBoxStyle.YesNo)
-
-            If (result = MsgBoxResult.Yes) Then
-                Me.Hide()
-                Order_Request.Show()
-            End If
+            result = MsgBox("Are you sure you want to buy a 6 Months Membership?", MsgBoxStyle.YesNo)
         End If
         If rdbdiscount5.Checked Then
-            Dim result As MsgBoxResult = MsgBox("Are you sure you want to buy a 1 Year Membership?", MsgBoxStyle.YesNo)
-
-            If (result = MsgBoxResult.Yes) Then
-                Me.Hide()
-                Order_Request.Show()
-            End If
+            result = MsgBox("Are you sure you want to buy a 1 Year Membership?", MsgBoxStyle.YesNo)
         End If
 
-        DBConnection.con.Open()
-        Dim insertMembership As New OleDbCommand("INSERT INTO MembershipOrder(
-        membership_id,
-        member_id,
-        total_price,
-        membership_datetime,
-        membership_status
-        ) VALUES(" &
-        membership_id & "," &
-        DBConnection.member_id & "," &
-        discountedPrice & ",'" &
-        Today.ToShortDateString & " " & Now.ToShortTimeString & "','" &
-        "Pending" & "')", con)
-        MsgBox("INSERT INTO MembershipOrder(
-        membership_id,
-        member_id,
-        total_price,
-        membership_datetime,
-        membership_status
-        ) VALUES(" &
-        membership_id & "," &
-        DBConnection.member_id & "," &
-        discountedPrice & ",'" &
-        Today.ToShortDateString & " " & Now.ToShortTimeString & "','" &
-        "Pending" & "')")
-        insertMembership.ExecuteNonQuery()
+        If (result = MsgBoxResult.Yes) Then
+            DBConnection.openCon()
+            Dim insertMembership As New OleDbCommand("INSERT INTO MembershipOrder(
+            membership_id,
+            member_id,
+            total_price,
+            membership_status
+            ) VALUES(" &
+            membership_id & "," &
+            DBConnection.member_id & "," &
+            discountedPrice & ",'" &
+            "Pending" & "')", con)
+            MsgBox("INSERT INTO MembershipOrder(
+            membership_id,
+            member_id,
+            total_price,
+            membership_status
+            ) VALUES(" &
+            membership_id & "," &
+            DBConnection.member_id & "," &
+            discountedPrice & ",'" &
+            "Pending" & "')")
+            'MsgBox(insertMembership.ExecuteNonQuery())
+            If insertMembership.ExecuteNonQuery() <= 0 Then
+                MsgBox("Error occured inserting data.")
+            End If
 
-        DBConnection.con.Close()
-
-
+            DBConnection.closeCon()
+            Me.Hide()
+            Order_Request.Show()
+        End If
 
 
 
