@@ -23,7 +23,7 @@
         buy_membership.Show()
     End Sub
 
-    Private Sub member_dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
+    Private Sub member_dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RichTextBox1.Text = "   
     UPPER BODY includes arms, shoulders and upper back. Some of the most common exercises for the upper body are biceps curls, triceps curls, bench presses, overhead presses, lateral raises, and upright rows.
 
@@ -38,10 +38,8 @@
 "
 
         DBConnection.openCon()
-        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id)
-        'MsgBox("test")
+        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " AND MembershipOrder.membership_status = 'Pending'")
         If getdata.HasRows Then
-            'MsgBox(getdata("membership_status"))
             If getdata("membership_status") = "Active" Then
                 lblMemStat.Text = "ACTIVE"
                 lblDaysLeft.Text = DateDiff("d", Today, CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days")))
