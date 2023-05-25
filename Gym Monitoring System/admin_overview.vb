@@ -19,7 +19,7 @@ Public Class admin_overview
         DBConnection.con.Close()
     End Sub
 
-    Private Sub dgvCustomer_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellContentClick
+    Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick
         Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
         txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
         txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
@@ -33,5 +33,29 @@ Public Class admin_overview
         txtWeight.Text = dgvCustomer.CurrentRow.Cells(11).Value
         txtBmi.Text = dgvCustomer.CurrentRow.Cells(12).Value
         RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        'Try
+        '    Dim searchcmd As New OleDbCommand("SELECT * FROM Members WHERE member_ID LIKE '%" & txtSearch.Text & "%' OR fname LIKE '%" & txtSearch.Text & "%' OR address LIKE '%" & txtSearch.Text & "%' OR gender LIKE '%" & txtSearch.Text & "%' OR contactnumber LIKE '%" & txtSearch.Text & "%' OR email LIKE '%" & txtSearch.Text & "%' OR emergencyperson LIKE '%" & txtSearch.Text & "%' OR emergencynum LIKE '%" & txtSearch.Text & "%' OR height LIKE '%" & txtSearch.Text & "%' OR weight LIKE '%" & txtSearch.Text & "%' OR medicalcondition LIKE '%" & txtSearch.Text & "%' OR paymentstatus LIKE '%" & txtSearch.Text & "%' OR membershiptype LIKE '%" & txtSearch.Text & "%' OR membersince LIKE '%" & txtSearch.Text & "%' OR age LIKE '%" & "%';", DBConnection.con)
+        '    Dim sql As String
+        '    Dim cmd As New OleDb.OleDbCommand
+        '    Dim dt As New DataTable
+        '    Dim da As New OleDb.OleDbDataAdapter
+        '    DBConnection.con.Open()
+        '    sql = 
+
+        '    cmd.CommandText = sql
+        '    da.SelectCommand = cmd
+
+        '    da.Fill(dt)
+
+        '    dgvCustomer.DataSource = dt
+        'Catch ex As Exception
+        '    MsgBox("An Error Occur!")
+        'Finally
+        '    DBConnection.con.Close()
+
+        'End Try
     End Sub
 End Class
