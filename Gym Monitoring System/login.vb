@@ -19,7 +19,9 @@ Public Class login
             Me.Hide()
             If getdata("isAdmin") = "Y" Then
                 MsgBox("Logged in as ADMIN: " & getdata("fname"))
+                DBConnection.con.Close()
                 admin_overview.Show()
+                Exit Sub
             Else
                 member_dashboard.Show()
             End If
