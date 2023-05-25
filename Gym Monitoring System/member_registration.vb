@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 Public Class member_registration
-    Private Sub member_registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Shown
+    Private Sub member_registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
         'reset fields
         txtFullname.Text = ""
         txtAddress.Text = ""
