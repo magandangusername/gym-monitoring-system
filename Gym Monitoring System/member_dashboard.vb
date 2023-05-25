@@ -38,7 +38,7 @@
 "
 
         DBConnection.openCon()
-        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " AND MembershipOrder.membership_status = 'Pending'")
+        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id)
         If getdata.HasRows Then
             If getdata("membership_status") = "Active" Then
                 lblMemStat.Text = "ACTIVE"
