@@ -7,6 +7,33 @@ Public Class profile
 
     Private Sub profile_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
         'load the current user profile info to the screen
+        'txtFullname.ReadOnly = True
+        txtFullname.Enabled = False
+        txtAddress.Enabled = False
+        txtBirthday.Enabled = False
+        txtAge.Enabled = False
+        txtGender.Enabled = False
+        txtHeight.Enabled = False
+        txtWeight.Enabled = False
+        txtContactNumber.Enabled = False
+        txtEmail.Enabled = False
+        txtEmergencyContactPerson.Enabled = False
+        txtContactNumber2.Enabled = False
+        txtOldPass.Hide()
+        txtPassword.Hide()
+        txtReTypePassword.Hide()
+        lbloldpass.Hide()
+        lblPassword.Hide()
+        lblReTypePassword.Hide()
+        seeoldpass.Hide()
+        showPassword.Hide()
+        showPassword2.Hide()
+        hideoldpass.Hide()
+        hidePassword.Hide()
+        hidePassword2.Hide()
+        btnSave.Hide()
+
+
         Call DBConnection.con.Open()
         Dim MemberProfile As New OleDbCommand("SELECT * FROM Members where member_id = " & DBConnection.member_id, con)
         Dim getdata As OleDbDataReader
@@ -25,6 +52,36 @@ Public Class profile
 
         getdata.Close()
         Call DBConnection.con.Close()
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        txtFullname.Enabled = True
+        txtAddress.Enabled = True
+        txtBirthday.Enabled = True
+        txtAge.Enabled = True
+        txtGender.Enabled = True
+        txtHeight.Enabled = True
+        txtWeight.Enabled = True
+        txtContactNumber.Enabled = True
+        txtEmail.Enabled = True
+        txtEmergencyContactPerson.Enabled = True
+        txtContactNumber2.Enabled = True
+        txtOldPass.Show()
+        txtPassword.Show()
+        txtReTypePassword.Show()
+        lbloldpass.Show()
+        lblPassword.Show()
+        lblReTypePassword.Show()
+        seeoldpass.Show()
+        showPassword.Show()
+        showPassword2.Show()
+        hideoldpass.Show()
+        hidePassword.Show()
+        hidePassword2.Show()
+        btnSave.Show()
+        btnUpdate.Hide()
+        btnBack.Hide()
+
     End Sub
 
     Private Sub txtHeight_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtHeight.KeyPress
@@ -75,42 +132,17 @@ Public Class profile
         End If
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        'Trim input fields
-        txtFullname.Text = Trim(txtFullname.Text)
-        txtAddress.Text = Trim(txtAddress.Text)
-        txtBirthday.Text = Trim(txtBirthday.Text)
-        txtContactNumber.Text = Trim(txtContactNumber.Text)
-        txtEmail.Text = Trim(txtEmail.Text)
-        txtEmergencyContactPerson.Text = Trim(txtEmergencyContactPerson.Text)
-        txtContactNumber2.Text = Trim(txtContactNumber2.Text)
 
-        Call DBConnection.openCon()
-        Dim updateprofile As New OleDbCommand("Update Members 
-        SET fname = '" & txtFullname.Text & "',
-        address = '" & txtAddress.Text & "',
-        contactnumber = '" & txtContactNumber.Text & "',
-        email = '" & txtEmail.Text & "',
-        emergencyperson = '" & txtEmergencyContactPerson.Text & "',
-        emergencynum = '" & txtContactNumber2.Text & "',
-        height = '" & txtHeight.Text & "',
-        weight = '" & txtWeight.Text & "'", con)
-
-        If txtPassword.Text IsNot "" And txtReTypePassword.Text IsNot "" Then
-            If txtPassword.Text = txtReTypePassword.Text Then
-                Dim updatepw As New OleDbCommand("Update credentials 
-                SET member_password = '" & txtPassword.Text &
-                " WHERE member_id = " & DBConnection.member_id, con)
-                updatepw.ExecuteNonQuery()
-                MsgBox("Password updated successfully")
-            End If
-        End If
-        updateprofile.ExecuteNonQuery()
-        MsgBox("Profile updated successfully")
-
-        DBConnection.closeCon()
+    Private Sub seeoldpass_Click(sender As Object, e As EventArgs) Handles seeoldpass.Click
+        txtOldPass.PasswordChar = "•"
+        showPassword.Visible = False
+        hidePassword.Visible = True
     End Sub
-
+    Private Sub hideoldpass_Click(sender As Object, e As EventArgs) Handles hideoldpass.Click
+        txtPassword.PasswordChar = "•"
+        hidePassword.Visible = False
+        showPassword.Visible = True
+    End Sub
     Private Sub showPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         txtPassword.PasswordChar = ""
         showPassword.Visible = False
