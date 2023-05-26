@@ -74,6 +74,7 @@ Partial Class member_registration
         Me.lblContactNum2Required = New System.Windows.Forms.Label()
         Me.lblPasswordRequired = New System.Windows.Forms.Label()
         Me.lblPassword2Required = New System.Windows.Forms.Label()
+        Me.lblPassRequirements = New System.Windows.Forms.Label()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +85,7 @@ Partial Class member_registration
         'lblFullName
         '
         Me.lblFullName.AutoSize = True
-        Me.lblFullName.Location = New System.Drawing.Point(57, 41)
+        Me.lblFullName.Location = New System.Drawing.Point(57, 39)
         Me.lblFullName.Name = "lblFullName"
         Me.lblFullName.Size = New System.Drawing.Size(54, 13)
         Me.lblFullName.TabIndex = 0
@@ -92,14 +93,14 @@ Partial Class member_registration
         '
         'txtFullname
         '
-        Me.txtFullname.Location = New System.Drawing.Point(112, 38)
+        Me.txtFullname.Location = New System.Drawing.Point(112, 36)
         Me.txtFullname.Name = "txtFullname"
         Me.txtFullname.Size = New System.Drawing.Size(307, 20)
         Me.txtFullname.TabIndex = 1
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(112, 74)
+        Me.txtAddress.Location = New System.Drawing.Point(112, 72)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(307, 20)
         Me.txtAddress.TabIndex = 3
@@ -107,7 +108,7 @@ Partial Class member_registration
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(57, 77)
+        Me.lblAddress.Location = New System.Drawing.Point(57, 75)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(45, 13)
         Me.lblAddress.TabIndex = 2
@@ -116,7 +117,7 @@ Partial Class member_registration
         'lblBirthday
         '
         Me.lblBirthday.AutoSize = True
-        Me.lblBirthday.Location = New System.Drawing.Point(57, 117)
+        Me.lblBirthday.Location = New System.Drawing.Point(57, 115)
         Me.lblBirthday.Name = "lblBirthday"
         Me.lblBirthday.Size = New System.Drawing.Size(45, 13)
         Me.lblBirthday.TabIndex = 4
@@ -124,7 +125,7 @@ Partial Class member_registration
         '
         'dtpBirthday
         '
-        Me.dtpBirthday.Location = New System.Drawing.Point(112, 114)
+        Me.dtpBirthday.Location = New System.Drawing.Point(112, 112)
         Me.dtpBirthday.Name = "dtpBirthday"
         Me.dtpBirthday.Size = New System.Drawing.Size(200, 20)
         Me.dtpBirthday.TabIndex = 5
@@ -132,7 +133,7 @@ Partial Class member_registration
         'lblAge
         '
         Me.lblAge.AutoSize = True
-        Me.lblAge.Location = New System.Drawing.Point(57, 162)
+        Me.lblAge.Location = New System.Drawing.Point(57, 160)
         Me.lblAge.Name = "lblAge"
         Me.lblAge.Size = New System.Drawing.Size(26, 13)
         Me.lblAge.TabIndex = 6
@@ -140,7 +141,7 @@ Partial Class member_registration
         '
         'txtAge
         '
-        Me.txtAge.Location = New System.Drawing.Point(112, 159)
+        Me.txtAge.Location = New System.Drawing.Point(112, 157)
         Me.txtAge.MaxLength = 3
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(200, 20)
@@ -149,7 +150,7 @@ Partial Class member_registration
         'lblGender
         '
         Me.lblGender.AutoSize = True
-        Me.lblGender.Location = New System.Drawing.Point(57, 206)
+        Me.lblGender.Location = New System.Drawing.Point(57, 204)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(42, 13)
         Me.lblGender.TabIndex = 8
@@ -179,7 +180,7 @@ Partial Class member_registration
         '
         'txtContactNumber
         '
-        Me.txtContactNumber.Location = New System.Drawing.Point(147, 245)
+        Me.txtContactNumber.Location = New System.Drawing.Point(147, 243)
         Me.txtContactNumber.MaxLength = 11
         Me.txtContactNumber.Name = "txtContactNumber"
         Me.txtContactNumber.Size = New System.Drawing.Size(307, 20)
@@ -188,7 +189,7 @@ Partial Class member_registration
         'lblContactNumber
         '
         Me.lblContactNumber.AutoSize = True
-        Me.lblContactNumber.Location = New System.Drawing.Point(57, 245)
+        Me.lblContactNumber.Location = New System.Drawing.Point(57, 243)
         Me.lblContactNumber.Name = "lblContactNumber"
         Me.lblContactNumber.Size = New System.Drawing.Size(84, 13)
         Me.lblContactNumber.TabIndex = 11
@@ -196,7 +197,7 @@ Partial Class member_registration
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(112, 289)
+        Me.txtEmail.Location = New System.Drawing.Point(112, 287)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(307, 20)
         Me.txtEmail.TabIndex = 14
@@ -204,7 +205,7 @@ Partial Class member_registration
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(57, 292)
+        Me.lblEmail.Location = New System.Drawing.Point(57, 290)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(32, 13)
         Me.lblEmail.TabIndex = 13
@@ -212,7 +213,7 @@ Partial Class member_registration
         '
         'txtHeight
         '
-        Me.txtHeight.Location = New System.Drawing.Point(469, 162)
+        Me.txtHeight.Location = New System.Drawing.Point(469, 160)
         Me.txtHeight.Name = "txtHeight"
         Me.txtHeight.Size = New System.Drawing.Size(200, 20)
         Me.txtHeight.TabIndex = 16
@@ -220,7 +221,7 @@ Partial Class member_registration
         'lblHeight
         '
         Me.lblHeight.AutoSize = True
-        Me.lblHeight.Location = New System.Drawing.Point(414, 165)
+        Me.lblHeight.Location = New System.Drawing.Point(414, 163)
         Me.lblHeight.Name = "lblHeight"
         Me.lblHeight.Size = New System.Drawing.Size(38, 13)
         Me.lblHeight.TabIndex = 15
@@ -228,7 +229,7 @@ Partial Class member_registration
         '
         'txtWeight
         '
-        Me.txtWeight.Location = New System.Drawing.Point(469, 201)
+        Me.txtWeight.Location = New System.Drawing.Point(469, 199)
         Me.txtWeight.Name = "txtWeight"
         Me.txtWeight.Size = New System.Drawing.Size(200, 20)
         Me.txtWeight.TabIndex = 18
@@ -236,7 +237,7 @@ Partial Class member_registration
         'lblWeight
         '
         Me.lblWeight.AutoSize = True
-        Me.lblWeight.Location = New System.Drawing.Point(414, 204)
+        Me.lblWeight.Location = New System.Drawing.Point(414, 202)
         Me.lblWeight.Name = "lblWeight"
         Me.lblWeight.Size = New System.Drawing.Size(41, 13)
         Me.lblWeight.TabIndex = 17
@@ -244,7 +245,7 @@ Partial Class member_registration
         '
         'txtContactNumber2
         '
-        Me.txtContactNumber2.Location = New System.Drawing.Point(147, 389)
+        Me.txtContactNumber2.Location = New System.Drawing.Point(147, 387)
         Me.txtContactNumber2.MaxLength = 11
         Me.txtContactNumber2.Name = "txtContactNumber2"
         Me.txtContactNumber2.Size = New System.Drawing.Size(307, 20)
@@ -253,7 +254,7 @@ Partial Class member_registration
         'lblContactNumber2
         '
         Me.lblContactNumber2.AutoSize = True
-        Me.lblContactNumber2.Location = New System.Drawing.Point(57, 392)
+        Me.lblContactNumber2.Location = New System.Drawing.Point(57, 390)
         Me.lblContactNumber2.Name = "lblContactNumber2"
         Me.lblContactNumber2.Size = New System.Drawing.Size(84, 13)
         Me.lblContactNumber2.TabIndex = 21
@@ -261,7 +262,7 @@ Partial Class member_registration
         '
         'txtEmergencyContactPerson
         '
-        Me.txtEmergencyContactPerson.Location = New System.Drawing.Point(199, 342)
+        Me.txtEmergencyContactPerson.Location = New System.Drawing.Point(199, 340)
         Me.txtEmergencyContactPerson.Name = "txtEmergencyContactPerson"
         Me.txtEmergencyContactPerson.Size = New System.Drawing.Size(307, 20)
         Me.txtEmergencyContactPerson.TabIndex = 20
@@ -269,7 +270,7 @@ Partial Class member_registration
         'lblEmergencyContactPerson
         '
         Me.lblEmergencyContactPerson.AutoSize = True
-        Me.lblEmergencyContactPerson.Location = New System.Drawing.Point(57, 345)
+        Me.lblEmergencyContactPerson.Location = New System.Drawing.Point(57, 343)
         Me.lblEmergencyContactPerson.Name = "lblEmergencyContactPerson"
         Me.lblEmergencyContactPerson.Size = New System.Drawing.Size(136, 13)
         Me.lblEmergencyContactPerson.TabIndex = 19
@@ -277,7 +278,7 @@ Partial Class member_registration
         '
         'txtReTypePassword
         '
-        Me.txtReTypePassword.Location = New System.Drawing.Point(160, 478)
+        Me.txtReTypePassword.Location = New System.Drawing.Point(160, 476)
         Me.txtReTypePassword.Name = "txtReTypePassword"
         Me.txtReTypePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtReTypePassword.Size = New System.Drawing.Size(307, 20)
@@ -286,7 +287,7 @@ Partial Class member_registration
         'lblReTypePassword
         '
         Me.lblReTypePassword.AutoSize = True
-        Me.lblReTypePassword.Location = New System.Drawing.Point(57, 485)
+        Me.lblReTypePassword.Location = New System.Drawing.Point(57, 483)
         Me.lblReTypePassword.Name = "lblReTypePassword"
         Me.lblReTypePassword.Size = New System.Drawing.Size(97, 13)
         Me.lblReTypePassword.TabIndex = 25
@@ -294,7 +295,7 @@ Partial Class member_registration
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(112, 435)
+        Me.txtPassword.Location = New System.Drawing.Point(112, 433)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.Size = New System.Drawing.Size(307, 20)
@@ -303,7 +304,7 @@ Partial Class member_registration
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(57, 438)
+        Me.lblPassword.Location = New System.Drawing.Point(57, 436)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(53, 13)
         Me.lblPassword.TabIndex = 23
@@ -312,7 +313,7 @@ Partial Class member_registration
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(57, 529)
+        Me.Label14.Location = New System.Drawing.Point(57, 527)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(118, 13)
         Me.Label14.TabIndex = 27
@@ -322,7 +323,7 @@ Partial Class member_registration
         '
         Me.rdbNo.AutoSize = True
         Me.rdbNo.Checked = True
-        Me.rdbNo.Location = New System.Drawing.Point(354, 525)
+        Me.rdbNo.Location = New System.Drawing.Point(354, 523)
         Me.rdbNo.Name = "rdbNo"
         Me.rdbNo.Size = New System.Drawing.Size(39, 17)
         Me.rdbNo.TabIndex = 29
@@ -333,7 +334,7 @@ Partial Class member_registration
         'rdbYes
         '
         Me.rdbYes.AutoSize = True
-        Me.rdbYes.Location = New System.Drawing.Point(222, 527)
+        Me.rdbYes.Location = New System.Drawing.Point(222, 525)
         Me.rdbYes.Name = "rdbYes"
         Me.rdbYes.Size = New System.Drawing.Size(43, 17)
         Me.rdbYes.TabIndex = 28
@@ -343,7 +344,7 @@ Partial Class member_registration
         '
         'medCon
         '
-        Me.medCon.Location = New System.Drawing.Point(60, 566)
+        Me.medCon.Location = New System.Drawing.Point(60, 564)
         Me.medCon.Name = "medCon"
         Me.medCon.Size = New System.Drawing.Size(367, 96)
         Me.medCon.TabIndex = 30
@@ -351,7 +352,7 @@ Partial Class member_registration
         '
         'btnRegister
         '
-        Me.btnRegister.Location = New System.Drawing.Point(610, 406)
+        Me.btnRegister.Location = New System.Drawing.Point(354, 666)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(75, 23)
         Me.btnRegister.TabIndex = 31
@@ -360,7 +361,7 @@ Partial Class member_registration
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(610, 475)
+        Me.btnBack.Location = New System.Drawing.Point(60, 666)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 32
@@ -370,7 +371,7 @@ Partial Class member_registration
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(675, 165)
+        Me.Label1.Location = New System.Drawing.Point(675, 163)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(23, 13)
         Me.Label1.TabIndex = 33
@@ -379,7 +380,7 @@ Partial Class member_registration
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(675, 205)
+        Me.Label2.Location = New System.Drawing.Point(675, 203)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(22, 13)
         Me.Label2.TabIndex = 34
@@ -388,7 +389,7 @@ Partial Class member_registration
         'showPassword
         '
         Me.showPassword.Image = CType(resources.GetObject("showPassword.Image"), System.Drawing.Image)
-        Me.showPassword.Location = New System.Drawing.Point(425, 435)
+        Me.showPassword.Location = New System.Drawing.Point(425, 433)
         Me.showPassword.Name = "showPassword"
         Me.showPassword.Size = New System.Drawing.Size(19, 20)
         Me.showPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -398,7 +399,7 @@ Partial Class member_registration
         'hidePassword
         '
         Me.hidePassword.Image = CType(resources.GetObject("hidePassword.Image"), System.Drawing.Image)
-        Me.hidePassword.Location = New System.Drawing.Point(425, 435)
+        Me.hidePassword.Location = New System.Drawing.Point(425, 433)
         Me.hidePassword.Name = "hidePassword"
         Me.hidePassword.Size = New System.Drawing.Size(19, 20)
         Me.hidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -409,7 +410,7 @@ Partial Class member_registration
         'showPassword2
         '
         Me.showPassword2.Image = CType(resources.GetObject("showPassword2.Image"), System.Drawing.Image)
-        Me.showPassword2.Location = New System.Drawing.Point(473, 478)
+        Me.showPassword2.Location = New System.Drawing.Point(473, 476)
         Me.showPassword2.Name = "showPassword2"
         Me.showPassword2.Size = New System.Drawing.Size(19, 20)
         Me.showPassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -419,7 +420,7 @@ Partial Class member_registration
         'hidePassword2
         '
         Me.hidePassword2.Image = CType(resources.GetObject("hidePassword2.Image"), System.Drawing.Image)
-        Me.hidePassword2.Location = New System.Drawing.Point(473, 478)
+        Me.hidePassword2.Location = New System.Drawing.Point(473, 476)
         Me.hidePassword2.Name = "hidePassword2"
         Me.hidePassword2.Size = New System.Drawing.Size(19, 20)
         Me.hidePassword2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -432,7 +433,7 @@ Partial Class member_registration
         Me.GroupBox1.Controls.Add(Me.rdbMale)
         Me.GroupBox1.Controls.Add(Me.rdbFemale)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(112, 189)
+        Me.GroupBox1.Location = New System.Drawing.Point(112, 187)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(200, 38)
         Me.GroupBox1.TabIndex = 72
@@ -442,7 +443,7 @@ Partial Class member_registration
         '
         Me.lblFNameRequired.AutoSize = True
         Me.lblFNameRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblFNameRequired.Location = New System.Drawing.Point(425, 41)
+        Me.lblFNameRequired.Location = New System.Drawing.Point(425, 39)
         Me.lblFNameRequired.Name = "lblFNameRequired"
         Me.lblFNameRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblFNameRequired.TabIndex = 73
@@ -453,7 +454,8 @@ Partial Class member_registration
         '
         Me.lblAddrRequired.AutoSize = True
         Me.lblAddrRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblAddrRequired.Location = New System.Drawing.Point(425, 77)
+        Me.lblAddrRequired.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblAddrRequired.Location = New System.Drawing.Point(425, 75)
         Me.lblAddrRequired.Name = "lblAddrRequired"
         Me.lblAddrRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblAddrRequired.TabIndex = 73
@@ -464,7 +466,7 @@ Partial Class member_registration
         '
         Me.lblBirthdayRequired.AutoSize = True
         Me.lblBirthdayRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblBirthdayRequired.Location = New System.Drawing.Point(318, 117)
+        Me.lblBirthdayRequired.Location = New System.Drawing.Point(318, 115)
         Me.lblBirthdayRequired.Name = "lblBirthdayRequired"
         Me.lblBirthdayRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblBirthdayRequired.TabIndex = 73
@@ -475,7 +477,7 @@ Partial Class member_registration
         '
         Me.lblAgeRequired.AutoSize = True
         Me.lblAgeRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblAgeRequired.Location = New System.Drawing.Point(318, 162)
+        Me.lblAgeRequired.Location = New System.Drawing.Point(318, 160)
         Me.lblAgeRequired.Name = "lblAgeRequired"
         Me.lblAgeRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblAgeRequired.TabIndex = 73
@@ -486,7 +488,7 @@ Partial Class member_registration
         '
         Me.lblGenderRequired.AutoSize = True
         Me.lblGenderRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblGenderRequired.Location = New System.Drawing.Point(318, 205)
+        Me.lblGenderRequired.Location = New System.Drawing.Point(318, 203)
         Me.lblGenderRequired.Name = "lblGenderRequired"
         Me.lblGenderRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblGenderRequired.TabIndex = 73
@@ -497,7 +499,7 @@ Partial Class member_registration
         '
         Me.lblContactNumRequired.AutoSize = True
         Me.lblContactNumRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblContactNumRequired.Location = New System.Drawing.Point(460, 248)
+        Me.lblContactNumRequired.Location = New System.Drawing.Point(460, 246)
         Me.lblContactNumRequired.Name = "lblContactNumRequired"
         Me.lblContactNumRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblContactNumRequired.TabIndex = 73
@@ -508,7 +510,7 @@ Partial Class member_registration
         '
         Me.lblEmailRequired.AutoSize = True
         Me.lblEmailRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblEmailRequired.Location = New System.Drawing.Point(425, 292)
+        Me.lblEmailRequired.Location = New System.Drawing.Point(425, 290)
         Me.lblEmailRequired.Name = "lblEmailRequired"
         Me.lblEmailRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblEmailRequired.TabIndex = 73
@@ -519,7 +521,7 @@ Partial Class member_registration
         '
         Me.lblECPRequired.AutoSize = True
         Me.lblECPRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblECPRequired.Location = New System.Drawing.Point(512, 345)
+        Me.lblECPRequired.Location = New System.Drawing.Point(512, 343)
         Me.lblECPRequired.Name = "lblECPRequired"
         Me.lblECPRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblECPRequired.TabIndex = 73
@@ -530,7 +532,7 @@ Partial Class member_registration
         '
         Me.lblContactNum2Required.AutoSize = True
         Me.lblContactNum2Required.ForeColor = System.Drawing.Color.Red
-        Me.lblContactNum2Required.Location = New System.Drawing.Point(460, 392)
+        Me.lblContactNum2Required.Location = New System.Drawing.Point(460, 390)
         Me.lblContactNum2Required.Name = "lblContactNum2Required"
         Me.lblContactNum2Required.Size = New System.Drawing.Size(50, 13)
         Me.lblContactNum2Required.TabIndex = 73
@@ -541,7 +543,7 @@ Partial Class member_registration
         '
         Me.lblPasswordRequired.AutoSize = True
         Me.lblPasswordRequired.ForeColor = System.Drawing.Color.Red
-        Me.lblPasswordRequired.Location = New System.Drawing.Point(450, 438)
+        Me.lblPasswordRequired.Location = New System.Drawing.Point(450, 436)
         Me.lblPasswordRequired.Name = "lblPasswordRequired"
         Me.lblPasswordRequired.Size = New System.Drawing.Size(50, 13)
         Me.lblPasswordRequired.TabIndex = 73
@@ -552,18 +554,30 @@ Partial Class member_registration
         '
         Me.lblPassword2Required.AutoSize = True
         Me.lblPassword2Required.ForeColor = System.Drawing.Color.Red
-        Me.lblPassword2Required.Location = New System.Drawing.Point(498, 481)
+        Me.lblPassword2Required.Location = New System.Drawing.Point(498, 479)
         Me.lblPassword2Required.Name = "lblPassword2Required"
         Me.lblPassword2Required.Size = New System.Drawing.Size(50, 13)
         Me.lblPassword2Required.TabIndex = 73
         Me.lblPassword2Required.Text = "Required"
         Me.lblPassword2Required.Visible = False
         '
+        'lblPassRequirements
+        '
+        Me.lblPassRequirements.AutoSize = True
+        Me.lblPassRequirements.ForeColor = System.Drawing.Color.Red
+        Me.lblPassRequirements.Location = New System.Drawing.Point(613, 436)
+        Me.lblPassRequirements.Name = "lblPassRequirements"
+        Me.lblPassRequirements.Size = New System.Drawing.Size(84, 13)
+        Me.lblPassRequirements.TabIndex = 74
+        Me.lblPassRequirements.Text = "pw requirements"
+        Me.lblPassRequirements.Visible = False
+        '
         'member_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 704)
+        Me.Controls.Add(Me.lblPassRequirements)
         Me.Controls.Add(Me.lblPassword2Required)
         Me.Controls.Add(Me.lblPasswordRequired)
         Me.Controls.Add(Me.lblContactNum2Required)
@@ -678,4 +692,5 @@ Partial Class member_registration
     Friend WithEvents lblContactNum2Required As Label
     Friend WithEvents lblPasswordRequired As Label
     Friend WithEvents lblPassword2Required As Label
+    Friend WithEvents lblPassRequirements As Label
 End Class

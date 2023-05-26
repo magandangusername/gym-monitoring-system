@@ -75,64 +75,86 @@ Public Class member_registration
             'MsgBox("ERROR: Name cannot be empty.")
             lblFNameRequired.Show()
             hasError = True
+        Else
+            lblFNameRequired.Hide()
         End If
         If txtAddress.Text = "" Then
             'MsgBox("ERROR: Address cannot be empty.")
-            lblFNameRequired.Show()
+            lblAddrRequired.Show()
             hasError = True
+        Else
+            lblAddrRequired.Hide()
         End If
         If dtpBirthday.Value > Today Then
             'MsgBox("ERROR: Birthdate cannot be empty.")
-            lblFNameRequired.Show()
+            lblBirthdayRequired.Show()
             hasError = True
+        Else
+            lblBirthdayRequired.Hide()
         End If
         If txtAge.Text = "" Then
             'MsgBox("ERROR: Age cannot be empty.")
-            lblFNameRequired.Show()
+            lblAgeRequired.Show()
             hasError = True
         ElseIf CInt(txtAge.Text) < 12 Then
             'MsgBox("ERROR: You are too young to become a member.")
-            lblFNameRequired.Show()
+            lblAgeRequired.Text = "Too young."
+            lblAgeRequired.Show()
             hasError = True
+        Else
+            lblAgeRequired.Hide()
         End If
         If txtContactNumber.Text = "" Then
             'MsgBox("ERROR: Contact Number cannot be empty.")
-            lblFNameRequired.Show()
+            lblContactNumRequired.Show()
             hasError = True
+        Else
+            lblContactNumRequired.Hide()
         End If
         If txtEmail.Text = "" Then
             'MsgBox("ERROR: Email cannot be empty.")
-            lblFNameRequired.Show()
+            lblEmailRequired.Show()
             hasError = True
-        End If
-        getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
-        If getdata.HasRows Then
-            'MsgBox("ERROR: Email is already taken.")
-            lblFNameRequired.Show()
-            hasError = True
+        Else
+            getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
+            If getdata.HasRows Then
+                'MsgBox("ERROR: Email is already taken.")
+                lblEmailRequired.Text = "Email is already taken."
+                lblEmailRequired.Show()
+                hasError = True
+            Else
+                lblEmailRequired.Hide()
+            End If
         End If
         If txtEmergencyContactPerson.Text = "" Then
             'MsgBox("ERROR: Emergency contact person cannot be empty.")
-            lblFNameRequired.Show()
+            lblECPRequired.Show()
             hasError = True
+        Else
+            lblECPRequired.Hide()
         End If
         If txtContactNumber2.Text = "" Then
             'MsgBox("ERROR: Emergency contact number cannot be empty.")
-            lblFNameRequired.Show()
+            lblContactNum2Required.Show()
             hasError = True
+        Else
+            lblContactNum2Required.Hide()
         End If
         If txtPassword.Text = "" Then
             'MsgBox("ERROR: Password cannot be empty.")
-            lblFNameRequired.Show()
+            lblPasswordRequired.Show()
             hasError = True
+        Else
+            lblPasswordRequired.Hide()
         End If
         If txtReTypePassword.Text = "" Then
             'MsgBox("ERROR: Please retype your password.")
-            lblFNameRequired.Show()
+            lblPassword2Required.Show()
             hasError = True
         ElseIf txtPassword.Text <> txtReTypePassword.Text Then
             'MsgBox("ERROR: password does not match.")
-            lblFNameRequired.Show()
+            lblPasswordRequired.Text = "password does not match."
+            lblPasswordRequired.Show()
             hasError = True
         ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
             'MsgBox("Password must be atleast 8 characters
@@ -141,8 +163,16 @@ Public Class member_registration
             'has atleast 1 Number
             'has atleast 1 Special Character
             '")
-            lblFNameRequired.Show()
+            lblPassRequirements.Text = "Password must be:
+            atleast 8 characters
+            has atleast 1 Uppercase
+            has atleast 1 Lowercase
+            has atleast 1 Number
+            has atleast 1 Special Character"
+            lblPassRequirements.Show()
             hasError = True
+        Else
+            lblPassword2Required.Hide()
         End If
 
         If hasError Then
