@@ -53,7 +53,7 @@ Partial Class member_dashboard
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(888, 295)
+        Me.ListBox1.Location = New System.Drawing.Point(818, 295)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(531, 303)
         Me.ListBox1.TabIndex = 19
@@ -62,7 +62,7 @@ Partial Class member_dashboard
         '
         Me.RichTextBox3.Location = New System.Drawing.Point(236, 476)
         Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(623, 165)
+        Me.RichTextBox3.Size = New System.Drawing.Size(563, 165)
         Me.RichTextBox3.TabIndex = 17
         Me.RichTextBox3.Text = ""
         '
@@ -71,16 +71,16 @@ Partial Class member_dashboard
         Me.RichTextBox2.Location = New System.Drawing.Point(51, 295)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(547, 165)
+        Me.RichTextBox2.Size = New System.Drawing.Size(486, 165)
         Me.RichTextBox2.TabIndex = 16
         Me.RichTextBox2.Text = ""
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(346, 114)
+        Me.RichTextBox1.Location = New System.Drawing.Point(354, 114)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(513, 165)
+        Me.RichTextBox1.Size = New System.Drawing.Size(445, 165)
         Me.RichTextBox1.TabIndex = 15
         Me.RichTextBox1.Text = ""
         '
@@ -96,7 +96,7 @@ Partial Class member_dashboard
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(616, 295)
+        Me.PictureBox3.Location = New System.Drawing.Point(556, 295)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(243, 165)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -105,7 +105,7 @@ Partial Class member_dashboard
         '
         'btnlogout
         '
-        Me.btnlogout.Location = New System.Drawing.Point(1344, 34)
+        Me.btnlogout.Location = New System.Drawing.Point(1274, 34)
         Me.btnlogout.Name = "btnlogout"
         Me.btnlogout.Size = New System.Drawing.Size(75, 23)
         Me.btnlogout.TabIndex = 12
@@ -122,7 +122,7 @@ Partial Class member_dashboard
         '
         'btnProfile
         '
-        Me.btnProfile.Location = New System.Drawing.Point(1252, 34)
+        Me.btnProfile.Location = New System.Drawing.Point(1172, 34)
         Me.btnProfile.Name = "btnProfile"
         Me.btnProfile.Size = New System.Drawing.Size(75, 23)
         Me.btnProfile.TabIndex = 20
@@ -131,7 +131,7 @@ Partial Class member_dashboard
         '
         'btnReport
         '
-        Me.btnReport.Location = New System.Drawing.Point(1093, 34)
+        Me.btnReport.Location = New System.Drawing.Point(1009, 34)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(138, 23)
         Me.btnReport.TabIndex = 21
@@ -150,7 +150,7 @@ Partial Class member_dashboard
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(1157, 623)
+        Me.Label2.Location = New System.Drawing.Point(1087, 623)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 13)
         Me.Label2.TabIndex = 23
@@ -158,7 +158,7 @@ Partial Class member_dashboard
         '
         'btnBuyMembership
         '
-        Me.btnBuyMembership.Location = New System.Drawing.Point(1281, 618)
+        Me.btnBuyMembership.Location = New System.Drawing.Point(1211, 618)
         Me.btnBuyMembership.Name = "btnBuyMembership"
         Me.btnBuyMembership.Size = New System.Drawing.Size(138, 23)
         Me.btnBuyMembership.TabIndex = 24
@@ -178,7 +178,7 @@ Partial Class member_dashboard
         '
         'PictureBox5
         '
-        Me.PictureBox5.Location = New System.Drawing.Point(888, 114)
+        Me.PictureBox5.Location = New System.Drawing.Point(818, 114)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(531, 165)
         Me.PictureBox5.TabIndex = 26
@@ -233,7 +233,7 @@ Partial Class member_dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1444, 696)
+        Me.ClientSize = New System.Drawing.Size(1370, 709)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblWarning)
         Me.Controls.Add(Me.lblDaysLeft)
