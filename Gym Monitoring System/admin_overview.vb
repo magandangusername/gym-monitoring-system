@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class admin_overview
     Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DBConnection.con.Open()
+        DBConnection.openCon()
 
         Dim customercmd As New OleDbCommand("
         SELECT Members.member_ID, Members.fname,Members.address,Members.birthday,Members.age,Members.gender,Members.contactnumber,Members.email,Members.emergencyperson,
@@ -16,7 +16,7 @@ Public Class admin_overview
         dt.Clear()
         da.Fill(dt)
         dgvCustomer.DataSource = dt
-        DBConnection.con.Close()
+        DBConnection.closeCon()
     End Sub
 
     Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick
@@ -35,27 +35,134 @@ Public Class admin_overview
         RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        'Try
-        '    Dim searchcmd As New OleDbCommand("SELECT * FROM Members WHERE member_ID LIKE '%" & txtSearch.Text & "%' OR fname LIKE '%" & txtSearch.Text & "%' OR address LIKE '%" & txtSearch.Text & "%' OR gender LIKE '%" & txtSearch.Text & "%' OR contactnumber LIKE '%" & txtSearch.Text & "%' OR email LIKE '%" & txtSearch.Text & "%' OR emergencyperson LIKE '%" & txtSearch.Text & "%' OR emergencynum LIKE '%" & txtSearch.Text & "%' OR height LIKE '%" & txtSearch.Text & "%' OR weight LIKE '%" & txtSearch.Text & "%' OR medicalcondition LIKE '%" & txtSearch.Text & "%' OR paymentstatus LIKE '%" & txtSearch.Text & "%' OR membershiptype LIKE '%" & txtSearch.Text & "%' OR membersince LIKE '%" & txtSearch.Text & "%' OR age LIKE '%" & "%';", DBConnection.con)
-        '    Dim sql As String
-        '    Dim cmd As New OleDb.OleDbCommand
-        '    Dim dt As New DataTable
-        '    Dim da As New OleDb.OleDbDataAdapter
-        '    DBConnection.con.Open()
-        '    sql = 
+    Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
+        Try
+            DBConnection.openCon()
+            Dim searchcmd As New OleDbCommand("SELECT * FROM Members WHERE 
+            member_ID LIKE '%" & txtsearch.Text & "%'
+            OR fname LIKE '%" & txtsearch.Text & "%' 
+            OR address LIKE '%" & txtsearch.Text & "%' 
+            OR gender LIKE '%" & txtsearch.Text & "%' 
+            OR contactnumber LIKE '%" & txtsearch.Text & "%' 
+            OR email LIKE '%" & txtsearch.Text & "%' 
+            OR emergencyperson LIKE '%" & txtsearch.Text & "%' 
+            OR emergencynum LIKE '%" & txtsearch.Text & "%' 
+            OR height LIKE '%" & txtsearch.Text & "%' 
+            OR weight LIKE '%" & txtsearch.Text & "%' 
+            OR medicalcondition LIKE '%" & txtsearch.Text & "%'        
+            ;", DBConnection.con)
+            Dim searchda As New OleDbDataAdapter
+            searchda.SelectCommand = searchcmd
+            Dim searchdt As New DataTable
+            searchda.Fill(searchdt)
+            dgvCustomer.DataSource = searchdt
+        Catch ex As Exception
+            MsgBox("An Error Occur!")
+        Finally
+            DBConnection.closeCon()
 
-        '    cmd.CommandText = sql
-        '    da.SelectCommand = cmd
+        End Try
+    End Sub
 
-        '    da.Fill(dt)
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        DBConnection.openCon()
+        Try
+            Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
+            emergencynum,height,weight,bmi,medicalcondition) 
+            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
+            Dim i = addcmd.ExecuteNonQuery
+            If i > 0 Then
+                MsgBox("New record has been inserted successfully!")
+            Else
+                MsgBox("No record has been inserted successfully!")
+            End If
 
-        '    dgvCustomer.DataSource = dt
-        'Catch ex As Exception
-        '    MsgBox("An Error Occur!")
-        'Finally
-        '    DBConnection.con.Close()
 
-        'End Try
+            'Dim sql As String
+            'Dim cmd As New OleDb.OleDbCommand
+            'con.Open()
+            'sql = "INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
+            'emergencynum,height,weight,bmi,medicalcondition,membersince,membershiptype,paymentstatus) 
+            'values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');"
+            'cmd.Connection = con
+            'cmd.CommandText = sql
+            'i = cmd.ExecuteNonQuery
+            'If i > 0 Then
+            '    MsgBox("New record has been inserted successfully!")
+            'Else
+            '    MsgBox("No record has been inserted successfully!")
+            'End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        DBConnection.openCon()
+        If txtFullname.Text <> Nothing And txtAddress.Text <> Nothing And txtBirthday.Text <> Nothing And txtGender.Text <> Nothing And txtContactNumber.Text <> Nothing And txtEmail.Text <> Nothing And txtEmergencyContactPerson.Text <> Nothing And txtContactNumber2.Text <> Nothing And txtHeight.Text <> Nothing And txtWeight.Text <> Nothing And txtBmi.Text <> Nothing And RichTextBox1.Text <> Nothing Then
+            Try
+                'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
+                Dim updatecmd As New OleDbCommand("Update Members
+                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
+                WHERE member_ID = " & Me.Text & "", DBConnection.con)
+
+                Dim i = updatecmd.ExecuteNonQuery
+
+                If i > 0 Then
+                    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+
+                Else
+                    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+                End If
+
+            Catch ex As Exception
+                MsgBox("An Error Occur", MessageBoxIcon.Error)
+            Finally
+                DBConnection.closeCon()
+
+            End Try
+        Else
+            MsgBox("All Fields Are Required", MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DBConnection.openCon()
+        Try
+            Dim deletecmd As New OleDbCommand("DELETE * FROM Members WHERE member_ID = " & Me.Text & "", DBConnection.con)
+            Dim i = deletecmd.ExecuteNonQuery
+            If i > 0 Then
+                Dim Answer As Integer
+                Answer = MsgBox("Do you want to delete this information?", vbQuestion + vbYesNo + vbDefaultButton2, "Caution")
+
+                If Answer = vbYes Then
+                    MsgBox("Record Has Been DELETED SUCCESSFULLY!", MessageBoxIcon.Information)
+                    txtFullname.Text = ""
+                    txtAddress.Text = ""
+                    txtBirthday.Text = ""
+                    txtGender.Text = ""
+                    txtContactNumber.Text = ""
+                    txtEmail.Text = ""
+                    txtEmergencyContactPerson.Text = ""
+                    txtContactNumber2.Text = ""
+                    txtHeight.Text = ""
+                    txtWeight.Text = ""
+                    txtBmi.Text = ""
+                    RichTextBox1.Text = ""
+                End If
+            Else
+                MsgBox("Please Select A Data!", MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
     End Sub
 End Class
