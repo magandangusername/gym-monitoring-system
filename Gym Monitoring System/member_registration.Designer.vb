@@ -63,6 +63,17 @@ Partial Class member_registration
         Me.showPassword2 = New System.Windows.Forms.PictureBox()
         Me.hidePassword2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblFNameRequired = New System.Windows.Forms.Label()
+        Me.lblAddrRequired = New System.Windows.Forms.Label()
+        Me.lblBirthdayRequired = New System.Windows.Forms.Label()
+        Me.lblAgeRequired = New System.Windows.Forms.Label()
+        Me.lblGenderRequired = New System.Windows.Forms.Label()
+        Me.lblContactNumRequired = New System.Windows.Forms.Label()
+        Me.lblEmailRequired = New System.Windows.Forms.Label()
+        Me.lblECPRequired = New System.Windows.Forms.Label()
+        Me.lblContactNum2Required = New System.Windows.Forms.Label()
+        Me.lblPasswordRequired = New System.Windows.Forms.Label()
+        Me.lblPassword2Required = New System.Windows.Forms.Label()
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -427,11 +438,143 @@ Partial Class member_registration
         Me.GroupBox1.TabIndex = 72
         Me.GroupBox1.TabStop = False
         '
+        'lblFNameRequired
+        '
+        Me.lblFNameRequired.AutoSize = True
+        Me.lblFNameRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblFNameRequired.Location = New System.Drawing.Point(425, 41)
+        Me.lblFNameRequired.Name = "lblFNameRequired"
+        Me.lblFNameRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblFNameRequired.TabIndex = 73
+        Me.lblFNameRequired.Text = "Required"
+        Me.lblFNameRequired.Visible = False
+        '
+        'lblAddrRequired
+        '
+        Me.lblAddrRequired.AutoSize = True
+        Me.lblAddrRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblAddrRequired.Location = New System.Drawing.Point(425, 77)
+        Me.lblAddrRequired.Name = "lblAddrRequired"
+        Me.lblAddrRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblAddrRequired.TabIndex = 73
+        Me.lblAddrRequired.Text = "Required"
+        Me.lblAddrRequired.Visible = False
+        '
+        'lblBirthdayRequired
+        '
+        Me.lblBirthdayRequired.AutoSize = True
+        Me.lblBirthdayRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblBirthdayRequired.Location = New System.Drawing.Point(318, 117)
+        Me.lblBirthdayRequired.Name = "lblBirthdayRequired"
+        Me.lblBirthdayRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblBirthdayRequired.TabIndex = 73
+        Me.lblBirthdayRequired.Text = "Required"
+        Me.lblBirthdayRequired.Visible = False
+        '
+        'lblAgeRequired
+        '
+        Me.lblAgeRequired.AutoSize = True
+        Me.lblAgeRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblAgeRequired.Location = New System.Drawing.Point(318, 162)
+        Me.lblAgeRequired.Name = "lblAgeRequired"
+        Me.lblAgeRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblAgeRequired.TabIndex = 73
+        Me.lblAgeRequired.Text = "Required"
+        Me.lblAgeRequired.Visible = False
+        '
+        'lblGenderRequired
+        '
+        Me.lblGenderRequired.AutoSize = True
+        Me.lblGenderRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblGenderRequired.Location = New System.Drawing.Point(318, 205)
+        Me.lblGenderRequired.Name = "lblGenderRequired"
+        Me.lblGenderRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblGenderRequired.TabIndex = 73
+        Me.lblGenderRequired.Text = "Required"
+        Me.lblGenderRequired.Visible = False
+        '
+        'lblContactNumRequired
+        '
+        Me.lblContactNumRequired.AutoSize = True
+        Me.lblContactNumRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblContactNumRequired.Location = New System.Drawing.Point(460, 248)
+        Me.lblContactNumRequired.Name = "lblContactNumRequired"
+        Me.lblContactNumRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblContactNumRequired.TabIndex = 73
+        Me.lblContactNumRequired.Text = "Required"
+        Me.lblContactNumRequired.Visible = False
+        '
+        'lblEmailRequired
+        '
+        Me.lblEmailRequired.AutoSize = True
+        Me.lblEmailRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblEmailRequired.Location = New System.Drawing.Point(425, 292)
+        Me.lblEmailRequired.Name = "lblEmailRequired"
+        Me.lblEmailRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblEmailRequired.TabIndex = 73
+        Me.lblEmailRequired.Text = "Required"
+        Me.lblEmailRequired.Visible = False
+        '
+        'lblECPRequired
+        '
+        Me.lblECPRequired.AutoSize = True
+        Me.lblECPRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblECPRequired.Location = New System.Drawing.Point(512, 345)
+        Me.lblECPRequired.Name = "lblECPRequired"
+        Me.lblECPRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblECPRequired.TabIndex = 73
+        Me.lblECPRequired.Text = "Required"
+        Me.lblECPRequired.Visible = False
+        '
+        'lblContactNum2Required
+        '
+        Me.lblContactNum2Required.AutoSize = True
+        Me.lblContactNum2Required.ForeColor = System.Drawing.Color.Red
+        Me.lblContactNum2Required.Location = New System.Drawing.Point(460, 392)
+        Me.lblContactNum2Required.Name = "lblContactNum2Required"
+        Me.lblContactNum2Required.Size = New System.Drawing.Size(50, 13)
+        Me.lblContactNum2Required.TabIndex = 73
+        Me.lblContactNum2Required.Text = "Required"
+        Me.lblContactNum2Required.Visible = False
+        '
+        'lblPasswordRequired
+        '
+        Me.lblPasswordRequired.AutoSize = True
+        Me.lblPasswordRequired.ForeColor = System.Drawing.Color.Red
+        Me.lblPasswordRequired.Location = New System.Drawing.Point(450, 438)
+        Me.lblPasswordRequired.Name = "lblPasswordRequired"
+        Me.lblPasswordRequired.Size = New System.Drawing.Size(50, 13)
+        Me.lblPasswordRequired.TabIndex = 73
+        Me.lblPasswordRequired.Text = "Required"
+        Me.lblPasswordRequired.Visible = False
+        '
+        'lblPassword2Required
+        '
+        Me.lblPassword2Required.AutoSize = True
+        Me.lblPassword2Required.ForeColor = System.Drawing.Color.Red
+        Me.lblPassword2Required.Location = New System.Drawing.Point(498, 481)
+        Me.lblPassword2Required.Name = "lblPassword2Required"
+        Me.lblPassword2Required.Size = New System.Drawing.Size(50, 13)
+        Me.lblPassword2Required.TabIndex = 73
+        Me.lblPassword2Required.Text = "Required"
+        Me.lblPassword2Required.Visible = False
+        '
         'member_registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 704)
+        Me.Controls.Add(Me.lblPassword2Required)
+        Me.Controls.Add(Me.lblPasswordRequired)
+        Me.Controls.Add(Me.lblContactNum2Required)
+        Me.Controls.Add(Me.lblECPRequired)
+        Me.Controls.Add(Me.lblEmailRequired)
+        Me.Controls.Add(Me.lblContactNumRequired)
+        Me.Controls.Add(Me.lblGenderRequired)
+        Me.Controls.Add(Me.lblAgeRequired)
+        Me.Controls.Add(Me.lblBirthdayRequired)
+        Me.Controls.Add(Me.lblAddrRequired)
+        Me.Controls.Add(Me.lblFNameRequired)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.showPassword2)
         Me.Controls.Add(Me.hidePassword2)
@@ -524,4 +667,15 @@ Partial Class member_registration
     Friend WithEvents showPassword2 As PictureBox
     Friend WithEvents hidePassword2 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lblFNameRequired As Label
+    Friend WithEvents lblAddrRequired As Label
+    Friend WithEvents lblBirthdayRequired As Label
+    Friend WithEvents lblAgeRequired As Label
+    Friend WithEvents lblGenderRequired As Label
+    Friend WithEvents lblContactNumRequired As Label
+    Friend WithEvents lblEmailRequired As Label
+    Friend WithEvents lblECPRequired As Label
+    Friend WithEvents lblContactNum2Required As Label
+    Friend WithEvents lblPasswordRequired As Label
+    Friend WithEvents lblPassword2Required As Label
 End Class

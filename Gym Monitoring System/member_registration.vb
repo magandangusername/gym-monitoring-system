@@ -27,6 +27,31 @@ Public Class member_registration
         If (dtpBirthday.Value < Today.AddYears(-yr)) Then yr -= 1
         txtAge.Text = yr
 
+        lblFNameRequired.Hide()
+        lblAddrRequired.Hide()
+        lblBirthdayRequired.Hide()
+        lblAgeRequired.Hide()
+        lblGenderRequired.Hide()
+        lblContactNumRequired.Hide()
+        lblEmailRequired.Hide()
+        lblECPRequired.Hide()
+        lblContactNum2Required.Hide()
+        lblPasswordRequired.Hide()
+        lblPassword2Required.Hide()
+
+        lblFNameRequired.Text = "Required"
+        lblAddrRequired.Text = "Required"
+        lblBirthdayRequired.Text = "Required"
+        lblAgeRequired.Text = "Required"
+        lblGenderRequired.Text = "Required"
+        lblContactNumRequired.Text = "Required"
+        lblEmailRequired.Text = "Required"
+        lblECPRequired.Text = "Required"
+        lblContactNum2Required.Text = "Required"
+        lblPasswordRequired.Text = "Required"
+        lblPassword2Required.Text = "Required"
+
+
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
@@ -47,67 +72,76 @@ Public Class member_registration
         'validation
         Dim hasError As Boolean = False
         If txtFullname.Text = "" Then
-            MsgBox("ERROR: Name cannot be empty.")
+            'MsgBox("ERROR: Name cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtAddress.Text = "" Then
-            MsgBox("ERROR: Address cannot be empty.")
+            'MsgBox("ERROR: Address cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If dtpBirthday.Value > Today Then
-            MsgBox("ERROR: Birthdate cannot be empty.")
+            'MsgBox("ERROR: Birthdate cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtAge.Text = "" Then
-            MsgBox("ERROR: Age cannot be empty.")
+            'MsgBox("ERROR: Age cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         ElseIf CInt(txtAge.Text) < 12 Then
-            MsgBox("ERROR: You are too young to become a member.")
+            'MsgBox("ERROR: You are too young to become a member.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtContactNumber.Text = "" Then
-            MsgBox("ERROR: Contact Number cannot be empty.")
+            'MsgBox("ERROR: Contact Number cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtEmail.Text = "" Then
-            MsgBox("ERROR: Email cannot be empty.")
+            'MsgBox("ERROR: Email cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
+        If getdata.HasRows Then
+            'MsgBox("ERROR: Email is already taken.")
+            lblFNameRequired.Show()
+            hasError = True
+        End If
         If txtEmergencyContactPerson.Text = "" Then
-            MsgBox("ERROR: Emergency contact person cannot be empty.")
+            'MsgBox("ERROR: Emergency contact person cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtContactNumber2.Text = "" Then
-            MsgBox("ERROR: Emergency contact number cannot be empty.")
+            'MsgBox("ERROR: Emergency contact number cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
-        'Height/Weight might be optional for now. uncomment if not
-        'If txtHeight.Text = "" Then
-        '    MsgBox("ERROR: Height cannot be empty.")
-        '    hasError = True
-        'End If
-        'If txtWeight.Text = "" Then
-        '    MsgBox("ERROR: Weight cannot be empty.")
-        '    hasError = True
-        'End If
         If txtPassword.Text = "" Then
-            MsgBox("ERROR: Password cannot be empty.")
+            'MsgBox("ERROR: Password cannot be empty.")
+            lblFNameRequired.Show()
             hasError = True
         End If
         If txtReTypePassword.Text = "" Then
-            MsgBox("ERROR: Please retype your password.")
+            'MsgBox("ERROR: Please retype your password.")
+            lblFNameRequired.Show()
             hasError = True
         ElseIf txtPassword.Text <> txtReTypePassword.Text Then
-            MsgBox("ERROR: password does not match.")
+            'MsgBox("ERROR: password does not match.")
+            lblFNameRequired.Show()
             hasError = True
         ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
-            MsgBox("Password must be atleast 8 characters
-            has atleast 1 Uppercase
-            has atleast 1 Lowercase
-            has atleast 1 Number
-            has atleast 1 Special Character
-            ")
+            'MsgBox("Password must be atleast 8 characters
+            'has atleast 1 Uppercase
+            'has atleast 1 Lowercase
+            'has atleast 1 Number
+            'has atleast 1 Special Character
+            '")
+            lblFNameRequired.Show()
             hasError = True
         End If
 
