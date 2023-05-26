@@ -19,6 +19,7 @@ Public Class profile
         txtEmail.Enabled = False
         txtEmergencyContactPerson.Enabled = False
         txtContactNumber2.Enabled = False
+        txtMedCon.Enabled = False
         txtOldPass.Hide()
         txtPassword.Hide()
         txtReTypePassword.Hide()
@@ -42,6 +43,7 @@ Public Class profile
         txtFullname.Text = getdata("fname")
         txtAddress.Text = getdata("address")
         txtBirthday.Text = getdata("birthday")
+        txtAge.Text = getdata("age")
         txtGender.Text = getdata("gender")
         txtHeight.Text = getdata("height")
         txtWeight.Text = getdata("weight")
@@ -49,6 +51,7 @@ Public Class profile
         txtEmail.Text = getdata("email")
         txtEmergencyContactPerson.Text = getdata("emergencyperson")
         txtContactNumber2.Text = getdata("emergencynum")
+        txtMedCon.Text = getdata("medicalcondition")
 
         getdata.Close()
         Call DBConnection.con.Close()
@@ -66,6 +69,7 @@ Public Class profile
         txtEmail.Enabled = True
         txtEmergencyContactPerson.Enabled = True
         txtContactNumber2.Enabled = True
+        txtMedCon.Enabled = True
         txtOldPass.Show()
         txtPassword.Show()
         txtReTypePassword.Show()
@@ -134,14 +138,14 @@ Public Class profile
 
 
     Private Sub seeoldpass_Click(sender As Object, e As EventArgs) Handles seeoldpass.Click
-        txtOldPass.PasswordChar = "•"
-        showPassword.Visible = False
-        hidePassword.Visible = True
+        txtOldPass.PasswordChar = ""
+        seeoldpass.Visible = False
+        hideoldpass.Visible = True
     End Sub
     Private Sub hideoldpass_Click(sender As Object, e As EventArgs) Handles hideoldpass.Click
-        txtPassword.PasswordChar = "•"
-        hidePassword.Visible = False
-        showPassword.Visible = True
+        txtOldPass.PasswordChar = "•"
+        hideoldpass.Visible = False
+        seeoldpass.Visible = True
     End Sub
     Private Sub showPassword_Click(sender As Object, e As EventArgs) Handles showPassword.Click
         txtPassword.PasswordChar = ""
@@ -164,4 +168,147 @@ Public Class profile
         hidePassword2.Visible = False
         showPassword2.Visible = True
     End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Call DBConnection.openCon()
+        'Trim input fields
+        txtFullname.Text = Trim(txtFullname.Text)
+        txtAddress.Text = Trim(txtAddress.Text)
+        txtBirthday.Text = Trim(txtBirthday.Text)
+        txtAge.Text = Trim(txtAge.Text)
+        txtContactNumber.Text = Trim(txtContactNumber.Text)
+        txtEmail.Text = Trim(txtEmail.Text)
+        txtEmergencyContactPerson.Text = Trim(txtEmergencyContactPerson.Text)
+        txtContactNumber2.Text = Trim(txtContactNumber2.Text)
+
+        Dim hasError As Boolean = False
+        If txtFullname.Text = "" Then
+            'MsgBox("ERROR: Name cannot be empty.")
+            lblFNameRequired.Show()
+            hasError = True
+        Else
+            lblFNameRequired.Hide()
+        End If
+
+        If txtAddress.Text = "" Then
+            'MsgBox("ERROR: Address cannot be empty.")
+            lblAddrRequired.Show()
+            hasError = True
+        Else
+            lblAddrRequired.Hide()
+        End If
+
+        If txtContactNumber.Text = "" Then
+            'MsgBox("ERROR: Contact Number cannot be empty.")
+            lblContactNumRequired.Show()
+            hasError = True
+        Else
+            lblContactNumRequired.Hide()
+        End If
+
+        If txtEmail.Text = "" Then
+            'MsgBox("ERROR: Email cannot be empty.")
+            lblEmailRequired.Show()
+            hasError = True
+        Else
+            getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
+            If getdata.HasRows Then
+                'MsgBox("ERROR: Email is already taken.")
+                lblEmailRequired.Text = "Email is already taken."
+                lblEmailRequired.Show()
+                hasError = True
+            Else
+                lblEmailRequired.Hide()
+            End If
+        End If
+
+        If txtEmergencyContactPerson.Text = "" Then
+            'MsgBox("ERROR: Emergency contact person cannot be empty.")
+            lblECPRequired.Show()
+            hasError = True
+        Else
+            lblECPRequired.Hide()
+        End If
+
+        If txtContactNumber2.Text = "" Then
+            'MsgBox("ERROR: Emergency contact number cannot be empty.")
+            lblContactNum2Required.Show()
+            hasError = True
+        Else
+            lblContactNum2Required.Hide()
+        End If
+
+        If txtOldPass.Text = "" Then
+            'MsgBox("ERROR: Email cannot be empty.")
+            lbloldpasswordrequired.Show()
+            hasError = True
+        Else
+            getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
+            If txtOldPass.Text <> getdata.HasRows.ToString Then
+                lbloldpasswordrequired.Text = "Old password do not match"
+                lbloldpasswordrequired.Show()
+                hasError = True
+
+            Else
+                'If txtOldPass.Text = getdata.HasRows Then
+                lbloldpasswordrequired.Hide()
+
+            End If
+        End If
+
+        If txtPassword.Text = "" Then
+            'MsgBox("ERROR: Password cannot be empty.")
+            lblPasswordRequired.Show()
+            hasError = True
+        Else
+            lblPasswordRequired.Hide()
+        End If
+        If txtReTypePassword.Text = "" Then
+            'MsgBox("ERROR: Please retype your password.")
+            lblPassword2Required.Show()
+            hasError = True
+        ElseIf txtPassword.Text <> txtReTypePassword.Text Then
+            'MsgBox("ERROR: password does not match.")
+            lblPasswordRequired.Text = "password does not match."
+            lblPasswordRequired.Show()
+            hasError = True
+        ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
+            'MsgBox("Password must be atleast 8 characters
+            'has atleast 1 Uppercase
+            'has atleast 1 Lowercase
+            'has atleast 1 Number
+            'has atleast 1 Special Character
+            '")
+            lblPassRequirements.Text = "Password must be:
+            atleast 8 characters
+            has atleast 1 Uppercase
+            has atleast 1 Lowercase
+            has atleast 1 Number
+            has atleast 1 Special Character"
+            lblPassRequirements.Show()
+            hasError = True
+        Else
+            lblPassword2Required.Hide()
+        End If
+        If hasError Then
+            DBConnection.closeCon()
+            Exit Sub
+        End If
+
+        'Dim updatecmd As New OleDbCommand("Update Members
+        '        SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
+        '        WHERE member_ID = " & Me.Text & "", DBConnection.con)
+
+        'Dim i = updatecmd.ExecuteNonQuery
+
+        'If i > 0 Then
+        '    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+
+        'Else
+        '    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+        'End If
+
+    End Sub
+
+
 End Class
