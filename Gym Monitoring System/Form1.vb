@@ -1,7 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'admin_overview.Show()
         RichTextBox1.Text = "   
     UPPER BODY includes arms, shoulders and upper back. Some of the most common exercises for the upper body are biceps curls, triceps curls, bench presses, overhead presses, lateral raises, and upright rows.
 

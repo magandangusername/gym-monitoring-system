@@ -140,4 +140,8 @@ Public Class buy_membership
             DBConnection.con.Close()
         End If
     End Sub
+
+    Private Sub buy_membership_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -3,8 +3,11 @@ Public Class admin_overview
 
     Private Sub dgvSession_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSession.CellClick ', dgvSession.SelectionChanged
         resetFields("session")
-
-        dtSession.Value = dgvSession.CurrentRow.Cells(0).Value()
+        Try
+            dtSession.Value = dgvSession.CurrentRow.Cells(0).Value()
+        Catch ex As Exception
+            dtSession.Value = Today
+        End Try
 
         loadSessions()
 
@@ -12,20 +15,6 @@ Public Class admin_overview
     End Sub
 
     Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick ', dgvCustomer.SelectionChanged
-        'reset fields for member info
-        'txtFullname.Text = ""
-        'txtAddress.Text = ""
-        'txtBirthday.Text = ""
-        'txtGender.Text = ""
-        'txtContactNumber.Text = ""
-        'txtEmail.Text = ""
-        'txtEmergencyContactPerson.Text = ""
-        'txtContactNumber2.Text = ""
-        'txtHeight.Text = ""
-        'txtWeight.Text = ""
-        'txtBmi.Text = ""
-        'RichTextBox1.Text = ""
-        'txtPW.Text = ""
 
         Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
         txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
@@ -117,22 +106,6 @@ Public Class admin_overview
             Else
                 MsgBox("Record occured creating record")
             End If
-
-
-            'Dim sql As String
-            'Dim cmd As New OleDb.OleDbCommand
-            'con.Open()
-            'sql = "INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
-            'emergencynum,height,weight,bmi,medicalcondition,membersince,membershiptype,paymentstatus) 
-            'values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');"
-            'cmd.Connection = con
-            'cmd.CommandText = sql
-            'i = cmd.ExecuteNonQuery
-            'If i > 0 Then
-            '    MsgBox("New record has been inserted successfully!")
-            'Else
-            '    MsgBox("No record has been inserted successfully!")
-            'End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -314,23 +287,10 @@ Public Class admin_overview
                         sessiondate = #" & dtSession.Value.ToShortDateString & "# AND
                         member_id = " & dgvCustomer.CurrentRow.Cells(0).Value(), DBConnection.con)
                         delSessionCMD.ExecuteNonQuery()
-                        'Dim updateSessionCMD As New OleDbCommand("
-                        'UPDATE MemberSessions SET
-                        'sessiondate = #" & dtSession.Value.ToShortDateString & "# 
-                        'WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                        'sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
-                        'updateSessionCMD.ExecuteNonQuery()
                     Else
                         DBConnection.closeCon()
                         Exit Sub
                     End If
-                    'Else
-                    '    Dim updateSessionCMD As New OleDbCommand("
-                    '    UPDATE MemberSessions SET
-                    '    sessiondate = #" & dtSession.Value.ToShortDateString & "#
-                    '    WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                    '    sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
-                    '    updateSessionCMD.ExecuteNonQuery()
                 End If
             Else
                 DBConnection.closeCon()
@@ -393,12 +353,7 @@ Public Class admin_overview
         checkAndUpdateAct(txtCBA16.Text, "52")
         checkAndUpdateAct(txtCBA17.Text, "53")
 
-
-        '    MsgBox("An Error Occurred: ", MessageBoxIcon.Error)
-        'Finally
         DBConnection.closeCon()
-        '
-        'End Try
         resetFields("session")
     End Sub
 
@@ -424,12 +379,6 @@ Public Class admin_overview
         FROM Members
         INNER JOIN credentials ON Members.member_ID = credentials.member_id
         WHERE credentials.isAdmin <> 'Y'", DBConnection.con)
-
-        'Dim adminreader As OleDbDataReader
-        'adminreader = customercmd.ExecuteReader
-        'If Me.Text = adminreader("credentials.member_id") Then
-        '    lblAdminName = "Welcome " & adminreader("fname")
-        'End If
 
         Dim da As New OleDbDataAdapter
         da.SelectCommand = customercmd

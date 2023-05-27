@@ -7,11 +7,9 @@ Public Class login
 
         DBConnection.openCon()
         Dim salt As String = securedStr.GenerateSalt(70)
-        'Dim selectID As New OleDbCommand("
         Dim getdata = DBConnection.fetchData("SELECT * FROM Members 
         INNER JOIN credentials ON credentials.member_id = Members.member_id WHERE Members.email = '" & txtEmail.Text & "' 
         AND credentials.member_password = '" & txtPassword.Text & "'")
-        'MsgBox(securedStr.HashPassword(txtPassword.Text, salt, 10101, 70))
         If getdata.HasRows Then
             DBConnection.member_id = getdata("Members.member_id")
             Me.Hide()
@@ -73,14 +71,6 @@ Public Class login
         hidePassword.Visible = False
         showPassword.Visible = True
     End Sub
-
-    'Private Sub txtEmail_Click(sender As Object, e As EventArgs) Handles txtEmail.Click
-    '    txtEmail.SelectAll()
-    'End Sub
-
-    'Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
-    '    txtPassword.SelectAll()
-    'End Sub
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.VisibleChanged
         txtEmail.Select()

@@ -72,32 +72,27 @@ Public Class member_registration
         'validation
         Dim hasError As Boolean = False
         If txtFullname.Text = "" Then
-            'MsgBox("ERROR: Name cannot be empty.")
             lblFNameRequired.Show()
             hasError = True
         Else
             lblFNameRequired.Hide()
         End If
         If txtAddress.Text = "" Then
-            'MsgBox("ERROR: Address cannot be empty.")
             lblAddrRequired.Show()
             hasError = True
         Else
             lblAddrRequired.Hide()
         End If
         If dtpBirthday.Value > Today Then
-            'MsgBox("ERROR: Birthdate cannot be empty.")
             lblBirthdayRequired.Show()
             hasError = True
         Else
             lblBirthdayRequired.Hide()
         End If
         If txtAge.Text = "" Then
-            'MsgBox("ERROR: Age cannot be empty.")
             lblAgeRequired.Show()
             hasError = True
         ElseIf CInt(txtAge.Text) < 12 Then
-            'MsgBox("ERROR: You are too young to become a member.")
             lblAgeRequired.Text = "Too young."
             lblAgeRequired.Show()
             hasError = True
@@ -105,20 +100,17 @@ Public Class member_registration
             lblAgeRequired.Hide()
         End If
         If txtContactNumber.Text = "" Then
-            'MsgBox("ERROR: Contact Number cannot be empty.")
             lblContactNumRequired.Show()
             hasError = True
         Else
             lblContactNumRequired.Hide()
         End If
         If txtEmail.Text = "" Then
-            'MsgBox("ERROR: Email cannot be empty.")
             lblEmailRequired.Show()
             hasError = True
         Else
             getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
             If getdata.HasRows Then
-                'MsgBox("ERROR: Email is already taken.")
                 lblEmailRequired.Text = "Email is already taken."
                 lblEmailRequired.Show()
                 hasError = True
@@ -127,42 +119,31 @@ Public Class member_registration
             End If
         End If
         If txtEmergencyContactPerson.Text = "" Then
-            'MsgBox("ERROR: Emergency contact person cannot be empty.")
             lblECPRequired.Show()
             hasError = True
         Else
             lblECPRequired.Hide()
         End If
         If txtContactNumber2.Text = "" Then
-            'MsgBox("ERROR: Emergency contact number cannot be empty.")
             lblContactNum2Required.Show()
             hasError = True
         Else
             lblContactNum2Required.Hide()
         End If
         If txtPassword.Text = "" Then
-            'MsgBox("ERROR: Password cannot be empty.")
             lblPasswordRequired.Show()
             hasError = True
         Else
             lblPasswordRequired.Hide()
         End If
         If txtReTypePassword.Text = "" Then
-            'MsgBox("ERROR: Please retype your password.")
             lblPassword2Required.Show()
             hasError = True
         ElseIf txtPassword.Text <> txtReTypePassword.Text Then
-            'MsgBox("ERROR: password does not match.")
             lblPasswordRequired.Text = "password does not match."
             lblPasswordRequired.Show()
             hasError = True
         ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
-            'MsgBox("Password must be atleast 8 characters
-            'has atleast 1 Uppercase
-            'has atleast 1 Lowercase
-            'has atleast 1 Number
-            'has atleast 1 Special Character
-            '")
             lblPassRequirements.Text = "Password must be:
             atleast 8 characters
             has atleast 1 Uppercase
@@ -228,14 +209,10 @@ Public Class member_registration
 
 
         registercmd.ExecuteNonQuery()
-        'Dim MemberID As New OleDbCommand("SELECT member_id FROM Members ORDER BY member_id DESC", con)
-        'getdata = MemberID.ExecuteReader
-        'getdata.Read()
         getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
         Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPassword.Text & "')"
         DBConnection.member_id = getdata("member_id")
         Dim registercmd2 As New OleDbCommand(pw, con)
-        'getdata.Close()
         registercmd2.ExecuteNonQuery()
 
         DBConnection.closeCon()
