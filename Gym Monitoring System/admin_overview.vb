@@ -4,12 +4,15 @@ Public Class admin_overview
     Private Sub dgvSession_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSession.CellClick ', dgvSession.SelectionChanged
         resetFields("session")
         Try
-            dtSession.Value = dgvSession.CurrentRow.Cells(0).Value()
+            If IsNothing(dgvSession.CurrentRow) = False Then
+                dtSession.Value = dgvSession.CurrentRow.Cells(0).Value()
+                loadSessions()
+            End If
         Catch ex As Exception
             dtSession.Value = Today
         End Try
 
-        loadSessions()
+
 
 
     End Sub
@@ -689,7 +692,79 @@ Public Class admin_overview
         membership_order.Show()
     End Sub
 
-    Private Sub tpCustomer_Click(sender As Object, e As EventArgs) Handles tpCustomer.Click
+    Private Sub unlockFields(Optional fieldType As String = "")
+        If fieldType = "member" Or fieldType = "" Then
+            'reset fields for member info
+            txtFullname.Text = ""
+            txtAddress.Text = ""
+            txtBirthday.Text = ""
+            txtGender.Text = ""
+            txtContactNumber.Text = ""
+            txtEmail.Text = ""
+            txtEmergencyContactPerson.Text = ""
+            txtContactNumber2.Text = ""
+            txtHeight.Text = ""
+            txtWeight.Text = ""
+            txtBmi.Text = ""
+            RichTextBox1.Text = ""
+            txtPW.Text = ""
+        ElseIf fieldType = "session" Or fieldType = "" Then
+            'reset fields for sessions
+            txtUBA1.Text = ""
+            txtUBA2.Text = ""
+            txtUBA3.Text = ""
+            txtUBA4.Text = ""
+            txtUBA5.Text = ""
+            txtUBA6.Text = ""
+            txtUBA7.Text = ""
+            txtUBA8.Text = ""
+            txtUBA9.Text = ""
+            txtUBA10.Text = ""
+            txtUBA11.Text = ""
+            txtUBA12.Text = ""
+            txtUBA13.Text = ""
+            txtUBA14.Text = ""
+            txtUBA15.Text = ""
+            txtUBA16.Text = ""
+            txtUBA17.Text = ""
+            txtUBA18.Text = ""
 
+            txtLBA1.Text = ""
+            txtLBA2.Text = ""
+            txtLBA3.Text = ""
+            txtLBA4.Text = ""
+            txtLBA5.Text = ""
+            txtLBA6.Text = ""
+            txtLBA7.Text = ""
+            txtLBA8.Text = ""
+            txtLBA9.Text = ""
+            txtLBA10.Text = ""
+            txtLBA11.Text = ""
+            txtLBA12.Text = ""
+            txtLBA13.Text = ""
+            txtLBA14.Text = ""
+            txtLBA15.Text = ""
+            txtLBA16.Text = ""
+            txtLBA17.Text = ""
+            txtLBA18.Text = ""
+
+            txtCBA1.Text = ""
+            txtCBA2.Text = ""
+            txtCBA3.Text = ""
+            txtCBA4.Text = ""
+            txtCBA5.Text = ""
+            txtCBA6.Text = ""
+            txtCBA7.Text = ""
+            txtCBA8.Text = ""
+            txtCBA9.Text = ""
+            txtCBA10.Text = ""
+            txtCBA11.Text = ""
+            txtCBA12.Text = ""
+            txtCBA13.Text = ""
+            txtCBA14.Text = ""
+            txtCBA15.Text = ""
+            txtCBA16.Text = ""
+            txtCBA17.Text = ""
+        End If
     End Sub
 End Class
