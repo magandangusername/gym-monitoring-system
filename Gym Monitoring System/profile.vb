@@ -183,7 +183,6 @@ Public Class profile
 
         Dim hasError As Boolean = False
         If txtFullname.Text = "" Then
-            'MsgBox("ERROR: Name cannot be empty.")
             lblFNameRequired.Show()
             hasError = True
         Else
@@ -191,7 +190,6 @@ Public Class profile
         End If
 
         If txtAddress.Text = "" Then
-            'MsgBox("ERROR: Address cannot be empty.")
             lblAddrRequired.Show()
             hasError = True
         Else
@@ -199,7 +197,6 @@ Public Class profile
         End If
 
         If txtContactNumber.Text = "" Then
-            'MsgBox("ERROR: Contact Number cannot be empty.")
             lblContactNumRequired.Show()
             hasError = True
         Else
@@ -207,25 +204,20 @@ Public Class profile
         End If
 
         If txtEmail.Text = "" Then
-            'MsgBox("ERROR: Email cannot be empty.")
             lblEmailRequired.Show()
             hasError = True
         Else
             getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "' AND member_ID <>" & DBConnection.member_id)
             If getdata.HasRows Then
-                'MsgBox("ERROR: Email is already taken.")
                 lblEmailRequired.Text = "Email is already taken."
                 lblEmailRequired.Show()
                 hasError = True
             Else
                 lblEmailRequired.Hide()
-
-
             End If
         End If
 
         If txtEmergencyContactPerson.Text = "" Then
-            'MsgBox("ERROR: Emergency contact person cannot be empty.")
             lblECPRequired.Show()
             hasError = True
         Else
@@ -233,81 +225,80 @@ Public Class profile
         End If
 
         If txtContactNumber2.Text = "" Then
-            'MsgBox("ERROR: Emergency contact number cannot be empty.")
             lblContactNum2Required.Show()
             hasError = True
         Else
             lblContactNum2Required.Hide()
         End If
 
+        If txtOldPass.Text <> "" Then
+            Dim eligibleToChange As Boolean = False
+            getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
+            If getdata.HasRows Then
+                lbloldpasswordrequired.Hide()
+                If txtPassword.Text = "" Then
+                    lblPasswordRequired.Show()
+                Else
+                    lblPasswordRequired.Hide()
+                End If
+                If txtReTypePassword.Text = "" Then
+                    lblPassword2Required.Show()
+                    hasError = True
+                Else
+                    lblPassword2Required.Hide()
+                End If
+                If txtPassword.Text <> txtReTypePassword.Text Then
+                    lblPasswordRequired.Text = "password does not match."
+                    lblPasswordRequired.Show()
+                    hasError = True
+                ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
+                    lblPassRequirements.Text = "Password must be:
+                    atleast 8 characters
+                    has atleast 1 Uppercase
+                    has atleast 1 Lowercase
+                    has atleast 1 Number
+                    has atleast 1 Special Character"
+                    lblPassRequirements.Show()
+                    hasError = True
+                Else
+                    lblPasswordRequired.Hide()
+                End If
+            Else
+                lbloldpasswordrequired.Text = "Old password do not match"
+                lbloldpasswordrequired.Show()
 
-
-        If txtOldPass.Text = "" Then
-            'MsgBox("ERROR: Old Pass cannot be empty.")
-            lbloldpasswordrequired.Show()
-            hasError = True
-        Else
-            lbloldpasswordrequired.Hide()
+            End If
         End If
 
 
-        getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
-        If getdata.HasRows Then
-            lbloldpasswordrequired.Hide()
-        Else
-            lbloldpasswordrequired.Text = "Old password do not match"
-            lbloldpasswordrequired.Show()
-
-        End If
 
 
 
-
-
-
-        If txtPassword.Text = "" Then
-            'MsgBox("ERROR: Password cannot be empty.")
-            lblPasswordRequired.Show()
-            hasError = True
-        Else
-            lblPasswordRequired.Hide()
-        End If
-        If txtReTypePassword.Text = "" Then
-            'MsgBox("ERROR: Please retype your password.")
-            lblPassword2Required.Show()
-            hasError = True
-        Else
-            lblPassword2Required.Hide()
-        End If
-        If txtPassword.Text <> txtReTypePassword.Text Then
-            'MsgBox("ERROR: password does not match.")
-            lblPasswordRequired.Text = "password does not match."
-            lblPasswordRequired.Show()
-            hasError = True
-        ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
-            'MsgBox("Password must be atleast 8 characters
-            'has atleast 1 Uppercase
-            'has atleast 1 Lowercase
-            'has atleast 1 Number
-            'has atleast 1 Special Character
-            '")
-            lblPassRequirements.Text = "Password must be:
-            atleast 8 characters
-            has atleast 1 Uppercase
-            has atleast 1 Lowercase
-            has atleast 1 Number
-            has atleast 1 Special Character"
-            lblPassRequirements.Show()
-            hasError = True
-        Else
-            lblPasswordRequired.Hide()
-
-        End If
 
         If hasError Then
             DBConnection.closeCon()
             Exit Sub
         End If
+
+        MsgBox("UPDATE Members
+        SET fname = '" & txtFullname.Text &
+        "', address = '" & txtAddress.Text &
+        "', contactnumber = '" & txtContactNumber.Text &
+        "', email = '" & txtEmail.Text &
+        "',emergencyperson = '" & txtEmergencyContactPerson.Text &
+        "',emergencynum = '" & txtContactNumber2.Text &
+        "',height = '" & txtHeight.Text &
+        "',weight = '" & txtWeight.Text &
+        "', medicalcondition = '" & txtMedCon.Text & "',
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID =" & DBConnection.member_id & ";
+        UPDATE credentials
+        SET credentials.member_id = " & DBConnection.member_id &
+        ", credentials.member_password = '" & txtPassword.Text & "'
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID = " & DBConnection.member_id & ";")
 
         Dim updatecmd As New OleDbCommand("UPDATE Members
         SET fname = '" & txtFullname.Text & "', 
@@ -318,27 +309,28 @@ Public Class profile
         emergencynum = '" & txtContactNumber2.Text & "',
         height = '" & txtHeight.Text & "',
         weight = '" & txtWeight.Text & "', 
-        medicalcondition = '" & txtMedCon.Text & "'
-        WHERE member_ID =" & DBConnection.member_id & ";", DBConnection.con)
-        Dim a = updatecmd.ExecuteNonQuery
-        If a > 0 Then
-            Dim updatecmd2 As New OleDbCommand("UPDATE credentials
-            SET 
-            member_id = " & DBConnection.member_id & ", 
-            member_password = '" & txtPassword.Text & "'
-            WHERE member_id = " & DBConnection.member_id & ";", DBConnection.con)
-            Dim b = updatecmd2.ExecuteNonQuery
-            If b > 0 Then
-                MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
-                btnUpdate.Show()
-                btnBack.Show()
-                btnSave.Hide()
-                DBConnection.closeCon()
-            Else
-                MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
-            End If
+        medicalcondition = '" & txtMedCon.Text & "',
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID =" & DBConnection.member_id & ";
+        
+        UPDATE credentials
+        SET 
+        credentials.member_id = " & DBConnection.member_id & ", 
+        credentials.member_password = '" & txtPassword.Text & "'
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID = " & DBConnection.member_id & ";", DBConnection.con)
+
+        Dim i = updatecmd.ExecuteNonQuery
+
+        If i > 0 Then
+            MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+        Else
+            MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
         End If
 
     End Sub
+
 
 End Class
