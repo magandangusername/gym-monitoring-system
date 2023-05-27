@@ -27,13 +27,4 @@ Module DBConnection
         End If
     End Sub
 
-    'Public Function lostWeight() As Double
-
-    'End Function
-
-    'Public Function closeData(ByVal Q As String) As Boolean
-    '    getdata.Close()
-    '    Return 1
-    'End Function
-
 End Module

@@ -33,6 +33,7 @@ Public Class profile
         hidePassword.Hide()
         hidePassword2.Hide()
         btnSave.Hide()
+        btnUpdate.Show()
 
 
         Call DBConnection.con.Open()
@@ -60,9 +61,9 @@ Public Class profile
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         txtFullname.Enabled = True
         txtAddress.Enabled = True
-        txtBirthday.Enabled = True
-        txtAge.Enabled = True
-        txtGender.Enabled = True
+        'txtBirthday.Enabled = True
+        'txtAge.Enabled = True
+        'txtGender.Enabled = True
         txtHeight.Enabled = True
         txtWeight.Enabled = True
         txtContactNumber.Enabled = True
@@ -84,7 +85,7 @@ Public Class profile
         hidePassword2.Show()
         btnSave.Show()
         btnUpdate.Hide()
-        btnBack.Hide()
+        'btnBack.Hide()
 
     End Sub
 
@@ -170,7 +171,7 @@ Public Class profile
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Call DBConnection.openCon()
+        DBConnection.openCon()
         'Trim input fields
         txtFullname.Text = Trim(txtFullname.Text)
         txtAddress.Text = Trim(txtAddress.Text)
@@ -274,29 +275,27 @@ Public Class profile
                 lbloldpasswordrequired.Show()
                 eligibleToChange = False
             End If
-        End If
 
-
-
-        If eligibleToChange = False Then
-            DBConnection.closeCon()
-            Exit Sub
-        Else
-            Dim updatecmd As New OleDbCommand("UPDATE credentials
+            If eligibleToChange Then
+                Dim updatecmd As New OleDbCommand("UPDATE credentials
             SET 
-            credentials.member_id = " & DBConnection.member_id & ", 
-            credentials.member_password = '" & txtPassword.Text & "'
-            FROM Members
-            JOIN credentials ON Members.member_ID = credentials.member_id
-            WHERE Members.member_ID = " & DBConnection.member_id & ";", DBConnection.con)
-            If updatecmd.ExecuteNonQuery() > 0 Then
-                MsgBox("Password change successfully.", MessageBoxIcon.Information)
-            Else
-                MsgBox("Password change failed.", MessageBoxIcon.Warning)
+            member_id = " & DBConnection.member_id & ", 
+            member_password = '" & txtPassword.Text & "'
+            WHERE member_ID = " & DBConnection.member_id, DBConnection.con)
+                If updatecmd.ExecuteNonQuery() > 0 Then
+                    MsgBox("Password change successfully.", MessageBoxIcon.Information)
+                Else
+                    MsgBox("Password change failed.", MessageBoxIcon.Warning)
+                End If
             End If
         End If
 
+
+
+
+
         If hasError Then
+            MsgBox("Errors detected")
             DBConnection.closeCon()
             Exit Sub
         Else
@@ -309,44 +308,21 @@ Public Class profile
             emergencynum = '" & txtContactNumber2.Text & "',
             height = '" & txtHeight.Text & "',
             weight = '" & txtWeight.Text & "', 
-            medicalcondition = '" & txtMedCon.Text & "',
-            FROM Members
-            JOIN credentials ON Members.member_ID = credentials.member_id
-            WHERE Members.member_ID =" & DBConnection.member_id & ";", DBConnection.con)
+            medicalcondition = '" & txtMedCon.Text & "'
+            WHERE member_ID =" & DBConnection.member_id, DBConnection.con)
+
 
 
             If updatecmd.ExecuteNonQuery() > 0 Then
                 MsgBox("Profile updated successfully", MessageBoxIcon.Information)
                 btnUpdate.Show()
-                btnBack.Show()
+                'btnBack.Show()
                 btnSave.Hide()
                 DBConnection.closeCon()
             Else
                 MsgBox("Profile update failed", MessageBoxIcon.Warning)
             End If
         End If
-
-        'MsgBox("UPDATE Members
-        'SET fname = '" & txtFullname.Text &
-        '"', address = '" & txtAddress.Text &
-        '"', contactnumber = '" & txtContactNumber.Text &
-        '"', email = '" & txtEmail.Text &
-        '"',emergencyperson = '" & txtEmergencyContactPerson.Text &
-        '"',emergencynum = '" & txtContactNumber2.Text &
-        '"',height = '" & txtHeight.Text &
-        '"',weight = '" & txtWeight.Text &
-        '"', medicalcondition = '" & txtMedCon.Text & "',
-        'FROM Members
-        'JOIN credentials ON Members.member_ID = credentials.member_id
-        'WHERE Members.member_ID =" & DBConnection.member_id & ";
-        'UPDATE credentials
-        'SET credentials.member_id = " & DBConnection.member_id &
-        '", credentials.member_password = '" & txtPassword.Text & "'
-        'FROM Members
-        'JOIN credentials ON Members.member_ID = credentials.member_id
-        'WHERE Members.member_ID = " & DBConnection.member_id & ";")
-
-
 
 
     End Sub
