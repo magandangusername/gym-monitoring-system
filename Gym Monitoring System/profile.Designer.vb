@@ -509,9 +509,9 @@ Partial Class profile
         Me.lbloldpasswordrequired.ForeColor = System.Drawing.Color.Red
         Me.lbloldpasswordrequired.Location = New System.Drawing.Point(528, 562)
         Me.lbloldpasswordrequired.Name = "lbloldpasswordrequired"
-        Me.lbloldpasswordrequired.Size = New System.Drawing.Size(50, 13)
+        Me.lbloldpasswordrequired.Size = New System.Drawing.Size(136, 13)
         Me.lbloldpasswordrequired.TabIndex = 76
-        Me.lbloldpasswordrequired.Text = "Required"
+        Me.lbloldpasswordrequired.Text = "Old password do not match"
         Me.lbloldpasswordrequired.Visible = False
         '
         'Label1
