@@ -283,6 +283,7 @@ Public Class admin_overview
     End Sub
 
     Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load, btnUpdate.Click, btnAdd.Click, btnDelete.Click ', dgvCustomer.CellClick, dgvSession.CellClick
+
         'reset fields
         resetFields("member")
         resetFields("session")
@@ -675,7 +676,7 @@ Public Class admin_overview
             txtBmi.Text = ""
             RichTextBox1.Text = ""
             txtPW.Text = ""
-        ElseIf fieldtype = "session" Then
+        ElseIf fieldType = "session" Then
             'reset fields for sessions
             txtUBA1.Text = ""
             txtUBA2.Text = ""
@@ -735,4 +736,11 @@ Public Class admin_overview
         End If
     End Sub
 
+    Private Sub btnMembershipOrder_Click(sender As Object, e As EventArgs) Handles btnMembershipOrder.Click
+        membership_order.Show()
+    End Sub
+
+    Private Sub tpCustomer_Click(sender As Object, e As EventArgs) Handles tpCustomer.Click
+
+    End Sub
 End Class

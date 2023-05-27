@@ -132,6 +132,12 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="membership_order.Designer.vb">
+      <DependentUpon>membership_order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="membership_order.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="member_dashboard.Designer.vb">
       <DependentUpon>member_dashboard.vb</DependentUpon>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="membership_order.resx">
+      <DependentUpon>membership_order.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="member_dashboard.resx">
       <DependentUpon>member_dashboard.vb</DependentUpon>
