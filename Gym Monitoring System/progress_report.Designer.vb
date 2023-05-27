@@ -45,7 +45,6 @@ Partial Class progress_report
         Me.txtWeightLost = New System.Windows.Forms.TextBox()
         Me.lblWeightLost = New System.Windows.Forms.Label()
         Me.lblRecommendation = New System.Windows.Forms.Label()
-        Me.rtbRecommendation = New System.Windows.Forms.RichTextBox()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.lblRemarks = New System.Windows.Forms.Label()
         Me.txtBmi = New System.Windows.Forms.TextBox()
@@ -54,276 +53,324 @@ Partial Class progress_report
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.btnRecommendation = New System.Windows.Forms.Button()
+        Me.txtRecommendation = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnReport
         '
-        Me.btnReport.Location = New System.Drawing.Point(937, 23)
+        Me.btnReport.Location = New System.Drawing.Point(1033, 30)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(138, 23)
+        Me.btnReport.Size = New System.Drawing.Size(184, 23)
         Me.btnReport.TabIndex = 24
         Me.btnReport.Text = "Progress Report"
         Me.btnReport.UseVisualStyleBackColor = True
         '
         'btnProfile
         '
-        Me.btnProfile.Location = New System.Drawing.Point(1096, 23)
+        Me.btnProfile.Location = New System.Drawing.Point(1461, 23)
+        Me.btnProfile.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnProfile.Name = "btnProfile"
-        Me.btnProfile.Size = New System.Drawing.Size(75, 23)
+        Me.btnProfile.Size = New System.Drawing.Size(100, 23)
         Me.btnProfile.TabIndex = 23
         Me.btnProfile.Text = "Profile"
         Me.btnProfile.UseVisualStyleBackColor = True
         '
         'btnlogout
         '
-        Me.btnlogout.Location = New System.Drawing.Point(1188, 23)
+        Me.btnlogout.Location = New System.Drawing.Point(1584, 23)
+        Me.btnlogout.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnlogout.Name = "btnlogout"
-        Me.btnlogout.Size = New System.Drawing.Size(75, 23)
+        Me.btnlogout.Size = New System.Drawing.Size(100, 23)
         Me.btnlogout.TabIndex = 22
         Me.btnlogout.Text = "Log out"
         Me.btnlogout.UseVisualStyleBackColor = True
         '
         'txtFullname
         '
-        Me.txtFullname.Location = New System.Drawing.Point(557, 433)
+        Me.txtFullname.Location = New System.Drawing.Point(580, 444)
+        Me.txtFullname.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtFullname.Name = "txtFullname"
-        Me.txtFullname.Size = New System.Drawing.Size(307, 20)
+        Me.txtFullname.Size = New System.Drawing.Size(337, 20)
         Me.txtFullname.TabIndex = 36
         '
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(478, 436)
+        Me.lblDate.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(474, 447)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(82, 13)
+        Me.lblDate.Size = New System.Drawing.Size(106, 13)
         Me.lblDate.TabIndex = 35
         Me.lblDate.Text = "Date of Session"
         '
         'txtSubscription
         '
-        Me.txtSubscription.Location = New System.Drawing.Point(152, 135)
+        Me.txtSubscription.Location = New System.Drawing.Point(159, 97)
+        Me.txtSubscription.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSubscription.Name = "txtSubscription"
-        Me.txtSubscription.Size = New System.Drawing.Size(307, 20)
+        Me.txtSubscription.Size = New System.Drawing.Size(301, 20)
         Me.txtSubscription.TabIndex = 38
         '
         'lblSubscription
         '
         Me.lblSubscription.AutoSize = True
-        Me.lblSubscription.Location = New System.Drawing.Point(86, 138)
+        Me.lblSubscription.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubscription.Location = New System.Drawing.Point(71, 100)
+        Me.lblSubscription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSubscription.Name = "lblSubscription"
-        Me.lblSubscription.Size = New System.Drawing.Size(65, 13)
+        Me.lblSubscription.Size = New System.Drawing.Size(88, 13)
         Me.lblSubscription.TabIndex = 37
         Me.lblSubscription.Text = "Subscription"
         '
         'txtEndSub
         '
-        Me.txtEndSub.Location = New System.Drawing.Point(152, 161)
+        Me.txtEndSub.Location = New System.Drawing.Point(159, 123)
+        Me.txtEndSub.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtEndSub.Name = "txtEndSub"
-        Me.txtEndSub.Size = New System.Drawing.Size(307, 20)
+        Me.txtEndSub.Size = New System.Drawing.Size(301, 20)
         Me.txtEndSub.TabIndex = 40
         '
         'lblEndSub
         '
         Me.lblEndSub.AutoSize = True
-        Me.lblEndSub.Location = New System.Drawing.Point(35, 164)
+        Me.lblEndSub.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEndSub.Location = New System.Drawing.Point(8, 127)
+        Me.lblEndSub.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEndSub.Name = "lblEndSub"
-        Me.lblEndSub.Size = New System.Drawing.Size(116, 13)
+        Me.lblEndSub.Size = New System.Drawing.Size(147, 13)
         Me.lblEndSub.TabIndex = 39
         Me.lblEndSub.Text = "Subscription End Time "
         '
         'txtInitialHeight
         '
-        Me.txtInitialHeight.Location = New System.Drawing.Point(152, 187)
+        Me.txtInitialHeight.Location = New System.Drawing.Point(159, 149)
+        Me.txtInitialHeight.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtInitialHeight.Name = "txtInitialHeight"
-        Me.txtInitialHeight.Size = New System.Drawing.Size(307, 20)
+        Me.txtInitialHeight.Size = New System.Drawing.Size(301, 20)
         Me.txtInitialHeight.TabIndex = 42
         '
         'lblInitialHeight
         '
         Me.lblInitialHeight.AutoSize = True
-        Me.lblInitialHeight.Location = New System.Drawing.Point(42, 190)
+        Me.lblInitialHeight.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInitialHeight.Location = New System.Drawing.Point(12, 152)
+        Me.lblInitialHeight.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInitialHeight.Name = "lblInitialHeight"
-        Me.lblInitialHeight.Size = New System.Drawing.Size(109, 13)
+        Me.lblInitialHeight.Size = New System.Drawing.Size(149, 13)
         Me.lblInitialHeight.TabIndex = 41
         Me.lblInitialHeight.Text = "Height at Registration"
         '
         'txtInitialWeight
         '
-        Me.txtInitialWeight.Location = New System.Drawing.Point(152, 213)
+        Me.txtInitialWeight.Location = New System.Drawing.Point(159, 175)
+        Me.txtInitialWeight.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtInitialWeight.Name = "txtInitialWeight"
-        Me.txtInitialWeight.Size = New System.Drawing.Size(307, 20)
+        Me.txtInitialWeight.Size = New System.Drawing.Size(301, 20)
         Me.txtInitialWeight.TabIndex = 44
         '
         'lblInitialWeight
         '
         Me.lblInitialWeight.AutoSize = True
-        Me.lblInitialWeight.Location = New System.Drawing.Point(39, 216)
+        Me.lblInitialWeight.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInitialWeight.Location = New System.Drawing.Point(8, 178)
+        Me.lblInitialWeight.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInitialWeight.Name = "lblInitialWeight"
-        Me.lblInitialWeight.Size = New System.Drawing.Size(112, 13)
+        Me.lblInitialWeight.Size = New System.Drawing.Size(152, 13)
         Me.lblInitialWeight.TabIndex = 43
         Me.lblInitialWeight.Text = "Weight at Registration"
         '
         'txtInitialBmi
         '
-        Me.txtInitialBmi.Location = New System.Drawing.Point(152, 239)
+        Me.txtInitialBmi.Location = New System.Drawing.Point(159, 201)
+        Me.txtInitialBmi.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtInitialBmi.Name = "txtInitialBmi"
-        Me.txtInitialBmi.Size = New System.Drawing.Size(307, 20)
+        Me.txtInitialBmi.Size = New System.Drawing.Size(301, 20)
         Me.txtInitialBmi.TabIndex = 46
         '
         'lblInitialBmi
         '
         Me.lblInitialBmi.AutoSize = True
-        Me.lblInitialBmi.Location = New System.Drawing.Point(54, 242)
+        Me.lblInitialBmi.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInitialBmi.Location = New System.Drawing.Point(28, 204)
+        Me.lblInitialBmi.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInitialBmi.Name = "lblInitialBmi"
-        Me.lblInitialBmi.Size = New System.Drawing.Size(97, 13)
+        Me.lblInitialBmi.Size = New System.Drawing.Size(132, 13)
         Me.lblInitialBmi.TabIndex = 45
         Me.lblInitialBmi.Text = "BMI at Registration"
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(476, 69)
+        Me.DataGridView1.Location = New System.Drawing.Point(468, 71)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(787, 343)
+        Me.DataGridView1.Size = New System.Drawing.Size(853, 343)
         Me.DataGridView1.TabIndex = 47
         '
         'txtHeight
         '
-        Me.txtHeight.Location = New System.Drawing.Point(557, 459)
+        Me.txtHeight.Location = New System.Drawing.Point(580, 470)
+        Me.txtHeight.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtHeight.Name = "txtHeight"
-        Me.txtHeight.Size = New System.Drawing.Size(307, 20)
+        Me.txtHeight.Size = New System.Drawing.Size(337, 20)
         Me.txtHeight.TabIndex = 49
         '
         'lblHeight
         '
         Me.lblHeight.AutoSize = True
-        Me.lblHeight.Location = New System.Drawing.Point(478, 462)
+        Me.lblHeight.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeight.Location = New System.Drawing.Point(474, 473)
+        Me.lblHeight.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblHeight.Name = "lblHeight"
-        Me.lblHeight.Size = New System.Drawing.Size(38, 13)
+        Me.lblHeight.Size = New System.Drawing.Size(48, 13)
         Me.lblHeight.TabIndex = 48
         Me.lblHeight.Text = "Height"
         '
         'txtWeight
         '
-        Me.txtWeight.Location = New System.Drawing.Point(557, 485)
+        Me.txtWeight.Location = New System.Drawing.Point(580, 496)
+        Me.txtWeight.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtWeight.Name = "txtWeight"
-        Me.txtWeight.Size = New System.Drawing.Size(307, 20)
+        Me.txtWeight.Size = New System.Drawing.Size(337, 20)
         Me.txtWeight.TabIndex = 51
         '
         'lblWeight
         '
         Me.lblWeight.AutoSize = True
-        Me.lblWeight.Location = New System.Drawing.Point(478, 488)
+        Me.lblWeight.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWeight.Location = New System.Drawing.Point(474, 499)
+        Me.lblWeight.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblWeight.Name = "lblWeight"
-        Me.lblWeight.Size = New System.Drawing.Size(41, 13)
+        Me.lblWeight.Size = New System.Drawing.Size(51, 13)
         Me.lblWeight.TabIndex = 50
         Me.lblWeight.Text = "Weight"
         '
         'txtWeightLost
         '
-        Me.txtWeightLost.Location = New System.Drawing.Point(557, 511)
+        Me.txtWeightLost.Location = New System.Drawing.Point(580, 522)
+        Me.txtWeightLost.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtWeightLost.Name = "txtWeightLost"
-        Me.txtWeightLost.Size = New System.Drawing.Size(307, 20)
+        Me.txtWeightLost.Size = New System.Drawing.Size(337, 20)
         Me.txtWeightLost.TabIndex = 53
         '
         'lblWeightLost
         '
         Me.lblWeightLost.AutoSize = True
-        Me.lblWeightLost.Location = New System.Drawing.Point(478, 514)
+        Me.lblWeightLost.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWeightLost.Location = New System.Drawing.Point(474, 525)
+        Me.lblWeightLost.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblWeightLost.Name = "lblWeightLost"
-        Me.lblWeightLost.Size = New System.Drawing.Size(64, 13)
+        Me.lblWeightLost.Size = New System.Drawing.Size(83, 13)
         Me.lblWeightLost.TabIndex = 52
         Me.lblWeightLost.Text = "Weight Lost"
         '
         'lblRecommendation
         '
         Me.lblRecommendation.AutoSize = True
-        Me.lblRecommendation.Location = New System.Drawing.Point(886, 476)
+        Me.lblRecommendation.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecommendation.Location = New System.Drawing.Point(945, 487)
+        Me.lblRecommendation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRecommendation.Name = "lblRecommendation"
-        Me.lblRecommendation.Size = New System.Drawing.Size(90, 13)
+        Me.lblRecommendation.Size = New System.Drawing.Size(113, 13)
         Me.lblRecommendation.TabIndex = 54
         Me.lblRecommendation.Text = "Recommendation"
         '
-        'rtbRecommendation
-        '
-        Me.rtbRecommendation.Location = New System.Drawing.Point(982, 473)
-        Me.rtbRecommendation.Name = "rtbRecommendation"
-        Me.rtbRecommendation.Size = New System.Drawing.Size(281, 54)
-        Me.rtbRecommendation.TabIndex = 55
-        Me.rtbRecommendation.Text = ""
-        '
         'txtRemarks
         '
-        Me.txtRemarks.Location = New System.Drawing.Point(982, 433)
+        Me.txtRemarks.Location = New System.Drawing.Point(1016, 444)
+        Me.txtRemarks.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(281, 20)
+        Me.txtRemarks.Size = New System.Drawing.Size(305, 20)
         Me.txtRemarks.TabIndex = 57
         '
         'lblRemarks
         '
         Me.lblRemarks.AutoSize = True
-        Me.lblRemarks.Location = New System.Drawing.Point(927, 436)
+        Me.lblRemarks.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRemarks.Location = New System.Drawing.Point(945, 448)
+        Me.lblRemarks.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRemarks.Name = "lblRemarks"
-        Me.lblRemarks.Size = New System.Drawing.Size(49, 13)
+        Me.lblRemarks.Size = New System.Drawing.Size(63, 13)
         Me.lblRemarks.TabIndex = 56
         Me.lblRemarks.Text = "Remarks"
         '
         'txtBmi
         '
-        Me.txtBmi.Location = New System.Drawing.Point(557, 545)
+        Me.txtBmi.Location = New System.Drawing.Point(580, 556)
+        Me.txtBmi.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBmi.Name = "txtBmi"
-        Me.txtBmi.Size = New System.Drawing.Size(307, 20)
+        Me.txtBmi.Size = New System.Drawing.Size(337, 20)
         Me.txtBmi.TabIndex = 59
         '
         'lblBmi
         '
         Me.lblBmi.AutoSize = True
-        Me.lblBmi.Location = New System.Drawing.Point(478, 545)
+        Me.lblBmi.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBmi.Location = New System.Drawing.Point(474, 556)
+        Me.lblBmi.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBmi.Name = "lblBmi"
-        Me.lblBmi.Size = New System.Drawing.Size(26, 13)
+        Me.lblBmi.Size = New System.Drawing.Size(31, 13)
         Me.lblBmi.TabIndex = 58
         Me.lblBmi.Text = "BMI"
         '
         'ListView1
         '
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(38, 282)
+        Me.ListView1.Location = New System.Drawing.Point(31, 237)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(421, 321)
+        Me.ListView1.Size = New System.Drawing.Size(429, 339)
         Me.ListView1.TabIndex = 60
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(152, 109)
+        Me.txtName.Location = New System.Drawing.Point(159, 71)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(307, 20)
+        Me.txtName.Size = New System.Drawing.Size(301, 20)
         Me.txtName.TabIndex = 62
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(100, 109)
+        Me.lblName.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(89, 71)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(51, 13)
+        Me.lblName.Size = New System.Drawing.Size(69, 13)
         Me.lblName.TabIndex = 61
         Me.lblName.Text = "FullName"
         '
         'btnRecommendation
         '
-        Me.btnRecommendation.Location = New System.Drawing.Point(1031, 562)
+        Me.btnRecommendation.Location = New System.Drawing.Point(1375, 562)
+        Me.btnRecommendation.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnRecommendation.Name = "btnRecommendation"
-        Me.btnRecommendation.Size = New System.Drawing.Size(199, 23)
+        Me.btnRecommendation.Size = New System.Drawing.Size(265, 23)
         Me.btnRecommendation.TabIndex = 63
         Me.btnRecommendation.Text = "Generate Recommendation"
         Me.btnRecommendation.UseVisualStyleBackColor = True
         '
+        'txtRecommendation
+        '
+        Me.txtRecommendation.Location = New System.Drawing.Point(948, 507)
+        Me.txtRecommendation.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtRecommendation.Multiline = True
+        Me.txtRecommendation.Name = "txtRecommendation"
+        Me.txtRecommendation.Size = New System.Drawing.Size(373, 69)
+        Me.txtRecommendation.TabIndex = 64
+        '
         'progress_report
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1296, 631)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1370, 631)
+        Me.Controls.Add(Me.txtRecommendation)
         Me.Controls.Add(Me.btnRecommendation)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.lblName)
@@ -332,7 +379,6 @@ Partial Class progress_report
         Me.Controls.Add(Me.lblBmi)
         Me.Controls.Add(Me.txtRemarks)
         Me.Controls.Add(Me.lblRemarks)
-        Me.Controls.Add(Me.rtbRecommendation)
         Me.Controls.Add(Me.lblRecommendation)
         Me.Controls.Add(Me.txtWeightLost)
         Me.Controls.Add(Me.lblWeightLost)
@@ -356,6 +402,8 @@ Partial Class progress_report
         Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnProfile)
         Me.Controls.Add(Me.btnlogout)
+        Me.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "progress_report"
         Me.Text = "progress_report"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -387,7 +435,6 @@ Partial Class progress_report
     Friend WithEvents txtWeightLost As TextBox
     Friend WithEvents lblWeightLost As Label
     Friend WithEvents lblRecommendation As Label
-    Friend WithEvents rtbRecommendation As RichTextBox
     Friend WithEvents txtRemarks As TextBox
     Friend WithEvents lblRemarks As Label
     Friend WithEvents txtBmi As TextBox
@@ -396,4 +443,5 @@ Partial Class progress_report
     Friend WithEvents txtName As TextBox
     Friend WithEvents lblName As Label
     Friend WithEvents btnRecommendation As Button
+    Friend WithEvents txtRecommendation As TextBox
 End Class
