@@ -284,12 +284,19 @@ Public Class admin_overview
 
     Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load, btnUpdate.Click, btnAdd.Click, btnDelete.Click ', dgvCustomer.CellClick, dgvSession.CellClick
 
+
+
         'reset fields
         resetFields("member")
         resetFields("session")
 
         'load data
         loadMembers()
+
+        'Load Admin in datagridview\
+        loadAdmin()
+
+        reloadCustomer()
     End Sub
 
     Private Sub btnUpdate2_Click(sender As Object, e As EventArgs) Handles btnUpdate2.Click
@@ -440,6 +447,8 @@ Public Class admin_overview
         DBConnection.closeCon()
     End Sub
 
+
+
     Private Sub reloadSessions()
         resetFields("session")
         DBConnection.openCon()
@@ -459,6 +468,25 @@ Public Class admin_overview
         da.Fill(dt)
         dgvSession.DataSource = dt
         DBConnection.closeCon()
+    End Sub
+
+    Private Sub reloadCustomer()
+        'DBConnection.openCon()
+
+
+        'Dim loadcmd As New OleDbCommand("
+        'SELECT Member.member_ID, Members.fname, Members.email, credentials.member_password
+        'FROM Members
+        'INNER JOIN credentials ON Members.members_ID = credentials.members_id
+        'WHERE Members.member_ID = " & DataGridView2.CurrentRow.Cells(0).Value() & "", DBConnection.con)
+
+        'Dim da As New OleDbDataAdapter
+        'da.SelectCommand = loadcmd
+        'Dim dt As New DataTable
+        'dt.Clear()
+        'da.Fill(dt)
+        'dgvSession.DataSource = dt
+        'DBConnection.closeCon()
     End Sub
 
     Private Sub loadSessions()
@@ -743,4 +771,136 @@ Public Class admin_overview
     Private Sub tpCustomer_Click(sender As Object, e As EventArgs) Handles tpCustomer.Click
 
     End Sub
+
+    Private Sub btnAdd1_Click(sender As Object, e As EventArgs) Handles btnAdd1.Click
+        DBConnection.openCon()
+        Try
+            Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,email) 
+            values ('" & txtAdminName.Text & "','" & txtAdminEmail.Text & "');", DBConnection.con)
+            addcmd.ExecuteNonQuery()
+            Dim getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
+            Dim pw = "INSERT INTO credentials (member_id,member_password,isAdmin) VALUES (" & getdata("member_id") & ",'" & txtPassword.Text & "', 'Y');"
+            Dim addpwcmd As New OleDbCommand(pw, DBConnection.con)
+            Dim mem = "INSERT INTO Members (fname,email) VALUES (" & txtAdminName.Text & ",'" & txtAdminEmail.Text & "');"
+            If addpwcmd.ExecuteNonQuery > 0 Then
+                MsgBox("New record has been inserted successfully!")
+            Else
+                MsgBox("Record occured creating record")
+            End If
+
+
+            'Dim sql As String
+            'Dim cmd As New OleDb.OleDbCommand
+            'con.Open()
+            'sql = "INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
+            'emergencynum,height,weight,bmi,medicalcondition,membersince,membershiptype,paymentstatus) 
+            'values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');"
+            'cmd.Connection = con
+            'cmd.CommandText = sql
+            'i = cmd.ExecuteNonQuery
+            'If i > 0 Then
+            '    MsgBox("New record has been inserted successfully!")
+            'Else
+            '    MsgBox("No record has been inserted successfully!")
+            'End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            DBConnection.closeCon()
+        End Try
+    End Sub
+
+    Private Sub btnUpdate1_Click(sender As Object, e As EventArgs) Handles btnUpdate1.Click
+        DBConnection.openCon()
+        If txtAdminName.Text <> Nothing And txtAdminEmail.Text <> Nothing And txtPassword.Text <> Nothing Then
+            Try
+                'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
+                Dim updatecmd As New OleDbCommand("Update Members
+                SET fname ='" & txtAdminName.Text & "', email ='" & txtAdminEmail.Text & "'
+                WHERE member_ID = " & Me.Text & "", DBConnection.con)
+
+                Dim i = updatecmd.ExecuteNonQuery
+
+                If i > 0 Then
+                    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+
+                Else
+                    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.ToString, MessageBoxIcon.Error)
+            Finally
+                DBConnection.closeCon()
+
+            End Try
+        Else
+            MsgBox("All Fields Are Required", MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub btnDelete1_Click(sender As Object, e As EventArgs) Handles btnDelete1.Click
+        DBConnection.openCon()
+        Try
+            Dim deletecmd As New OleDbCommand("DELETE * FROM Members WHERE member_ID = " & Me.Text & "", DBConnection.con)
+            Dim i = deletecmd.ExecuteNonQuery
+            If i > 0 Then
+                Dim Answer As Integer
+                Answer = MsgBox("Do you want to delete this information?", vbQuestion + vbYesNo + vbDefaultButton2, "Caution")
+
+                If Answer = vbYes Then
+                    MsgBox("Record Has Been DELETED SUCCESSFULLY!", MessageBoxIcon.Information)
+                    txtFullname.Text = ""
+                    txtEmail.Text = ""
+                    txtPassword.Text = ""
+                End If
+            Else
+                MsgBox("Please Select A Data!", MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+    Private Sub loadAdmin()
+        DBConnection.openCon()
+
+        Dim admincmd As New OleDbCommand("
+        SELECT Members.member_ID, 
+        Members.fname, 
+        Members.email,
+credentials.member_password
+        FROM Members
+        INNER JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE credentials.isAdmin <> 'N'", DBConnection.con)
+
+        'Dim adminreader As OleDbDataReader
+        'adminreader = customercmd.ExecuteReader
+        'If Me.Text = adminreader("credentials.member_id") Then
+        '    lblAdminName = "Welcome " & adminreader("fname")
+        'End If
+
+        Dim da As New OleDbDataAdapter
+        da.SelectCommand = admincmd
+        Dim dt As New DataTable
+        dt.Clear()
+        da.Fill(dt)
+        DataGridView2.DataSource = dt
+        DBConnection.closeCon()
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Me.Text = DataGridView2.CurrentRow.Cells(0).Value
+        txtAdminName.Text = DataGridView2.CurrentRow.Cells(1).Value
+        txtAdminEmail.Text = DataGridView2.CurrentRow.Cells(2).Value
+        txtPassword.Text = DataGridView2.CurrentRow.Cells(3).Value
+        reloadCustomer()
+
+    End Sub
+
+
 End Class
