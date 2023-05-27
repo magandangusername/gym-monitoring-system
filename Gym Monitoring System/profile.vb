@@ -170,7 +170,7 @@ Public Class profile
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Call DBConnection.openCon()
+        DBConnection.openCon()
         'Trim input fields
         txtFullname.Text = Trim(txtFullname.Text)
         txtAddress.Text = Trim(txtAddress.Text)
@@ -297,6 +297,7 @@ Public Class profile
         End If
 
         If hasError Then
+            MsgBox("Errors detected")
             DBConnection.closeCon()
             Exit Sub
         Else
@@ -315,6 +316,7 @@ Public Class profile
             WHERE Members.member_ID =" & DBConnection.member_id & ";", DBConnection.con)
 
 
+
             If updatecmd.ExecuteNonQuery() > 0 Then
                 MsgBox("Profile updated successfully", MessageBoxIcon.Information)
                 btnUpdate.Show()
@@ -325,28 +327,6 @@ Public Class profile
                 MsgBox("Profile update failed", MessageBoxIcon.Warning)
             End If
         End If
-
-        'MsgBox("UPDATE Members
-        'SET fname = '" & txtFullname.Text &
-        '"', address = '" & txtAddress.Text &
-        '"', contactnumber = '" & txtContactNumber.Text &
-        '"', email = '" & txtEmail.Text &
-        '"',emergencyperson = '" & txtEmergencyContactPerson.Text &
-        '"',emergencynum = '" & txtContactNumber2.Text &
-        '"',height = '" & txtHeight.Text &
-        '"',weight = '" & txtWeight.Text &
-        '"', medicalcondition = '" & txtMedCon.Text & "',
-        'FROM Members
-        'JOIN credentials ON Members.member_ID = credentials.member_id
-        'WHERE Members.member_ID =" & DBConnection.member_id & ";
-        'UPDATE credentials
-        'SET credentials.member_id = " & DBConnection.member_id &
-        '", credentials.member_password = '" & txtPassword.Text & "'
-        'FROM Members
-        'JOIN credentials ON Members.member_ID = credentials.member_id
-        'WHERE Members.member_ID = " & DBConnection.member_id & ";")
-
-
 
 
     End Sub

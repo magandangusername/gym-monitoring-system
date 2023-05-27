@@ -94,7 +94,7 @@ Partial Class member_dashboard
         Me.Label2.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(959, 670)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(188, 16)
+        Me.Label2.Size = New System.Drawing.Size(187, 16)
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "AVAIL MEMBERSHIP! "
         '
@@ -116,7 +116,7 @@ Partial Class member_dashboard
         Me.Label3.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(17, 656)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(179, 16)
+        Me.Label3.Size = New System.Drawing.Size(178, 16)
         Me.Label3.TabIndex = 27
         Me.Label3.Text = "Membership Status: "
         '
@@ -127,7 +127,7 @@ Partial Class member_dashboard
         Me.lblMemStat.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMemStat.Location = New System.Drawing.Point(51, 680)
         Me.lblMemStat.Name = "lblMemStat"
-        Me.lblMemStat.Size = New System.Drawing.Size(89, 16)
+        Me.lblMemStat.Size = New System.Drawing.Size(88, 16)
         Me.lblMemStat.TabIndex = 27
         Me.lblMemStat.Text = "INACTIVE"
         '
@@ -149,7 +149,7 @@ Partial Class member_dashboard
         Me.Label6.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(222, 668)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 16)
+        Me.Label6.Size = New System.Drawing.Size(104, 16)
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "Day(s) left:"
         '
@@ -161,7 +161,7 @@ Partial Class member_dashboard
         Me.lblWarning.ForeColor = System.Drawing.Color.Red
         Me.lblWarning.Location = New System.Drawing.Point(366, 668)
         Me.lblWarning.Name = "lblWarning"
-        Me.lblWarning.Size = New System.Drawing.Size(82, 16)
+        Me.lblWarning.Size = New System.Drawing.Size(81, 16)
         Me.lblWarning.TabIndex = 27
         Me.lblWarning.Text = "Warning"
         '
