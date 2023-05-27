@@ -1,66 +1,460 @@
 ﻿Imports System.Data.OleDb
 Public Class admin_overview
 
-    Private Sub dgvSession_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSession.CellClick
-        'reset fields for sessions
-        txtUBA1.Text = ""
-        txtUBA2.Text = ""
-        txtUBA3.Text = ""
-        txtUBA4.Text = ""
-        txtUBA5.Text = ""
-        txtUBA6.Text = ""
-        txtUBA7.Text = ""
-        txtUBA8.Text = ""
-        txtUBA9.Text = ""
-        txtUBA10.Text = ""
-        txtUBA11.Text = ""
-        txtUBA12.Text = ""
-        txtUBA13.Text = ""
-        txtUBA14.Text = ""
-        txtUBA15.Text = ""
-        txtUBA16.Text = ""
-        txtUBA17.Text = ""
-        txtUBA18.Text = ""
-
-        txtLBA1.Text = ""
-        txtLBA2.Text = ""
-        txtLBA3.Text = ""
-        txtLBA4.Text = ""
-        txtLBA5.Text = ""
-        txtLBA6.Text = ""
-        txtLBA7.Text = ""
-        txtLBA8.Text = ""
-        txtLBA9.Text = ""
-        txtLBA10.Text = ""
-        txtLBA11.Text = ""
-        txtLBA12.Text = ""
-        txtLBA13.Text = ""
-        txtLBA14.Text = ""
-        txtLBA15.Text = ""
-        txtLBA16.Text = ""
-        txtLBA17.Text = ""
-        txtLBA18.Text = ""
-
-        txtCBA1.Text = ""
-        txtCBA2.Text = ""
-        txtCBA3.Text = ""
-        txtCBA4.Text = ""
-        txtCBA5.Text = ""
-        txtCBA6.Text = ""
-        txtCBA7.Text = ""
-        txtCBA8.Text = ""
-        txtCBA9.Text = ""
-        txtCBA10.Text = ""
-        txtCBA11.Text = ""
-        txtCBA12.Text = ""
-        txtCBA13.Text = ""
-        txtCBA14.Text = ""
-        txtCBA15.Text = ""
-        txtCBA16.Text = ""
-        txtCBA17.Text = ""
+    Private Sub dgvSession_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSession.CellClick ', dgvSession.SelectionChanged
+        resetFields("session")
 
         dtSession.Value = dgvSession.CurrentRow.Cells(0).Value()
 
+        loadSessions()
+
+
+    End Sub
+
+    Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick ', dgvCustomer.SelectionChanged
+        'reset fields for member info
+        'txtFullname.Text = ""
+        'txtAddress.Text = ""
+        'txtBirthday.Text = ""
+        'txtGender.Text = ""
+        'txtContactNumber.Text = ""
+        'txtEmail.Text = ""
+        'txtEmergencyContactPerson.Text = ""
+        'txtContactNumber2.Text = ""
+        'txtHeight.Text = ""
+        'txtWeight.Text = ""
+        'txtBmi.Text = ""
+        'RichTextBox1.Text = ""
+        'txtPW.Text = ""
+
+        Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
+        txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
+        txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
+        txtBirthday.Text = dgvCustomer.CurrentRow.Cells(3).Value
+        txtGender.Text = dgvCustomer.CurrentRow.Cells(5).Value
+        txtContactNumber.Text = dgvCustomer.CurrentRow.Cells(6).Value
+        txtEmail.Text = dgvCustomer.CurrentRow.Cells(7).Value
+        txtEmergencyContactPerson.Text = dgvCustomer.CurrentRow.Cells(8).Value
+        txtContactNumber2.Text = dgvCustomer.CurrentRow.Cells(9).Value
+        txtHeight.Text = dgvCustomer.CurrentRow.Cells(10).Value
+        txtWeight.Text = dgvCustomer.CurrentRow.Cells(11).Value
+        txtBmi.Text = dgvCustomer.CurrentRow.Cells(12).Value
+        RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
+
+        reloadSessions()
+
+
+    End Sub
+
+    Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
+        Try
+            DBConnection.openCon()
+            Dim searchcmd As New OleDbCommand("SELECT * FROM Members WHERE 
+            member_ID LIKE '%" & txtsearch.Text & "%'
+            OR fname LIKE '%" & txtsearch.Text & "%' 
+            OR address LIKE '%" & txtsearch.Text & "%' 
+            OR gender LIKE '%" & txtsearch.Text & "%' 
+            OR contactnumber LIKE '%" & txtsearch.Text & "%' 
+            OR email LIKE '%" & txtsearch.Text & "%' 
+            OR emergencyperson LIKE '%" & txtsearch.Text & "%' 
+            OR emergencynum LIKE '%" & txtsearch.Text & "%' 
+            OR height LIKE '%" & txtsearch.Text & "%' 
+            OR weight LIKE '%" & txtsearch.Text & "%' 
+            OR medicalcondition LIKE '%" & txtsearch.Text & "%'        
+            ;", DBConnection.con)
+            Dim searchda As New OleDbDataAdapter
+            searchda.SelectCommand = searchcmd
+            Dim searchdt As New DataTable
+            searchda.Fill(searchdt)
+            dgvCustomer.DataSource = searchdt
+        Catch ex As Exception
+            MsgBox("An Error Occur!")
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+    Private Sub btnSearch2_Click(sender As Object, e As EventArgs) Handles btnSearch2.Click
+        Try
+            DBConnection.openCon()
+            Dim searchcmd2 As New OleDbCommand("SELECT MemberSessions.sessiondate, MemberSessions.sessiontime, MemberSessions.lostweight, activitieslist.actname, activitieslist.acttype, activitieslist.actvalue
+            FROM MemberSessions
+            INNER JOIN activitieslist ON MemberSessions.actcode = activitieslist.actcode
+            WHERE 
+            MemberSessions.sessiondate LIKE '%" & txtSearch2.Text & "%'
+            OR MemberSessions.sessiontime LIKE '%" & txtSearch2.Text & "%' 
+            OR MemberSessions.lostweight LIKE '%" & txtSearch2.Text & "%' 
+            OR activitieslist.actname LIKE '%" & txtSearch2.Text & "%' 
+            OR activitieslist.acttype LIKE '%" & txtSearch2.Text & "%' 
+            OR activitieslist.actvalue LIKE '%" & txtSearch2.Text & "%'      
+            ;", DBConnection.con)
+            Dim searchda As New OleDbDataAdapter
+            searchda.SelectCommand = searchcmd2
+            Dim searchdt As New DataTable
+            searchda.Fill(searchdt)
+            dgvSession.DataSource = searchdt
+        Catch ex As Exception
+            MsgBox("An Error Occur!")
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        DBConnection.openCon()
+        Try
+            Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
+            emergencynum,height,weight,bmi,medicalcondition) 
+            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
+            Dim i = addcmd.ExecuteNonQuery
+            If i > 0 Then
+                MsgBox("New record has been inserted successfully!")
+            Else
+                MsgBox("No record has been inserted successfully!")
+            End If
+
+
+            'Dim sql As String
+            'Dim cmd As New OleDb.OleDbCommand
+            'con.Open()
+            'sql = "INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
+            'emergencynum,height,weight,bmi,medicalcondition,membersince,membershiptype,paymentstatus) 
+            'values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');"
+            'cmd.Connection = con
+            'cmd.CommandText = sql
+            'i = cmd.ExecuteNonQuery
+            'If i > 0 Then
+            '    MsgBox("New record has been inserted successfully!")
+            'Else
+            '    MsgBox("No record has been inserted successfully!")
+            'End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+
+    Private Sub btnAdd2_Click(sender As Object, e As EventArgs) Handles btnAdd2.Click
+        DBConnection.openCon()
+        Try
+            Dim getdata = DBConnection.fetchData("SELECT * FROM MemberSessions WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND sessiondate = #" & dtSession.Value.ToShortDateString & "#")
+            If getdata.HasRows = False Then
+                checkAndUpdateAct(txtUBA1.Text, "1")
+                checkAndUpdateAct(txtUBA2.Text, "2")
+                checkAndUpdateAct(txtUBA3.Text, "3")
+                checkAndUpdateAct(txtUBA4.Text, "4")
+                checkAndUpdateAct(txtUBA5.Text, "5")
+                checkAndUpdateAct(txtUBA6.Text, "6")
+                checkAndUpdateAct(txtUBA7.Text, "7")
+                checkAndUpdateAct(txtUBA8.Text, "8")
+                checkAndUpdateAct(txtUBA9.Text, "9")
+                checkAndUpdateAct(txtUBA10.Text, "10")
+                checkAndUpdateAct(txtUBA11.Text, "11")
+                checkAndUpdateAct(txtUBA12.Text, "12")
+                checkAndUpdateAct(txtUBA13.Text, "13")
+                checkAndUpdateAct(txtUBA14.Text, "14")
+                checkAndUpdateAct(txtUBA15.Text, "15")
+                checkAndUpdateAct(txtUBA16.Text, "16")
+                checkAndUpdateAct(txtUBA17.Text, "17")
+                checkAndUpdateAct(txtUBA18.Text, "18")
+                checkAndUpdateAct(txtLBA1.Text, "19")
+                checkAndUpdateAct(txtLBA2.Text, "20")
+                checkAndUpdateAct(txtLBA3.Text, "21")
+                checkAndUpdateAct(txtLBA4.Text, "22")
+                checkAndUpdateAct(txtLBA5.Text, "23")
+                checkAndUpdateAct(txtLBA6.Text, "24")
+                checkAndUpdateAct(txtLBA7.Text, "25")
+                checkAndUpdateAct(txtLBA8.Text, "26")
+                checkAndUpdateAct(txtLBA9.Text, "27")
+                checkAndUpdateAct(txtLBA10.Text, "28")
+                checkAndUpdateAct(txtLBA11.Text, "29")
+                checkAndUpdateAct(txtLBA12.Text, "30")
+                checkAndUpdateAct(txtLBA13.Text, "31")
+                checkAndUpdateAct(txtLBA14.Text, "32")
+                checkAndUpdateAct(txtLBA15.Text, "33")
+                checkAndUpdateAct(txtLBA16.Text, "34")
+                checkAndUpdateAct(txtLBA17.Text, "35")
+                checkAndUpdateAct(txtLBA18.Text, "36")
+                checkAndUpdateAct(txtCBA1.Text, "37")
+                checkAndUpdateAct(txtCBA2.Text, "38")
+                checkAndUpdateAct(txtCBA3.Text, "39")
+                checkAndUpdateAct(txtCBA4.Text, "40")
+                checkAndUpdateAct(txtCBA5.Text, "41")
+                checkAndUpdateAct(txtCBA6.Text, "42")
+                checkAndUpdateAct(txtCBA7.Text, "43")
+                checkAndUpdateAct(txtCBA8.Text, "44")
+                checkAndUpdateAct(txtCBA9.Text, "45")
+                checkAndUpdateAct(txtCBA10.Text, "46")
+                checkAndUpdateAct(txtCBA11.Text, "47")
+                checkAndUpdateAct(txtCBA12.Text, "48")
+                checkAndUpdateAct(txtCBA13.Text, "49")
+                checkAndUpdateAct(txtCBA14.Text, "50")
+                checkAndUpdateAct(txtCBA15.Text, "51")
+                checkAndUpdateAct(txtCBA16.Text, "52")
+                checkAndUpdateAct(txtCBA17.Text, "53")
+
+                reloadSessions()
+            Else
+                MsgBox("session date already exists")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        DBConnection.openCon()
+        If txtFullname.Text <> Nothing And txtAddress.Text <> Nothing And txtBirthday.Text <> Nothing And txtGender.Text <> Nothing And txtContactNumber.Text <> Nothing And txtEmail.Text <> Nothing And txtEmergencyContactPerson.Text <> Nothing And txtContactNumber2.Text <> Nothing And txtHeight.Text <> Nothing And txtWeight.Text <> Nothing And txtBmi.Text <> Nothing And RichTextBox1.Text <> Nothing Then
+            Try
+                'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
+                Dim updatecmd As New OleDbCommand("Update Members
+                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
+                WHERE member_ID = " & Me.Text & "", DBConnection.con)
+
+                Dim i = updatecmd.ExecuteNonQuery
+
+                If i > 0 Then
+                    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+
+                Else
+                    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+                End If
+
+            Catch ex As Exception
+                MsgBox("An Error Occur", MessageBoxIcon.Error)
+            Finally
+                DBConnection.closeCon()
+
+            End Try
+        Else
+            MsgBox("All Fields Are Required", MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        DBConnection.openCon()
+        Try
+            Dim deletecmd As New OleDbCommand("DELETE * FROM Members WHERE member_ID = " & Me.Text & "", DBConnection.con)
+            Dim i = deletecmd.ExecuteNonQuery
+            If i > 0 Then
+                Dim Answer As Integer
+                Answer = MsgBox("Do you want to delete this information?", vbQuestion + vbYesNo + vbDefaultButton2, "Caution")
+
+                If Answer = vbYes Then
+                    MsgBox("Record Has Been DELETED SUCCESSFULLY!", MessageBoxIcon.Information)
+                    txtFullname.Text = ""
+                    txtAddress.Text = ""
+                    txtBirthday.Text = ""
+                    txtGender.Text = ""
+                    txtContactNumber.Text = ""
+                    txtEmail.Text = ""
+                    txtEmergencyContactPerson.Text = ""
+                    txtContactNumber2.Text = ""
+                    txtHeight.Text = ""
+                    txtWeight.Text = ""
+                    txtBmi.Text = ""
+                    RichTextBox1.Text = ""
+                End If
+            Else
+                MsgBox("Please Select A Data!", MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex)
+        Finally
+            DBConnection.closeCon()
+
+        End Try
+
+    End Sub
+
+    Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load, btnUpdate.Click, btnAdd.Click, btnDelete.Click ', dgvCustomer.CellClick, dgvSession.CellClick
+        'reset fields
+        resetFields("member")
+        resetFields("session")
+
+        'load data
+        loadMembers()
+    End Sub
+
+    Private Sub btnUpdate2_Click(sender As Object, e As EventArgs) Handles btnUpdate2.Click
+        Dim getdata As OleDbDataReader
+        DBConnection.openCon()
+        'check session date if changed
+        If dtSession.Value.ToShortDateString <> dgvSession.CurrentRow.Cells(0).Value() Then
+            'confirm change of session date
+            Dim result As MsgBoxResult
+            result = MsgBox("Are you sure you want to move this to another session date?", MsgBoxStyle.YesNo)
+            If result = MsgBoxResult.Yes Then
+                'check if new session date already exists
+                getdata = DBConnection.fetchData("SELECT * FROM MemberSessions WHERE 
+                member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
+                sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#")
+                If getdata.HasRows Then
+                    'remove the old session if it exists and confirmed to replace
+                    result = MsgBox("A session with this date already exists, do you want to replace it?", MsgBoxStyle.YesNo)
+                    If result = MsgBoxResult.Yes Then
+                        Dim delSessionCMD As New OleDbCommand("
+                        DELETE MemberSessions WHERE
+                        sessiondate = #" & dtSession.Value.ToShortDateString & "# AND
+                        member_id = " & dgvCustomer.CurrentRow.Cells(0).Value(), DBConnection.con)
+                        delSessionCMD.ExecuteNonQuery()
+                        'Dim updateSessionCMD As New OleDbCommand("
+                        'UPDATE MemberSessions SET
+                        'sessiondate = #" & dtSession.Value.ToShortDateString & "# 
+                        'WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
+                        'sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
+                        'updateSessionCMD.ExecuteNonQuery()
+                    Else
+                        DBConnection.closeCon()
+                        Exit Sub
+                    End If
+                    'Else
+                    '    Dim updateSessionCMD As New OleDbCommand("
+                    '    UPDATE MemberSessions SET
+                    '    sessiondate = #" & dtSession.Value.ToShortDateString & "#
+                    '    WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
+                    '    sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
+                    '    updateSessionCMD.ExecuteNonQuery()
+                End If
+            Else
+                DBConnection.closeCon()
+                Exit Sub
+            End If
+
+        End If
+
+        checkAndUpdateAct(txtUBA1.Text, "1")
+        checkAndUpdateAct(txtUBA2.Text, "2")
+        checkAndUpdateAct(txtUBA3.Text, "3")
+        checkAndUpdateAct(txtUBA4.Text, "4")
+        checkAndUpdateAct(txtUBA5.Text, "5")
+        checkAndUpdateAct(txtUBA6.Text, "6")
+        checkAndUpdateAct(txtUBA7.Text, "7")
+        checkAndUpdateAct(txtUBA8.Text, "8")
+        checkAndUpdateAct(txtUBA9.Text, "9")
+        checkAndUpdateAct(txtUBA10.Text, "10")
+        checkAndUpdateAct(txtUBA11.Text, "11")
+        checkAndUpdateAct(txtUBA12.Text, "12")
+        checkAndUpdateAct(txtUBA13.Text, "13")
+        checkAndUpdateAct(txtUBA14.Text, "14")
+        checkAndUpdateAct(txtUBA15.Text, "15")
+        checkAndUpdateAct(txtUBA16.Text, "16")
+        checkAndUpdateAct(txtUBA17.Text, "17")
+        checkAndUpdateAct(txtUBA18.Text, "18")
+        checkAndUpdateAct(txtLBA1.Text, "19")
+        checkAndUpdateAct(txtLBA2.Text, "20")
+        checkAndUpdateAct(txtLBA3.Text, "21")
+        checkAndUpdateAct(txtLBA4.Text, "22")
+        checkAndUpdateAct(txtLBA5.Text, "23")
+        checkAndUpdateAct(txtLBA6.Text, "24")
+        checkAndUpdateAct(txtLBA7.Text, "25")
+        checkAndUpdateAct(txtLBA8.Text, "26")
+        checkAndUpdateAct(txtLBA9.Text, "27")
+        checkAndUpdateAct(txtLBA10.Text, "28")
+        checkAndUpdateAct(txtLBA11.Text, "29")
+        checkAndUpdateAct(txtLBA12.Text, "30")
+        checkAndUpdateAct(txtLBA13.Text, "31")
+        checkAndUpdateAct(txtLBA14.Text, "32")
+        checkAndUpdateAct(txtLBA15.Text, "33")
+        checkAndUpdateAct(txtLBA16.Text, "34")
+        checkAndUpdateAct(txtLBA17.Text, "35")
+        checkAndUpdateAct(txtLBA18.Text, "36")
+        checkAndUpdateAct(txtCBA1.Text, "37")
+        checkAndUpdateAct(txtCBA2.Text, "38")
+        checkAndUpdateAct(txtCBA3.Text, "39")
+        checkAndUpdateAct(txtCBA4.Text, "40")
+        checkAndUpdateAct(txtCBA5.Text, "41")
+        checkAndUpdateAct(txtCBA6.Text, "42")
+        checkAndUpdateAct(txtCBA7.Text, "43")
+        checkAndUpdateAct(txtCBA8.Text, "44")
+        checkAndUpdateAct(txtCBA9.Text, "45")
+        checkAndUpdateAct(txtCBA10.Text, "46")
+        checkAndUpdateAct(txtCBA11.Text, "47")
+        checkAndUpdateAct(txtCBA12.Text, "48")
+        checkAndUpdateAct(txtCBA13.Text, "49")
+        checkAndUpdateAct(txtCBA14.Text, "50")
+        checkAndUpdateAct(txtCBA15.Text, "51")
+        checkAndUpdateAct(txtCBA16.Text, "52")
+        checkAndUpdateAct(txtCBA17.Text, "53")
+
+
+        '    MsgBox("An Error Occurred: ", MessageBoxIcon.Error)
+        'Finally
+        DBConnection.closeCon()
+        '
+        'End Try
+        resetFields("session")
+    End Sub
+
+    Private Sub loadMembers()
+        DBConnection.openCon()
+
+        Dim customercmd As New OleDbCommand("
+        SELECT Members.member_ID as ID, 
+        Members.fname as Name, 
+        Members.address as Address,
+        Members.birthday as Birthdate,
+        Members.age as Age,
+        Members.gender as Gender,
+        Members.contactnumber as Contact,
+        Members.email as Email,
+        Members.emergencyperson as 'Emergency Person',
+        Members.emergencynum as 'Emergency Person Contact',
+        Members.height as Height,
+        Members.weight as Weight,
+        Members.bmi as BMI,
+        Members.medicalcondition as 'Medical Condition',
+        Members.membersince as 'Member Since'
+        FROM Members
+        INNER JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE credentials.isAdmin <> 'Y'", DBConnection.con)
+
+        'Dim adminreader As OleDbDataReader
+        'adminreader = customercmd.ExecuteReader
+        'If Me.Text = adminreader("credentials.member_id") Then
+        '    lblAdminName = "Welcome " & adminreader("fname")
+        'End If
+
+        Dim da As New OleDbDataAdapter
+        da.SelectCommand = customercmd
+        Dim dt As New DataTable
+        dt.Clear()
+        da.Fill(dt)
+        dgvCustomer.DataSource = dt
+        DBConnection.closeCon()
+    End Sub
+
+    Private Sub reloadSessions()
+        resetFields("session")
+        DBConnection.openCon()
+
+        Dim sessioncmd As New OleDbCommand("
+        SELECT MemberSessions.sessiondate as 'Session Date'
+        FROM MemberSessions
+        INNER JOIN activitieslist ON MemberSessions.actcode = activitieslist.actcode
+        WHERE MemberSessions.member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " GROUP BY MemberSessions.sessiondate", DBConnection.con)
+
+
+
+        Dim da As New OleDbDataAdapter
+        da.SelectCommand = sessioncmd
+        Dim dt As New DataTable
+        dt.Clear()
+        da.Fill(dt)
+        dgvSession.DataSource = dt
+        DBConnection.closeCon()
+    End Sub
+
+    Private Sub loadSessions()
         DBConnection.openCon()
         Dim sessioncmd As New OleDbCommand("
         SELECT *
@@ -187,475 +581,45 @@ Public Class admin_overview
         DBConnection.closeCon()
     End Sub
 
-    Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick
-        'reset fields for member info
-        'txtFullname.Text = ""
-        'txtAddress.Text = ""
-        'txtBirthday.Text = ""
-        'txtGender.Text = ""
-        'txtContactNumber.Text = ""
-        'txtEmail.Text = ""
-        'txtEmergencyContactPerson.Text = ""
-        'txtContactNumber2.Text = ""
-        'txtHeight.Text = ""
-        'txtWeight.Text = ""
-        'txtBmi.Text = ""
-        'RichTextBox1.Text = ""
-        'txtPW.Text = ""
-
-        Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
-        txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
-        txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
-        txtBirthday.Text = dgvCustomer.CurrentRow.Cells(3).Value
-        txtGender.Text = dgvCustomer.CurrentRow.Cells(5).Value
-        txtContactNumber.Text = dgvCustomer.CurrentRow.Cells(6).Value
-        txtEmail.Text = dgvCustomer.CurrentRow.Cells(7).Value
-        txtEmergencyContactPerson.Text = dgvCustomer.CurrentRow.Cells(8).Value
-        txtContactNumber2.Text = dgvCustomer.CurrentRow.Cells(9).Value
-        txtHeight.Text = dgvCustomer.CurrentRow.Cells(10).Value
-        txtWeight.Text = dgvCustomer.CurrentRow.Cells(11).Value
-        txtBmi.Text = dgvCustomer.CurrentRow.Cells(12).Value
-        RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
-
-        DBConnection.openCon()
-
-        Dim sessioncmd As New OleDbCommand("
-        SELECT MemberSessions.sessiondate as 'Session Date'
-        FROM MemberSessions
-        INNER JOIN activitieslist ON MemberSessions.actcode = activitieslist.actcode
-        WHERE MemberSessions.member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " GROUP BY MemberSessions.sessiondate", DBConnection.con)
-
-
-
-        Dim da As New OleDbDataAdapter
-        da.SelectCommand = sessioncmd
-        Dim dt As New DataTable
-        dt.Clear()
-        da.Fill(dt)
-        dgvSession.DataSource = dt
-        DBConnection.closeCon()
-
-
-    End Sub
-
-    Private Sub btnsearch_Click(sender As Object, e As EventArgs) Handles btnsearch.Click
-        Try
-            DBConnection.openCon()
-            Dim searchcmd As New OleDbCommand("SELECT * FROM Members WHERE 
-            member_ID LIKE '%" & txtsearch.Text & "%'
-            OR fname LIKE '%" & txtsearch.Text & "%' 
-            OR address LIKE '%" & txtsearch.Text & "%' 
-            OR gender LIKE '%" & txtsearch.Text & "%' 
-            OR contactnumber LIKE '%" & txtsearch.Text & "%' 
-            OR email LIKE '%" & txtsearch.Text & "%' 
-            OR emergencyperson LIKE '%" & txtsearch.Text & "%' 
-            OR emergencynum LIKE '%" & txtsearch.Text & "%' 
-            OR height LIKE '%" & txtsearch.Text & "%' 
-            OR weight LIKE '%" & txtsearch.Text & "%' 
-            OR medicalcondition LIKE '%" & txtsearch.Text & "%'        
-            ;", DBConnection.con)
-            Dim searchda As New OleDbDataAdapter
-            searchda.SelectCommand = searchcmd
-            Dim searchdt As New DataTable
-            searchda.Fill(searchdt)
-            dgvCustomer.DataSource = searchdt
-        Catch ex As Exception
-            MsgBox("An Error Occur!")
-        Finally
-            DBConnection.closeCon()
-
-        End Try
-    End Sub
-    Private Sub btnSearch2_Click(sender As Object, e As EventArgs) Handles btnSearch2.Click
-        Try
-            DBConnection.openCon()
-            Dim searchcmd2 As New OleDbCommand("SELECT MemberSessions.sessiondate, MemberSessions.sessiontime, MemberSessions.lostweight, activitieslist.actname, activitieslist.acttype, activitieslist.actvalue
-            FROM MemberSessions
-            INNER JOIN activitieslist ON MemberSessions.actcode = activitieslist.actcode
-            WHERE 
-            MemberSessions.sessiondate LIKE '%" & txtSearch2.Text & "%'
-            OR MemberSessions.sessiontime LIKE '%" & txtSearch2.Text & "%' 
-            OR MemberSessions.lostweight LIKE '%" & txtSearch2.Text & "%' 
-            OR activitieslist.actname LIKE '%" & txtSearch2.Text & "%' 
-            OR activitieslist.acttype LIKE '%" & txtSearch2.Text & "%' 
-            OR activitieslist.actvalue LIKE '%" & txtSearch2.Text & "%'      
-            ;", DBConnection.con)
-            Dim searchda As New OleDbDataAdapter
-            searchda.SelectCommand = searchcmd2
-            Dim searchdt As New DataTable
-            searchda.Fill(searchdt)
-            dgvSession.DataSource = searchdt
-        Catch ex As Exception
-            MsgBox("An Error Occur!")
-        Finally
-            DBConnection.closeCon()
-
-        End Try
-    End Sub
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        DBConnection.openCon()
-        Try
-            Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
-            emergencynum,height,weight,bmi,medicalcondition) 
-            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
-            Dim i = addcmd.ExecuteNonQuery
-            If i > 0 Then
-                MsgBox("New record has been inserted successfully!")
-            Else
-                MsgBox("No record has been inserted successfully!")
-            End If
-
-
-            'Dim sql As String
-            'Dim cmd As New OleDb.OleDbCommand
-            'con.Open()
-            'sql = "INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
-            'emergencynum,height,weight,bmi,medicalcondition,membersince,membershiptype,paymentstatus) 
-            'values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');"
-            'cmd.Connection = con
-            'cmd.CommandText = sql
-            'i = cmd.ExecuteNonQuery
-            'If i > 0 Then
-            '    MsgBox("New record has been inserted successfully!")
-            'Else
-            '    MsgBox("No record has been inserted successfully!")
-            'End If
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            DBConnection.closeCon()
-
-        End Try
-    End Sub
-
-    Private Sub btnAdd2_Click(sender As Object, e As EventArgs) Handles btnAdd2.Click
-        DBConnection.openCon()
-        Try
-            Dim getdata = DBConnection.fetchData("SELECT * FROM MemberSessions WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND sessiondate = #" & dtSession.Value & "#")
-            If getdata.HasRows = False Then
-                checkAndUpdateAct(txtUBA1.Text, "1")
-                checkAndUpdateAct(txtUBA2.Text, "2")
-                checkAndUpdateAct(txtUBA3.Text, "3")
-                checkAndUpdateAct(txtUBA4.Text, "4")
-                checkAndUpdateAct(txtUBA5.Text, "5")
-                checkAndUpdateAct(txtUBA6.Text, "6")
-                checkAndUpdateAct(txtUBA7.Text, "7")
-                checkAndUpdateAct(txtUBA8.Text, "8")
-                checkAndUpdateAct(txtUBA9.Text, "9")
-                checkAndUpdateAct(txtUBA10.Text, "10")
-                checkAndUpdateAct(txtUBA11.Text, "11")
-                checkAndUpdateAct(txtUBA12.Text, "12")
-                checkAndUpdateAct(txtUBA13.Text, "13")
-                checkAndUpdateAct(txtUBA14.Text, "14")
-                checkAndUpdateAct(txtUBA15.Text, "15")
-                checkAndUpdateAct(txtUBA16.Text, "16")
-                checkAndUpdateAct(txtUBA17.Text, "17")
-                checkAndUpdateAct(txtUBA18.Text, "18")
-                checkAndUpdateAct(txtLBA1.Text, "19")
-                checkAndUpdateAct(txtLBA2.Text, "20")
-                checkAndUpdateAct(txtLBA3.Text, "21")
-                checkAndUpdateAct(txtLBA4.Text, "22")
-                checkAndUpdateAct(txtLBA5.Text, "23")
-                checkAndUpdateAct(txtLBA6.Text, "24")
-                checkAndUpdateAct(txtLBA7.Text, "25")
-                checkAndUpdateAct(txtLBA8.Text, "26")
-                checkAndUpdateAct(txtLBA9.Text, "27")
-                checkAndUpdateAct(txtLBA10.Text, "28")
-                checkAndUpdateAct(txtLBA11.Text, "29")
-                checkAndUpdateAct(txtLBA12.Text, "30")
-                checkAndUpdateAct(txtLBA13.Text, "31")
-                checkAndUpdateAct(txtLBA14.Text, "32")
-                checkAndUpdateAct(txtLBA15.Text, "33")
-                checkAndUpdateAct(txtLBA16.Text, "34")
-                checkAndUpdateAct(txtLBA17.Text, "35")
-                checkAndUpdateAct(txtLBA18.Text, "36")
-                checkAndUpdateAct(txtCBA1.Text, "37")
-                checkAndUpdateAct(txtCBA2.Text, "38")
-                checkAndUpdateAct(txtCBA3.Text, "39")
-                checkAndUpdateAct(txtCBA4.Text, "40")
-                checkAndUpdateAct(txtCBA5.Text, "41")
-                checkAndUpdateAct(txtCBA6.Text, "42")
-                checkAndUpdateAct(txtCBA7.Text, "43")
-                checkAndUpdateAct(txtCBA8.Text, "44")
-                checkAndUpdateAct(txtCBA9.Text, "45")
-                checkAndUpdateAct(txtCBA10.Text, "46")
-                checkAndUpdateAct(txtCBA11.Text, "47")
-                checkAndUpdateAct(txtCBA12.Text, "48")
-                checkAndUpdateAct(txtCBA13.Text, "49")
-                checkAndUpdateAct(txtCBA14.Text, "50")
-                checkAndUpdateAct(txtCBA15.Text, "51")
-                checkAndUpdateAct(txtCBA16.Text, "52")
-                checkAndUpdateAct(txtCBA17.Text, "53")
-            Else
-                MsgBox("session date already exists")
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            DBConnection.closeCon()
-
-        End Try
-    End Sub
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        DBConnection.openCon()
-        If txtFullname.Text <> Nothing And txtAddress.Text <> Nothing And txtBirthday.Text <> Nothing And txtGender.Text <> Nothing And txtContactNumber.Text <> Nothing And txtEmail.Text <> Nothing And txtEmergencyContactPerson.Text <> Nothing And txtContactNumber2.Text <> Nothing And txtHeight.Text <> Nothing And txtWeight.Text <> Nothing And txtBmi.Text <> Nothing And RichTextBox1.Text <> Nothing Then
-            Try
-                'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
-                Dim updatecmd As New OleDbCommand("Update Members
-                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
-                WHERE member_ID = " & Me.Text & "", DBConnection.con)
-
-                Dim i = updatecmd.ExecuteNonQuery
-
-                If i > 0 Then
-                    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
-
-                Else
-                    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
-                End If
-
-            Catch ex As Exception
-                MsgBox("An Error Occur", MessageBoxIcon.Error)
-            Finally
-                DBConnection.closeCon()
-
-            End Try
-        Else
-            MsgBox("All Fields Are Required", MessageBoxIcon.Warning)
+    Private Sub updateAct(field As String, actcode As String, Optional sessiondate As String = "")
+        If sessiondate = "" Then
+            sessiondate = dtSession.Value.ToShortDateString
         End If
-    End Sub
-
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        DBConnection.openCon()
-        Try
-            Dim deletecmd As New OleDbCommand("DELETE * FROM Members WHERE member_ID = " & Me.Text & "", DBConnection.con)
-            Dim i = deletecmd.ExecuteNonQuery
-            If i > 0 Then
-                Dim Answer As Integer
-                Answer = MsgBox("Do you want to delete this information?", vbQuestion + vbYesNo + vbDefaultButton2, "Caution")
-
-                If Answer = vbYes Then
-                    MsgBox("Record Has Been DELETED SUCCESSFULLY!", MessageBoxIcon.Information)
-                    txtFullname.Text = ""
-                    txtAddress.Text = ""
-                    txtBirthday.Text = ""
-                    txtGender.Text = ""
-                    txtContactNumber.Text = ""
-                    txtEmail.Text = ""
-                    txtEmergencyContactPerson.Text = ""
-                    txtContactNumber2.Text = ""
-                    txtHeight.Text = ""
-                    txtWeight.Text = ""
-                    txtBmi.Text = ""
-                    RichTextBox1.Text = ""
-                End If
-            Else
-                MsgBox("Please Select A Data!", MessageBoxIcon.Warning)
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex)
-        Finally
-            DBConnection.closeCon()
-
-        End Try
-
-    End Sub
-
-    Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load, btnUpdate.Click, btnAdd.Click, btnDelete.Click ', dgvCustomer.CellClick, dgvSession.CellClick
-        'reset fields
-        resetFields("member")
-        resetFields("session")
-
-        'load data
-        loadMembers()
-    End Sub
-
-    Private Sub btnUpdate2_Click(sender As Object, e As EventArgs) Handles btnUpdate2.Click
-        Dim getdata As OleDbDataReader
-        DBConnection.openCon()
-        'check session date if changed
-        If dtSession.Value <> dgvSession.CurrentRow.Cells(0).Value() Then
-            'confirm change of session date
-            Dim result As MsgBoxResult
-            result = MsgBox("Are you sure you want to move this to another session date?", MsgBoxStyle.YesNo)
-            If result = MsgBoxResult.Yes Then
-                'check if new session date already exists
-                getdata = DBConnection.fetchData("SELECT * FROM MemberSessions WHERE 
-                member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#")
-                If getdata.HasRows Then
-                    'remove the old session if it exists and confirmed to replace
-                    result = MsgBox("A session with this date already exists, do you want to replace it?", MsgBoxStyle.YesNo)
-                    If result = MsgBoxResult.Yes Then
-                        Dim delSessionCMD As New OleDbCommand("
-                        DELETE MemberSessions WHERE
-                        sessiondate = #" & dtSession.Value & "# AND
-                        member_id = " & dgvCustomer.CurrentRow.Cells(0).Value(), DBConnection.con)
-                        delSessionCMD.ExecuteNonQuery()
-                        'Dim updateSessionCMD As New OleDbCommand("
-                        'UPDATE MemberSessions SET
-                        'sessiondate = #" & dtSession.Value & "# 
-                        'WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                        'sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
-                        'updateSessionCMD.ExecuteNonQuery()
-                    Else
-                        DBConnection.closeCon()
-                        Exit Sub
-                    End If
-                    'Else
-                    '    Dim updateSessionCMD As New OleDbCommand("
-                    '    UPDATE MemberSessions SET
-                    '    sessiondate = #" & dtSession.Value & "#
-                    '    WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                    '    sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
-                    '    updateSessionCMD.ExecuteNonQuery()
-                End If
-            Else
-                DBConnection.closeCon()
-                Exit Sub
-            End If
-
-        End If
-
-        checkAndUpdateAct(txtUBA1.Text, "1")
-        checkAndUpdateAct(txtUBA2.Text, "2")
-        checkAndUpdateAct(txtUBA3.Text, "3")
-        checkAndUpdateAct(txtUBA4.Text, "4")
-        checkAndUpdateAct(txtUBA5.Text, "5")
-        checkAndUpdateAct(txtUBA6.Text, "6")
-        checkAndUpdateAct(txtUBA7.Text, "7")
-        checkAndUpdateAct(txtUBA8.Text, "8")
-        checkAndUpdateAct(txtUBA9.Text, "9")
-        checkAndUpdateAct(txtUBA10.Text, "10")
-        checkAndUpdateAct(txtUBA11.Text, "11")
-        checkAndUpdateAct(txtUBA12.Text, "12")
-        checkAndUpdateAct(txtUBA13.Text, "13")
-        checkAndUpdateAct(txtUBA14.Text, "14")
-        checkAndUpdateAct(txtUBA15.Text, "15")
-        checkAndUpdateAct(txtUBA16.Text, "16")
-        checkAndUpdateAct(txtUBA17.Text, "17")
-        checkAndUpdateAct(txtUBA18.Text, "18")
-        checkAndUpdateAct(txtLBA1.Text, "19")
-        checkAndUpdateAct(txtLBA2.Text, "20")
-        checkAndUpdateAct(txtLBA3.Text, "21")
-        checkAndUpdateAct(txtLBA4.Text, "22")
-        checkAndUpdateAct(txtLBA5.Text, "23")
-        checkAndUpdateAct(txtLBA6.Text, "24")
-        checkAndUpdateAct(txtLBA7.Text, "25")
-        checkAndUpdateAct(txtLBA8.Text, "26")
-        checkAndUpdateAct(txtLBA9.Text, "27")
-        checkAndUpdateAct(txtLBA10.Text, "28")
-        checkAndUpdateAct(txtLBA11.Text, "29")
-        checkAndUpdateAct(txtLBA12.Text, "30")
-        checkAndUpdateAct(txtLBA13.Text, "31")
-        checkAndUpdateAct(txtLBA14.Text, "32")
-        checkAndUpdateAct(txtLBA15.Text, "33")
-        checkAndUpdateAct(txtLBA16.Text, "34")
-        checkAndUpdateAct(txtLBA17.Text, "35")
-        checkAndUpdateAct(txtLBA18.Text, "36")
-        checkAndUpdateAct(txtCBA1.Text, "37")
-        checkAndUpdateAct(txtCBA2.Text, "38")
-        checkAndUpdateAct(txtCBA3.Text, "39")
-        checkAndUpdateAct(txtCBA4.Text, "40")
-        checkAndUpdateAct(txtCBA5.Text, "41")
-        checkAndUpdateAct(txtCBA6.Text, "42")
-        checkAndUpdateAct(txtCBA7.Text, "43")
-        checkAndUpdateAct(txtCBA8.Text, "44")
-        checkAndUpdateAct(txtCBA9.Text, "45")
-        checkAndUpdateAct(txtCBA10.Text, "46")
-        checkAndUpdateAct(txtCBA11.Text, "47")
-        checkAndUpdateAct(txtCBA12.Text, "48")
-        checkAndUpdateAct(txtCBA13.Text, "49")
-        checkAndUpdateAct(txtCBA14.Text, "50")
-        checkAndUpdateAct(txtCBA15.Text, "51")
-        checkAndUpdateAct(txtCBA16.Text, "52")
-        checkAndUpdateAct(txtCBA17.Text, "53")
-
-
-        '    MsgBox("An Error Occurred: ", MessageBoxIcon.Error)
-        'Finally
-        DBConnection.closeCon()
-        '
-        'End Try
-        resetFields("session")
-    End Sub
-
-    Private Sub loadMembers()
-        DBConnection.openCon()
-
-        Dim customercmd As New OleDbCommand("
-        SELECT Members.member_ID as ID, 
-        Members.fname as Name, 
-        Members.address as Address,
-        Members.birthday as Birthdate,
-        Members.age as Age,
-        Members.gender as Gender,
-        Members.contactnumber as Contact,
-        Members.email as Email,
-        Members.emergencyperson as 'Emergency Person',
-        Members.emergencynum as 'Emergency Person Contact',
-        Members.height as Height,
-        Members.weight as Weight,
-        Members.bmi as BMI,
-        Members.medicalcondition as 'Medical Condition',
-        Members.membersince as 'Member Since'
-        FROM Members
-        INNER JOIN credentials ON Members.member_ID = credentials.member_id
-        WHERE credentials.isAdmin <> 'Y'", DBConnection.con)
-
-        'Dim adminreader As OleDbDataReader
-        'adminreader = customercmd.ExecuteReader
-        'If Me.Text = adminreader("credentials.member_id") Then
-        '    lblAdminName = "Welcome " & adminreader("fname")
-        'End If
-
-        Dim da As New OleDbDataAdapter
-        da.SelectCommand = customercmd
-        Dim dt As New DataTable
-        dt.Clear()
-        da.Fill(dt)
-        dgvCustomer.DataSource = dt
-        DBConnection.closeCon()
-    End Sub
-
-    Private Sub updateAct(field As String, actcode As String)
         field = Trim(field)
         If field <> "" Then
             Dim cmd As New OleDbCommand("
                 UPDATE MemberSessions SET
                 session_minutes = " & field & "
                 WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "# AND
+                sessiondate = #" & sessiondate & "# AND
                 actcode = " & actcode, DBConnection.con)
             cmd.ExecuteNonQuery()
         Else
             Dim cmd As New OleDbCommand("
                 DELETE FROM MemberSessions 
                 WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
-                sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "# AND
+                sessiondate = #" & sessiondate & "# AND
                 actcode = " & actcode, DBConnection.con)
             cmd.ExecuteNonQuery()
         End If
     End Sub
 
-    Private Sub addAct(field As String, actcode As String)
+    Private Sub addAct(field As String, actcode As String, Optional sessiondate As String = "")
+        If sessiondate = "" Then
+            sessiondate = dtSession.Value.ToShortDateString
+        End If
         field = Trim(field)
         Dim cmd As New OleDbCommand("
             INSERT INTO MemberSessions(member_id, sessiondate, session_minutes, actcode)
             VALUES(" & dgvCustomer.CurrentRow.Cells(0).Value() & ",
-            #" & dgvSession.CurrentRow.Cells(0).Value() & "#, " &
+            #" & sessiondate & "#, " &
             field & ", " & actcode & ")", DBConnection.con)
         cmd.ExecuteNonQuery()
     End Sub
 
     Private Sub checkAndUpdateAct(field As String, actcode As String, Optional sessiondate As String = "")
         If sessiondate = "" Then
-            sessiondate = dtSession.Value
+            sessiondate = dtSession.Value.ToShortDateString
         End If
         field = Trim(field)
         'check if member already has this record
@@ -677,12 +641,15 @@ Public Class admin_overview
 
 
     Private Sub btnDelete2_Click(sender As Object, e As EventArgs) Handles btnDelete2.Click
+        DBConnection.openCon()
         Dim cmd As New OleDbCommand("
                 DELETE FROM MemberSessions 
                 WHERE member_id = " & dgvCustomer.CurrentRow.Cells(0).Value() & " AND 
                 sessiondate = #" & dgvSession.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
         cmd.ExecuteNonQuery()
+        DBConnection.closeCon()
         resetFields("session")
+        reloadSessions()
     End Sub
 
     Private Sub resetFields(fieldType As String)
