@@ -317,6 +317,10 @@ Public Class profile
 
             If updatecmd.ExecuteNonQuery() > 0 Then
                 MsgBox("Profile updated successfully", MessageBoxIcon.Information)
+                btnUpdate.Show()
+                btnBack.Show()
+                btnSave.Hide()
+                DBConnection.closeCon()
             Else
                 MsgBox("Profile update failed", MessageBoxIcon.Warning)
             End If
