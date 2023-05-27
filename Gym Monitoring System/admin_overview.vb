@@ -102,16 +102,20 @@ Public Class admin_overview
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        'no validation required for admin
         DBConnection.openCon()
         Try
             Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
             emergencynum,height,weight,bmi,medicalcondition) 
             values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
-            Dim i = addcmd.ExecuteNonQuery
-            If i > 0 Then
+            addcmd.ExecuteNonQuery()
+            Dim getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
+            Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPW.Text & "')"
+            Dim addpwcmd As New OleDbCommand(pw, DBConnection.con)
+            If addpwcmd.ExecuteNonQuery > 0 Then
                 MsgBox("New record has been inserted successfully!")
             Else
-                MsgBox("No record has been inserted successfully!")
+                MsgBox("Record occured creating record")
             End If
 
 
@@ -136,6 +140,8 @@ Public Class admin_overview
             DBConnection.closeCon()
 
         End Try
+        resetFields("member")
+        loadMembers()
     End Sub
 
     Private Sub btnAdd2_Click(sender As Object, e As EventArgs) Handles btnAdd2.Click
