@@ -23,11 +23,71 @@ Partial Class admin_overview
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnSearch2 = New System.Windows.Forms.Button()
+        Me.txtSearch2 = New System.Windows.Forms.TextBox()
+        Me.btnAdd2 = New System.Windows.Forms.Button()
+        Me.btnDelete2 = New System.Windows.Forms.Button()
+        Me.btnUpdate2 = New System.Windows.Forms.Button()
         Me.dgvSession = New System.Windows.Forms.DataGridView()
         Me.RichTextBox1 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtSession = New System.Windows.Forms.DateTimePicker()
         Me.btnsearch = New System.Windows.Forms.Button()
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.txtLBA18 = New System.Windows.Forms.TextBox()
@@ -87,7 +147,9 @@ Partial Class admin_overview
         Me.lblCore = New System.Windows.Forms.Label()
         Me.lblUpperBody = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPW = New System.Windows.Forms.TextBox()
         Me.txtBmi = New System.Windows.Forms.TextBox()
+        Me.Label56 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtBirthday = New System.Windows.Forms.TextBox()
@@ -129,64 +191,6 @@ Partial Class admin_overview
         Me.lblTotalData = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.btnAdd2 = New System.Windows.Forms.Button()
-        Me.btnDelete2 = New System.Windows.Forms.Button()
-        Me.btnUpdate2 = New System.Windows.Forms.Button()
-        Me.btnSearch2 = New System.Windows.Forms.Button()
-        Me.txtSearch2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.dgvSession, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,7 +273,7 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.btnUpdate2)
         Me.tpCustomer.Controls.Add(Me.dgvSession)
         Me.tpCustomer.Controls.Add(Me.RichTextBox1)
-        Me.tpCustomer.Controls.Add(Me.DateTimePicker1)
+        Me.tpCustomer.Controls.Add(Me.dtSession)
         Me.tpCustomer.Controls.Add(Me.btnsearch)
         Me.tpCustomer.Controls.Add(Me.txtsearch)
         Me.tpCustomer.Controls.Add(Me.txtLBA18)
@@ -329,7 +333,9 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.lblCore)
         Me.tpCustomer.Controls.Add(Me.lblUpperBody)
         Me.tpCustomer.Controls.Add(Me.Label2)
+        Me.tpCustomer.Controls.Add(Me.txtPW)
         Me.tpCustomer.Controls.Add(Me.txtBmi)
+        Me.tpCustomer.Controls.Add(Me.Label56)
         Me.tpCustomer.Controls.Add(Me.Label1)
         Me.tpCustomer.Controls.Add(Me.txtGender)
         Me.tpCustomer.Controls.Add(Me.txtBirthday)
@@ -363,11 +369,550 @@ Partial Class admin_overview
         Me.tpCustomer.Text = " "
         Me.tpCustomer.UseVisualStyleBackColor = True
         '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Location = New System.Drawing.Point(1046, 238)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(34, 13)
+        Me.Label47.TabIndex = 224
+        Me.Label47.Text = "Sit-up"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(1205, 544)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(93, 13)
+        Me.Label38.TabIndex = 224
+        Me.Label38.Text = "Bodyweight Squat"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(1047, 544)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(45, 13)
+        Me.Label29.TabIndex = 224
+        Me.Label29.Text = "Leg curl"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(838, 541)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(122, 13)
+        Me.Label12.TabIndex = 224
+        Me.Label12.Text = "Dumbbell shoulder press"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Location = New System.Drawing.Point(1205, 215)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(59, 13)
+        Me.Label55.TabIndex = 225
+        Me.Label55.Text = "Plank walk"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(1046, 215)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(76, 13)
+        Me.Label46.TabIndex = 225
+        Me.Label46.Text = "Modified plank"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(1205, 519)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(80, 13)
+        Me.Label37.TabIndex = 225
+        Me.Label37.Text = "Dumbbell lunge"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(1047, 520)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(57, 13)
+        Me.Label28.TabIndex = 225
+        Me.Label28.Text = "Side lunge"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(838, 517)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(112, 13)
+        Me.Label13.TabIndex = 225
+        Me.Label13.Text = "Dumbbell bench press"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Location = New System.Drawing.Point(1205, 193)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(120, 13)
+        Me.Label54.TabIndex = 226
+        Me.Label54.Text = "Chaturanga Dandasana"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(1046, 192)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(74, 13)
+        Me.Label45.TabIndex = 226
+        Me.Label45.Text = "Russian twists"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(1205, 498)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(68, 13)
+        Me.Label36.TabIndex = 226
+        Me.Label36.Text = "Barbell squat"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(1047, 497)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(92, 13)
+        Me.Label27.TabIndex = 226
+        Me.Label27.Text = "Romanian deadlift"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(1205, 170)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(104, 13)
+        Me.Label53.TabIndex = 227
+        Me.Label53.Text = "Dumbbell plank drag"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(1046, 169)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(88, 13)
+        Me.Label44.TabIndex = 227
+        Me.Label44.Text = "Bicycle crunches"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(1205, 475)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(72, 13)
+        Me.Label35.TabIndex = 227
+        Me.Label35.Text = "Donkey kicks"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(1205, 147)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(57, 13)
+        Me.Label52.TabIndex = 223
+        Me.Label52.Text = "Plank jack"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(1046, 146)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(50, 13)
+        Me.Label43.TabIndex = 223
+        Me.Label43.Text = "Leg raise"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(1047, 474)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(72, 13)
+        Me.Label26.TabIndex = 227
+        Me.Label26.Text = "Goblet squats"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(1205, 452)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(73, 13)
+        Me.Label34.TabIndex = 223
+        Me.Label34.Text = "Leg extension"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(838, 495)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(141, 13)
+        Me.Label14.TabIndex = 226
+        Me.Label14.Text = "Overhead Triceps Extension"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Location = New System.Drawing.Point(1205, 124)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(58, 13)
+        Me.Label51.TabIndex = 222
+        Me.Label51.Text = "High plank"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(1046, 123)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(83, 13)
+        Me.Label42.TabIndex = 222
+        Me.Label42.Text = "Reverse crunch"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(1047, 451)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(43, 13)
+        Me.Label25.TabIndex = 223
+        Me.Label25.Text = "Deadlift"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(1205, 429)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(75, 13)
+        Me.Label33.TabIndex = 222
+        Me.Label33.Text = "Walking lunge"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(838, 472)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(64, 13)
+        Me.Label15.TabIndex = 227
+        Me.Label15.Text = "Dumbbell fly"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(1205, 101)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(74, 13)
+        Me.Label50.TabIndex = 221
+        Me.Label50.Text = "Forearm plank"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(1046, 100)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(41, 13)
+        Me.Label41.TabIndex = 221
+        Me.Label41.Text = "Crunch"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(1047, 429)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(55, 13)
+        Me.Label24.TabIndex = 222
+        Me.Label24.Text = "Calf raises"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(1205, 406)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(81, 13)
+        Me.Label32.TabIndex = 221
+        Me.Label32.Text = "Reverse lunges"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(1205, 78)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(82, 13)
+        Me.Label49.TabIndex = 220
+        Me.Label49.Text = "Bird-dog crunch"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(838, 449)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(43, 13)
+        Me.Label16.TabIndex = 223
+        Me.Label16.Text = "Deadlift"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(1046, 77)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(34, 13)
+        Me.Label40.TabIndex = 220
+        Me.Label40.Text = "Plank"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(1047, 406)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(56, 13)
+        Me.Label23.TabIndex = 221
+        Me.Label23.Text = "Split squat"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(1205, 382)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(53, 13)
+        Me.Label31.TabIndex = 220
+        Me.Label31.Text = "Leg press"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(1205, 55)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(94, 13)
+        Me.Label48.TabIndex = 219
+        Me.Label48.Text = "Hanging leg raises"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(838, 426)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(100, 13)
+        Me.Label17.TabIndex = 222
+        Me.Label17.Text = "Dumbbell front raise"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(1046, 54)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(38, 13)
+        Me.Label39.TabIndex = 219
+        Me.Label39.Text = "Pilates"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(1047, 383)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(37, 13)
+        Me.Label22.TabIndex = 220
+        Me.Label22.Text = "Lunge"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(1205, 360)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(90, 13)
+        Me.Label30.TabIndex = 219
+        Me.Label30.Text = "Single leg deadlift"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(838, 403)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(61, 13)
+        Me.Label18.TabIndex = 221
+        Me.Label18.Text = "Upright row"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(1047, 360)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(40, 13)
+        Me.Label21.TabIndex = 219
+        Me.Label21.Text = "Squats"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(838, 380)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(132, 13)
+        Me.Label19.TabIndex = 220
+        Me.Label19.Text = "Dumbbell triceps kickback"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(838, 357)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(53, 13)
+        Me.Label20.TabIndex = 219
+        Me.Label20.Text = "Pull-down"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(635, 539)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(121, 13)
+        Me.Label11.TabIndex = 218
+        Me.Label11.Text = "Single arm dumbbell row"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(635, 517)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(54, 13)
+        Me.Label10.TabIndex = 218
+        Me.Label10.Text = "Tricep dip"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(635, 494)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 13)
+        Me.Label9.TabIndex = 218
+        Me.Label9.Text = "Lying triceps extensions"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(635, 471)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.TabIndex = 218
+        Me.Label8.Text = "Pull-up"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(635, 448)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(59, 13)
+        Me.Label7.TabIndex = 217
+        Me.Label7.Text = "Biceps curl"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(635, 425)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 13)
+        Me.Label6.TabIndex = 216
+        Me.Label6.Text = "Bent-over row"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(635, 402)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 13)
+        Me.Label5.TabIndex = 215
+        Me.Label5.Text = "Pushups"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(635, 379)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(82, 13)
+        Me.Label4.TabIndex = 214
+        Me.Label4.Text = "Overhead press"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(635, 356)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.TabIndex = 213
+        Me.Label3.Text = "Bench press"
+        '
+        'btnSearch2
+        '
+        Me.btnSearch2.Location = New System.Drawing.Point(6, 543)
+        Me.btnSearch2.Name = "btnSearch2"
+        Me.btnSearch2.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch2.TabIndex = 212
+        Me.btnSearch2.Text = "Search"
+        Me.btnSearch2.UseVisualStyleBackColor = True
+        '
+        'txtSearch2
+        '
+        Me.txtSearch2.Location = New System.Drawing.Point(87, 545)
+        Me.txtSearch2.MaxLength = 11
+        Me.txtSearch2.Name = "txtSearch2"
+        Me.txtSearch2.Size = New System.Drawing.Size(212, 20)
+        Me.txtSearch2.TabIndex = 211
+        '
+        'btnAdd2
+        '
+        Me.btnAdd2.Location = New System.Drawing.Point(305, 544)
+        Me.btnAdd2.Name = "btnAdd2"
+        Me.btnAdd2.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd2.TabIndex = 208
+        Me.btnAdd2.Text = "Add"
+        Me.btnAdd2.UseVisualStyleBackColor = True
+        '
+        'btnDelete2
+        '
+        Me.btnDelete2.Location = New System.Drawing.Point(467, 544)
+        Me.btnDelete2.Name = "btnDelete2"
+        Me.btnDelete2.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete2.TabIndex = 210
+        Me.btnDelete2.Text = "Delete"
+        Me.btnDelete2.UseVisualStyleBackColor = True
+        '
+        'btnUpdate2
+        '
+        Me.btnUpdate2.Location = New System.Drawing.Point(386, 544)
+        Me.btnUpdate2.Name = "btnUpdate2"
+        Me.btnUpdate2.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate2.TabIndex = 209
+        Me.btnUpdate2.Text = "Update"
+        Me.btnUpdate2.UseVisualStyleBackColor = True
+        '
         'dgvSession
         '
+        Me.dgvSession.AllowUserToAddRows = False
+        Me.dgvSession.AllowUserToDeleteRows = False
+        Me.dgvSession.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvSession.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
+        Me.dgvSession.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSession.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSession.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSession.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvSession.Location = New System.Drawing.Point(6, 294)
+        Me.dgvSession.MultiSelect = False
         Me.dgvSession.Name = "dgvSession"
+        Me.dgvSession.ReadOnly = True
+        Me.dgvSession.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        Me.dgvSession.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSession.Size = New System.Drawing.Size(534, 245)
         Me.dgvSession.TabIndex = 207
         '
@@ -379,12 +924,12 @@ Partial Class admin_overview
         Me.RichTextBox1.Size = New System.Drawing.Size(307, 38)
         Me.RichTextBox1.TabIndex = 206
         '
-        'DateTimePicker1
+        'dtSession
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(794, 213)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 205
+        Me.dtSession.Location = New System.Drawing.Point(807, 324)
+        Me.dtSession.Name = "dtSession"
+        Me.dtSession.Size = New System.Drawing.Size(200, 20)
+        Me.dtSession.TabIndex = 205
         '
         'btnsearch
         '
@@ -810,17 +1355,34 @@ Partial Class admin_overview
         Me.Label2.TabIndex = 90
         Me.Label2.Text = "Medical Condition if Any"
         '
+        'txtPW
+        '
+        Me.txtPW.Location = New System.Drawing.Point(824, 238)
+        Me.txtPW.Name = "txtPW"
+        Me.txtPW.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtPW.Size = New System.Drawing.Size(170, 20)
+        Me.txtPW.TabIndex = 89
+        '
         'txtBmi
         '
-        Me.txtBmi.Location = New System.Drawing.Point(824, 239)
+        Me.txtBmi.Location = New System.Drawing.Point(824, 213)
         Me.txtBmi.Name = "txtBmi"
         Me.txtBmi.Size = New System.Drawing.Size(170, 20)
         Me.txtBmi.TabIndex = 89
         '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(771, 243)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(53, 13)
+        Me.Label56.TabIndex = 88
+        Me.Label56.Text = "Password"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(792, 242)
+        Me.Label1.Location = New System.Drawing.Point(792, 216)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(26, 13)
         Me.Label1.TabIndex = 88
@@ -1008,9 +1570,27 @@ Partial Class admin_overview
         '
         'dgvCustomer
         '
+        Me.dgvCustomer.AllowUserToAddRows = False
+        Me.dgvCustomer.AllowUserToDeleteRows = False
+        Me.dgvCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgvCustomer.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
+        Me.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomer.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvCustomer.Location = New System.Drawing.Point(6, 6)
+        Me.dgvCustomer.MultiSelect = False
         Me.dgvCustomer.Name = "dgvCustomer"
+        Me.dgvCustomer.ReadOnly = True
+        Me.dgvCustomer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        Me.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCustomer.Size = New System.Drawing.Size(534, 250)
         Me.dgvCustomer.TabIndex = 0
         '
@@ -1038,7 +1618,7 @@ Partial Class admin_overview
         Me.tpAdmin.Location = New System.Drawing.Point(23, 4)
         Me.tpAdmin.Name = "tpAdmin"
         Me.tpAdmin.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpAdmin.Size = New System.Drawing.Size(1544, 578)
+        Me.tpAdmin.Size = New System.Drawing.Size(1332, 573)
         Me.tpAdmin.TabIndex = 1
         Me.tpAdmin.Text = "Admin "
         Me.tpAdmin.UseVisualStyleBackColor = True
@@ -1167,527 +1747,6 @@ Partial Class admin_overview
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'btnAdd2
-        '
-        Me.btnAdd2.Location = New System.Drawing.Point(305, 544)
-        Me.btnAdd2.Name = "btnAdd2"
-        Me.btnAdd2.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd2.TabIndex = 208
-        Me.btnAdd2.Text = "Add"
-        Me.btnAdd2.UseVisualStyleBackColor = True
-        '
-        'btnDelete2
-        '
-        Me.btnDelete2.Location = New System.Drawing.Point(467, 544)
-        Me.btnDelete2.Name = "btnDelete2"
-        Me.btnDelete2.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete2.TabIndex = 210
-        Me.btnDelete2.Text = "Delete"
-        Me.btnDelete2.UseVisualStyleBackColor = True
-        '
-        'btnUpdate2
-        '
-        Me.btnUpdate2.Location = New System.Drawing.Point(386, 544)
-        Me.btnUpdate2.Name = "btnUpdate2"
-        Me.btnUpdate2.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate2.TabIndex = 209
-        Me.btnUpdate2.Text = "Update"
-        Me.btnUpdate2.UseVisualStyleBackColor = True
-        '
-        'btnSearch2
-        '
-        Me.btnSearch2.Location = New System.Drawing.Point(6, 543)
-        Me.btnSearch2.Name = "btnSearch2"
-        Me.btnSearch2.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch2.TabIndex = 212
-        Me.btnSearch2.Text = "Search"
-        Me.btnSearch2.UseVisualStyleBackColor = True
-        '
-        'txtSearch2
-        '
-        Me.txtSearch2.Location = New System.Drawing.Point(87, 545)
-        Me.txtSearch2.MaxLength = 11
-        Me.txtSearch2.Name = "txtSearch2"
-        Me.txtSearch2.Size = New System.Drawing.Size(212, 20)
-        Me.txtSearch2.TabIndex = 211
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(635, 356)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 13)
-        Me.Label3.TabIndex = 213
-        Me.Label3.Text = "Bench press"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(635, 379)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 13)
-        Me.Label4.TabIndex = 214
-        Me.Label4.Text = "Overhead press"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(635, 402)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 13)
-        Me.Label5.TabIndex = 215
-        Me.Label5.Text = "Pushups"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(635, 425)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 13)
-        Me.Label6.TabIndex = 216
-        Me.Label6.Text = "Bent-over row"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(635, 448)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(59, 13)
-        Me.Label7.TabIndex = 217
-        Me.Label7.Text = "Biceps curl"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(635, 471)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 218
-        Me.Label8.Text = "Pull-up"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(635, 494)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 13)
-        Me.Label9.TabIndex = 218
-        Me.Label9.Text = "Lying triceps extensions"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(635, 517)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(54, 13)
-        Me.Label10.TabIndex = 218
-        Me.Label10.Text = "Tricep dip"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(635, 539)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(121, 13)
-        Me.Label11.TabIndex = 218
-        Me.Label11.Text = "Single arm dumbbell row"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(838, 541)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(122, 13)
-        Me.Label12.TabIndex = 224
-        Me.Label12.Text = "Dumbbell shoulder press"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(838, 517)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(112, 13)
-        Me.Label13.TabIndex = 225
-        Me.Label13.Text = "Dumbbell bench press"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(838, 495)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(141, 13)
-        Me.Label14.TabIndex = 226
-        Me.Label14.Text = "Overhead Triceps Extension"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(838, 472)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(64, 13)
-        Me.Label15.TabIndex = 227
-        Me.Label15.Text = "Dumbbell fly"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(838, 449)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(43, 13)
-        Me.Label16.TabIndex = 223
-        Me.Label16.Text = "Deadlift"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(838, 426)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(100, 13)
-        Me.Label17.TabIndex = 222
-        Me.Label17.Text = "Dumbbell front raise"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(838, 403)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(61, 13)
-        Me.Label18.TabIndex = 221
-        Me.Label18.Text = "Upright row"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(838, 380)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(132, 13)
-        Me.Label19.TabIndex = 220
-        Me.Label19.Text = "Dumbbell triceps kickback"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(838, 357)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(53, 13)
-        Me.Label20.TabIndex = 219
-        Me.Label20.Text = "Pull-down"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(1047, 360)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(40, 13)
-        Me.Label21.TabIndex = 219
-        Me.Label21.Text = "Squats"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(1047, 383)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(37, 13)
-        Me.Label22.TabIndex = 220
-        Me.Label22.Text = "Lunge"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(1047, 406)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(56, 13)
-        Me.Label23.TabIndex = 221
-        Me.Label23.Text = "Split squat"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(1047, 429)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(55, 13)
-        Me.Label24.TabIndex = 222
-        Me.Label24.Text = "Calf raises"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(1047, 451)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(43, 13)
-        Me.Label25.TabIndex = 223
-        Me.Label25.Text = "Deadlift"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(1047, 474)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(72, 13)
-        Me.Label26.TabIndex = 227
-        Me.Label26.Text = "Goblet squats"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(1047, 497)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(92, 13)
-        Me.Label27.TabIndex = 226
-        Me.Label27.Text = "Romanian deadlift"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(1047, 520)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(57, 13)
-        Me.Label28.TabIndex = 225
-        Me.Label28.Text = "Side lunge"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(1047, 544)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(45, 13)
-        Me.Label29.TabIndex = 224
-        Me.Label29.Text = "Leg curl"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(1205, 360)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(90, 13)
-        Me.Label30.TabIndex = 219
-        Me.Label30.Text = "Single leg deadlift"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(1205, 382)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(53, 13)
-        Me.Label31.TabIndex = 220
-        Me.Label31.Text = "Leg press"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(1205, 406)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(81, 13)
-        Me.Label32.TabIndex = 221
-        Me.Label32.Text = "Reverse lunges"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(1205, 429)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(75, 13)
-        Me.Label33.TabIndex = 222
-        Me.Label33.Text = "Walking lunge"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(1205, 452)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(73, 13)
-        Me.Label34.TabIndex = 223
-        Me.Label34.Text = "Leg extension"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(1205, 475)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(72, 13)
-        Me.Label35.TabIndex = 227
-        Me.Label35.Text = "Donkey kicks"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(1205, 498)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(68, 13)
-        Me.Label36.TabIndex = 226
-        Me.Label36.Text = "Barbell squat"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(1205, 519)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(80, 13)
-        Me.Label37.TabIndex = 225
-        Me.Label37.Text = "Dumbbell lunge"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(1205, 544)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(93, 13)
-        Me.Label38.TabIndex = 224
-        Me.Label38.Text = "Bodyweight Squat"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(1046, 54)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(38, 13)
-        Me.Label39.TabIndex = 219
-        Me.Label39.Text = "Pilates"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(1046, 77)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(34, 13)
-        Me.Label40.TabIndex = 220
-        Me.Label40.Text = "Plank"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(1046, 100)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(41, 13)
-        Me.Label41.TabIndex = 221
-        Me.Label41.Text = "Crunch"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(1046, 123)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(83, 13)
-        Me.Label42.TabIndex = 222
-        Me.Label42.Text = "Reverse crunch"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(1046, 146)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(50, 13)
-        Me.Label43.TabIndex = 223
-        Me.Label43.Text = "Leg raise"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(1046, 169)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(88, 13)
-        Me.Label44.TabIndex = 227
-        Me.Label44.Text = "Bicycle crunches"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(1046, 192)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(74, 13)
-        Me.Label45.TabIndex = 226
-        Me.Label45.Text = "Russian twists"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(1046, 215)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(76, 13)
-        Me.Label46.TabIndex = 225
-        Me.Label46.Text = "Modified plank"
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(1046, 238)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(34, 13)
-        Me.Label47.TabIndex = 224
-        Me.Label47.Text = "Sit-up"
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(1205, 55)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(94, 13)
-        Me.Label48.TabIndex = 219
-        Me.Label48.Text = "Hanging leg raises"
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(1205, 78)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(82, 13)
-        Me.Label49.TabIndex = 220
-        Me.Label49.Text = "Bird-dog crunch"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(1205, 101)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(74, 13)
-        Me.Label50.TabIndex = 221
-        Me.Label50.Text = "Forearm plank"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(1205, 124)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(58, 13)
-        Me.Label51.TabIndex = 222
-        Me.Label51.Text = "High plank"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(1205, 147)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(57, 13)
-        Me.Label52.TabIndex = 223
-        Me.Label52.Text = "Plank jack"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(1205, 170)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(104, 13)
-        Me.Label53.TabIndex = 227
-        Me.Label53.Text = "Dumbbell plank drag"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(1205, 193)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(120, 13)
-        Me.Label54.TabIndex = 226
-        Me.Label54.Text = "Chaturanga Dandasana"
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(1205, 215)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(59, 13)
-        Me.Label55.TabIndex = 225
-        Me.Label55.Text = "Plank walk"
-        '
         'admin_overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1808,7 +1867,7 @@ Partial Class admin_overview
     Friend WithEvents txtUBA2 As TextBox
     Friend WithEvents btnsearch As Button
     Friend WithEvents txtsearch As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtSession As DateTimePicker
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents lblPassword As Label
     Friend WithEvents txtAdminEmail As TextBox
@@ -1877,4 +1936,6 @@ Partial Class admin_overview
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents txtPW As TextBox
+    Friend WithEvents Label56 As Label
 End Class

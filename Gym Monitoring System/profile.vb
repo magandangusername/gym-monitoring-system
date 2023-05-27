@@ -211,7 +211,7 @@ Public Class profile
             lblEmailRequired.Show()
             hasError = True
         Else
-            getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "'")
+            getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "' AND member_ID <>" & DBConnection.member_id)
             If getdata.HasRows Then
                 'MsgBox("ERROR: Email is already taken.")
                 lblEmailRequired.Text = "Email is already taken."
@@ -219,6 +219,8 @@ Public Class profile
                 hasError = True
             Else
                 lblEmailRequired.Hide()
+
+
             End If
         End If
 
@@ -238,23 +240,30 @@ Public Class profile
             lblContactNum2Required.Hide()
         End If
 
+
+
         If txtOldPass.Text = "" Then
-            'MsgBox("ERROR: Email cannot be empty.")
+            'MsgBox("ERROR: Old Pass cannot be empty.")
             lbloldpasswordrequired.Show()
             hasError = True
         Else
-            getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
-            If txtOldPass.Text <> getdata.HasRows.ToString Then
-                lbloldpasswordrequired.Text = "Old password do not match"
-                lbloldpasswordrequired.Show()
-                hasError = True
-
-            Else
-                'If txtOldPass.Text = getdata.HasRows Then
-                lbloldpasswordrequired.Hide()
-
-            End If
+            lbloldpasswordrequired.Hide()
         End If
+
+
+        getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
+        If getdata.HasRows Then
+            lbloldpasswordrequired.Hide()
+        Else
+            lbloldpasswordrequired.Text = "Old password do not match"
+            lbloldpasswordrequired.Show()
+
+        End If
+
+
+
+
+
 
         If txtPassword.Text = "" Then
             'MsgBox("ERROR: Password cannot be empty.")
@@ -267,7 +276,10 @@ Public Class profile
             'MsgBox("ERROR: Please retype your password.")
             lblPassword2Required.Show()
             hasError = True
-        ElseIf txtPassword.Text <> txtReTypePassword.Text Then
+        Else
+            lblPassword2Required.Hide()
+        End If
+        If txtPassword.Text <> txtReTypePassword.Text Then
             'MsgBox("ERROR: password does not match.")
             lblPasswordRequired.Text = "password does not match."
             lblPasswordRequired.Show()
@@ -288,25 +300,63 @@ Public Class profile
             lblPassRequirements.Show()
             hasError = True
         Else
-            lblPassword2Required.Hide()
+            lblPasswordRequired.Hide()
+
         End If
         If hasError Then
             DBConnection.closeCon()
             Exit Sub
         End If
 
-        'Dim updatecmd As New OleDbCommand("Update Members
-        '        SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
-        '        WHERE member_ID = " & Me.Text & "", DBConnection.con)
+        MsgBox("UPDATE Members
+        SET fname = '" & txtFullname.Text &
+        "', address = '" & txtAddress.Text &
+        "', contactnumber = '" & txtContactNumber.Text &
+        "', email = '" & txtEmail.Text &
+        "',emergencyperson = '" & txtEmergencyContactPerson.Text &
+        "',emergencynum = '" & txtContactNumber2.Text &
+        "',height = '" & txtHeight.Text &
+        "',weight = '" & txtWeight.Text &
+        "', medicalcondition = '" & txtMedCon.Text & "',
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID =" & DBConnection.member_id & ";
+        UPDATE credentials
+        SET credentials.member_id = " & DBConnection.member_id &
+        ", credentials.member_password = '" & txtPassword.Text & "'
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID = " & DBConnection.member_id & ";")
 
-        'Dim i = updatecmd.ExecuteNonQuery
+        Dim updatecmd As New OleDbCommand("UPDATE Members
+        SET fname = '" & txtFullname.Text & "', 
+        address = '" & txtAddress.Text & "', 
+        contactnumber = '" & txtContactNumber.Text & "', 
+        email = '" & txtEmail.Text & "',
+        emergencyperson = '" & txtEmergencyContactPerson.Text & "',
+        emergencynum = '" & txtContactNumber2.Text & "',
+        height = '" & txtHeight.Text & "',
+        weight = '" & txtWeight.Text & "', 
+        medicalcondition = '" & txtMedCon.Text & "',
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID =" & DBConnection.member_id & ";
+        
+        UPDATE credentials
+        SET 
+        credentials.member_id = " & DBConnection.member_id & ", 
+        credentials.member_password = '" & txtPassword.Text & "'
+        FROM Members
+        JOIN credentials ON Members.member_ID = credentials.member_id
+        WHERE Members.member_ID = " & DBConnection.member_id & ";", DBConnection.con)
 
-        'If i > 0 Then
-        '    MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+        Dim i = updatecmd.ExecuteNonQuery
 
-        'Else
-        '    MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
-        'End If
+        If i > 0 Then
+            MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+        Else
+            MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+        End If
 
     End Sub
 
