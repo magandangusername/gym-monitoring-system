@@ -36,6 +36,12 @@
     Why It’s Important: 
             Your core supports your back, which in turn supports your entire body. Having strong stomach and back muscles helps take some of the load off of your spine. It helps improve balance, stability, and posture.
 "
+        RichTextBox3.Text = "
+            Lower body includes legs and glutes. Some of the most common exercises for the lower body are lunges, squats, step-ups, mountain climbers, and squat-thrusts.
+
+        Why It’s Important: 
+            Working the lower body tones the legs and glutes, and helps you maintain lower body strength. Powerful leg muscles allow us to climb stairs easily, to squat down and retrieve something off the floor, to get back up if we have fallen. Strong leg muscles also help protect our knees and hips from injury. They help us preserve our mobility, agility and stability as we age, and are helpful in maintaining our balance.
+"
         lblWarning.Text = ""
         DBConnection.openCon()
         Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
