@@ -303,30 +303,11 @@ Public Class profile
             lblPasswordRequired.Hide()
 
         End If
+
         If hasError Then
             DBConnection.closeCon()
             Exit Sub
         End If
-
-        MsgBox("UPDATE Members
-        SET fname = '" & txtFullname.Text &
-        "', address = '" & txtAddress.Text &
-        "', contactnumber = '" & txtContactNumber.Text &
-        "', email = '" & txtEmail.Text &
-        "',emergencyperson = '" & txtEmergencyContactPerson.Text &
-        "',emergencynum = '" & txtContactNumber2.Text &
-        "',height = '" & txtHeight.Text &
-        "',weight = '" & txtWeight.Text &
-        "', medicalcondition = '" & txtMedCon.Text & "',
-        FROM Members
-        JOIN credentials ON Members.member_ID = credentials.member_id
-        WHERE Members.member_ID =" & DBConnection.member_id & ";
-        UPDATE credentials
-        SET credentials.member_id = " & DBConnection.member_id &
-        ", credentials.member_password = '" & txtPassword.Text & "'
-        FROM Members
-        JOIN credentials ON Members.member_ID = credentials.member_id
-        WHERE Members.member_ID = " & DBConnection.member_id & ";")
 
         Dim updatecmd As New OleDbCommand("UPDATE Members
         SET fname = '" & txtFullname.Text & "', 
@@ -337,28 +318,27 @@ Public Class profile
         emergencynum = '" & txtContactNumber2.Text & "',
         height = '" & txtHeight.Text & "',
         weight = '" & txtWeight.Text & "', 
-        medicalcondition = '" & txtMedCon.Text & "',
-        FROM Members
-        JOIN credentials ON Members.member_ID = credentials.member_id
-        WHERE Members.member_ID =" & DBConnection.member_id & ";
-        
-        UPDATE credentials
-        SET 
-        credentials.member_id = " & DBConnection.member_id & ", 
-        credentials.member_password = '" & txtPassword.Text & "'
-        FROM Members
-        JOIN credentials ON Members.member_ID = credentials.member_id
-        WHERE Members.member_ID = " & DBConnection.member_id & ";", DBConnection.con)
-
-        Dim i = updatecmd.ExecuteNonQuery
-
-        If i > 0 Then
-            MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
-        Else
-            MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+        medicalcondition = '" & txtMedCon.Text & "'
+        WHERE member_ID =" & DBConnection.member_id & ";", DBConnection.con)
+        Dim a = updatecmd.ExecuteNonQuery
+        If a > 0 Then
+            Dim updatecmd2 As New OleDbCommand("UPDATE credentials
+            SET 
+            member_id = " & DBConnection.member_id & ", 
+            member_password = '" & txtPassword.Text & "'
+            WHERE member_id = " & DBConnection.member_id & ";", DBConnection.con)
+            Dim b = updatecmd2.ExecuteNonQuery
+            If b > 0 Then
+                MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
+                btnUpdate.Show()
+                btnBack.Show()
+                btnSave.Hide()
+                DBConnection.closeCon()
+            Else
+                MsgBox("Record Update Failed!", MessageBoxIcon.Warning)
+            End If
         End If
 
     End Sub
-
 
 End Class
