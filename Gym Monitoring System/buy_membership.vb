@@ -55,17 +55,7 @@ Public Class buy_membership
             DBConnection.member_id & "," &
             discountedPrice & ",'" &
             "Pending" & "')", con)
-            MsgBox("INSERT INTO MembershipOrder(
-            membership_id,
-            member_id,
-            total_price,
-            membership_status
-            ) VALUES(" &
-            membership_id & "," &
-            DBConnection.member_id & "," &
-            discountedPrice & ",'" &
-            "Pending" & "')")
-            'MsgBox(insertMembership.ExecuteNonQuery())
+
             If insertMembership.ExecuteNonQuery() <= 0 Then
                 MsgBox("Error occured inserting data.")
             End If

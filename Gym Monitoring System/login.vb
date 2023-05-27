@@ -13,7 +13,6 @@ Public Class login
         AND credentials.member_password = '" & txtPassword.Text & "'")
         'MsgBox(securedStr.HashPassword(txtPassword.Text, salt, 10101, 70))
         If getdata.HasRows Then
-            MsgBox("Login Success")
             DBConnection.member_id = getdata("Members.member_id")
             Me.Hide()
             If getdata("isAdmin") = "Y" Then
