@@ -1,6 +1,6 @@
 ﻿Public Class member_dashboard
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
-        Form1.Show()
+        Home.Show()
         Me.Hide()
     End Sub
 
