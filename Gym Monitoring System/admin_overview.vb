@@ -18,22 +18,26 @@ Public Class admin_overview
     End Sub
 
     Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick ', dgvCustomer.SelectionChanged
+        Try
+            'Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
+            txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
+            txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
+            txtBirthday.Text = dgvCustomer.CurrentRow.Cells(3).Value
+            txtGender.Text = dgvCustomer.CurrentRow.Cells(5).Value
+            txtContactNumber.Text = dgvCustomer.CurrentRow.Cells(6).Value
+            txtEmail.Text = dgvCustomer.CurrentRow.Cells(7).Value
+            txtEmergencyContactPerson.Text = dgvCustomer.CurrentRow.Cells(8).Value
+            txtContactNumber2.Text = dgvCustomer.CurrentRow.Cells(9).Value
+            txtHeight.Text = dgvCustomer.CurrentRow.Cells(10).Value
+            txtWeight.Text = dgvCustomer.CurrentRow.Cells(11).Value
+            txtBmi.Text = dgvCustomer.CurrentRow.Cells(12).Value
+            RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
 
-        Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
-        txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
-        txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
-        txtBirthday.Text = dgvCustomer.CurrentRow.Cells(3).Value
-        txtGender.Text = dgvCustomer.CurrentRow.Cells(5).Value
-        txtContactNumber.Text = dgvCustomer.CurrentRow.Cells(6).Value
-        txtEmail.Text = dgvCustomer.CurrentRow.Cells(7).Value
-        txtEmergencyContactPerson.Text = dgvCustomer.CurrentRow.Cells(8).Value
-        txtContactNumber2.Text = dgvCustomer.CurrentRow.Cells(9).Value
-        txtHeight.Text = dgvCustomer.CurrentRow.Cells(10).Value
-        txtWeight.Text = dgvCustomer.CurrentRow.Cells(11).Value
-        txtBmi.Text = dgvCustomer.CurrentRow.Cells(12).Value
-        RichTextBox1.Text = dgvCustomer.CurrentRow.Cells(13).Value
+            reloadSessions()
 
-        reloadSessions()
+        Catch ex As Exception
+
+        End Try
 
 
     End Sub
@@ -199,9 +203,17 @@ Public Class admin_overview
                 'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
                 Dim updatecmd As New OleDbCommand("Update Members
                 SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday = #" & txtBirthday.Text & "#, gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
-                WHERE member_ID = " & Me.Text & "", DBConnection.con)
+                WHERE member_ID = " & dgvCustomer.CurrentRow.Cells(0).Value() & "", DBConnection.con)
 
                 Dim i = updatecmd.ExecuteNonQuery
+
+                If Trim(txtPW.Text) <> "" Then
+                    Dim updatePWcmd As New OleDbCommand("Update credentials
+                    SET member_password ='" & txtPW.Text & "'
+                    WHERE member_ID = " & Me.Text & "", DBConnection.con)
+                    updatePWcmd.ExecuteNonQuery()
+                End If
+
 
                 If i > 0 Then
                     MsgBox("Record Has Been UPDATED SUCCESSFULLY!", MessageBoxIcon.Information)
@@ -214,7 +226,6 @@ Public Class admin_overview
                 MsgBox("An Error Occur", MessageBoxIcon.Error)
             Finally
                 DBConnection.closeCon()
-
             End Try
         Else
             MsgBox("All Fields Are Required", MessageBoxIcon.Warning)
@@ -259,6 +270,8 @@ Public Class admin_overview
     End Sub
 
     Private Sub admin_overview_Load(sender As Object, e As EventArgs) Handles MyBase.Load, btnUpdate.Click, btnAdd.Click, btnDelete.Click
+        Dim getdata = DBConnection.fetchData("SELECT * FROM Members WHERE member_id = " & DBConnection.member_id)
+        lblAdminName.Text = "Welcome " & getdata("fname") & "!"
         'reset fields
         resetFields("member")
         resetFields("session")
@@ -923,5 +936,18 @@ credentials.member_password
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        DBConnection.member_id = ""
+        login.Show()
+        Me.Close()
+    End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnClearMembersFields.Click
+        resetFields("member")
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnClearSessionFields.Click
+        resetFields("session")
+    End Sub
 End Class

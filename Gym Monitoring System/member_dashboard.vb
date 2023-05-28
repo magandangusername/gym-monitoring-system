@@ -69,6 +69,7 @@
                 lblUser.Text = getdata("fname") & "!"
             End If
         End If
+        lblMembership.Text = "None"
 
 
         DBConnection.closeCon()

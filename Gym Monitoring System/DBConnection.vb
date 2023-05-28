@@ -6,6 +6,7 @@ Module DBConnection
     Public getdata As OleDbDataReader
 
     Public Function fetchData(ByVal Q As String) As OleDbDataReader
+        openCon()
         Dim recordToGet As New OleDbCommand(Q, con)
         getdata = recordToGet.ExecuteReader
         getdata.Read()

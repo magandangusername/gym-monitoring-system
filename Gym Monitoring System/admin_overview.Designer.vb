@@ -176,6 +176,8 @@ Partial Class admin_overview
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.dgvCustomer = New System.Windows.Forms.DataGridView()
+        Me.btnClearSessionFields = New System.Windows.Forms.Button()
+        Me.btnClearMembersFields = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.tpAdmin = New System.Windows.Forms.TabPage()
         Me.txtPassword = New System.Windows.Forms.TextBox()
@@ -193,6 +195,7 @@ Partial Class admin_overview
         Me.lblTotalData = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.dgvSession, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -364,6 +367,8 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.btnAdd)
         Me.tpCustomer.Controls.Add(Me.btnDelete)
         Me.tpCustomer.Controls.Add(Me.dgvCustomer)
+        Me.tpCustomer.Controls.Add(Me.btnClearSessionFields)
+        Me.tpCustomer.Controls.Add(Me.btnClearMembersFields)
         Me.tpCustomer.Controls.Add(Me.btnUpdate)
         Me.tpCustomer.Location = New System.Drawing.Point(22, 4)
         Me.tpCustomer.Name = "tpCustomer"
@@ -1607,6 +1612,24 @@ Partial Class admin_overview
         Me.dgvCustomer.Size = New System.Drawing.Size(534, 250)
         Me.dgvCustomer.TabIndex = 0
         '
+        'btnClearSessionFields
+        '
+        Me.btnClearSessionFields.Location = New System.Drawing.Point(546, 294)
+        Me.btnClearSessionFields.Name = "btnClearSessionFields"
+        Me.btnClearSessionFields.Size = New System.Drawing.Size(75, 23)
+        Me.btnClearSessionFields.TabIndex = 2
+        Me.btnClearSessionFields.Text = "Clear Fields"
+        Me.btnClearSessionFields.UseVisualStyleBackColor = True
+        '
+        'btnClearMembersFields
+        '
+        Me.btnClearMembersFields.Location = New System.Drawing.Point(546, 6)
+        Me.btnClearMembersFields.Name = "btnClearMembersFields"
+        Me.btnClearMembersFields.Size = New System.Drawing.Size(75, 23)
+        Me.btnClearMembersFields.TabIndex = 2
+        Me.btnClearMembersFields.Text = "Clear Fields"
+        Me.btnClearMembersFields.UseVisualStyleBackColor = True
+        '
         'btnUpdate
         '
         Me.btnUpdate.Location = New System.Drawing.Point(386, 263)
@@ -1722,6 +1745,7 @@ Partial Class admin_overview
         'lblAdminName
         '
         Me.lblAdminName.AutoSize = True
+        Me.lblAdminName.ForeColor = System.Drawing.Color.White
         Me.lblAdminName.Location = New System.Drawing.Point(38, 9)
         Me.lblAdminName.Name = "lblAdminName"
         Me.lblAdminName.Size = New System.Drawing.Size(84, 13)
@@ -1760,12 +1784,23 @@ Partial Class admin_overview
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!)
+        Me.Button1.Location = New System.Drawing.Point(1285, 9)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 228
+        Me.Button1.Text = "Log out"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'admin_overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1370, 623)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.lblTotalData)
         Me.Controls.Add(Me.lblDate)
@@ -1954,4 +1989,7 @@ Partial Class admin_overview
     Friend WithEvents txtPW As TextBox
     Friend WithEvents Label56 As Label
     Friend WithEvents btnMembershipOrder As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnClearMembersFields As Button
+    Friend WithEvents btnClearSessionFields As Button
 End Class

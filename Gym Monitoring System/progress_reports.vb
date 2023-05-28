@@ -93,27 +93,47 @@ Public Class progress_reports
 
 
         Dim getCustomerInfo = DBConnection.fetchData("SELECT * FROM Members WHERE member_ID =" & DBConnection.member_id & ";")
-
+        Dim weight As Double
+        Dim height As Double
+        Dim BMI As Double
+        Dim age As Integer
+        Dim FCalories As Double
+        Dim MCalories As Double
 
 
         Dim getdata = DBConnection.fetchData("SELECT * FROM (MembershipOrder
         LEFT JOIN membership ON membership.membership_id = MembershipOrder.membership_id)
         LEFT JOIN Members ON Members.member_id = MembershipOrder.member_id
         WHERE Members.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC, membership_datetime DESC")
-        txtName.Text = getdata("fname")
-        txtSubscription.Text = getdata("membership_name")
-        txtEndSub.Text = CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days"))
-        txtHeight.Text = getdata("height")
-        txtWeight.Text = getdata("weight")
+
+        If getdata.HasRows Then
+            txtName.Text = getdata("fname")
+            txtSubscription.Text = getdata("membership_name")
+            txtEndSub.Text = CDate(getdata("membership_active_datetime")).AddDays(getdata("membership_days"))
+
+            weight = getdata("weight")
+            height = getdata("height")
+            txtHeight.Text = height
+            txtWeight.Text = weight
+            age = CInt(getdata("age"))
+        Else
+            txtName.Text = getCustomerInfo("fname")
+            txtSubscription.Text = "None"
+            txtEndSub.Text = "None"
+            txtHeight.Text = getCustomerInfo("height")
+            txtWeight.Text = getCustomerInfo("weight")
+
+            weight = getCustomerInfo("weight")
+            height = getCustomerInfo("height")
+            txtHeight.Text = height
+            txtWeight.Text = weight
+            age = CInt(getCustomerInfo("age"))
+        End If
 
 
-
-        Dim weight As Double = getdata("weight")
-        Dim height As Double = getdata("height")
-        Dim BMI As Double = (weight) / (height ^ 2)
-        Dim age As Integer = CInt(getdata("age"))
-        Dim FCalories As Double = fnum1 + (fnum2 * weight) + (fnum3 * height) - (fnum4 * age)
-        Dim MCalories As Double = mnum1 + (mnum2 * weight) + (mnum3 * height) - (mnum4 * age)
+        BMI = (weight) / (height ^ 2)
+        FCalories = fnum1 + (fnum2 * weight) + (fnum3 * height) - (fnum4 * age)
+        MCalories = mnum1 + (mnum2 * weight) + (mnum3 * height) - (mnum4 * age)
         txtInitialBmi.Text = BMI
 
         If getCustomerInfo("gender") = "Male" Then
@@ -208,7 +228,7 @@ Public Class progress_reports
         " AND sessiondate = #" & dgvSessions.CurrentRow.Cells(0).Value() & "#", DBConnection.con)
 
         Dim getdata = sessioncmd.ExecuteReader
-
+        totalcalories = 0
         While getdata.Read
 
             If getdata("actname") = "Bench press" And getdata("acttype") = "Upper Body" Then

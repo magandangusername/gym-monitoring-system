@@ -336,6 +336,7 @@ Partial Class progress_reports
         '
         'txtLBA18
         '
+        Me.txtLBA18.Enabled = False
         Me.txtLBA18.Location = New System.Drawing.Point(1164, 567)
         Me.txtLBA18.Name = "txtLBA18"
         Me.txtLBA18.ReadOnly = True
@@ -344,6 +345,7 @@ Partial Class progress_reports
         '
         'txtLBA17
         '
+        Me.txtLBA17.Enabled = False
         Me.txtLBA17.Location = New System.Drawing.Point(1164, 544)
         Me.txtLBA17.Name = "txtLBA17"
         Me.txtLBA17.ReadOnly = True
@@ -352,6 +354,7 @@ Partial Class progress_reports
         '
         'txtLBA16
         '
+        Me.txtLBA16.Enabled = False
         Me.txtLBA16.Location = New System.Drawing.Point(1164, 521)
         Me.txtLBA16.Name = "txtLBA16"
         Me.txtLBA16.ReadOnly = True
@@ -360,6 +363,7 @@ Partial Class progress_reports
         '
         'txtLBA15
         '
+        Me.txtLBA15.Enabled = False
         Me.txtLBA15.Location = New System.Drawing.Point(1164, 498)
         Me.txtLBA15.Name = "txtLBA15"
         Me.txtLBA15.ReadOnly = True
@@ -368,6 +372,7 @@ Partial Class progress_reports
         '
         'txtLBA14
         '
+        Me.txtLBA14.Enabled = False
         Me.txtLBA14.Location = New System.Drawing.Point(1164, 475)
         Me.txtLBA14.Name = "txtLBA14"
         Me.txtLBA14.ReadOnly = True
@@ -376,6 +381,7 @@ Partial Class progress_reports
         '
         'txtLBA13
         '
+        Me.txtLBA13.Enabled = False
         Me.txtLBA13.Location = New System.Drawing.Point(1164, 452)
         Me.txtLBA13.Name = "txtLBA13"
         Me.txtLBA13.ReadOnly = True
@@ -384,6 +390,7 @@ Partial Class progress_reports
         '
         'txtLBA12
         '
+        Me.txtLBA12.Enabled = False
         Me.txtLBA12.Location = New System.Drawing.Point(1164, 429)
         Me.txtLBA12.Name = "txtLBA12"
         Me.txtLBA12.ReadOnly = True
@@ -392,6 +399,7 @@ Partial Class progress_reports
         '
         'txtLBA11
         '
+        Me.txtLBA11.Enabled = False
         Me.txtLBA11.Location = New System.Drawing.Point(1164, 406)
         Me.txtLBA11.Name = "txtLBA11"
         Me.txtLBA11.ReadOnly = True
@@ -400,6 +408,7 @@ Partial Class progress_reports
         '
         'txtLBA10
         '
+        Me.txtLBA10.Enabled = False
         Me.txtLBA10.Location = New System.Drawing.Point(1164, 383)
         Me.txtLBA10.Name = "txtLBA10"
         Me.txtLBA10.ReadOnly = True
@@ -408,6 +417,7 @@ Partial Class progress_reports
         '
         'txtLBA9
         '
+        Me.txtLBA9.Enabled = False
         Me.txtLBA9.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA9.Location = New System.Drawing.Point(994, 567)
         Me.txtLBA9.Name = "txtLBA9"
@@ -417,6 +427,7 @@ Partial Class progress_reports
         '
         'txtLBA8
         '
+        Me.txtLBA8.Enabled = False
         Me.txtLBA8.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA8.Location = New System.Drawing.Point(994, 544)
         Me.txtLBA8.Name = "txtLBA8"
@@ -426,6 +437,7 @@ Partial Class progress_reports
         '
         'txtLBA7
         '
+        Me.txtLBA7.Enabled = False
         Me.txtLBA7.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA7.Location = New System.Drawing.Point(994, 521)
         Me.txtLBA7.Name = "txtLBA7"
@@ -435,6 +447,7 @@ Partial Class progress_reports
         '
         'txtLBA6
         '
+        Me.txtLBA6.Enabled = False
         Me.txtLBA6.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA6.Location = New System.Drawing.Point(994, 498)
         Me.txtLBA6.Name = "txtLBA6"
@@ -444,6 +457,7 @@ Partial Class progress_reports
         '
         'txtLBA5
         '
+        Me.txtLBA5.Enabled = False
         Me.txtLBA5.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA5.Location = New System.Drawing.Point(994, 475)
         Me.txtLBA5.Name = "txtLBA5"
@@ -453,6 +467,7 @@ Partial Class progress_reports
         '
         'txtLBA4
         '
+        Me.txtLBA4.Enabled = False
         Me.txtLBA4.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA4.Location = New System.Drawing.Point(994, 452)
         Me.txtLBA4.Name = "txtLBA4"
@@ -462,6 +477,7 @@ Partial Class progress_reports
         '
         'txtLBA3
         '
+        Me.txtLBA3.Enabled = False
         Me.txtLBA3.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA3.Location = New System.Drawing.Point(994, 429)
         Me.txtLBA3.Name = "txtLBA3"
@@ -471,6 +487,7 @@ Partial Class progress_reports
         '
         'txtLBA2
         '
+        Me.txtLBA2.Enabled = False
         Me.txtLBA2.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA2.Location = New System.Drawing.Point(994, 406)
         Me.txtLBA2.Name = "txtLBA2"
@@ -480,6 +497,7 @@ Partial Class progress_reports
         '
         'txtLBA1
         '
+        Me.txtLBA1.Enabled = False
         Me.txtLBA1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLBA1.Location = New System.Drawing.Point(994, 383)
         Me.txtLBA1.Name = "txtLBA1"
@@ -679,6 +697,7 @@ Partial Class progress_reports
         '
         'txtUBA18
         '
+        Me.txtUBA18.Enabled = False
         Me.txtUBA18.Location = New System.Drawing.Point(290, 564)
         Me.txtUBA18.Name = "txtUBA18"
         Me.txtUBA18.ReadOnly = True
@@ -687,6 +706,7 @@ Partial Class progress_reports
         '
         'txtUBA17
         '
+        Me.txtUBA17.Enabled = False
         Me.txtUBA17.Location = New System.Drawing.Point(290, 541)
         Me.txtUBA17.Name = "txtUBA17"
         Me.txtUBA17.ReadOnly = True
@@ -695,6 +715,7 @@ Partial Class progress_reports
         '
         'txtUBA16
         '
+        Me.txtUBA16.Enabled = False
         Me.txtUBA16.Location = New System.Drawing.Point(290, 518)
         Me.txtUBA16.Name = "txtUBA16"
         Me.txtUBA16.ReadOnly = True
@@ -703,6 +724,7 @@ Partial Class progress_reports
         '
         'txtUBA15
         '
+        Me.txtUBA15.Enabled = False
         Me.txtUBA15.Location = New System.Drawing.Point(290, 495)
         Me.txtUBA15.Name = "txtUBA15"
         Me.txtUBA15.ReadOnly = True
@@ -711,6 +733,7 @@ Partial Class progress_reports
         '
         'txtUBA14
         '
+        Me.txtUBA14.Enabled = False
         Me.txtUBA14.Location = New System.Drawing.Point(290, 472)
         Me.txtUBA14.Name = "txtUBA14"
         Me.txtUBA14.ReadOnly = True
@@ -719,6 +742,7 @@ Partial Class progress_reports
         '
         'txtUBA13
         '
+        Me.txtUBA13.Enabled = False
         Me.txtUBA13.Location = New System.Drawing.Point(290, 449)
         Me.txtUBA13.Name = "txtUBA13"
         Me.txtUBA13.ReadOnly = True
@@ -727,6 +751,7 @@ Partial Class progress_reports
         '
         'txtUBA12
         '
+        Me.txtUBA12.Enabled = False
         Me.txtUBA12.Location = New System.Drawing.Point(290, 426)
         Me.txtUBA12.Name = "txtUBA12"
         Me.txtUBA12.ReadOnly = True
@@ -735,6 +760,7 @@ Partial Class progress_reports
         '
         'txtUBA11
         '
+        Me.txtUBA11.Enabled = False
         Me.txtUBA11.Location = New System.Drawing.Point(290, 403)
         Me.txtUBA11.Name = "txtUBA11"
         Me.txtUBA11.ReadOnly = True
@@ -743,6 +769,7 @@ Partial Class progress_reports
         '
         'txtUBA10
         '
+        Me.txtUBA10.Enabled = False
         Me.txtUBA10.Location = New System.Drawing.Point(290, 380)
         Me.txtUBA10.Name = "txtUBA10"
         Me.txtUBA10.ReadOnly = True
@@ -751,6 +778,7 @@ Partial Class progress_reports
         '
         'txtUBA9
         '
+        Me.txtUBA9.Enabled = False
         Me.txtUBA9.Location = New System.Drawing.Point(76, 563)
         Me.txtUBA9.Name = "txtUBA9"
         Me.txtUBA9.ReadOnly = True
@@ -759,6 +787,7 @@ Partial Class progress_reports
         '
         'txtUBA8
         '
+        Me.txtUBA8.Enabled = False
         Me.txtUBA8.Location = New System.Drawing.Point(76, 540)
         Me.txtUBA8.Name = "txtUBA8"
         Me.txtUBA8.ReadOnly = True
@@ -767,6 +796,7 @@ Partial Class progress_reports
         '
         'txtUBA7
         '
+        Me.txtUBA7.Enabled = False
         Me.txtUBA7.Location = New System.Drawing.Point(76, 517)
         Me.txtUBA7.Name = "txtUBA7"
         Me.txtUBA7.ReadOnly = True
@@ -775,6 +805,7 @@ Partial Class progress_reports
         '
         'txtUBA6
         '
+        Me.txtUBA6.Enabled = False
         Me.txtUBA6.Location = New System.Drawing.Point(76, 494)
         Me.txtUBA6.Name = "txtUBA6"
         Me.txtUBA6.ReadOnly = True
@@ -783,6 +814,7 @@ Partial Class progress_reports
         '
         'txtUBA5
         '
+        Me.txtUBA5.Enabled = False
         Me.txtUBA5.Location = New System.Drawing.Point(76, 471)
         Me.txtUBA5.Name = "txtUBA5"
         Me.txtUBA5.ReadOnly = True
@@ -791,6 +823,7 @@ Partial Class progress_reports
         '
         'txtUBA4
         '
+        Me.txtUBA4.Enabled = False
         Me.txtUBA4.Location = New System.Drawing.Point(76, 448)
         Me.txtUBA4.Name = "txtUBA4"
         Me.txtUBA4.ReadOnly = True
@@ -799,6 +832,7 @@ Partial Class progress_reports
         '
         'txtUBA3
         '
+        Me.txtUBA3.Enabled = False
         Me.txtUBA3.Location = New System.Drawing.Point(76, 425)
         Me.txtUBA3.Name = "txtUBA3"
         Me.txtUBA3.ReadOnly = True
@@ -807,6 +841,7 @@ Partial Class progress_reports
         '
         'txtUBA2
         '
+        Me.txtUBA2.Enabled = False
         Me.txtUBA2.Location = New System.Drawing.Point(76, 402)
         Me.txtUBA2.Name = "txtUBA2"
         Me.txtUBA2.ReadOnly = True
@@ -815,6 +850,7 @@ Partial Class progress_reports
         '
         'txtUBA1
         '
+        Me.txtUBA1.Enabled = False
         Me.txtUBA1.Location = New System.Drawing.Point(76, 379)
         Me.txtUBA1.Name = "txtUBA1"
         Me.txtUBA1.ReadOnly = True
@@ -1003,6 +1039,7 @@ Partial Class progress_reports
         '
         'txtCBA17
         '
+        Me.txtCBA17.Enabled = False
         Me.txtCBA17.Location = New System.Drawing.Point(749, 542)
         Me.txtCBA17.Name = "txtCBA17"
         Me.txtCBA17.ReadOnly = True
@@ -1011,6 +1048,7 @@ Partial Class progress_reports
         '
         'txtCBA16
         '
+        Me.txtCBA16.Enabled = False
         Me.txtCBA16.Location = New System.Drawing.Point(749, 519)
         Me.txtCBA16.Name = "txtCBA16"
         Me.txtCBA16.ReadOnly = True
@@ -1019,6 +1057,7 @@ Partial Class progress_reports
         '
         'txtCBA15
         '
+        Me.txtCBA15.Enabled = False
         Me.txtCBA15.Location = New System.Drawing.Point(749, 496)
         Me.txtCBA15.Name = "txtCBA15"
         Me.txtCBA15.ReadOnly = True
@@ -1027,6 +1066,7 @@ Partial Class progress_reports
         '
         'txtCBA14
         '
+        Me.txtCBA14.Enabled = False
         Me.txtCBA14.Location = New System.Drawing.Point(749, 473)
         Me.txtCBA14.Name = "txtCBA14"
         Me.txtCBA14.ReadOnly = True
@@ -1035,6 +1075,7 @@ Partial Class progress_reports
         '
         'txtCBA13
         '
+        Me.txtCBA13.Enabled = False
         Me.txtCBA13.Location = New System.Drawing.Point(749, 450)
         Me.txtCBA13.Name = "txtCBA13"
         Me.txtCBA13.ReadOnly = True
@@ -1043,6 +1084,7 @@ Partial Class progress_reports
         '
         'txtCBA12
         '
+        Me.txtCBA12.Enabled = False
         Me.txtCBA12.Location = New System.Drawing.Point(749, 427)
         Me.txtCBA12.Name = "txtCBA12"
         Me.txtCBA12.ReadOnly = True
@@ -1051,6 +1093,7 @@ Partial Class progress_reports
         '
         'txtCBA11
         '
+        Me.txtCBA11.Enabled = False
         Me.txtCBA11.Location = New System.Drawing.Point(749, 404)
         Me.txtCBA11.Name = "txtCBA11"
         Me.txtCBA11.ReadOnly = True
@@ -1059,6 +1102,7 @@ Partial Class progress_reports
         '
         'txtCBA10
         '
+        Me.txtCBA10.Enabled = False
         Me.txtCBA10.Location = New System.Drawing.Point(749, 381)
         Me.txtCBA10.Name = "txtCBA10"
         Me.txtCBA10.ReadOnly = True
@@ -1067,6 +1111,7 @@ Partial Class progress_reports
         '
         'txtCBA9
         '
+        Me.txtCBA9.Enabled = False
         Me.txtCBA9.Location = New System.Drawing.Point(581, 564)
         Me.txtCBA9.Name = "txtCBA9"
         Me.txtCBA9.ReadOnly = True
@@ -1075,6 +1120,7 @@ Partial Class progress_reports
         '
         'txtCBA8
         '
+        Me.txtCBA8.Enabled = False
         Me.txtCBA8.Location = New System.Drawing.Point(581, 541)
         Me.txtCBA8.Name = "txtCBA8"
         Me.txtCBA8.ReadOnly = True
@@ -1083,6 +1129,7 @@ Partial Class progress_reports
         '
         'txtCBA7
         '
+        Me.txtCBA7.Enabled = False
         Me.txtCBA7.Location = New System.Drawing.Point(581, 518)
         Me.txtCBA7.Name = "txtCBA7"
         Me.txtCBA7.ReadOnly = True
@@ -1091,6 +1138,7 @@ Partial Class progress_reports
         '
         'txtCBA6
         '
+        Me.txtCBA6.Enabled = False
         Me.txtCBA6.Location = New System.Drawing.Point(581, 495)
         Me.txtCBA6.Name = "txtCBA6"
         Me.txtCBA6.ReadOnly = True
@@ -1099,6 +1147,7 @@ Partial Class progress_reports
         '
         'txtCBA5
         '
+        Me.txtCBA5.Enabled = False
         Me.txtCBA5.Location = New System.Drawing.Point(581, 472)
         Me.txtCBA5.Name = "txtCBA5"
         Me.txtCBA5.ReadOnly = True
@@ -1107,6 +1156,7 @@ Partial Class progress_reports
         '
         'txtCBA4
         '
+        Me.txtCBA4.Enabled = False
         Me.txtCBA4.Location = New System.Drawing.Point(581, 449)
         Me.txtCBA4.Name = "txtCBA4"
         Me.txtCBA4.ReadOnly = True
@@ -1115,6 +1165,7 @@ Partial Class progress_reports
         '
         'txtCBA3
         '
+        Me.txtCBA3.Enabled = False
         Me.txtCBA3.Location = New System.Drawing.Point(581, 426)
         Me.txtCBA3.Name = "txtCBA3"
         Me.txtCBA3.ReadOnly = True
@@ -1123,6 +1174,7 @@ Partial Class progress_reports
         '
         'txtCBA2
         '
+        Me.txtCBA2.Enabled = False
         Me.txtCBA2.Location = New System.Drawing.Point(581, 403)
         Me.txtCBA2.Name = "txtCBA2"
         Me.txtCBA2.ReadOnly = True
@@ -1131,6 +1183,7 @@ Partial Class progress_reports
         '
         'txtCBA1
         '
+        Me.txtCBA1.Enabled = False
         Me.txtCBA1.Location = New System.Drawing.Point(581, 380)
         Me.txtCBA1.Name = "txtCBA1"
         Me.txtCBA1.ReadOnly = True
@@ -1484,6 +1537,7 @@ Partial Class progress_reports
         Me.Controls.Add(Me.lblSubscription)
         Me.Controls.Add(Me.txtSessionDate)
         Me.Controls.Add(Me.lblDate)
+        Me.Enabled = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "progress_reports"
         Me.Text = "Progress Report"
