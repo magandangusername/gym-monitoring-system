@@ -25,6 +25,7 @@ Partial Class admin_overview
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(admin_overview))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
         Me.btnMembershipOrder = New System.Windows.Forms.Button()
@@ -1770,8 +1771,9 @@ Partial Class admin_overview
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblAdminName)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin_overview"
-        Me.Text = "admin_overview"
+        Me.Text = "Admin Overview"
         Me.TabControl1.ResumeLayout(False)
         Me.tpCustomer.ResumeLayout(False)
         Me.tpCustomer.PerformLayout()

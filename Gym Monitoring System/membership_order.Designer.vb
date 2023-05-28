@@ -22,6 +22,7 @@ Partial Class membership_order
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(membership_order))
         Me.txtMembershipOrder = New System.Windows.Forms.TextBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lbl1 = New System.Windows.Forms.Label()
@@ -65,8 +66,9 @@ Partial Class membership_order
         Me.Controls.Add(Me.lbl1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtMembershipOrder)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "membership_order"
-        Me.Text = "membership_order"
+        Me.Text = "Activate Order"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

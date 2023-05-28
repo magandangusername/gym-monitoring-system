@@ -57,7 +57,7 @@ Partial Class Order_Request
         Me.Label1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(36, 119)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 16)
+        Me.Label1.Size = New System.Drawing.Size(103, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Account Name"
         '
@@ -84,7 +84,7 @@ Partial Class Order_Request
         Me.lblCurrDateTime.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrDateTime.Location = New System.Drawing.Point(333, 93)
         Me.lblCurrDateTime.Name = "lblCurrDateTime"
-        Me.lblCurrDateTime.Size = New System.Drawing.Size(136, 16)
+        Me.lblCurrDateTime.Size = New System.Drawing.Size(135, 16)
         Me.lblCurrDateTime.TabIndex = 2
         Me.lblCurrDateTime.Text = "Current Datetime"
         '
@@ -95,7 +95,7 @@ Partial Class Order_Request
         Me.Label3.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(76, 151)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 16)
+        Me.Label3.Size = New System.Drawing.Size(63, 16)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Address"
         '
@@ -106,7 +106,7 @@ Partial Class Order_Request
         Me.Label4.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(20, 185)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(120, 16)
+        Me.Label4.Size = New System.Drawing.Size(119, 16)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Contact Number"
         '
@@ -117,7 +117,7 @@ Partial Class Order_Request
         Me.Label5.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(92, 247)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 16)
+        Me.Label5.Size = New System.Drawing.Size(47, 16)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Price"
         '
@@ -128,7 +128,7 @@ Partial Class Order_Request
         Me.Label8.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(76, 301)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 16)
+        Me.Label8.Size = New System.Drawing.Size(63, 16)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Total: "
         '
@@ -139,7 +139,7 @@ Partial Class Order_Request
         Me.Label9.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(28, 274)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(112, 16)
+        Me.Label9.Size = New System.Drawing.Size(111, 16)
         Me.Label9.TabIndex = 9
         Me.Label9.Text = "Discount in %"
         '
@@ -150,7 +150,7 @@ Partial Class Order_Request
         Me.lblDiscounted.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiscounted.Location = New System.Drawing.Point(146, 301)
         Me.lblDiscounted.Name = "lblDiscounted"
-        Me.lblDiscounted.Size = New System.Drawing.Size(16, 16)
+        Me.lblDiscounted.Size = New System.Drawing.Size(15, 16)
         Me.lblDiscounted.TabIndex = 11
         Me.lblDiscounted.Text = "0"
         '
@@ -161,7 +161,7 @@ Partial Class Order_Request
         Me.lblPrice.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.Location = New System.Drawing.Point(146, 247)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(16, 16)
+        Me.lblPrice.Size = New System.Drawing.Size(15, 16)
         Me.lblPrice.TabIndex = 12
         Me.lblPrice.Text = "0"
         '
@@ -172,7 +172,7 @@ Partial Class Order_Request
         Me.lblDiscount.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiscount.Location = New System.Drawing.Point(146, 274)
         Me.lblDiscount.Name = "lblDiscount"
-        Me.lblDiscount.Size = New System.Drawing.Size(16, 16)
+        Me.lblDiscount.Size = New System.Drawing.Size(15, 16)
         Me.lblDiscount.TabIndex = 13
         Me.lblDiscount.Text = "0"
         '
@@ -183,7 +183,7 @@ Partial Class Order_Request
         Me.lblName.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.Location = New System.Drawing.Point(146, 119)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(40, 16)
+        Me.lblName.Size = New System.Drawing.Size(39, 16)
         Me.lblName.TabIndex = 14
         Me.lblName.Text = "NAME"
         '
@@ -194,7 +194,7 @@ Partial Class Order_Request
         Me.lblAddress.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddress.Location = New System.Drawing.Point(146, 151)
         Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(64, 16)
+        Me.lblAddress.Size = New System.Drawing.Size(63, 16)
         Me.lblAddress.TabIndex = 14
         Me.lblAddress.Text = "ADDRESS"
         '
@@ -205,7 +205,7 @@ Partial Class Order_Request
         Me.lblContact.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblContact.Location = New System.Drawing.Point(146, 185)
         Me.lblContact.Name = "lblContact"
-        Me.lblContact.Size = New System.Drawing.Size(120, 16)
+        Me.lblContact.Size = New System.Drawing.Size(119, 16)
         Me.lblContact.TabIndex = 14
         Me.lblContact.Text = "CONTACT NUMBER"
         '
@@ -216,7 +216,7 @@ Partial Class Order_Request
         Me.Label2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(52, 219)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 16)
+        Me.Label2.Size = New System.Drawing.Size(87, 16)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Membership"
         '
@@ -227,7 +227,7 @@ Partial Class Order_Request
         Me.lblMembership.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMembership.Location = New System.Drawing.Point(146, 219)
         Me.lblMembership.Name = "lblMembership"
-        Me.lblMembership.Size = New System.Drawing.Size(88, 16)
+        Me.lblMembership.Size = New System.Drawing.Size(87, 16)
         Me.lblMembership.TabIndex = 15
         Me.lblMembership.Text = "MEMBERSHIP"
         '
@@ -238,7 +238,7 @@ Partial Class Order_Request
         Me.Label6.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(68, 93)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 16)
+        Me.Label6.Size = New System.Drawing.Size(71, 16)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Order ID"
         '
@@ -249,7 +249,7 @@ Partial Class Order_Request
         Me.lblOrderID.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOrderID.Location = New System.Drawing.Point(146, 93)
         Me.lblOrderID.Name = "lblOrderID"
-        Me.lblOrderID.Size = New System.Drawing.Size(72, 16)
+        Me.lblOrderID.Size = New System.Drawing.Size(71, 16)
         Me.lblOrderID.TabIndex = 16
         Me.lblOrderID.Text = "00000000"
         '
@@ -312,8 +312,9 @@ Partial Class Order_Request
         Me.Controls.Add(Me.lblCurrDateTime)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Order_Request"
-        Me.Text = "Order_Request"
+        Me.Text = "Order Receipt"
         CType(Me.GyM_DBDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

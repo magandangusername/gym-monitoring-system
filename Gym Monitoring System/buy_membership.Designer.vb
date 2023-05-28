@@ -198,8 +198,9 @@ Partial Class buy_membership
         Me.Controls.Add(Me.rdbdiscount2)
         Me.Controls.Add(Me.rdbdiscount1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "buy_membership"
-        Me.Text = "buy_membership"
+        Me.Text = "Membership Menu"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

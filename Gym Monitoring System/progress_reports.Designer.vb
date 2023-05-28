@@ -22,6 +22,7 @@ Partial Class progress_reports
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(progress_reports))
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -1477,8 +1478,9 @@ Partial Class progress_reports
         Me.Controls.Add(Me.lblSubscription)
         Me.Controls.Add(Me.txtSessionDate)
         Me.Controls.Add(Me.lblDate)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "progress_reports"
-        Me.Text = "progress_reports"
+        Me.Text = "Progress Report"
         CType(Me.dgvSessions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

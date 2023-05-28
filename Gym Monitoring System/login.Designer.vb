@@ -79,6 +79,7 @@ Partial Class login
         '
         Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnLogin.Font = New System.Drawing.Font("Copperplate Gothic Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.btnLogin.Location = New System.Drawing.Point(158, 347)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(102, 23)
@@ -90,6 +91,7 @@ Partial Class login
         '
         Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnRegister.Font = New System.Drawing.Font("Copperplate Gothic Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegister.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.btnRegister.Location = New System.Drawing.Point(353, 347)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(102, 23)
@@ -167,7 +169,9 @@ Partial Class login
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.hidePassword)
+        Me.ForeColor = System.Drawing.Color.GhostWhite
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login"
         Me.Text = "login"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()

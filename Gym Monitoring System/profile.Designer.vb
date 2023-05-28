@@ -659,8 +659,9 @@ Partial Class profile
         Me.Controls.Add(Me.lblAddress)
         Me.Controls.Add(Me.txtFullname)
         Me.Controls.Add(Me.lblFullName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "profile"
-        Me.Text = "profile"
+        Me.Text = "Profile"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).EndInit()

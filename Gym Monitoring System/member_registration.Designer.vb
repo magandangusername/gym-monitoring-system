@@ -715,7 +715,8 @@ Partial Class member_registration
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "member_registration"
-        Me.Text = "member_registration"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Register"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.showPassword2, System.ComponentModel.ISupportInitialize).EndInit()

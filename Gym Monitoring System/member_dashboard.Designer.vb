@@ -403,8 +403,9 @@ Partial Class member_dashboard
         Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnProfile)
         Me.Controls.Add(Me.btnlogout)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "member_dashboard"
-        Me.Text = "member_dashboard"
+        Me.Text = "Dashboard"
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

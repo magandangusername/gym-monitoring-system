@@ -191,8 +191,9 @@ Partial Class admin_registration
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin_registration"
-        Me.Text = "admin_registration"
+        Me.Text = "Admin Registration"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
