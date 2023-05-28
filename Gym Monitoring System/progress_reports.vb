@@ -131,7 +131,7 @@ Public Class progress_reports
         End If
 
 
-        BMI = (weight) / (height ^ 2)
+        BMI = weight / (height / 100) ^ 2
         FCalories = fnum1 + (fnum2 * weight) + (fnum3 * height) - (fnum4 * age)
         MCalories = mnum1 + (mnum2 * weight) + (mnum3 * height) - (mnum4 * age)
         txtInitialBmi.Text = BMI

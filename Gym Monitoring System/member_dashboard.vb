@@ -52,7 +52,7 @@
         Dim getdata = DBConnection.fetchData("SELECT * 
         FROM MembershipOrder 
         INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id 
-        WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
+        WHERE MembershipOrder.member_id = " & DBConnection.member_id & " AND membership_active_datetime IS NOT NULL ORDER BY membership_active_datetime DESC")
         If getdata.HasRows Then
             If getdata("membership_status") = "Active" Then
                 lblMemStat.Text = "ACTIVE"
