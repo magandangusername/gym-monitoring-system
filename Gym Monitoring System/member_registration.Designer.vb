@@ -28,7 +28,7 @@ Partial Class member_registration
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.lblBirthday = New System.Windows.Forms.Label()
-        Me.dtplblBirthday = New System.Windows.Forms.DateTimePicker()
+        Me.dtpBirthday = New System.Windows.Forms.DateTimePicker()
         Me.lblAge = New System.Windows.Forms.Label()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.lblGender = New System.Windows.Forms.Label()
