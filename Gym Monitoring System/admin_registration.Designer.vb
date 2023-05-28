@@ -46,6 +46,7 @@ Partial Class admin_registration
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Aqua
         Me.Label1.Location = New System.Drawing.Point(36, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 13)
@@ -56,6 +57,7 @@ Partial Class admin_registration
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Aqua
         Me.Label2.Location = New System.Drawing.Point(67, 156)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
@@ -66,6 +68,7 @@ Partial Class admin_registration
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Aqua
         Me.Label3.Location = New System.Drawing.Point(36, 190)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(72, 13)

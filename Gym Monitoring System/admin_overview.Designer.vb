@@ -23,10 +23,11 @@ Partial Class admin_overview
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
+        Me.btnMembershipOrder = New System.Windows.Forms.Button()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -191,7 +192,6 @@ Partial Class admin_overview
         Me.lblTotalData = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.btnMembershipOrder = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.tpCustomer.SuspendLayout()
         CType(Me.dgvSession, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -371,6 +371,15 @@ Partial Class admin_overview
         Me.tpCustomer.TabIndex = 0
         Me.tpCustomer.Text = " Customer"
         Me.tpCustomer.UseVisualStyleBackColor = True
+        '
+        'btnMembershipOrder
+        '
+        Me.btnMembershipOrder.Location = New System.Drawing.Point(458, 544)
+        Me.btnMembershipOrder.Name = "btnMembershipOrder"
+        Me.btnMembershipOrder.Size = New System.Drawing.Size(75, 23)
+        Me.btnMembershipOrder.TabIndex = 228
+        Me.btnMembershipOrder.Text = "Order"
+        Me.btnMembershipOrder.UseVisualStyleBackColor = True
         '
         'Label47
         '
@@ -900,14 +909,14 @@ Partial Class admin_overview
         Me.dgvSession.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvSession.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         Me.dgvSession.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSession.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSession.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSession.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSession.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvSession.Location = New System.Drawing.Point(6, 294)
@@ -1578,14 +1587,14 @@ Partial Class admin_overview
         Me.dgvCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvCustomer.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         Me.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Copperplate Gothic Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustomer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCustomer.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvCustomer.Location = New System.Drawing.Point(6, 6)
@@ -1628,7 +1637,7 @@ Partial Class admin_overview
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(1269, 118)
+        Me.txtPassword.Location = New System.Drawing.Point(964, 129)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(307, 20)
         Me.txtPassword.TabIndex = 79
@@ -1636,7 +1645,7 @@ Partial Class admin_overview
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(1210, 121)
+        Me.lblPassword.Location = New System.Drawing.Point(886, 132)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(72, 13)
         Me.lblPassword.TabIndex = 78
@@ -1644,7 +1653,7 @@ Partial Class admin_overview
         '
         'txtAdminEmail
         '
-        Me.txtAdminEmail.Location = New System.Drawing.Point(1269, 79)
+        Me.txtAdminEmail.Location = New System.Drawing.Point(964, 90)
         Me.txtAdminEmail.Name = "txtAdminEmail"
         Me.txtAdminEmail.Size = New System.Drawing.Size(307, 20)
         Me.txtAdminEmail.TabIndex = 77
@@ -1652,7 +1661,7 @@ Partial Class admin_overview
         'lblAdminEmail
         '
         Me.lblAdminEmail.AutoSize = True
-        Me.lblAdminEmail.Location = New System.Drawing.Point(1231, 82)
+        Me.lblAdminEmail.Location = New System.Drawing.Point(917, 93)
         Me.lblAdminEmail.Name = "lblAdminEmail"
         Me.lblAdminEmail.Size = New System.Drawing.Size(41, 13)
         Me.lblAdminEmail.TabIndex = 76
@@ -1660,7 +1669,7 @@ Partial Class admin_overview
         '
         'txtAdminName
         '
-        Me.txtAdminName.Location = New System.Drawing.Point(1269, 42)
+        Me.txtAdminName.Location = New System.Drawing.Point(964, 53)
         Me.txtAdminName.Name = "txtAdminName"
         Me.txtAdminName.Size = New System.Drawing.Size(307, 20)
         Me.txtAdminName.TabIndex = 75
@@ -1668,7 +1677,7 @@ Partial Class admin_overview
         'lblAdmin
         '
         Me.lblAdmin.AutoSize = True
-        Me.lblAdmin.Location = New System.Drawing.Point(1209, 45)
+        Me.lblAdmin.Location = New System.Drawing.Point(917, 60)
         Me.lblAdmin.Name = "lblAdmin"
         Me.lblAdmin.Size = New System.Drawing.Size(41, 13)
         Me.lblAdmin.TabIndex = 74
@@ -1706,7 +1715,7 @@ Partial Class admin_overview
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(6, 7)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1175, 498)
+        Me.DataGridView2.Size = New System.Drawing.Size(857, 498)
         Me.DataGridView2.TabIndex = 1
         '
         'lblAdminName
@@ -1749,15 +1758,6 @@ Partial Class admin_overview
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'btnMembershipOrder
-        '
-        Me.btnMembershipOrder.Location = New System.Drawing.Point(458, 544)
-        Me.btnMembershipOrder.Name = "btnMembershipOrder"
-        Me.btnMembershipOrder.Size = New System.Drawing.Size(75, 23)
-        Me.btnMembershipOrder.TabIndex = 228
-        Me.btnMembershipOrder.Text = "Order"
-        Me.btnMembershipOrder.UseVisualStyleBackColor = True
         '
         'admin_overview
         '
