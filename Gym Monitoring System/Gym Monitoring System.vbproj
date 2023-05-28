@@ -157,6 +157,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="progress_reports.Designer.vb">
+      <DependentUpon>progress_reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="progress_reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="securedStr.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="progress_report.resx">
       <DependentUpon>progress_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="progress_reports.resx">
+      <DependentUpon>progress_reports.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

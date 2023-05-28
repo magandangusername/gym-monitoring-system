@@ -75,6 +75,6 @@
     End Sub
 
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
-        progress_report.Show()
+        progress_reports.Show()
     End Sub
 End Class

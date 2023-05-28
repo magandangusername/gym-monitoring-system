@@ -894,7 +894,7 @@ Public Class admin_overview
         SELECT Members.member_ID, 
         Members.fname, 
         Members.email,
-        credentials.member_password
+credentials.member_password
         FROM Members
         INNER JOIN credentials ON Members.member_ID = credentials.member_id
         WHERE credentials.isAdmin <> 'N'", DBConnection.con)
@@ -923,5 +923,5 @@ Public Class admin_overview
 
     End Sub
 
-
+   
 End Class
