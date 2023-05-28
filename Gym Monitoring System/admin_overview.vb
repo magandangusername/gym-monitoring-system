@@ -99,7 +99,7 @@ Public Class admin_overview
         Try
             Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
             emergencynum,height,weight,bmi,medicalcondition) 
-            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', '" & txtBirthday.Text & "',  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
+            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', #" & txtBirthday.Text & "#,  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
             addcmd.ExecuteNonQuery()
             Dim getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
             Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPW.Text & "')"
@@ -198,7 +198,7 @@ Public Class admin_overview
             Try
                 'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
                 Dim updatecmd As New OleDbCommand("Update Members
-                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday ='" & txtBirthday.Text & "', gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
+                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday = #" & txtBirthday.Text & "#, gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
                 WHERE member_ID = " & Me.Text & "", DBConnection.con)
 
                 Dim i = updatecmd.ExecuteNonQuery

@@ -193,8 +193,8 @@ Public Class member_registration
         ) 
         VALUES ('" &
         txtFullname.Text & "','" &
-        txtAddress.Text & "','" &
-        dtpBirthday.Value.ToShortDateString() & "','" &
+        txtAddress.Text & "',#" &
+        dtpBirthday.Value.ToShortDateString() & "#,'" &
         txtAge.Text & "','" &
         gender & "','" &
         txtContactNumber.Text & "','" &

@@ -5399,18 +5399,19 @@ Namespace GYM_DBDataSetTableAdapters
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Members` WHERE ((`ID` = ?) AND ((? = 1 AND `fname` IS NULL) OR (`fna"& _ 
                 "me` = ?)) AND ((? = 1 AND `address` IS NULL) OR (`address` = ?)) AND ((? = 1 AND"& _ 
-                " `birthday` IS NULL) OR (`birthday` = ?)) AND ((? = 1 AND `age` IS NULL) OR (`ag"& _ 
-                "e` = ?)) AND ((? = 1 AND `gender` IS NULL) OR (`gender` = ?)) AND ((? = 1 AND `c"& _ 
-                "ontactnumber` IS NULL) OR (`contactnumber` = ?)) AND ((? = 1 AND `email` IS NULL"& _ 
-                ") OR (`email` = ?)) AND ((? = 1 AND `emergencyperson` IS NULL) OR (`emergencyper"& _ 
-                "son` = ?)) AND ((? = 1 AND `emergencynum` IS NULL) OR (`emergencynum` = ?)) AND "& _ 
-                "((? = 1 AND `height` IS NULL) OR (`height` = ?)) AND ((? = 1 AND `weight` IS NUL"& _ 
-                "L) OR (`weight` = ?)) AND ((? = 1 AND `medicalcode` IS NULL) OR (`medicalcode` ="& _ 
-                " ?)) AND ((? = 1 AND `trainercode` IS NULL) OR (`trainercode` = ?)) AND ((? = 1 "& _ 
-                "AND `sessionlistscode` IS NULL) OR (`sessionlistscode` = ?)) AND ((? = 1 AND `me"& _ 
-                "mbersince` IS NULL) OR (`membersince` = ?)) AND ((? = 1 AND `membershiptype` IS "& _ 
-                "NULL) OR (`membershiptype` = ?)) AND ((? = 1 AND `paymentstatus` IS NULL) OR (`p"& _ 
-                "aymentstatus` = ?)) AND ((? = 1 AND `bmi` IS NULL) OR (`bmi` = ?)))"
+                " `birthday` IS NULL) OR (`"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  ` = ?)) "& _ 
+                "AND ((? = 1 AND `age` IS NULL) OR (`age` = ?)) AND ((? = 1 AND `gender` IS NULL)"& _ 
+                " OR (`gender` = ?)) AND ((? = 1 AND `contactnumber` IS NULL) OR (`contactnumber`"& _ 
+                " = ?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)) AND ((? = 1 AND `emerg"& _ 
+                "encyperson` IS NULL) OR (`emergencyperson` = ?)) AND ((? = 1 AND `emergencynum` "& _ 
+                "IS NULL) OR (`emergencynum` = ?)) AND ((? = 1 AND `height` IS NULL) OR (`height`"& _ 
+                " = ?)) AND ((? = 1 AND `weight` IS NULL) OR (`weight` = ?)) AND ((? = 1 AND `med"& _ 
+                "icalcode` IS NULL) OR (`medicalcode` = ?)) AND ((? = 1 AND `trainercode` IS NULL"& _ 
+                ") OR (`trainercode` = ?)) AND ((? = 1 AND `sessionlistscode` IS NULL) OR (`sessi"& _ 
+                "onlistscode` = ?)) AND ((? = 1 AND `membersince` IS NULL) OR (`membersince` = ?)"& _ 
+                ") AND ((? = 1 AND `membershiptype` IS NULL) OR (`membershiptype` = ?)) AND ((? ="& _ 
+                " 1 AND `paymentstatus` IS NULL) OR (`paymentstatus` = ?)) AND ((? = 1 AND `bmi` "& _ 
+                "IS NULL) OR (`bmi` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_fname", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "fname", Global.System.Data.DataRowVersion.Original, true, Nothing))

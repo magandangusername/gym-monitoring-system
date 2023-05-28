@@ -111,7 +111,7 @@ Public Class progress_reports
         Dim weight As Double = getdata("weight")
         Dim height As Double = getdata("height")
         Dim BMI As Double = (weight) / (height ^ 2)
-        Dim age As String
+        Dim age As Integer = CInt(getdata("age"))
         Dim FCalories As Double = fnum1 + (fnum2 * weight) + (fnum3 * height) - (fnum4 * age)
         Dim MCalories As Double = mnum1 + (mnum2 * weight) + (mnum3 * height) - (mnum4 * age)
         txtInitialBmi.Text = BMI
@@ -212,169 +212,119 @@ Public Class progress_reports
         While getdata.Read
 
             If getdata("actname") = "Bench press" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA1.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Overhead press" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA2.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Pushups" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA3.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Bent-over row" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA4.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Biceps curl" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA5.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Pull-up" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA6.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Lying triceps extensions" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA7.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Tricep dip" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA8.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Single arm dumbbell row" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA9.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Pull-down" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA10.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell triceps kickback" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA11.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell triceps kickback" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA12.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell front raise" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA13.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Deadlift" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA14.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell fly" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA15.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Overhead Triceps Extension" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA16.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell bench press" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA17.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell shoulder press" And getdata("acttype") = "Upper Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtUBA18.Text = getdata("session_minutes")
 
             ElseIf getdata("actname") = "Squats" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA1.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Lunge" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA2.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Split squat" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA3.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Calf raises" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA4.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Deadlift" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA5.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Goblet squats" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA6.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Romanian deadlift" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA7.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Side lunge" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA8.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Leg curl" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA9.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Single leg deadlift" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA10.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Leg press" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA11.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Reverse lunges" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA12.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Walking lunge" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA13.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Leg extension" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA14.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Donkey kicks" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA15.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Barbell squat" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA16.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell lunge" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA17.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Bodyweight Squat" And getdata("acttype") = "Lower Body" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtLBA18.Text = getdata("session_minutes")
 
             ElseIf getdata("actname") = "Pilates" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA1.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Plank" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA2.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Crunch" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA3.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Reverse crunch" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA4.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Leg raise" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA5.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Bicycle crunches" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA6.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Russian twists" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA7.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Modified plank" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA8.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Sit-up" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA9.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Hanging leg raises" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA10.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Bird-dog crunch" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA11.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Forearm plank" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA12.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "High plank" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA13.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Plank jack" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA14.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Dumbbell plank drag" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA15.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Chaturanga Dandasana" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA16.Text = getdata("session_minutes")
             ElseIf getdata("actname") = "Plank walk" And getdata("acttype") = "Core" Then
-                totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
                 txtCBA17.Text = getdata("session_minutes")
             End If
+            totalcalories += CInt(getdata("session_minutes")) * CInt(getdata("actvalue"))
         End While
+
         getdata.Close()
+        txtCaloriesLost.Text = totalcalories
         DBConnection.closeCon()
     End Sub
 

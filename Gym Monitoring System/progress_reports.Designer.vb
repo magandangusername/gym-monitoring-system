@@ -1149,9 +1149,15 @@ Partial Class progress_reports
         '
         'dgvSessions
         '
+        Me.dgvSessions.AllowUserToAddRows = False
+        Me.dgvSessions.AllowUserToDeleteRows = False
+        Me.dgvSessions.AllowUserToResizeColumns = False
+        Me.dgvSessions.AllowUserToResizeRows = False
+        Me.dgvSessions.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSessions.Location = New System.Drawing.Point(506, 89)
         Me.dgvSessions.Name = "dgvSessions"
+        Me.dgvSessions.ReadOnly = True
         Me.dgvSessions.Size = New System.Drawing.Size(846, 226)
         Me.dgvSessions.TabIndex = 356
         '

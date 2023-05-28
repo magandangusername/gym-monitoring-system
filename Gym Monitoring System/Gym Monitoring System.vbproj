@@ -102,12 +102,6 @@
     <Compile Include="admin_overview.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_registration.Designer.vb">
-      <DependentUpon>admin_registration.vb</DependentUpon>
-    </Compile>
-    <Compile Include="admin_registration.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="buy_membership.Designer.vb">
       <DependentUpon>buy_membership.vb</DependentUpon>
     </Compile>
@@ -186,19 +180,10 @@
     <Compile Include="profile.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="progress_report.Designer.vb">
-      <DependentUpon>progress_report.vb</DependentUpon>
-    </Compile>
-    <Compile Include="progress_report.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="admin_overview.resx">
       <DependentUpon>admin_overview.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="admin_registration.resx">
-      <DependentUpon>admin_registration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="buy_membership.resx">
       <DependentUpon>buy_membership.vb</DependentUpon>
@@ -229,9 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="profile.resx">
       <DependentUpon>profile.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="progress_report.resx">
-      <DependentUpon>progress_report.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="progress_reports.resx">
       <DependentUpon>progress_reports.vb</DependentUpon>
