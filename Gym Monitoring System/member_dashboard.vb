@@ -44,7 +44,15 @@
 "
         lblWarning.Text = ""
         DBConnection.openCon()
-        Dim getdata = DBConnection.fetchData("SELECT * FROM MembershipOrder INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
+        'MsgBox("SELECT * 
+        'FROM MembershipOrder 
+        'INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id 
+        'INNER JOIN Members ON Members.member_id = MembershipOrder.member_id 
+        'WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
+        Dim getdata = DBConnection.fetchData("SELECT * 
+        FROM MembershipOrder 
+        INNER JOIN membership ON membership.membership_id = MembershipOrder.membership_id 
+        WHERE MembershipOrder.member_id = " & DBConnection.member_id & " ORDER BY membership_active_datetime DESC")
         If getdata.HasRows Then
             If getdata("membership_status") = "Active" Then
                 lblMemStat.Text = "ACTIVE"
@@ -56,6 +64,9 @@
                     lblWarning.Text = "Warning: membership is expiring in " & daysleft & "day(s)!"
                 End If
                 lblDaysLeft.Text = daysleft
+                lblMembership.Text = getdata("membership_name")
+                getdata = DBConnection.fetchData("SELECT * FROM Members WHERE member_id = " & DBConnection.member_id)
+                lblUser.Text = getdata("fname") & "!"
             End If
         End If
 

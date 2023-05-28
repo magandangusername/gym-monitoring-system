@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class member_dashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class member_dashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(member_dashboard))
         Me.btnlogout = New System.Windows.Forms.Button()
@@ -46,6 +46,11 @@ Partial Class member_dashboard
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblMembership = New System.Windows.Forms.Label()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,7 +119,7 @@ Partial Class member_dashboard
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(17, 656)
+        Me.Label3.Location = New System.Drawing.Point(33, 657)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(178, 16)
         Me.Label3.TabIndex = 27
@@ -125,7 +130,7 @@ Partial Class member_dashboard
         Me.lblMemStat.AutoSize = True
         Me.lblMemStat.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lblMemStat.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMemStat.Location = New System.Drawing.Point(51, 680)
+        Me.lblMemStat.Location = New System.Drawing.Point(67, 681)
         Me.lblMemStat.Name = "lblMemStat"
         Me.lblMemStat.Size = New System.Drawing.Size(88, 16)
         Me.lblMemStat.TabIndex = 27
@@ -136,7 +141,7 @@ Partial Class member_dashboard
         Me.lblDaysLeft.AutoSize = True
         Me.lblDaysLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lblDaysLeft.Font = New System.Drawing.Font("Copperplate Gothic Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDaysLeft.Location = New System.Drawing.Point(333, 668)
+        Me.lblDaysLeft.Location = New System.Drawing.Point(493, 670)
         Me.lblDaysLeft.Name = "lblDaysLeft"
         Me.lblDaysLeft.Size = New System.Drawing.Size(19, 18)
         Me.lblDaysLeft.TabIndex = 27
@@ -147,7 +152,7 @@ Partial Class member_dashboard
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label6.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(222, 668)
+        Me.Label6.Location = New System.Drawing.Point(382, 670)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(104, 16)
         Me.Label6.TabIndex = 27
@@ -159,7 +164,7 @@ Partial Class member_dashboard
         Me.lblWarning.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lblWarning.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWarning.ForeColor = System.Drawing.Color.Red
-        Me.lblWarning.Location = New System.Drawing.Point(366, 668)
+        Me.lblWarning.Location = New System.Drawing.Point(526, 670)
         Me.lblWarning.Name = "lblWarning"
         Me.lblWarning.Size = New System.Drawing.Size(81, 16)
         Me.lblWarning.TabIndex = 27
@@ -306,12 +311,71 @@ Partial Class member_dashboard
         Me.PictureBox5.TabIndex = 37
         Me.PictureBox5.TabStop = False
         '
+        'ListBox4
+        '
+        Me.ListBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ListBox4.Enabled = False
+        Me.ListBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.ItemHeight = 15
+        Me.ListBox4.Items.AddRange(New Object() {"Lower Body Development ", "              Activities", "", "Squats", "Lunge", "Split squat", "Calf raises", "Deadlift", "Goblet squats", "Romanian deadlift", "Side lunge", "Leg curl", "Single leg deadlift", "Leg press", "Reverse lunges", "Walking lunge", "Leg extension", "Donkey kicks", "Barbell squat", "Dumbbell lunge", "Bodyweight Squat"})
+        Me.ListBox4.Location = New System.Drawing.Point(1764, -340)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.Size = New System.Drawing.Size(162, 334)
+        Me.ListBox4.TabIndex = 40
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(631, 31)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(29, 16)
+        Me.Label4.TabIndex = 27
+        Me.Label4.Text = "HI "
+        '
+        'lblUser
+        '
+        Me.lblUser.AutoSize = True
+        Me.lblUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblUser.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUser.Location = New System.Drawing.Point(657, 31)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(48, 16)
+        Me.lblUser.TabIndex = 27
+        Me.lblUser.Text = "User"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label7.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(232, 657)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(116, 16)
+        Me.Label7.TabIndex = 27
+        Me.Label7.Text = "Membership: "
+        '
+        'lblMembership
+        '
+        Me.lblMembership.AutoSize = True
+        Me.lblMembership.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblMembership.Font = New System.Drawing.Font("Copperplate Gothic Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMembership.Location = New System.Drawing.Point(245, 681)
+        Me.lblMembership.Name = "lblMembership"
+        Me.lblMembership.Size = New System.Drawing.Size(63, 16)
+        Me.lblMembership.TabIndex = 27
+        Me.lblMembership.Text = "1 Year"
+        Me.lblMembership.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'member_dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1370, 709)
+        Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
@@ -328,6 +392,10 @@ Partial Class member_dashboard
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblWarning)
         Me.Controls.Add(Me.lblDaysLeft)
+        Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblMembership)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblMemStat)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnBuyMembership)
@@ -370,4 +438,9 @@ Partial Class member_dashboard
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblUser As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents lblMembership As Label
 End Class

@@ -614,7 +614,7 @@ Partial Class member_registration
         '
         Me.lblPassRequirements.AutoSize = True
         Me.lblPassRequirements.ForeColor = System.Drawing.Color.Red
-        Me.lblPassRequirements.Location = New System.Drawing.Point(619, 449)
+        Me.lblPassRequirements.Location = New System.Drawing.Point(624, 421)
         Me.lblPassRequirements.Name = "lblPassRequirements"
         Me.lblPassRequirements.Size = New System.Drawing.Size(84, 13)
         Me.lblPassRequirements.TabIndex = 74
