@@ -68,8 +68,11 @@
                 getdata = DBConnection.fetchData("SELECT * FROM Members WHERE member_id = " & DBConnection.member_id)
                 lblUser.Text = getdata("fname") & "!"
             End If
+        Else
+            lblMembership.Text = "None"
+
         End If
-        lblMembership.Text = "None"
+
 
 
         DBConnection.closeCon()
