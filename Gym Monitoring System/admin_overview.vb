@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing
 Public Class admin_overview
 
     Private Sub dgvSession_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSession.CellClick ', dgvSession.SelectionChanged
@@ -17,13 +18,17 @@ Public Class admin_overview
 
     End Sub
 
-    Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick ', dgvCustomer.SelectionChanged
+    Private Sub dgvCustomer_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomer.CellClick
         Try
             'Me.Text = dgvCustomer.CurrentRow.Cells(0).Value
             txtFullname.Text = dgvCustomer.CurrentRow.Cells(1).Value
             txtAddress.Text = dgvCustomer.CurrentRow.Cells(2).Value
             txtBirthday.Text = dgvCustomer.CurrentRow.Cells(3).Value
-            txtGender.Text = dgvCustomer.CurrentRow.Cells(5).Value
+            If dgvCustomer.CurrentRow.Cells(5).Value = "Male" Then
+                rdbMale.Checked = True
+            Else
+                rdbFemale.Checked = True
+            End If
             txtContactNumber.Text = dgvCustomer.CurrentRow.Cells(6).Value
             txtEmail.Text = dgvCustomer.CurrentRow.Cells(7).Value
             txtEmergencyContactPerson.Text = dgvCustomer.CurrentRow.Cells(8).Value
@@ -101,9 +106,13 @@ Public Class admin_overview
         'no validation required for admin
         DBConnection.openCon()
         Try
+            Dim gender As String = "Female"
+            If rdbMale.Checked Then
+                gender = "Male"
+            End If
             Dim addcmd As New OleDbCommand("INSERT INTO Members (fname,address,birthday,gender,contactnumber,email,emergencyperson,
             emergencynum,height,weight,bmi,medicalcondition) 
-            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', #" & txtBirthday.Text & "#,  '" & txtGender.Text & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
+            values ('" & txtFullname.Text & "','" & txtAddress.Text & "', #" & txtBirthday.Text & "#,  '" & gender & "', '" & txtContactNumber.Text & "', '" & txtEmail.Text & "', '" & txtEmergencyContactPerson.Text & "', '" & txtContactNumber2.Text & "', '" & txtHeight.Text & "', '" & txtWeight.Text & "', '" & txtBmi.Text & "', '" & RichTextBox1.Text & "');", DBConnection.con)
             addcmd.ExecuteNonQuery()
             Dim getdata = DBConnection.fetchData("SELECT member_id FROM Members ORDER BY member_id DESC")
             Dim pw = "INSERT INTO credentials (member_id,member_password) VALUES (" & getdata("member_id") & ",'" & txtPW.Text & "')"
@@ -200,9 +209,13 @@ Public Class admin_overview
         DBConnection.openCon()
         If txtFullname.Text <> Nothing And txtAddress.Text <> Nothing And txtBirthday.Text <> Nothing And txtGender.Text <> Nothing And txtContactNumber.Text <> Nothing And txtEmail.Text <> Nothing And txtEmergencyContactPerson.Text <> Nothing And txtContactNumber2.Text <> Nothing And txtHeight.Text <> Nothing And txtWeight.Text <> Nothing And txtBmi.Text <> Nothing And RichTextBox1.Text <> Nothing Then
             Try
+                Dim gender As String = "Female"
+                If rdbMale.Checked Then
+                    gender = "Male"
+                End If
                 'Dim birthday = Str(dtpbirthday.Value().Year) & "-" & Str(dtpbirthday.Value().Month) & "-" & Str(dtpbirthday.Value().Day)
                 Dim updatecmd As New OleDbCommand("Update Members
-                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday = #" & txtBirthday.Text & "#, gender ='" & txtGender.Text & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
+                SET fname ='" & txtFullname.Text & "', address ='" & txtAddress.Text & "', birthday = #" & txtBirthday.Text & "#, gender ='" & gender & "', contactnumber ='" & txtContactNumber.Text & "', email ='" & txtEmail.Text & "', emergencyperson ='" & txtEmergencyContactPerson.Text & "', emergencynum ='" & txtContactNumber2.Text & "', height ='" & txtHeight.Text & "', weight ='" & txtWeight.Text & "', bmi ='" & txtBmi.Text & "', medicalcondition ='" & RichTextBox1.Text & "'
                 WHERE member_ID = " & dgvCustomer.CurrentRow.Cells(0).Value() & "", DBConnection.con)
 
                 Dim i = updatecmd.ExecuteNonQuery
@@ -223,7 +236,7 @@ Public Class admin_overview
                 End If
 
             Catch ex As Exception
-                MsgBox("An Error Occur", MessageBoxIcon.Error)
+                MsgBox("Error: ", MessageBoxIcon.Error)
             Finally
                 DBConnection.closeCon()
             End Try
@@ -243,18 +256,7 @@ Public Class admin_overview
 
                 If Answer = vbYes Then
                     MsgBox("Record Has Been DELETED SUCCESSFULLY!", MessageBoxIcon.Information)
-                    txtFullname.Text = ""
-                    txtAddress.Text = ""
-                    txtBirthday.Text = ""
-                    txtGender.Text = ""
-                    txtContactNumber.Text = ""
-                    txtEmail.Text = ""
-                    txtEmergencyContactPerson.Text = ""
-                    txtContactNumber2.Text = ""
-                    txtHeight.Text = ""
-                    txtWeight.Text = ""
-                    txtBmi.Text = ""
-                    RichTextBox1.Text = ""
+                    resetFields("member")
                 End If
             Else
                 MsgBox("Please Select A Data!", MessageBoxIcon.Warning)
@@ -656,7 +658,8 @@ Public Class admin_overview
             txtFullname.Text = ""
             txtAddress.Text = ""
             txtBirthday.Text = ""
-            txtGender.Text = ""
+            rdbMale.Checked = False
+            rdbFemale.Checked = False
             txtContactNumber.Text = ""
             txtEmail.Text = ""
             txtEmergencyContactPerson.Text = ""
@@ -950,4 +953,158 @@ credentials.member_password
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnClearSessionFields.Click
         resetFields("session")
     End Sub
+
+    'Private Sub validateInputs()
+    '    'Trim input fields
+    '    txtFullname.Text = Trim(txtFullname.Text)
+    '    txtAddress.Text = Trim(txtAddress.Text)
+    '    txtBirthday.Text = Trim(txtBirthday.Text)
+    '    txtContactNumber.Text = Trim(txtContactNumber.Text)
+    '    txtEmail.Text = Trim(txtEmail.Text)
+    '    txtEmergencyContactPerson.Text = Trim(txtEmergencyContactPerson.Text)
+    '    txtContactNumber2.Text = Trim(txtContactNumber2.Text)
+    '
+    '    Dim hasError As Boolean = False
+    '    If txtFullname.Text = "" Then
+    '        hasError = True
+    '    Else
+    '        lblFNameRequired.Hide()
+    '    End If
+    '
+    '    If txtAddress.Text = "" Then
+    '        lblAddrRequired.Show()
+    '        hasError = True
+    '    Else
+    '        lblAddrRequired.Hide()
+    '    End If
+    '
+    '    If txtContactNumber.Text = "" Then
+    '        lblContactNumRequired.Show()
+    '        hasError = True
+    '    Else
+    '        lblContactNumRequired.Hide()
+    '    End If
+    '
+    '    If txtEmail.Text = "" Then
+    '        lblEmailRequired.Show()
+    '        hasError = True
+    '    Else
+    '        getdata = DBConnection.fetchData("SELECT * FROM Members WHERE email = '" & Trim(txtEmail.Text) & "' AND member_ID <>" & DBConnection.member_id)
+    '        If getdata.HasRows Then
+    '            lblEmailRequired.Text = "Email is already taken."
+    '            lblEmailRequired.Show()
+    '            hasError = True
+    '        Else
+    '            lblEmailRequired.Hide()
+    '        End If
+    '    End If
+    '
+    '    If txtEmergencyContactPerson.Text = "" Then
+    '        lblECPRequired.Show()
+    '        hasError = True
+    '    Else
+    '        lblECPRequired.Hide()
+    '    End If
+    '
+    '    If txtContactNumber2.Text = "" Then
+    '        lblContactNum2Required.Show()
+    '        hasError = True
+    '    Else
+    '        lblContactNum2Required.Hide()
+    '    End If
+    '
+    '    Dim eligibleToChange As Boolean = False
+    '    If txtOldPass.Text <> "" Then
+    '        'check if old pw is same in DB
+    '
+    '        getdata = DBConnection.fetchData("SELECT * FROM credentials WHERE member_id = " & DBConnection.member_id & " AND member_password = '" & txtOldPass.Text & "'")
+    '        If getdata.HasRows Then
+    '            lbloldpasswordrequired.Hide()
+    '            If txtPassword.Text = "" Then
+    '                lblPasswordRequired.Show()
+    '                eligibleToChange = False
+    '            Else
+    '                eligibleToChange = True
+    '                lblPasswordRequired.Hide()
+    '            End If
+    '            If txtReTypePassword.Text = "" Then
+    '                lblPassword2Required.Show()
+    '                eligibleToChange = False
+    '            Else
+    '                lblPassword2Required.Hide()
+    '                eligibleToChange = True
+    '            End If
+    '            If txtPassword.Text <> txtReTypePassword.Text Then
+    '                lblPasswordRequired.Text = "password does not match."
+    '                lblPasswordRequired.Show()
+    '                eligibleToChange = False
+    '            ElseIf Not securedStr.ValidatePassword(txtPassword.Text) Then
+    '                lblPassRequirements.Text = "Password must be:
+    '                atleast 8 characters
+    '                has atleast 1 Uppercase
+    '                has atleast 1 Lowercase
+    '                has atleast 1 Number
+    '                has atleast 1 Special Character"
+    '                lblPassRequirements.Show()
+    '                eligibleToChange = False
+    '            Else
+    '                lblPasswordRequired.Hide()
+    '                eligibleToChange = True
+    '            End If
+    '        Else
+    '            lbloldpasswordrequired.Text = "Old password do not match"
+    '            lbloldpasswordrequired.Show()
+    '            eligibleToChange = False
+    '        End If
+    '
+    '        If eligibleToChange Then
+    '            Dim updatecmd As New OleDbCommand("UPDATE credentials
+    '        SET 
+    '        member_id = " & DBConnection.member_id & ", 
+    '        member_password = '" & txtPassword.Text & "'
+    '        WHERE member_ID = " & DBConnection.member_id, DBConnection.con)
+    '            If updatecmd.ExecuteNonQuery() > 0 Then
+    '                MsgBox("Password change successfully.", MessageBoxIcon.Information)
+    '            Else
+    '                MsgBox("Password change failed.", MessageBoxIcon.Warning)
+    '            End If
+    '        End If
+    '    End If
+    '
+    '
+    '
+    '
+    '
+    '    If hasError Then
+    '        MsgBox("Errors detected")
+    '        DBConnection.closeCon()
+    '        Exit Sub
+    '    Else
+    '        Dim updatecmd As New OleDbCommand("UPDATE Members
+    '        SET fname = '" & txtFullname.Text & "', 
+    '        address = '" & txtAddress.Text & "', 
+    '        contactnumber = '" & txtContactNumber.Text & "', 
+    '        email = '" & txtEmail.Text & "',
+    '        emergencyperson = '" & txtEmergencyContactPerson.Text & "',
+    '        emergencynum = '" & txtContactNumber2.Text & "',
+    '        height = '" & txtHeight.Text & "',
+    '        weight = '" & txtWeight.Text & "', 
+    '        medicalcondition = '" & txtMedCon.Text & "'
+    '        WHERE member_ID =" & DBConnection.member_id, DBConnection.con)
+    '
+    '
+    '
+    '        If updatecmd.ExecuteNonQuery() > 0 Then
+    '            MsgBox("Profile updated successfully", MessageBoxIcon.Information)
+    '            btnUpdate.Show()
+    '            'btnBack.Show()
+    '            btnSave.Hide()
+    '            DBConnection.closeCon()
+    '        Else
+    '            MsgBox("Profile update failed", MessageBoxIcon.Warning)
+    '        End If
+    '    End If
+    'End Sub
+
+
 End Class

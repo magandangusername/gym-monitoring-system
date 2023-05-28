@@ -28,6 +28,8 @@ Partial Class admin_overview
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(admin_overview))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpCustomer = New System.Windows.Forms.TabPage()
+        Me.rdbFemale = New System.Windows.Forms.RadioButton()
+        Me.rdbMale = New System.Windows.Forms.RadioButton()
         Me.btnMembershipOrder = New System.Windows.Forms.Button()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -153,7 +155,6 @@ Partial Class admin_overview
         Me.txtBmi = New System.Windows.Forms.TextBox()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtBirthday = New System.Windows.Forms.TextBox()
         Me.txtContactNumber2 = New System.Windows.Forms.TextBox()
         Me.lblContactNumber2 = New System.Windows.Forms.Label()
@@ -219,6 +220,8 @@ Partial Class admin_overview
         '
         'tpCustomer
         '
+        Me.tpCustomer.Controls.Add(Me.rdbFemale)
+        Me.tpCustomer.Controls.Add(Me.rdbMale)
         Me.tpCustomer.Controls.Add(Me.btnMembershipOrder)
         Me.tpCustomer.Controls.Add(Me.Label47)
         Me.tpCustomer.Controls.Add(Me.Label38)
@@ -344,7 +347,6 @@ Partial Class admin_overview
         Me.tpCustomer.Controls.Add(Me.txtBmi)
         Me.tpCustomer.Controls.Add(Me.Label56)
         Me.tpCustomer.Controls.Add(Me.Label1)
-        Me.tpCustomer.Controls.Add(Me.txtGender)
         Me.tpCustomer.Controls.Add(Me.txtBirthday)
         Me.tpCustomer.Controls.Add(Me.txtContactNumber2)
         Me.tpCustomer.Controls.Add(Me.lblContactNumber2)
@@ -377,6 +379,28 @@ Partial Class admin_overview
         Me.tpCustomer.TabIndex = 0
         Me.tpCustomer.Text = " Customer"
         Me.tpCustomer.UseVisualStyleBackColor = True
+        '
+        'rdbFemale
+        '
+        Me.rdbFemale.AutoSize = True
+        Me.rdbFemale.Location = New System.Drawing.Point(778, 84)
+        Me.rdbFemale.Name = "rdbFemale"
+        Me.rdbFemale.Size = New System.Drawing.Size(70, 17)
+        Me.rdbFemale.TabIndex = 229
+        Me.rdbFemale.TabStop = True
+        Me.rdbFemale.Text = "Female"
+        Me.rdbFemale.UseVisualStyleBackColor = True
+        '
+        'rdbMale
+        '
+        Me.rdbMale.AutoSize = True
+        Me.rdbMale.Location = New System.Drawing.Point(715, 84)
+        Me.rdbMale.Name = "rdbMale"
+        Me.rdbMale.Size = New System.Drawing.Size(57, 17)
+        Me.rdbMale.TabIndex = 229
+        Me.rdbMale.TabStop = True
+        Me.rdbMale.Text = "Male"
+        Me.rdbMale.UseVisualStyleBackColor = True
         '
         'btnMembershipOrder
         '
@@ -1406,13 +1430,6 @@ Partial Class admin_overview
         Me.Label1.TabIndex = 88
         Me.Label1.Text = "BMI"
         '
-        'txtGender
-        '
-        Me.txtGender.Location = New System.Drawing.Point(715, 83)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(279, 20)
-        Me.txtGender.TabIndex = 87
-        '
         'txtBirthday
         '
         Me.txtBirthday.Location = New System.Drawing.Point(715, 57)
@@ -1554,6 +1571,8 @@ Partial Class admin_overview
         '
         'txtFullname
         '
+        Me.txtFullname.BackColor = System.Drawing.SystemColors.Window
+        Me.txtFullname.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtFullname.Location = New System.Drawing.Point(715, 6)
         Me.txtFullname.Name = "txtFullname"
         Me.txtFullname.Size = New System.Drawing.Size(291, 20)
@@ -1837,7 +1856,6 @@ Partial Class admin_overview
     Friend WithEvents lblAdminName As Label
     Friend WithEvents lblDate As Label
     Friend WithEvents lblTotalData As Label
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents txtBirthday As TextBox
     Friend WithEvents txtContactNumber2 As TextBox
     Friend WithEvents lblContactNumber2 As Label
@@ -1993,4 +2011,6 @@ Partial Class admin_overview
     Friend WithEvents Button1 As Button
     Friend WithEvents btnClearMembersFields As Button
     Friend WithEvents btnClearSessionFields As Button
+    Friend WithEvents rdbFemale As RadioButton
+    Friend WithEvents rdbMale As RadioButton
 End Class
