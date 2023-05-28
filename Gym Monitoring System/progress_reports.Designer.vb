@@ -1540,6 +1540,7 @@ Partial Class progress_reports
         Me.Enabled = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "progress_reports"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Progress Report"
         CType(Me.dgvSessions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -661,6 +661,7 @@ Partial Class profile
         Me.Controls.Add(Me.lblFullName)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "profile"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Profile"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()

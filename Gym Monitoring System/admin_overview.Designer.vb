@@ -1808,6 +1808,7 @@ Partial Class admin_overview
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin_overview"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin Overview"
         Me.TabControl1.ResumeLayout(False)
         Me.tpCustomer.ResumeLayout(False)

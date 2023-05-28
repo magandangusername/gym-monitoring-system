@@ -68,6 +68,7 @@ Partial Class membership_order
         Me.Controls.Add(Me.txtMembershipOrder)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "membership_order"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Activate Order"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -173,6 +173,7 @@ Partial Class login
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login"
         CType(Me.showPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hidePassword, System.ComponentModel.ISupportInitialize).EndInit()
